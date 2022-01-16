@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="DolAdatokMod.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <main>
+      <h1>Dolgozó adatai</h1>
+      <div class="row">
+        <div class="col">
+            <input id="belepes" width="276" />
+            <script>
+                $('#belepes').datepicker({
+                    uiLibrary: 'bootstrap4'
+                });
+            </script>
+              <label class="form-label" for="form8Example1">Belépés napja</label>
+        </div> 
+        <div class="col">
+            <input id="kilepes" width="276" />
+            <script>
+                $('#kilepes').datepicker({
+                    uiLibrary: 'bootstrap4'
+                });
+            </script>
+              <label class="form-label" for="form8Example1">kilepes napja</label>
+        </div>       
+      </div> 
+      <hr />
+      <div class="row">
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">Besorolási betű</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">Besorolási szám</label>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col">
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">FEOR azonosító</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-outline">
+            <input type="text" id="form8Example1" class="form-control" />
+            <label class="form-label" for="form8Example1">SZGF kód</label>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="container">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#"><<</a></li>
+      <li class="page-item">
+        <a class="page-link" href="DolAdatokMod.html">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="DolAdatokMod2.html">2</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">>></a></li>
+    </ul>
+  </div>
+    </main>
+  </body>
+</html>

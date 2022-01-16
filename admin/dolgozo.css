@@ -1,0 +1,11 @@
+@charset "utf-8";
+.modositasDadat {
+    float: right;
+    margin: 10px;
+  }
+  #modositDadat{
+    margin: 5px;
+  }
+  .ikon{
+    font-size:36px;
+  }
