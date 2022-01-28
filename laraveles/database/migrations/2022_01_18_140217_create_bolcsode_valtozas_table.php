@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateBolcsodeValtozasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('bolcsode_valtozas', function (Blueprint $table) {
+            $table->id();
+            $table->foreign('bolcsode_id')->references('id')->on('bolcsodes');
+            $table->date('meddig');
+            $table->string('regiadmin');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('bolcsode_valtozas');
+    }
+}

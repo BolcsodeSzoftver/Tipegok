@@ -1,0 +1,23 @@
+@charset "utf-8";
+h3 {
+  margin: 12px 0;
+  color: rgb(31, 144, 214);
+}
+.modositadat {
+  float: right;
+  margin: 10px;
+}
+#modositadat{
+  margin: 10px;
+}
+th,td{
+  text-align: center;
+}
+#jovhagyas{
+  padding: 5px;
+  margin: 5px;
+  float: right;
+}
+.pagination {
+  float: right;
+}

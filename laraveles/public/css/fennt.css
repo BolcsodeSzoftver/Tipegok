@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+#mentes, #ment{
+    width: 200px;
+    margin: auto;
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.gomb1{
+    position: absolute;
+    right: -10px;
+    top: 80px;
+}
+.gomb2{
+    position: absolute;
+    right: -10px;
+    top: 100px;
+}
+#adatMentes{
+    margin: 10px;
+}

@@ -1,0 +1,36 @@
+@charset "utf-8";
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+  "a"
+  "s";
+  
+}
+h1 {
+  text-align: center;
+}
+.row {
+  padding: 10px;
+}
+.pagination {
+  float: right;
+}
+#gomb {
+  padding: 5px;
+  margin: 5px;
+  float: right;
+}
+#gomb2 {
+  display: block;
+  margin: 0 auto;
+}
+article{
+	grid-area: a;
+	
+}
+section{
+	grid-area: s;
+}
