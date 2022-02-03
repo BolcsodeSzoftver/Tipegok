@@ -1,0 +1,1 @@
+<?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/welcome.blade.php ENDPATH**/ ?>

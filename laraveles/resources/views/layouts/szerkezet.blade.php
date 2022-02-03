@@ -39,7 +39,7 @@
                           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Beállítások</a>
                             <a class="dropdown-item" href="#">...</a>
-                            <a class="dropdown-item" href="#">Kijelentkezés</a>
+                            <a class="dropdown-item" href="{{route('logout')}}">Kijelentkezés</a>
                           </div>
                         </li>
                       </ul>
