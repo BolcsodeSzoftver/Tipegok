@@ -2,7 +2,10 @@ class Bolcsode {
     constructor(elem, adat) {
       this.elem = elem;
       this.adat = adat;
-      this.gombModosit = elem.children(".modosit")
+      this.gombModosit = elem.children(".modosit");
+      this.gombTorol = elem.children('.torol');
+     
+
       this.cimElem = elem.children(".cim");
       this.nevElem = elem.children(".nev");
       this.agazatiAzonElem = elem.children(".agazati_azon");
@@ -16,7 +19,15 @@ class Bolcsode {
           this.kattintasTrigger("modosit");
           
         });
+        this.gombTorol.on("click", () => {
+          console.log("gom");
+          this.kattintasTrigger("torol");
+          
+        });
+     
     }
+    
+ 
     setAdatok(ertekek) {
       this.cimElem.html(ertekek.cim);
       this.nevElem.html(ertekek.nev);
@@ -35,6 +46,10 @@ class Bolcsode {
       console.log("kattintastrigger");
     }
   }
+
+ 
+
+
 
   
   

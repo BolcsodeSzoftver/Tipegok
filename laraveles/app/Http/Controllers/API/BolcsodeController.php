@@ -102,6 +102,10 @@ class BolcsodeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bolcsode = bolcsode::findOrFail($id);
+        $bolcsode->delete();
+
+        return response()->json( $bolcsode::all());
     }
+   
 }

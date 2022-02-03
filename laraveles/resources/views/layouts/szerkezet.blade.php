@@ -9,65 +9,95 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> 
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   
+    <link rel="stylesheet" href="css/szerkezet.css">
+
+
+
 
     @yield('head')
-    
+
 </head>
 
 <body>
-    <nav class="container nav justify-content-end bg-info">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
-                BölcsődeAdmin
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Beállítások</a>
-                <a class="dropdown-item" href="#">...</a>
-                <a class="dropdown-item" href="#">Kijelentkezés</a>
+    <div class="container-fluid p-0">
+        <div class="row ">
+            <div class="col-sm-12 ">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Admin</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                      <ul class="navbar-nav">
+                        
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            profilom
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Beállítások</a>
+                            <a class="dropdown-item" href="#">...</a>
+                            <a class="dropdown-item" href="#">Kijelentkezés</a>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
             </div>
-        </li>
-    </nav>
-    <main class="container-xl mt-3 border">
-        <div class="row">
-            <nav class="navba col-sm-3 bg-info">
-                <ul class="navbar-nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="/felhasznalo">Felhasználók</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="/dolgozo">Dolgozók</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="#">Gyerekek</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="#">Beosztás</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="#">Jelenlét</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="/">Bölcsőde</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="/fenntarto">Fenntartó</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="/mellekletek">Mellékletek</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link bg-info text-white" href="#">Statisztikák</a>
-                    </li>
-                </ul>
-            </nav>
-            <article class="col-sm-9">
-                @yield('tartalom')
-            </article>
         </div>
-    </main>
+        <div class="row pr-10">
+
+            <div class="col-sm-2" id="menu">
+
+                <section>
+
+                    <ul class="nav flex-column bg-white mb-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/felhasznalo">Felhasználók</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dolgozo">Dolgozók</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gyerekek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Beosztás</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Jelenlét</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/">Bölcsőde</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/fenntarto">Fenntartó</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/mellekletek">Mellékletek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Statisztikák</a>
+                        </li>
+                    </ul>
+
+
+                </section>
+            </div>
+            <div class="col-sm-9">
+                <article>
+                    @yield('tartalom')
+                </article>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
 </body>
 
 </html>

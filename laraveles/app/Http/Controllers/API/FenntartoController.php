@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
+use SebastianBergmann\Environment\Console;
 
 class FenntartoController extends Controller
 {
@@ -14,7 +15,7 @@ class FenntartoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     /**
+    /**
      * -Ezt használjuk az összes megjegyzés lekéréséhez. 
      */
     public function index()
@@ -51,7 +52,7 @@ class FenntartoController extends Controller
      */
     public function show($id)
     {
-        //
+        return fenntarto::find($id);
     }
 
     /**
@@ -72,7 +73,7 @@ class FenntartoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-        /**
+    /**
      * Az update() metódus hasonló a store() metódushoz, de ahelyett, hogy új megjegyzést hozna létre, először megragadja a meglévő kért megjegyzést
      * a findOrFail($id) paraméterrel. Ezután érvényesíti az új kérést, frissíti a meglévő megjegyzést, 
      * ha a kérelem érvényes, menti az adatbázisba, és visszaküldi a frissített megjegyzést.
@@ -87,7 +88,7 @@ class FenntartoController extends Controller
         $fenntarto->adoszam  = $request->get('adoszam');
         $fenntarto->megye  = $request->get('megye');
         $fenntarto->cegjegyzekszam  = $request->get('cegjegyzekszam');
-        $fenntarto->statisztikaiszam   = $request->get('statisztikaiszam');   
+        $fenntarto->statisztikaiszam   = $request->get('statisztikaiszam');
         $fenntarto->illetekes_kormányh = $request->get('illetekes_kormányh');
         $fenntarto->bolcsodek_szama = $request->get('bolcsodek_szama');
         $fenntarto->uzemorvos_nev  = $request->get('uzemorvos_nev');
@@ -95,8 +96,8 @@ class FenntartoController extends Controller
         $fenntarto->uzemorvos_telefonszam   = $request->get('uzemorvos_telefonszam');
         //$fenntarto->fennt_admin  = $request->get('fennt_admin');
         $fenntarto->save();
-        Storage::put('fenntartoValtozas.json',fenntarto::all());
-        return response()->json( $fenntarto);
+        Storage::put('fenntartoValtozas.json', fenntarto::all());
+        return response()->json($fenntarto);
     }
 
     /**
@@ -107,6 +108,16 @@ class FenntartoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fenntarto = fenntarto::findOrFail($id);
+        $fenntarto->delete();
+
+        return response()->json($fenntarto::all());
     }
+    public function expand()
+    {
+       /*  $tasks=fenntarto::with('bolcsiadat')->get(); */
+        return "sziaaaa";
+        
+    } 
+
 }

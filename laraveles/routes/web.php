@@ -46,6 +46,10 @@ Route::get('/ujdolgozo4', function () {
 Route::get('/fenntarto', function () {
     return view('fenntarto');
 });
+Route::get('/belepes', function () {
+    return view('belepes');
+});
+
 
 
 

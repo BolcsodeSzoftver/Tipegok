@@ -1,12 +1,12 @@
-@extends('layouts.szerkezet')
-@section('head')
+
+<?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/fennt.css" />
     <script src="js/ajax.js"></script>
     <script src="js/fenntClass.js"></script>
     <script src="js/fenntListazas.js"></script>
     <script src="js/fennt.js"></script>
-@endsection
-@section('tartalom')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('tartalom'); ?>
 
     <h3>Fenntartó adatok</h3>
     <table class="table">
@@ -166,4 +166,6 @@
     </div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/fenntarto.blade.php ENDPATH**/ ?>

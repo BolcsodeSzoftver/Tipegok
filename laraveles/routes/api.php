@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\fenntarto;
 use App\Models\bolcsode;
+use Database\Factories\FenntartoFactory;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 /**
  * A Route::apiResource() itt létrehozza a megjegyzések létrehozásához, megjelenítéséhez, frissítéséhez és törléséhez szükséges összes útvonalat.
  */
- Route::apiResource('bolcsode', BolcsodeController::class);
- Route::apiResource('fenntarto', FenntartoController::class);
- 
+Route::apiResource('bolcsode', BolcsodeController::class);
+Route::apiResource('fenntarto', FenntartoController::class);
+Route::get('/api/fenntarto/show/{id}',[FenntartoController::class, 'show']); 
+

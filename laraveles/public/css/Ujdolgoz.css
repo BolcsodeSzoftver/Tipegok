@@ -1,5 +1,5 @@
 @charset "utf-8";
-main {
+/* main {
   width: 80%;
   max-width: 1000px;
   margin: auto;
@@ -8,7 +8,7 @@ main {
   "a"
   "s";
   
-}
+} */
 h1 {
   text-align: center;
 }

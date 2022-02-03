@@ -3,12 +3,8 @@ h3 {
   margin: 12px 0;
   color: rgb(31, 144, 214);
 }
-.modositadat {
-  float: right;
-  margin: 10px;
-}
-#modositadat{
-  margin: 10px;
+table{
+  background-color: #f3f3f3;
 }
 th,td{
   text-align: center;
@@ -20,4 +16,8 @@ th,td{
 }
 .pagination {
   float: right;
+}
+
+.modosit{
+  text-align: center;
 }
