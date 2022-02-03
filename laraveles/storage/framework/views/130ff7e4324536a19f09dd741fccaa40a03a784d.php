@@ -1,3 +1,4 @@
+
 <?php if (isset($component)) { $__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015 = $component; } ?>
 <?php $component = $__env->getContainer()->make(App\View\Components\GuestLayout::class, []); ?>
 <?php $component->withName('guest-layout'); ?>
@@ -54,7 +55,6 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-
         <form method="POST" action="<?php echo e(route('login')); ?>">
             <?php echo csrf_field(); ?>
 

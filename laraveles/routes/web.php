@@ -46,8 +46,8 @@ Route::get('/belepes', function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('bolcsiadat');
+})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
