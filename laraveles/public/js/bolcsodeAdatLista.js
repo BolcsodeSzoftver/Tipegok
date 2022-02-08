@@ -7,7 +7,7 @@ function adatLista(bolcsodek) {
         const bolcsode = new Bolcsode(ujElem, adat);      
        
     });
-    $(".bolcsiNev").on("click", function(){
+ /*    $(".bolcsiNev").on("click", function(){
         let option="";
         $(".bolcsiNev").empty();
         bolcsodek.forEach(function(adat){
@@ -20,9 +20,9 @@ function adatLista(bolcsodek) {
         $(".bolcsiNev").empty();
         bolcsodek.forEach(function(adat) {
             $(".bolcsiNev").append("<option value=" + adat.id + ">" + adat.nev + "</option>")
-        });*/
+        });
         
-    });
+    }); */
  
     sablonElem.remove();
    

@@ -6,15 +6,20 @@
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
 
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('tartalom'); ?>
 
     <h3>Bölcsőde adatok</h3>
+    <button id="bolcsiKeres">Fenntartókhoz tartozó bölcsödék</button>
     <form class="form">
-        <label for="bolcsi">Bölcsödék:</label>
+        <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>       
         <select class="bolcsiNev"></select>
+       
     </form>
+  
+    
     <table class="table">
         <thead>
             <tr>
@@ -53,6 +58,7 @@
             </tr>
         </tbody>
     </table>
+  
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">

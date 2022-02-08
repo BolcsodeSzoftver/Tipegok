@@ -52,7 +52,8 @@ class FenntartoController extends Controller
      */
     public function show($id)
     {
-        return fenntarto::find($id);
+       /*  $comment = Comment::findOrFail($id);
+        return response()->json($comment); */
     }
 
     /**
@@ -113,11 +114,4 @@ class FenntartoController extends Controller
 
         return response()->json($fenntarto::all());
     }
-    public function expand()
-    {
-       /*  $tasks=fenntarto::with('bolcsiadat')->get(); */
-        return "sziaaaa";
-        
-    } 
-
 }

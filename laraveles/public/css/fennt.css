@@ -12,12 +12,11 @@ table {
     white-space: nowrap;*/
     background-color: #f3f3f3;
 }
-.modosit{
+.modosit, .torol{
     text-align: center;
+    width: 6%;
 }
-.torol{
-    float: left;
-}
+
 /*}
 
 .gomb1 {

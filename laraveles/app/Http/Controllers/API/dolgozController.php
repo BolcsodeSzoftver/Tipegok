@@ -4,12 +4,12 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\bolcsode;
 use Illuminate\Support\Facades\Storage;
+use App\Models\alkalmazott                  ;
 
-class BolcsodeController extends Controller
+class dolgozController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,8 +19,7 @@ class BolcsodeController extends Controller
      */
     public function index()
     {
-        Storage::put('bolcsiadat.json', bolcsode::all());
-        return response()->json(bolcsode::all());
+        return response()->json(alkalmazott::all());
     }
 
     /**
@@ -52,8 +51,8 @@ class BolcsodeController extends Controller
      */
     public function show($id)
     {
-        $bolcsode = bolcsode::findOrFail($id);
-        return response()->json($bolcsode);
+        $alkalmazott = alkalmazott::findOrFail($id);
+        return response()->json($alkalmazott);
     }
 
     /**
@@ -81,17 +80,26 @@ class BolcsodeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $bolcsode = bolcsode::findOrFail($id);
-        $bolcsode->cim = $request->get('cim');
-        $bolcsode->nev = $request->get('nev');
-        $bolcsode->agazati_azon = $request->get('agazati_azon');
-        $bolcsode->szgyf_kod = $request->get('szgyf_kod');
-        $bolcsode->ferohelyek_szama = $request->get('ferohelyek_szama');
-        $bolcsode->feor = $request->get('feor');
-        $bolcsode->agazati_potlek = $request->get('agazati_potlek');
-        $bolcsode->save();
-        Storage::put('bolcsiadatValtozas.json', bolcsode::all());
-        return response()->json($bolcsode);
+        $alkalmazott = alkalmazott::findOrFail($id);
+        $alkalmazott->szul_nev  = $request->get('szul_nev');
+        $alkalmazott->szul_hely   = $request->get('szul_hely');
+        $alkalmazott->szul_ido   = $request->get('szul_ido');
+        $alkalmazott->anyja_neve   = $request->get('anyja_neve');
+        $alkalmazott->adoazon_jel  = $request->get('adoazon_jel');
+        $alkalmazott->tajszam  = $request->get('tajszam');
+        $alkalmazott->nem  = $request->get('nem');
+        $alkalmazott->nev   = $request->get('nev');
+        $alkalmazott->banszamla_szam   = $request->get('banszamla_szam');
+        $alkalmazott->telefonszam   = $request->get('telefonszam');
+        $alkalmazott->allando_lakhely   = $request->get('allando_lakhely');
+        $alkalmazott->tartozkodasi_hely   = $request->get('tartozkodasi_hely');
+        $alkalmazott->hazas_e   = $request->get('hazas_e');
+        $alkalmazott->tizenhat_alatti_gyermek    = $request->get('tizenhat_alatti_gyermek');
+        $alkalmazott->all_polgarsag     = $request->get('all_polgarsag');
+
+        
+        $alkalmazott->save();
+        return response()->json($alkalmazott);
     }
 
     /**
@@ -102,9 +110,9 @@ class BolcsodeController extends Controller
      */
     public function destroy($id)
     {
-        $bolcsode = bolcsode::findOrFail($id);
-        $bolcsode->delete();
+        $alkalmazott = alkalmazott::findOrFail($id);
+        $alkalmazott->delete();
 
-        return response()->json($bolcsode::all());
+        return response()->json($alkalmazott::all());
     }
 }

@@ -16,10 +16,6 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
-
         <!-- Scripts -->
         <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
     </head>

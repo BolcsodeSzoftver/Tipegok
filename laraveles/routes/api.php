@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\BolcsodeController;
+use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\FenntartoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,5 +29,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
  */
 Route::apiResource('bolcsode', BolcsodeController::class);
 Route::apiResource('fenntarto', FenntartoController::class);
-Route::get('/api/fenntarto/show/{id}',[FenntartoController::class, 'show']); 
+Route::apiResource('dolgozo', dolgozController::class);
+
+
+
 
