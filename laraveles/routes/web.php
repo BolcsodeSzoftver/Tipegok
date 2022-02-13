@@ -25,22 +25,27 @@ Route::get('/dolgozo', function () {
 Route::get('/mellekletek', function () {
     return view('mellekletek');
 })->middleware(['auth']);
-Route::get('/ujdolgozo', function () {
+
+Route::get('/ujDolgozo', function () {
     return view('ujDolgozo');
 })->middleware(['auth']);
-Route::get('/ujdolgozo2', function () {
+Route::get('/ujDolgozo2', function () {
     return view('ujdolgozo2');
 })->middleware(['auth']);
-
-Route::get('/ujdolgozo3', function () {
+Route::get('/ujDolgozo3', function () {
     return view('ujdolgozo3');
 })->middleware(['auth']);
-Route::get('/ujdolgozo4', function () {
+Route::get('/ujDolgozo4', function () {
     return view('ujdolgozo4');
 })->middleware(['auth']);
+
 Route::get('/fenntarto', function () {
     return view('fenntarto');
 })->middleware(['auth']);
+Route::get('/ujFenntarto', function () {
+    return view('ujFenntarto');
+})->middleware(['auth']);
+
 Route::get('/belepes', function () {
     return view('belepes');
 });

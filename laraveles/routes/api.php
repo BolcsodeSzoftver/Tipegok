@@ -30,7 +30,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('bolcsode', BolcsodeController::class);
 Route::apiResource('fenntarto', FenntartoController::class);
 Route::apiResource('dolgozo', dolgozController::class);
-
-
-
-

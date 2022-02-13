@@ -17,7 +17,7 @@ $(function() {
 		$('#nem').attr('value', event.detail.nem);
 		$('#hazas').attr('value', event.detail.hazas_e);
 		$('#allandoLak').attr('value', event.detail.allando_lakhely);
-		$('#tartHely').attr('value', event.detail.tartozkodasi_hely );
+		$('#tartHely').attr('value', event.detail.tartozkodasi_hely);
 		$('#adoAzon').attr('value', event.detail.adoazon_jel);
 		$('#tajSz').attr('value', event.detail.tajszam);
 		$('#bankSZ').attr('value', event.detail.banszamla_szam);
@@ -59,7 +59,7 @@ $(function() {
 				tartozkodasi_hely: tartHely,
 				adoazon_jel: adoAzon,
 				tajszam: tajSz,
-				banszamla_szam : bankSZ
+				banszamla_szam: bankSZ
 			};
 			console.log(gId);
 			ajax.putAjax(vegpont, adat, gId);
@@ -72,9 +72,9 @@ $(function() {
 	$(window).on('torol', (event) => {
 		console.log('torles');
 		ajax.deleteAjax(vegpont, event.detail.id);
-        console.log(event.detail.id);
-        //ajax.getAjax(vegpont, fenntLista);
-        location.reload();
+		console.log(event.detail.id);
+		//ajax.getAjax(vegpont, fenntLista);
+		location.reload();
 	});
 
 	$('.adatModositEnged').on('click', function() {
@@ -82,12 +82,35 @@ $(function() {
 		$('input').removeAttr('readonly');
 	});
 
-    $("#urlap1").on('click', function(){
-        $('#adatok2').hide();
-        $('#adatok1').show();
-    });
-    $("#urlap2").on('click', function(){
-        $('#adatok1').hide();
-        $('#adatok2').show();
-    });
+	$('#urlap1').on('click', function() {
+		$('#adatok2').hide();
+		$('#adatok1').show();
+	});
+	$('#urlap2').on('click', function() {
+		$('#adatok1').hide();
+		$('#adatok2').show();
+	});
+
+	// tablazat oszlopok elrejtése
+	for (let i = 2; i < 6; i++) {
+		$('.t' + i).hide();
+	}
+
+	$('#adatokT1').css('background-color', 'gray');
+	$('#adatokT1').css('color', 'white');
+	for (let i = 1; i < 6; i++) {
+		$('#adatokT' + i).on('click', function() {
+			for (let k = 1; k < 5; k++) {
+				$('#adatokT' + (i + k)).css('background-color', 'white');
+				$('#adatokT' + (i + k)).css('color', 'blue');
+				$('#adatokT' + (i - k)).css('background-color', 'white');
+				$('#adatokT' + (i - k)).css('color', 'blue');
+				$('.t' + (i + k)).hide();
+				$('.t' + (i - k)).hide();
+			}
+			$('#adatokT' + i).css('background-color', 'gray');
+			$('#adatokT' + i).css('color', 'white');
+			$('.t' + i).show();
+		});
+	}
 });

@@ -1,5 +1,5 @@
-@extends('layouts.UjdolgozoSzerkezet')
-@section('UjdolgozoTartalom')
+
+<?php $__env->startSection('UjdolgozoTartalom'); ?>
 <div class="container">
 
 <label class="form-label" for="form8Example1">Állandó lakhely</label>
@@ -75,4 +75,6 @@
 </div>
 
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.UjdolgozoSzerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/ujdolgozo2.blade.php ENDPATH**/ ?>

@@ -19,7 +19,8 @@ class dolgozController extends Controller
      */
     public function index()
     {
-        return response()->json(alkalmazott::all());
+        /* $alkalmazott= alkalmazott::all();  */
+        return response()->json(alkalmazott::all())  /* and  view('pages.dTabla', compact('alkalmazott')) */ ;
     }
 
     /**

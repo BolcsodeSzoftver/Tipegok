@@ -1,12 +1,12 @@
-@extends('layouts.szerkezet')
-@section('head')
+
+<?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
     <script src="js/dolgozoClass.js"></script>
     <script src="js/dolgozoListazas.js"></script>
-@endsection
-@section('tartalom')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('tartalom'); ?>
 
 
 <h3>Doldozó adatai</h3>
@@ -279,4 +279,5 @@
   </li>
 </ul>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/dolgozo.blade.php ENDPATH**/ ?>
