@@ -25,11 +25,7 @@ function fenntLista(tomb) {
         });
 
 	});
-	$("select").change(()=>{
-		console.log("mukszik");
-		
-		
-	  });
+
     sablonElem.remove(); //sablonelem eltávolítása
 }
 

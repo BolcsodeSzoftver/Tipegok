@@ -13,16 +13,41 @@
 <button type="button" class="btn btn-primary btn-lg" id="jovhagyas">
   Jóváhagyásra váró dolgozók
 </button>
-
+<br>
+<ul class="nav nav-tabs">
+  <li class="nav-item"><a class="nav-link" id="adatokT1">adatok1</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT2">adatok2</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT3">adatok3</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT4">adatok4</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT5">adatok5</a></li>
+</ul>
 <table class="table">
         <thead>
           <tr>
             <th scope="col"></th>
             <th scope="col"></th>
             <th scope="col">Név</th>
-            <th scope="col">Cím</th>
-            <th scope="col">Telefonszám</th>
-            <th scope="col">Anyja neve</th>
+            
+              <th class="t1" scope="col">Cím</th>
+              <th class="t1" scope="col">Telefonszám</th>
+              <th class="t1" scope="col">Anyja neve</th>
+
+              <th class="t2" scope="col">Születési név</th>
+              <th class="t2" scope="col">Születési hely</th>
+              <th class="t2" scope="col">Születési idő</th>
+            
+              <th class="t3" scope="col">Állandó lakhely</th>
+              <th class="t3" scope="col">Tartozkodási hely</th>
+          
+              <th class="t4" scope="col">Tajszám</th>
+              <th class="t4" scope="col">Adóazonosító</th>
+              <th class="t4" scope="col">Bankszámla szám</th>
+          
+              <th class="t5" scope="col">Nem</th>
+              <th class="t5" scope="col">Házas</th>
+              <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
+              <th class="t5" scope="col">Állam polgárság</th>
+            
           </tr>
         </thead>
           <tbody >
@@ -38,16 +63,28 @@
                   <i class="fa fa-trash"></i>
               </button>
           </td>
-            <td class="nev"></td>
-            <td class="cim"></td>
-            <td class="tel"></td>
-            <td class="anyjaNeve"></td>
-           <!--  <td> -->
+            <td id="nev"></td>
+            
+              <td class="t1" id="cim"></td>
+              <td class="t1" id="tel"></td>
+              <td class="t1" id="anyjaNeve"></td>
+            
+              <td class="t2" id="szulN"></td>
+              <td class="t2" id="szulH"></td>
+              <td class="t2" id="szulI"></td>
            
-              <!-- <i class="fa fa-pencil-square-o" style="font-size: 30px; margin: 10px" class="modositD"></i> -->
-              <!-- <i class="fa fa-envelope" style="font-size: 30px; margin: 10px"></i>
-              <i class="fa fa-ellipsis-h" style="font-size: 30px; margin: 10px"></i> -->
-            </td>
+              <td class="t3" id="cim"></td>
+              <td class="t3" id="tartHely"></td>
+            
+              <td class="t4"id="taj"></td>
+              <td class="t4"id="adoA"></td>
+              <td class="t4"id="bankSz"></td>
+           
+              <td class="t5" id="nem"></td>
+              <td class="t5" id="hazas"></td>
+              <td class="t5" id="gyerek"></td>
+              <td class="t5" id="polgar"></td>
+            
           </tr>
         </tbody>
       </table>
@@ -230,12 +267,17 @@
     <li class="page-item"><a class="page-link" href="#">>></a></li>
   </ul>
 </div>
-<input
+<!-- <input
   class="btn btn-secondary"
   style="width: 200px"
   type="submit"
   value="Új dolgozó"
-/>
+/> -->
+<ul style="list-style-type: none;">
+  <li>
+    <a class="btn btn-secondary" style="width: 200px; " href="/ujDolgozo" target="_blank">Új dolgozó</a>
+  </li>
+</ul>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/dolgozo.blade.php ENDPATH**/ ?>

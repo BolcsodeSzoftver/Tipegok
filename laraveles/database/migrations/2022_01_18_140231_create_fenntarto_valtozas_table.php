@@ -16,7 +16,7 @@ class CreateFenntartoValtozasTable extends Migration
         Schema::create('fenntarto_valtozas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('fennt_id');
-            $table->foreign('fennt_id')->references('id')->on('fenntartos');
+            //$table->foreign('fennt_id')->references('id')->on('fenntartos');
             $table->date('meddig');
             $table->string('regiadmin');
             $table->timestamps();
