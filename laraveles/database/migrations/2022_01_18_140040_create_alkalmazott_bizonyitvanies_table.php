@@ -16,7 +16,7 @@ class CreateAlkalmazottBizonyitvaniesTable extends Migration
         Schema::create('alkalmazott_bizonyitvanies', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('alkalmazott_id');
-            $table->foreign('alkalmazott_id')->references('id')->on('alkalmazotts');
+            //$table->foreign('alkalmazott_id')->references('id')->on('alkalmazotts');
             $table->string('vegzettseg');
             $table->string('biz_intezmeny_nev');
             $table->date('kiadas_datuma');

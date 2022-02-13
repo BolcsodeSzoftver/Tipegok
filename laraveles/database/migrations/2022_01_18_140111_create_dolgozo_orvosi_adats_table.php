@@ -15,7 +15,7 @@ class CreateDolgozoOrvosiAdatsTable extends Migration
     {
         Schema::create('dolgozo_orvosi_adats', function (Blueprint $table) {
             $table->id();
-            $table->foreign('dolgozo_id')->references('id')->on('dolgozos');
+            //$table->foreign('dolgozo_id')->references('id')->on('dolgozos');
             $table->boolean('tartosbeteg');
             //$table->boolean('egeszsegugyi_konyv');
             //$table->string('dokumentum');
