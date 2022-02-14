@@ -12,7 +12,6 @@
 
 @section('tartalom')
     <h3>Bölcsőde adatok</h3>
-    <button id="bolcsiKeres">Fenntartókhoz tartozó bölcsödék</button>
     <form class="form">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
@@ -23,10 +22,6 @@
         </select>
 
     </form>
-
-
-
-
     <table class="table">
         <thead>
             <tr>
@@ -67,8 +62,7 @@
     </table>
     <ul style="list-style-type: none;">
         <li>
-            <a class="btn btn-secondary" id="ujBolcsi" style="width: 200px; " data-toggle="modal"
-                data-target="#exampleModalLong">Új bölcsőde</a>
+            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
         </li>
     </ul>
 
@@ -160,5 +154,4 @@
     </div>
 @endsection
 
-{{-- //le gördülő menü hogy melyik fenntartó bölcsiét akarjuk listázni
-    /fenntarto/id(fenntartó)?_expand=bolcsode-->ilyen jellegű api végpont --}}
+

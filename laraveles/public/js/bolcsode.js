@@ -64,14 +64,8 @@ $(function () {
         $('input').removeAttr('readonly');
 
     });
-    $("#ujBolcsi").on("click", function(){
-        console.log('ujBolcsi');
-        $("#idB").hide();
-        $("#adatokMod").hide();
-        $('input').removeAttr('readonly');    
+  
 
-    });
-   
     $('select').change(()=>{
         let fajlnev = "/teszt/"+$('select').val();
         ajaxhivas.getAjax(fajlnev, adatLista);
@@ -79,6 +73,9 @@ $(function () {
         console.log($('select').val())
         
     });
+  
+
+    
   
   
 });

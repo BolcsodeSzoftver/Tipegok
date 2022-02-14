@@ -12,7 +12,7 @@ function adatLista(bolcsodek) {
    
 
  
-    sablonElem.remove();
+    sablonElem.hide();
    
 
 }

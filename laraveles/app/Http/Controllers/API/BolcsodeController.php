@@ -43,7 +43,17 @@ class BolcsodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bolcsode = new bolcsode();
+        $bolcsode->cim = $request->cim;
+        $bolcsode->nev = $request->nev;
+        $bolcsode->agazati_azon = $request->agazatiAzon;
+        $bolcsode->feor= $request->feorAzon;
+        $bolcsode->szgyf_kod = $request->szgyfKod;
+        $bolcsode->ferohelyek_szama = $request->ferohelyekSzama;
+        $bolcsode->agazati_potlek = $request->agazatiPotlek;
+        $bolcsode->fennt_id = $request->fenntarto;
+        $bolcsode->bolcsod_admin = $request->admin;
+        $bolcsode->save();
     }
 
     /**

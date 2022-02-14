@@ -40,7 +40,5 @@ class Bolcsode {
         console.log("kattintastrigger");
     }
 
-    szurveKiir(params) {
-      
-    }
+   
 }

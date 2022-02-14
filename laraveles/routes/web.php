@@ -20,6 +20,9 @@ Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/felhasznalo', function () {
     return view('felhasznalo');
 })->middleware(['auth']);
+Route::get('/ujBolcsi', function () {
+    return view('ujBolcsi');
+})->middleware(['auth']);
 Route::get('/dolgozo', function () {
     return view('dolgozo');
 })->middleware(['auth']);
