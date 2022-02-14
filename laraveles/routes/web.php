@@ -50,6 +50,7 @@ Route::get('/belepes', function () {
     return view('belepes');
 });
 
+
 Route::get('/', function () {
     return view('bolcsiadat');
 })->middleware(['auth']);

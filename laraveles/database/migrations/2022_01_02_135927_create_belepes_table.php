@@ -17,6 +17,7 @@ class CreateBelepesTable extends Migration
         Schema::create('belepes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('users')->references('id')->on('users');
+            $table->foreignId('jogosultsags')->references('id')->on('jogosultsags');
             $table->timestamps();
         });
     }

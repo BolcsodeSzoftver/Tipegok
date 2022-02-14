@@ -24,7 +24,7 @@ class CreateBolcsodesTable extends Migration
             $table->integer('ferohelyek_szama');
             $table->integer('feor');
             $table->integer('agazati_potlek');
-            $table->string('bolcs_admin');
+            $table->foreignId('bolcsode_admin')->references('id')->on('belepes');
             $table->timestamps();
         });
     }

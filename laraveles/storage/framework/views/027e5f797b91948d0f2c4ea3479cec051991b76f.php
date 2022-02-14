@@ -165,7 +165,11 @@
         </div>
     </div>
 
-
+    <ul style="list-style-type: none;">
+  <li>
+    <a class="btn btn-secondary" style="width: 200px; " href="/ujFenntarto" target="_blank">Új fenntartó</a>
+  </li>
+</ul>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/fenntarto.blade.php ENDPATH**/ ?>

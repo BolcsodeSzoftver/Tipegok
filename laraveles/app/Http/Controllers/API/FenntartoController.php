@@ -21,6 +21,7 @@ class FenntartoController extends Controller
     public function index()
     {
         //Storage::put('fenntarto.json',fenntarto::all());
+        
         return response()->json(fenntarto::all());
     }
 

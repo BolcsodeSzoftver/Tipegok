@@ -6,7 +6,7 @@ class AjaxHivas {
             url: fajlnev,
             type: "GET",
             success: function (result) {
-                console.log(result);
+                
                 result.forEach((element) => {
                     bolcsodek.push(element);
                 });

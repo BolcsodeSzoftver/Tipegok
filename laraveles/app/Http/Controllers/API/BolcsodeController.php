@@ -19,7 +19,8 @@ class BolcsodeController extends Controller
      */
     public function index()
     {
-        Storage::put('bolcsiadat.json', bolcsode::all());
+        //Storage::put('bolcsiadat.json', bolcsode::all());
+        $bolcsode=bolcsode::all();
         return response()->json(bolcsode::all());
     }
 

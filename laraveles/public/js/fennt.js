@@ -75,13 +75,14 @@ $(function () {
         //ajax.getAjax(vegpont, fenntLista);
         location.reload();
 	});
-
+  
 
     $(".adatModositEnged").on("click", function(){
         console.log('modositEnged');
         $('input').removeAttr('readonly');
 
     });
+    
 
     
 });

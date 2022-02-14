@@ -7,6 +7,7 @@ function adatLista(bolcsodek) {
         const bolcsode = new Bolcsode(ujElem, adat);      
        
     });
+   
  /*    $(".bolcsiNev").on("click", function(){
         let option="";
         $(".bolcsiNev").empty();
