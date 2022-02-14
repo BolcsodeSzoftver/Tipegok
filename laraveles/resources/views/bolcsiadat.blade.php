@@ -15,9 +15,16 @@
     <button id="bolcsiKeres">Fenntartókhoz tartozó bölcsödék</button>
     <form class="form">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
-        <select class="bolcsiNev"></select>
+        <select class="bolcsiNev">
+          
+            @foreach ($fenntartok as $fenntarto)
+                <option value="{{$fenntarto->id}}">{{$fenntarto->nev}}</option>
+            @endforeach
+        </select>
 
     </form>
+
+
 
 
     <table class="table">
@@ -60,7 +67,8 @@
     </table>
     <ul style="list-style-type: none;">
         <li>
-            <a class="btn btn-secondary" id="ujBolcsi" style="width: 200px; " data-toggle="modal"  data-target="#exampleModalLong">Új bölcsőde</a>
+            <a class="btn btn-secondary" id="ujBolcsi" style="width: 200px; " data-toggle="modal"
+                data-target="#exampleModalLong">Új bölcsőde</a>
         </li>
     </ul>
 

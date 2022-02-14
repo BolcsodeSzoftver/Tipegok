@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\fenntarto;
+use App\Http\Controllers\API\BolcsodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('bolcsiadat');
-})->middleware(['auth']);
+Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
+Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/felhasznalo', function () {
     return view('felhasznalo');
 })->middleware(['auth']);
@@ -49,11 +50,6 @@ Route::get('/ujFenntarto', function () {
 Route::get('/belepes', function () {
     return view('belepes');
 });
-
-
-Route::get('/', function () {
-    return view('bolcsiadat');
-})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

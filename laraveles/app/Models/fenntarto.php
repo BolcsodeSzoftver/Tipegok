@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class fenntarto extends Model
 {
     use HasFactory;
+   
 }

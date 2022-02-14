@@ -4,7 +4,7 @@ function fenntLista(tomb) {
 
     //szuloElem.empty();
     //sablonElem.show();
-    $(".form").hide();
+  /*   $(".form").hide();
     $("#bolcsiKeres").on("click", function () {
         console.log("bölcsikeres");
 		$("#bolcsiKeres").hide();
@@ -27,9 +27,9 @@ function fenntLista(tomb) {
                
            }
             
-          });
+          }); 
 
-	});
+	}); */
 
     tomb.forEach(function (adat) {
         /* console.log(adat); */

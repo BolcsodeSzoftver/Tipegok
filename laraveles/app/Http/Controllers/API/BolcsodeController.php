@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\bolcsode;
+use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
 
 class BolcsodeController extends Controller
@@ -107,5 +108,15 @@ class BolcsodeController extends Controller
         $bolcsode->delete();
 
         return response()->json($bolcsode::all());
+    }
+
+    public function megjelenit(){
+        $fenntartok=fenntarto::all();;
+        return view('bolcsiadat',compact('fenntartok'));
+    }
+
+    public function fenntartoBolcsode($id){
+        $bolcsodek = bolcsode::where('fennt_id',$id)->get();
+        return response()->json($bolcsodek);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\fenntarto;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\Environment\Console;
 
@@ -21,7 +22,7 @@ class FenntartoController extends Controller
     public function index()
     {
         //Storage::put('fenntarto.json',fenntarto::all());
-        
+       
         return response()->json(fenntarto::all());
     }
 
@@ -65,7 +66,7 @@ class FenntartoController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
