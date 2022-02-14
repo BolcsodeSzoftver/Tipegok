@@ -16,13 +16,14 @@ use App\Http\Controllers\API\BolcsodeController;
 */
 
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
+Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/felhasznalo', function () {
     return view('felhasznalo');
 })->middleware(['auth']);
-Route::get('/ujBolcsi', function () {
+/* Route::get('/ujBolcsi', function () {
     return view('ujBolcsi');
-})->middleware(['auth']);
+})->middleware(['auth']); */
 Route::get('/dolgozo', function () {
     return view('dolgozo');
 })->middleware(['auth']);

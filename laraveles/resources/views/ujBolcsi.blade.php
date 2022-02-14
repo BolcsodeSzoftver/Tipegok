@@ -24,92 +24,112 @@
 
 <body>
     <main>
-        <form action="/api/bolcsode" method="POST">   
-            @csrf  
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Bölcsőde adatai</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="modositUrlap">
-                        <div class="row">
-                            <div class="col">
-                               
-                                <div class="form-outline">
-                                    <input type="text" id="cim" class="form-control"  name="fenntarto"/>
-                                    <label class="form-label" for="cim">Fenntartó</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                               
-                                <div class="form-outline">
-                                    <input type="text" id="cim" class="form-control"  name="admin"/>
-                                    <label class="form-label" for="cim">Admin</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                               
-                                <div class="form-outline">
-                                    <input type="text" id="cim" class="form-control"  name="cim"/>
-                                    <label class="form-label" for="cim">Cím</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-outline">
-                                    <input type="text" id="nev" class="form-control" name="nev" />
-                                    <label class="form-label" for="nev">Név</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-outline">
-                                    <input type="text" id="agazatiAzon" class="form-control" name="agazatiAzon" />
-                                    <label class="form-label" for="agazatiAzon">Ágazati azonosító</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-outline">
-                                    <input type="text" id="feorAzon" class="form-control" name="feorAzon" />
-                                    <label class="form-label" for="feorAzon">FEOR azonosító</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-outline">
-                                    <input type="text" id="szgyfKod" class="form-control" name="szgyfKod" />
-                                    <label class="form-label" for="szgyfKod">SZGYF kód</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-outline">
-                                    <input type="number" id="ferohelyekSzama" class="form-control" name="ferohelyekSzama" />
-                                    <label class="form-label" for="ferohelyekSzama">Férőhelyek száma</label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-outline">
-                                    <input type="text" id="agazatiPotlek" class="form-control"  name="agazatiPotlek"/>
-                                    <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
-                                </div>
-                            </div>
+        <form action="/api/bolcsode" method="POST">
+            @csrf
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Bölcsőde adatai</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modositUrlap">
+                            <div class="row">
+                                <div class="col">
 
+                                    <div class="form-outline">
+                                        {{-- <input type="text" id="cim" class="form-control" name="fenntarto" />
+                                        <label class="form-label" for="cim">Fenntartó</label> --}}
+                                        <label for="bolcsi">Fenntartók:</label>
+                                        <select class="bolcsiNev" name="fenntarto">
+
+                                            @foreach ($fenntartokId as $fenntarto)
+                                                <option  value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
+                                            @endforeach
+                                        </select>
+
+
+                                    </div>
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+{{--                                         <input type="text" id="cim" class="form-control" name="admin" />
+                                        <label class="form-label" for="cim">Admin</label> --}}
+                                        <label for="bolcsi">Admin:</label>
+                                        <select class="bolcsiNev" name="admin">
+
+                                            @foreach ($megjelenitAdmin as $admin)
+                                            @if ( $admin->jogosultsags === 1)
+                                                <option  value="{{ $admin->id }}">{{ $admin->jogosultsags}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="cim" class="form-control" name="cim" />
+                                        <label class="form-label" for="cim">Cím</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="nev" class="form-control" name="nev" />
+                                        <label class="form-label" for="nev">Név</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="agazatiAzon" class="form-control" name="agazatiAzon" />
+                                        <label class="form-label" for="agazatiAzon">Ágazati azonosító</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="feorAzon" class="form-control" name="feorAzon" />
+                                        <label class="form-label" for="feorAzon">FEOR azonosító</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="szgyfKod" class="form-control" name="szgyfKod" />
+                                        <label class="form-label" for="szgyfKod">SZGYF kód</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="number" id="ferohelyekSzama" class="form-control"
+                                            name="ferohelyekSzama" />
+                                        <label class="form-label" for="ferohelyekSzama">Férőhelyek száma</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="agazatiPotlek" class="form-control"
+                                            name="agazatiPotlek" />
+                                        <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="col">
+                            <div class="form-outline">
+                                <button class="btn btn-primary" id="ujBolcsi" type="submit">
+                                    Mentés
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="modal-footer">
-                    <div class="col">
-                        <div class="form-outline">
-                            <button class="btn btn-primary" id="ujBolcsi" type="submit">
-                                Mentés
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </form>
     </main>
 </body>

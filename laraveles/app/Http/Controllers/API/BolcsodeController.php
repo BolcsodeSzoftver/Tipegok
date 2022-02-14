@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\belepes;
 use Illuminate\Http\Request;
 use App\Models\bolcsode;
 use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 class BolcsodeController extends Controller
 {
@@ -124,6 +126,13 @@ class BolcsodeController extends Controller
         $fenntartok=fenntarto::all();;
         return view('bolcsiadat',compact('fenntartok'));
     }
+    public function megjeleniFenntartoId(){
+        $fenntartokId=fenntarto::all();
+        $megjelenitAdmin=belepes::all();
+        $megjelenitAdminNev=User::all();
+        return view('ujBolcsi',compact('fenntartokId','megjelenitAdmin','megjelenitAdminNev'));
+    }
+
 
     public function fenntartoBolcsode($id){
         $bolcsodek = bolcsode::where('fennt_id',$id)->get();
