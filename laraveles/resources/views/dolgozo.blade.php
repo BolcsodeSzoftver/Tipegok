@@ -14,6 +14,9 @@
   Jóváhagyásra váró dolgozók
 </button>
 <br>
+
+<label>Keresés:</label><input type="text" name="szo" id="szo" />
+<br>
 <ul class="nav nav-tabs">
   <li class="nav-item"><a class="nav-link" id="adatokT1">saját adatok</a></li>
   <li class="nav-item"><a class="nav-link" id="adatokT2">születési adatok</a></li>
@@ -26,7 +29,7 @@
           <tr>
             <th scope="col"></th>
             <th scope="col"></th>
-            <th scope="col">Név</th>
+            <th id="dNev" scope="col">Név</th>
             
               <th class="t1" scope="col">Cím</th>
               <th class="t1" scope="col">Telefonszám</th>

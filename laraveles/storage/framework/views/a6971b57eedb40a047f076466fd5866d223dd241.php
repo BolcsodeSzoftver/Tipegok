@@ -16,16 +16,16 @@
         <header class="text-center bg-secondary text-white">
             <h3>Fenntartó</h3>
         </header>
-        <form action="" method="get">
+        <form action="/api/fenntarto" method="post">
             <div class="row">
                 <div class="col">
                     <div class="row">
                         <label class="col-sm-3" for="nev">Fenntartó neve:</label>
-                        <input class="col-sm-6" type="text" id="nev" name="fennt">
+                        <input class="col-sm-6" type="text" id="nev" name="nev">
                     </div>
                    <div class="row"> 
                         <label class="col-sm-3" for="szekh">Székhely:</label>
-                        <input class="col-sm-6" type="text" id="szekh" name="szk">
+                        <input class="col-sm-6" type="text" id="szekh" name="szekhely">
                    </div> 
                    <div class="row">
                         <label class="col-sm-3" for="megye">Megye:</label>
@@ -37,7 +37,7 @@
                    </div>
                    <div class="row">
                         <label class="col-sm-3" for="agazatia">Ágazati azon:</label>
-                        <input class="col-sm-6" type="text" id="agazatia" name="agazati">
+                        <input class="col-sm-6" type="text" id="agazatia" name="agazati_azon">
                    </div>
                 </div>
                 <div class="col">
@@ -47,19 +47,19 @@
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="cegsz">Cégjegyzékszám:</label>
-                        <input class="col-sm-6" type="number" id="cegsz" name="cjszam">
+                        <input class="col-sm-6" type="number" id="cegsz" name="cegjegyzekszam">
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="stat">Statisztikaiszám:</label>
-                        <input class="col-sm-6" type="number" id="stat" name="stszam">
+                        <input class="col-sm-6" type="number" id="stat" name="statisztikaiszam">
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="kormanyHivatal">Illetékes kormány hivatal:</label>
-                        <input class="col-sm-6" type="text" id="kormanyHivatal" name="kormanyH">
+                        <input class="col-sm-6" type="text" id="kormanyHivatal" name="illetekes_kormányh">
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="bsz">Bölcsödék száma:</label>
-                        <input class="col-sm-6" type="number" id="bsz" name="bSzam">
+                        <input class="col-sm-6" type="number" id="bsz" name="bolcsodek_szama">
                     </div>
                 </div>
             </div>
@@ -68,15 +68,15 @@
                 <legend>Üzemorvos:</legend>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oNeve">Név:</label>
-                    <input class="col-sm-4" type="text" id="oNeve" name="oNeve">
+                    <input class="col-sm-4" type="text" id="oNeve" name="uzemorvos_nev">
                 </div>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oCim">Cím:</label>
-                    <input class="col-sm-4" type="text" id="oCim" name="oCim">
+                    <input class="col-sm-4" type="text" id="oCim" name="uzemorvos_cim">
                 </div>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oTel">Telefonszám:</label>
-                    <input class="col-sm-4" type="number" id="oTel" name="oTel">
+                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam">
                 </div>
             </fieldset>
             <div id="ment">
