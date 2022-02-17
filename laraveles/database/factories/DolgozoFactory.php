@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\belepes;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DolgozoFactory extends Factory
@@ -13,8 +14,6 @@ class DolgozoFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
-        ];
+       
     }
 }

@@ -42,7 +42,7 @@
                                         <select class="bolcsiNev" name="fenntarto">
 
                                             <?php $__currentLoopData = $fenntartokId; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option  value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?></option>
+                                                <option value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
 
@@ -52,14 +52,19 @@
                                 <div class="col">
 
                                     <div class="form-outline">
-
+                                        
                                         <label for="bolcsi">Admin:</label>
                                         <select class="bolcsiNev" name="admin">
 
                                             <?php $__currentLoopData = $megjelenitAdmin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $admin): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <?php if( $admin->jogosultsags === 1): ?>
-                                                <option  value="<?php echo e($admin->id); ?>"><?php echo e($admin->jogosultsags); ?></option>
-                                                <?php endif; ?>
+                                                <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if($admin->jogosultsags === 1 and $admin->users === $adminNev->id): ?>
+                                                        <option value="<?php echo e($admin->id); ?>">
+                                                            <?php echo e($adminNev->name); ?>
+
+                                                        </option>
+                                                    <?php endif; ?>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                     </div>
