@@ -36,30 +36,8 @@
                 <th scope="col">Ágazati pótlék</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="adatok">
-                <td class="modosit">
-                    <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
-                        data-target="#exampleModalLong">
-                        <i class='fa fa-edit'></i>
-                    </button>
-                </td>
-                <td class="torol">
-                    <button class="btn btn-primary" id="toroladat" type="button">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-                <td class="cim"></td>
-                <td class="nev"></td>
-                <td class="agazati_azon"></td>
-                <td class="szgyf_kod"></td>
-                <td class="ferohelyek_szama"></td>
-                <td class="feor"></td>
-                <td class="agazati_potlek"></td>
-
-            </tr>
-        </tbody>
     </table>
+    
     <ul style="list-style-type: none;">
         <li>
             <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>

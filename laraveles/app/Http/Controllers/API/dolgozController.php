@@ -41,7 +41,24 @@ class dolgozController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $alkalmazott = new alkalmazott();
+        $alkalmazott->szul_nev  = $request->szul_nev;
+        $alkalmazott->szul_hely   = $request->szul_hely;
+        $alkalmazott->szul_ido   = $request->szul_ido;
+        $alkalmazott->anyja_neve   = $request->anyja_neve;
+        $alkalmazott->adoazon_jel  = $request->adoazon_jel;
+        $alkalmazott->tajszam  = $request->tajszam;
+        $alkalmazott->nem  = $request->nem;
+        $alkalmazott->nev   = $request->nev;
+        $alkalmazott->banszamla_szam   = $request->banszamla_szam;
+        $alkalmazott->telefonszam   = $request->telefonszam;
+        $alkalmazott->allando_lakhely   = $request->allando_lakhely;
+        $alkalmazott->tartozkodasi_hely   = $request->tartozkodasi_hely;
+        $alkalmazott->hazas_e   = $request->hazas_e;
+        $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhat_alatti_gyermek;
+        $alkalmazott->all_polgarsag     = $request->all_polgarsag;
+
+        $alkalmazott->save();
     }
 
     /**
@@ -115,5 +132,26 @@ class dolgozController extends Controller
         $alkalmazott->delete();
 
         return response()->json($alkalmazott::all());
+    }
+
+    /* public function dolgozoKeres($szo){
+        $alkalmazott = alkalmazott::where('nev',$szo)->get();
+        return response()->json($alkalmazott);
+    } */
+
+    public function search(Request $request)
+    {
+        /* $alkalmazott=alkalmazott::all(); */
+        $queryString = $request->query('q');
+        $tasks=alkalmazott::select('*');
+        $columns = \Schema::getColumnListing('alkalmazott');
+
+        foreach ($columns as $column) {
+            $tasks->orWhere(function ($tasks) use ($column, $queryString){
+                $tasks->orWhere($column,'like', '%' . $queryString . '%');
+            });
+        }
+
+        return $tasks->get();
     }
 }

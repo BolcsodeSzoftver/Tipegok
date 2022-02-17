@@ -91,9 +91,11 @@ $(function() {
 		$('#adatok2').show();
 	});
 
-	// tablazat oszlopok elrejtése
-	for (let i = 2; i < 6; i++) {
-		$('.t' + i).hide();
+	//tablazatFejlecElrejtese();
+	function tablazatFejlecElrejtese(){
+		for (let i = 2; i < 6; i++) {
+			$('.t' + i).hide();
+		}
 	}
 
 	$('#adatokT1').css('background-color', 'gray');
@@ -112,5 +114,49 @@ $(function() {
 			$('#adatokT' + i).css('color', 'white');
 			$('.t' + i).show();
 		});
+	}
+
+	$('#szo').on('keyup', function() {
+		tablaFejlecKiir();		
+		let eleresiut = '/dolgozo/' + $('#szo').val();
+		console.log(eleresiut);
+		ajax.getAjax(eleresiut, dolgozoLista);
+	});
+
+	$('#dNev').on('click', function() {
+		tablaFejlecKiir();
+		console.log('rendez');
+		ajax.getAjax(vegpont, rendezes);
+	});
+
+	function tablaFejlecKiir(){
+		$('.table').empty();
+		$('.table').append(` <tr>
+		<th scope="col"></th>
+		<th scope="col"></th>
+		<th id="dNev" scope="col">Név</th>
+		
+		  <th class="t1" scope="col">Cím</th>
+		  <th class="t1" scope="col">Telefonszám</th>
+		  <th class="t1" scope="col">Anyja neve</th>
+
+		  <th class="t2" scope="col">Születési név</th>
+		  <th class="t2" scope="col">Születési hely</th>
+		  <th class="t2" scope="col">Születési idő</th>
+		
+		  <th class="t3" scope="col">Állandó lakhely</th>
+		  <th class="t3" scope="col">Tartozkodási hely</th>
+	  
+		  <th class="t4" scope="col">Tajszám</th>
+		  <th class="t4" scope="col">Adóazonosító</th>
+		  <th class="t4" scope="col">Bankszámla szám</th>
+	  
+		  <th class="t5" scope="col">Nem</th>
+		  <th class="t5" scope="col">Házas</th>
+		  <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
+		  <th class="t5" scope="col">Állam polgárság</th>
+		
+	  </tr>`);
+	  
 	}
 });

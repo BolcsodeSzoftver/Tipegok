@@ -44,6 +44,22 @@ class FenntartoController extends Controller
      */
     public function store(Request $request)
     {
+        $fenntarto = new fenntarto();
+        $fenntarto->nev = $request->nev;
+        $fenntarto->szekhely  = $request->szekhely;
+        $fenntarto->agazati_azon  = $request->agazati_azon;
+        $fenntarto->kepviselo  = $request->kepviselo;
+        $fenntarto->adoszam  = $request->adoszam;
+        $fenntarto->megye  = $request->megye;
+        $fenntarto->cegjegyzekszam  = $request->cegjegyzekszam;
+        $fenntarto->statisztikaiszam   = $request->statisztikaiszam;
+        $fenntarto->illetekes_kormányh = $request->illetekes_kormányh;
+        $fenntarto->bolcsodek_szama = $request->bolcsodek_szama;
+        $fenntarto->uzemorvos_nev  = $request->uzemorvos_nev;
+        $fenntarto->uzemorvos_cim   = $request->uzemorvos_cim;
+        $fenntarto->uzemorvos_telefonszam   = $request->uzemorvos_telefonszam;
+        //$fenntarto->fennt_admin  = $request->get('fennt_admin');
+        $fenntarto->save();
     }
 
     /**

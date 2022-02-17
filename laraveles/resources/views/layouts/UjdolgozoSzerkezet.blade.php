@@ -22,10 +22,12 @@
     <main>
         <article>
             <h1>Dolgozó adatai</h1>
+            <form action="/api/dolgozo" method="post">
             @yield('UjdolgozoTartalom')
+            </form>
         </article> 
       <div class="container">
-        <ul class="pagination">
+        <ul class="nav justify-content-center">
           <li class="page-item"><a class="page-link" href="#"><<</a></li>
           <li class="page-item">
             <a class="page-link" href="/ujDolgozo">1</a>
@@ -41,7 +43,6 @@
           </li>
           <li class="page-item"><a class="page-link" href="#">>></a></li>
         </ul>
-      </div>
       </div>
     </main>
   </body>
