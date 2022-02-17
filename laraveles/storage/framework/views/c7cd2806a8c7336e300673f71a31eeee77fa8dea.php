@@ -55,7 +55,6 @@
                                         
                                         <label for="bolcsi">Admin:</label>
                                         <select class="bolcsiNev" name="admin">
-
                                             <?php $__currentLoopData = $megjelenitAdmin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $admin): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <?php if($admin->jogosultsags === 1 and $admin->users === $adminNev->id): ?>

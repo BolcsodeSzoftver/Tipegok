@@ -78,4 +78,5 @@ $(function() {
 		console.log('muksziik');
 		console.log($('select').val());
 	});
+	
 });
