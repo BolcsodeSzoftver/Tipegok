@@ -1,6 +1,5 @@
 
 <?php $__env->startSection('head'); ?>
-    <link rel="stylesheet" href="css/bolcsiadat.css" />
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
 
@@ -9,54 +8,22 @@
     <table class="table">
         <thead class="thead-light">
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Felhasználó név</th>
+            <th>Email</th>
+            <th>Jogosultság</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <?php $__currentLoopData = $felhasznalok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <?php if($f->jogosultsag_id==1): ?>
+                <tr>
+                    <td><?php echo e($f->felhasznalo_nev); ?></td>
+                    <td><?php echo e($f->email); ?></td>
+                    <td><?php echo e($f->jogosultsag_id); ?></td>
+                </tr>
+                <?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </tr>
         </tbody>
       </table>

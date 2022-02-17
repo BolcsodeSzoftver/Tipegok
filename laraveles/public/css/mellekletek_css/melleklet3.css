@@ -1,0 +1,43 @@
+h2{
+    text-transform: uppercase;
+    margin-top: 80px;
+    text-align: center;
+}
+main{
+    max-width: 210mm;
+    max-height: 297mm;
+    margin: auto;
+}
+.szoveg{
+    margin-top: 150px;
+    line-height: 10mm;
+    margin-bottom: 100px;
+    font-size: large;
+}
+.kitoltendo{
+    margin-left: 27ch;
+}
+.datum{
+    margin-top: 50mm;
+    margin-bottom: 30mm;
+    font-size: large;
+}
+.haziorvos{
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    line-height: 15mm;
+    font-size: large;
+    padding-right: 30mm;
+}
+
+@media print {
+	#gomb {
+	  display: none;
+	}
+
+	#export {
+		width: 210mm;
+		height: 297mm;
+	  }
+}

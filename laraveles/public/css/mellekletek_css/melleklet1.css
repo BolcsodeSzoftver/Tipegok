@@ -1,0 +1,34 @@
+main {
+  width: 210mm;
+  height: 297mm;
+  margin: auto;
+}
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+.alcim {
+  margin-bottom: 200px;
+}
+th,
+td {
+  padding-right: 25px;
+  padding-bottom: 15px;
+}
+
+.alairas {
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+}
+
+@media print {
+	#gomb {
+	  display: none;
+	}
+
+	#export {
+		width: 210mm;
+		height: 297mm;
+	  }
+}
