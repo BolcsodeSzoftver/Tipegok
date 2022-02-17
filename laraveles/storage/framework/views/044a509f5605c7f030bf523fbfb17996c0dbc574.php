@@ -5,16 +5,16 @@
  <table class="table">
     <thead class="thead-light">
       <tr>
-        <td> <input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 1"> </td>
-        <td> <input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 2"> </td>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 3"> </td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet1" target="_blank">Melleklet 1</a></td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet2" target="_blank">Melleklet 2</a></td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet3" target="_blank">Melleklet 3</a></td>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 4"> </td>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 5"> </td>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 6"> </td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet4" target="_blank">Melleklet 4</a></td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet5" target="_blank">Melleklet 5</a></td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet6" target="_blank">Melleklet 6</a></td>
       </tr>
       <tr>
         <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 7"> </td>
@@ -22,8 +22,8 @@
         <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 9"> </td>
       </tr>
       <tr>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 10"> </td>
-        <td><input class="btn btn-secondary" style="width:200px" type="submit" value="Új melléklet"> </td>
+        <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet10" target="_blank">Melleklet 10</a></td>
+        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Új melléklet"> </td>
         <td> </td>
       </tr>
     </tbody>

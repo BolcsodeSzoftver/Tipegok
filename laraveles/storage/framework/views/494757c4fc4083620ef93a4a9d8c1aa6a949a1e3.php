@@ -10,23 +10,44 @@
 
 
 <h3>Doldozó adatai</h3>
+<?php
+$db = 0;
+?>
+<?php $__currentLoopData = $alkalmazott; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  <?php if($alkalmazott->allapot==0): ?>
+  <?php
+    $db ++;
+  ?>
+  <?php endif; ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
 <button type="button" class="btn btn-primary btn-lg" id="jovhagyas">
   Jóváhagyásra váró dolgozók
+  <?php if($db>0): ?>
+    : <?php echo $db ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i> 
+  <?php else: ?>
+    nincs
+  <?php endif; ?>
+  
 </button>
+
+<br>
+
+<label>Keresés:</label><input type="text" name="szo" id="szo" />
 <br>
 <ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link" id="adatokT1">adatok1</a></li>
-  <li class="nav-item"><a class="nav-link" id="adatokT2">adatok2</a></li>
-  <li class="nav-item"><a class="nav-link" id="adatokT3">adatok3</a></li>
-  <li class="nav-item"><a class="nav-link" id="adatokT4">adatok4</a></li>
-  <li class="nav-item"><a class="nav-link" id="adatokT5">adatok5</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT1">saját adatok</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT2">születési adatok</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT3">lakhely</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT4">ID</a></li>
+  <li class="nav-item"><a class="nav-link" id="adatokT5">egyéb adatok</a></li>
 </ul>
 <table class="table">
         <thead>
           <tr>
             <th scope="col"></th>
             <th scope="col"></th>
-            <th scope="col">Név</th>
+            <th id="dNev" scope="col">Név</th>
             
               <th class="t1" scope="col">Cím</th>
               <th class="t1" scope="col">Telefonszám</th>
@@ -50,43 +71,6 @@
             
           </tr>
         </thead>
-          <tbody >
-          <tr class="adatok">
-            <td class="modosit">
-              <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
-                  data-target="#exampleModalLong">
-                  <i class='fa fa-edit'></i>
-              </button>
-          </td>
-          <td class="torol">
-              <button class="btn btn-primary" id="toroladat" type="button">
-                  <i class="fa fa-trash"></i>
-              </button>
-          </td>
-            <td id="nev"></td>
-            
-              <td class="t1" id="cim"></td>
-              <td class="t1" id="tel"></td>
-              <td class="t1" id="anyjaNeve"></td>
-            
-              <td class="t2" id="szulN"></td>
-              <td class="t2" id="szulH"></td>
-              <td class="t2" id="szulI"></td>
-           
-              <td class="t3" id="cim"></td>
-              <td class="t3" id="tartHely"></td>
-            
-              <td class="t4"id="taj"></td>
-              <td class="t4"id="adoA"></td>
-              <td class="t4"id="bankSz"></td>
-           
-              <td class="t5" id="nem"></td>
-              <td class="t5" id="hazas"></td>
-              <td class="t5" id="gyerek"></td>
-              <td class="t5" id="polgar"></td>
-            
-          </tr>
-        </tbody>
       </table>
 
       <!-- Modal -->
