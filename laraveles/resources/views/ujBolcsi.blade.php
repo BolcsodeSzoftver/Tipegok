@@ -57,7 +57,6 @@
                                         <label class="form-label" for="cim">Admin</label> --}}
                                         <label for="bolcsi">Admin:</label>
                                         <select class="bolcsiNev" name="admin">
-
                                             @foreach ($megjelenitAdmin as $admin)
                                                 @foreach ($megjelenitAdminNev as $adminNev)
                                                     @if ($admin->jogosultsags === 1 and $admin->users === $adminNev->id)
