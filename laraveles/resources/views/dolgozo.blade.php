@@ -10,9 +10,27 @@
 
 
 <h3>Doldozó adatai</h3>
+<?php
+$db = 0;
+?>
+@foreach($alkalmazott as $alkalmazott)
+  @if($alkalmazott->allapot==0)
+  <?php
+    $db ++;
+  ?>
+  @endif
+@endforeach
+
 <button type="button" class="btn btn-primary btn-lg" id="jovhagyas">
   Jóváhagyásra váró dolgozók
+  @if ($db>0)
+    : <?php echo $db ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i> 
+  @else
+    nincs
+  @endif
+  
 </button>
+
 <br>
 
 <label>Keresés:</label><input type="text" name="szo" id="szo" />

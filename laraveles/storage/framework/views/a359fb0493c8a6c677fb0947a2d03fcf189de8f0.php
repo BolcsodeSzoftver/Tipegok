@@ -10,9 +10,26 @@
 
 
 <h3>Doldozó adatai</h3>
+<?php
+$db = 0;
+?>
+<?php $__currentLoopData = $alkalmazott; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  <?php if($alkalmazott->allapot==0): ?>
+  <?php
+    $db ++;
+  ?>
+  <?php endif; ?>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
 <button type="button" class="btn btn-primary btn-lg" id="jovhagyas">
-  Jóváhagyásra váró dolgozók
+  Jóváhagyásra váró dolgozó  <?php if($db>0): ?>
+  k : <?php echo $db ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i> 
+  <?php else: ?>
+    nincs
+  <?php endif; ?>
+  
 </button>
+
 <br>
 
 <label>Keresés:</label><input type="text" name="szo" id="szo" />

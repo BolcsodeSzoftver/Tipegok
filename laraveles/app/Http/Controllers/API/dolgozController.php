@@ -19,8 +19,8 @@ class dolgozController extends Controller
      */
     public function index()
     {
-        /* $alkalmazott= alkalmazott::all();  */
-        return response()->json(alkalmazott::all())  /* and  view('pages.dTabla', compact('alkalmazott')) */ ;
+        $alkalmazott= alkalmazott::all();
+        return response()->json(alkalmazott::all());
     }
 
     /**
@@ -153,5 +153,10 @@ class dolgozController extends Controller
         }
 
         return $tasks->get();
+    }
+
+    public function allapot(){
+        $alkalmazott= alkalmazott::all();
+        return view('dolgozo', compact('alkalmazott'));
     }
 }

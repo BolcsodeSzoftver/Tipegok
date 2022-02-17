@@ -32,9 +32,10 @@ Route::get('/dolgozo/search', [dolgozController::class, 'search']);
 /* Route::get('/ujBolcsi', function () {
     return view('ujBolcsi');
 })->middleware(['auth']); */
-Route::get('/dolgozo', function () {
+/* Route::get('/dolgozo', function () {
     return view('dolgozo');
-})->middleware(['auth']);
+})->middleware(['auth']); */
+Route::get('/dolgozo', [dolgozController::class,'allapot'])->middleware(['auth']);
 
 Route::get('/mellekletek', function () {
     return view('mellekletek');
