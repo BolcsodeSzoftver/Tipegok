@@ -14,6 +14,6 @@ class alkalmazott extends Model
         'szul_ido','anyja_neve','adoazon_jel',
         'tajszam','nem','nev','banszamla_szam','telefonszam',
         'allando_lakhely','tartozkodasi_hely','hazas_e',
-        'tizenhat_alatti_gyermek','all_polgarsag'
+        'tizenhat_alatti_gyermek','all_polgarsag','allapot'
     ];
 }

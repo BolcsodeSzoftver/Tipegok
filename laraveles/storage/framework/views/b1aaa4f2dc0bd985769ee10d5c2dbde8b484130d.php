@@ -9,25 +9,25 @@
         <thead class="thead-light">
           <tr>
             <th>Felhasználó név</th>
-            <th>Email</th><!-- 
-            <th>Jogosultság</th> -->
+            <th>Email</th>
+            <th>Jogosultság</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-          <!-- <?php $__currentLoopData = $felhasznalok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php $__currentLoopData = $admin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> -->
-            <?php $__currentLoopData = $u; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $uuuu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <!-- <?php if($f->jogosultsag_id==1 and $f->jogosultsag_id==$a->id): ?> -->
+          <?php $__currentLoopData = $felhasznalok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $admin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($f->jogosultsags==1 and $f->jogosultsags==$a->id and $f->users == $u->id): ?>
                 <tr>
-                    <td><?php echo e($uuuu->name); ?></td>
-                    <td><?php echo e($uuuu->email); ?></td><!-- 
-                    <td><?php echo e($a->megnevezes); ?></td> -->
+                    <td><?php echo e($u->name); ?></td>
+                    <td><?php echo e($u->email); ?></td>
+                    <td><?php echo e($a->megnevezes); ?></td>
                 </tr>
-                <!-- <?php endif; ?> -->
+                <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <!-- <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> -->
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </tr>
         </tbody>
       </table>

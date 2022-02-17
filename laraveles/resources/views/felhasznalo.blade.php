@@ -18,7 +18,7 @@
           @foreach($felhasznalok as $f)
             @foreach($admin as $a)
             @foreach($user as $u)
-              @if($f->jogosultsag_id==1 and $f->jogosultsag_id==$a->id)
+            @if($f->jogosultsags==1 and $f->jogosultsags==$a->id and $f->users == $u->id)
                 <tr>
                     <td>{{ $u->name }}</td>
                     <td>{{ $u->email }}</td>

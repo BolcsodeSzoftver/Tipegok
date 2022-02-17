@@ -31,7 +31,8 @@ class AlkalmazottFactory extends Factory
             'tartozkodasi_hely'=> $this->faker->address,
             'hazas_e'=> $this->faker->boolean,
             'tizenhat_alatti_gyermek'=> $this->faker->numberBetween(10),
-            'all_polgarsag'=> $this->faker->country
+            'all_polgarsag'=> $this->faker->country,
+            'allapot'=> $this->faker->boolean
         ];
     }
 }

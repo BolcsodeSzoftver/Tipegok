@@ -32,7 +32,7 @@ class CreateAlkalmazottsTable extends Migration
             $table->String('hazas_e');
             $table->String('tizenhat_alatti_gyermek');
             $table->String('all_polgarsag');
-            /* $table->integer('allapot'); */
+            $table->integer('allapot');
             $table->timestamps();
         });
     }
