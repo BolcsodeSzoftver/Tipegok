@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class dolgozo extends Model
 {
     use HasFactory;
+ 
 }

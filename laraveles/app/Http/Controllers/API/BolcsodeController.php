@@ -54,7 +54,7 @@ class BolcsodeController extends Controller
         $bolcsode->ferohelyek_szama = $request->ferohelyekSzama;
         $bolcsode->agazati_potlek = $request->agazatiPotlek;
         $bolcsode->fennt_id = $request->fenntarto;
-        $bolcsode->bolcsod_admin = $request->admin;
+        $bolcsode->bolcsode_admin = $request->admin;
         $bolcsode->save();
     }
 
