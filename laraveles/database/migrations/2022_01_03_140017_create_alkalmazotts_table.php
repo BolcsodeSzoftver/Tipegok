@@ -15,7 +15,7 @@ class CreateAlkalmazottsTable extends Migration
     {
         Schema::create('alkalmazotts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('belepes_id')->unique();
+            $table->unsignedBigInteger('belepes_id');
             $table->foreign('belepes_id')->references('id')->on('belepes');
             $table->String('szul_nev');
             $table->String('szul_hely');
@@ -32,6 +32,7 @@ class CreateAlkalmazottsTable extends Migration
             $table->String('hazas_e');
             $table->String('tizenhat_alatti_gyermek');
             $table->String('all_polgarsag');
+            /* $table->integer('allapot'); */
             $table->timestamps();
         });
     }

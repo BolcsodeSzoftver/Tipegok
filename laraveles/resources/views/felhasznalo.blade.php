@@ -16,13 +16,17 @@
         <tbody>
           <tr>
           @foreach($felhasznalok as $f)
-              @if($f->jogosultsag_id==1)
+            @foreach($admin as $a)
+            @foreach($user as $u)
+              @if($f->jogosultsag_id==1 and $f->jogosultsag_id==$a->id)
                 <tr>
-                    <td>{{ $f->felhasznalo_nev }}</td>
-                    <td>{{ $f->email }}</td>
-                    <td>{{ $f->jogosultsag_id }}</td>
+                    <td>{{ $u->name }}</td>
+                    <td>{{ $u->email }}</td>
+                    <td>{{ $a->megnevezes }}</td>
                 </tr>
                 @endif
+                @endforeach
+              @endforeach
             @endforeach
           </tr>
         </tbody>

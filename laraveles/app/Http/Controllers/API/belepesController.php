@@ -9,6 +9,7 @@ use App\Models\bolcsode;
 use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use App\Models\jogosultsag;
 
 class belepesController extends Controller
 {
@@ -19,6 +20,8 @@ class belepesController extends Controller
 
     public function megjelenit(){
         $felhasznalok=belepes::all();
-        return view('felhasznalo',compact('felhasznalok'));
+        $admin=jogosultsag::all();
+        $user=User::all();
+        return view('felhasznalo',compact('felhasznalok','admin','user'));
     }
 }
