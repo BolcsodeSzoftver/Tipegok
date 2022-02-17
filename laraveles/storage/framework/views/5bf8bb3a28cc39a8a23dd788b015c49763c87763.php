@@ -1,5 +1,5 @@
-@extends('layouts.szerkezet')
-@section('tartalom')
+
+<?php $__env->startSection('tartalom'); ?>
 
 
  <table class="table">
@@ -29,4 +29,5 @@
     </tbody>
   </table>
   
-  @endsection
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/mellekletek.blade.php ENDPATH**/ ?>

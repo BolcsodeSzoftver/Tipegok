@@ -1,6 +1,5 @@
 @extends('layouts.szerkezet')
 @section('head')
-    <link rel="stylesheet" href="css/bolcsiadat.css" />
 @endsection
 @section('tartalom')
 
@@ -9,54 +8,22 @@
     <table class="table">
         <thead class="thead-light">
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Felhasználó név</th>
+            <th>Email</th>
+            <th>Jogosultság</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          @foreach($felhasznalok as $f)
+              @if($f->jogosultsag_id==1)
+                <tr>
+                    <td>{{ $f->felhasznalo_nev }}</td>
+                    <td>{{ $f->email }}</td>
+                    <td>{{ $f->jogosultsag_id }}</td>
+                </tr>
+                @endif
+            @endforeach
           </tr>
         </tbody>
       </table>

@@ -70,6 +70,10 @@ class Alkalmazott {
 			console.log('gom');
 			this.kattintasTrigger('torol');
 		});
+
+		for (let i = 2; i < 6; i++) {
+			$('.t' + i).hide();
+		}
 	}
 
 	setAdatok(ertekek) {

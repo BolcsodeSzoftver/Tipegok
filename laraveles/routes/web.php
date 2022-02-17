@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\fenntarto;
 use App\Http\Controllers\API\BolcsodeController;
+use App\Http\Controllers\API\dolgozController;
+use App\Http\Controllers\API\belepesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,8 @@ use App\Http\Controllers\API\BolcsodeController;
 |
 */
 
+Route::get('/felhasznalo', [belepesController::class,'megjelenit'])->middleware(['auth']);
+
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
@@ -22,18 +26,29 @@ Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
 /* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
 Route::get('/dolgozo/search', [dolgozController::class, 'search']);
 
-Route::get('/felhasznalo', function () {
+/* Route::get('/felhasznalo', function () {
     return view('felhasznalo');
-})->middleware(['auth']);
+})->middleware(['auth']); */
 /* Route::get('/ujBolcsi', function () {
     return view('ujBolcsi');
 })->middleware(['auth']); */
 Route::get('/dolgozo', function () {
     return view('dolgozo');
 })->middleware(['auth']);
+
 Route::get('/mellekletek', function () {
     return view('mellekletek');
 })->middleware(['auth']);
+
+Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']);
+Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']);
+Route::get('/melleklet3', function () {return view('melleklet3');})->middleware(['auth']);
+Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(['auth']);
+Route::get('/melleklet5', function () {return view('melleklet5');})->middleware(['auth']);
+Route::get('/melleklet6', function () {return view('melleklet6');})->middleware(['auth']);
+Route::get('/melleklet10', function () {return view('melleklet10');})->middleware(['auth']);
+
+Route::get('/fejlesztesAlatt', function () {return view('fejlesztesAlatt');})->middleware(['auth']);
 
 Route::get('/ujDolgozo', function () {
     return view('ujDolgozo');

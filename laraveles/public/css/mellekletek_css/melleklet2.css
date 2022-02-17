@@ -1,0 +1,58 @@
+h2:nth-child(1){
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+h2{
+    font-size: 20px;
+    text-align: center;
+}
+main{
+    max-width: 210mm;
+    max-height: 297mm;
+    margin: auto;
+}
+p{
+    line-height: 1mm;
+}
+.foresz{
+    display: flex;
+}
+.ketto{
+    margin-top: 135px;
+}
+.harom{
+    margin-top: 75px;
+}
+article:nth-child(1){
+    margin-right: 30px;
+}
+.kelt{
+    margin-top: 35px;
+}
+.alairas{
+    height: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    line-height: 15mm;
+    font-size: large;
+    padding-right: 30mm;
+}
+.alairas p{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media print {
+	#gomb {
+	  display: none;
+	}
+
+	#export {
+		width: 210mm;
+		height: 297mm;
+	  }
+}
