@@ -1,4 +1,5 @@
 @extends('layouts.szerkezet')
+@extends('layouts.torlesMegerosites')
 @section('head')
     <link rel="stylesheet" href="css/fennt.css" />
     <script src="js/ajax.js"></script>
@@ -20,9 +21,9 @@
 
             </tr>
         </thead>
-        <tbody id="adat"></tbody>
-        <tbody id="sablon">
-            <tr class="adatok">
+        <tbody id="adatFenntarto"></tbody>
+        <tbody id="sablonFenntarto">
+            <tr class="adatokFenntarto">
                 <td class="modosit">
                     <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
                         data-target="#exampleModalLong">
@@ -30,7 +31,7 @@
                     </button>
                 </td>
                 <td class="torol">
-                    <button class="btn btn-primary" id="toroladat" type="button">
+                    <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal" data-target="#exampleModalCenter">
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
@@ -58,8 +59,8 @@
                         <div class="row">
                             <div class="col" id="fId">
                                 <div class="form-outline">
-                                    <input type="text" id="id" class="form-control" readonly>
-                                    <label class="form-label" for="id">ID</label>
+                                    <input type="text" id="Fenntartoid" class="form-control" readonly>
+                                    <label class="form-label" for="Fenntartoid">ID</label>
                                 </div>
                             </div>
                             <div class="col">

@@ -1,6 +1,6 @@
 function fenntLista(tomb) {
-    const szuloElem = $("#adat");
-    const sablonElem = $("#sablon .adatok");
+    const szuloElem = $("#adatFenntarto");
+    const sablonElem = $("#sablonFenntarto .adatokFenntarto");
 
     tomb.forEach(function (adat) {
         /* console.log(adat); */

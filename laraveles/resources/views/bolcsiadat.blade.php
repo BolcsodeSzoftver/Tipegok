@@ -1,4 +1,5 @@
 @extends('layouts.szerkezet')
+@extends('layouts.torlesMegerosites')
 @section('head')
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/ajax.js"></script>
@@ -130,6 +131,9 @@
             </div>
         </div>
     </div>
+
+
+   
 @endsection
 
 

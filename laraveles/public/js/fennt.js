@@ -5,13 +5,19 @@ $(function () {
     ajax.getAjax(vegpont, fenntLista);
     //$(".urlap").hide();
 
+    $(".megerositTorles").on("click", () => {
+        console.log("megerositTorles");
+        ajax.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
+        location.reload();
+    });
+
     $(window).on("modosit", (event) => {
         console.log(event);
         //$(".urlap").show();
         //$("table").hide();
         //$("#modositadat").hide();
 
-        $("#id").attr("value", event.detail.id);
+        $("#Fenntartoid").attr("value", event.detail.id);
         $("#nev").attr("value", event.detail.nev);
         $("#kepv").attr("value", event.detail.kepviselo);
         $("#megye").attr("value", event.detail.megye);
@@ -29,7 +35,7 @@ $(function () {
         $("#fId").hide();
         $("#adatMentes").on("click", function () {
             console.log("ment");
-            let fId = $("#id").val();
+            let fId = $("#Fenntartoid").val();
             let nev = $("#nev").val();
             let szekhely = $("#szekh").val();
             let agazatiA = $("#agazatia").val();
@@ -69,11 +75,8 @@ $(function () {
     });
 
     $(window).on('torol', (event) => {
-		console.log('torles');
-		ajax.deleteAjax(vegpont, event.detail.id);
-        console.log(event.detail.id);
-        //ajax.getAjax(vegpont, fenntLista);
-        location.reload();
+        console.log('toroleees')
+		$(".megerositTorles").attr("id", event.detail.id);
 	});
   
 

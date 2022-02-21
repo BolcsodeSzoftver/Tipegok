@@ -4,6 +4,12 @@ $(function() {
 
 	ajax.getAjax(vegpont, dolgozoLista);
 
+	$(".megerositTorles").on("click", () => {
+        console.log("megerositTorles");
+        ajax.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
+        location.reload();
+    });
+
 	$(window).on('modosit', (event) => {
 		$('#id').attr('value', event.detail.id);
 		$('#nev').attr('value', event.detail.nev);
@@ -70,11 +76,8 @@ $(function() {
 	});
 
 	$(window).on('torol', (event) => {
-		console.log('torles');
-		ajax.deleteAjax(vegpont, event.detail.id);
-		console.log(event.detail.id);
-		//ajax.getAjax(vegpont, fenntLista);
-		location.reload();
+        console.log('toroleees')
+		$(".megerositTorles").attr("id", event.detail.id);
 	});
 
 	$('.adatModositEnged').on('click', function() {

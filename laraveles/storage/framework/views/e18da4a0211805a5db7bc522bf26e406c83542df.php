@@ -1,4 +1,5 @@
 
+
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/ajax.js"></script>
@@ -36,30 +37,8 @@
                 <th scope="col">Ágazati pótlék</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="adatok">
-                <td class="modosit">
-                    <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
-                        data-target="#exampleModalLong">
-                        <i class='fa fa-edit'></i>
-                    </button>
-                </td>
-                <td class="torol">
-                    <button class="btn btn-primary" id="toroladat" type="button">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-                <td class="cim"></td>
-                <td class="nev"></td>
-                <td class="agazati_azon"></td>
-                <td class="szgyf_kod"></td>
-                <td class="ferohelyek_szama"></td>
-                <td class="feor"></td>
-                <td class="agazati_potlek"></td>
-
-            </tr>
-        </tbody>
     </table>
+    
     <ul style="list-style-type: none;">
         <li>
             <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
@@ -152,8 +131,12 @@
             </div>
         </div>
     </div>
+
+
+   
 <?php $__env->stopSection(); ?>
 
 
 
+<?php echo $__env->make('layouts.torlesMegerosites', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/bolcsiadat.blade.php ENDPATH**/ ?>

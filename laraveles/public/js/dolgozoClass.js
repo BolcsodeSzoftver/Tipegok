@@ -8,7 +8,7 @@ class Alkalmazott {
 		  </button>
 	  </td>
 	  <td class="torol">
-		  <button class="btn btn-primary" id="toroladat" type="button">
+		  <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal" data-target="#exampleModalCenter">
 			  <i class="fa fa-trash"></i>
 		  </button>
 	  </td>

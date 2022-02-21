@@ -28,7 +28,6 @@ class Fenntarto {
 		});
 
 		this.gombTorol.on('click', () => {
-			console.log('torol');
 			this.kattintasTrigger('torol');
 		});
 	}

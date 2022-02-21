@@ -7,8 +7,8 @@ class Bolcsode {
 				<i class='fa fa-edit'></i>
 			</button>
 		</td>
-		<td class="torol">
-			<button class="btn btn-primary" id="toroladat" type="button">
+		<td class="torolBolcsi">
+			<button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal" data-target="#exampleModalCenter">
 				<i class="fa fa-trash"></i>
 			</button>
 		</td>
@@ -25,7 +25,8 @@ class Bolcsode {
 		this.elem = this.tabla.find('tr:last');
 		this.adat = adat;
 		this.gombModosit = this.elem.children('.modosit');
-		this.gombTorol = this.elem.children('.torol');
+		this.gombTorol = this.elem.children('.torolBolcsi');
+		
 
 		this.cimElem = this.elem.children('.cim');
 		this.nevElem = this.elem.children('.nev');
@@ -39,10 +40,11 @@ class Bolcsode {
 			console.log('gom');
 			this.kattintasTrigger('modosit');
 		});
-		this.gombTorol.on('click', () => {
+		  this.gombTorol.on('click', () => {
 			console.log('gom');
-			this.kattintasTrigger('torol');
-		});
+			this.kattintasTrigger('EsemenyTorolBolcsi');
+		});  
+		
 	}
 
 	setAdatok(ertekek) {
