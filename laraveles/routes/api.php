@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\BolcsodeController;
 use App\Http\Controllers\API\dolgozController;
+use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,3 +31,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('bolcsode', BolcsodeController::class);
 Route::apiResource('fenntarto', FenntartoController::class);
 Route::apiResource('dolgozo', dolgozController::class);
+Route::apiResource('felhasznalo', FelhasznaloController::class);

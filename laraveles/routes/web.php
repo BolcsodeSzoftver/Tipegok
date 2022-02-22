@@ -5,6 +5,7 @@ use App\Models\fenntarto;
 use App\Http\Controllers\API\BolcsodeController;
 use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\belepesController;
+use App\Http\Controllers\API\FelhasznaloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,7 @@ use App\Http\Controllers\API\belepesController;
 |
 */
 
-Route::get('/felhasznalo', [belepesController::class,'megjelenit'])->middleware(['auth']);
-
+Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
