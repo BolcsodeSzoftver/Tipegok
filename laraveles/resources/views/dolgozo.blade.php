@@ -19,21 +19,22 @@
             ?>
         @endif
     @endforeach
-
-    <button type="button" class="btn btn-primary btn-lg" id="jovhagyas">
-        Jóváhagyásra váró dolgozók
-        @if ($db > 0)
-            : <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
-        @else
-            nincs
-        @endif
-
-    </button>
-
-    <br>
-
-    <label>Keresés:</label><input type="text" name="szo" id="szo" />
-    <br>
+<div class="row">
+    <div class="col">
+        <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..."/>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-primary btn-lg" id="jovhagyas">
+            Jóváhagyásra váró dolgozók
+            @if ($db > 0)
+                : <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
+            @else
+                nincs
+            @endif
+        </button>
+    </div>
+</div>
+    
     <ul class="nav nav-tabs">
         <li class="nav-item"><a class="nav-link" id="adatokT1">saját adatok</a></li>
         <li class="nav-item"><a class="nav-link" id="adatokT2">születési adatok</a></li>
@@ -46,10 +47,10 @@
             <tr class="table-active">
                 <th></th>
                 <th></th>
-                <th scope="col">Név</th>
-                <th class="t1" scope="col">Cím</th>
-                <th class="t1" scope="col">Telefonszám</th>
-                <th class="t1" scope="col">Anyja neve</th>
+                <th scope="col" sortable>Név</th>
+                <th class="t1"  sortable scope="col">Cím</th>
+                <th class="t1"  sortable scope="col">Telefonszám</th>
+                <th class="t1"  sortable scope="col">Anyja neve</th>
 
                 <th class="t2" scope="col">Születési név</th>
                 <th class="t2" scope="col">Születési hely</th>
@@ -69,7 +70,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($alkalmazotts as $data)
+            @forelse ($alkalmazotts as $data)
                 <tr>
                     <td class="modosit">
                         <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
@@ -103,7 +104,15 @@
                     <td class="t5" id="gyerek">{{ $data->tizenhat_alatti_gyermek }}</td>
                     <td class="t5" id="polgar">{{ $data->all_polgarsag }}</td>
                 </tr>
-            @endforeach
+                @empty
+                <tr>
+                    <td>
+                        <div class="flex justify-center items-center">
+                            <span class="font-medium text-cool-gray-400">Nincs ilyen dolgozo</span>
+                        </div>
+                    </td>
+                </tr>
+            @endforelse
         </tbody>
     </table>
     <div>
