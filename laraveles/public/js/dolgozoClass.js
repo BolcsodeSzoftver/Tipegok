@@ -1,6 +1,6 @@
 class Alkalmazott {
 	constructor(tabla, adat) {
-		this.sablon = `<tr class="adatok">
+		/* this.sablon = `<tr class="adatok">
 		<td class="modosit">
 		  <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
 			  data-target="#exampleModalLong">
@@ -34,7 +34,8 @@ class Alkalmazott {
 		  <td class="t5" id="gyerek"></td>
 		  <td class="t5" id="polgar"></td>
 		
-	  </tr>`;
+	  </tr>`; */
+
 		this.tabla = tabla;
 		this.tabla.append(this.sablon);
 		this.elem = this.tabla.find('tr:last');

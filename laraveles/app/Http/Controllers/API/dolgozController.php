@@ -134,14 +134,14 @@ class dolgozController extends Controller
         return response()->json($alkalmazott::all());
     }
 
-    /* public function dolgozoKeres($szo){
-        $alkalmazott = alkalmazott::where('nev',$szo)->get();
+    public function dolgozoKeres($szo){
+        /* $alkalmazott = alkalmazott::where('nev',$szo)->get(); */
+        $alkalmazott=alkalmazott::all();
         return response()->json($alkalmazott);
-    } */
+    } 
 
-    public function search(Request $request)
+    /* public function search(Request $request)
     {
-        /* $alkalmazott=alkalmazott::all(); */
         $queryString = $request->query('q');
         $tasks=alkalmazott::select('*');
         $columns = \Schema::getColumnListing('alkalmazott');
@@ -153,10 +153,11 @@ class dolgozController extends Controller
         }
 
         return $tasks->get();
-    }
+    } */
 
     public function allapot(){
         $alkalmazott= alkalmazott::all();
-        return view('dolgozo', compact('alkalmazott'));
+        $alkalmazotts = alkalmazott::paginate(5);
+        return view('dolgozo', compact('alkalmazott','alkalmazotts'));
     }
 }

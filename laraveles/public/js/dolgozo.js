@@ -94,7 +94,7 @@ $(function() {
 		$('#adatok2').show();
 	});
 
-	tablazatFejlecElrejtese();
+	//tablazatFejlecElrejtese();
 	function tablazatFejlecElrejtese(){
 		for (let i = 2; i < 6; i++) {
 			$('.t' + i).hide();

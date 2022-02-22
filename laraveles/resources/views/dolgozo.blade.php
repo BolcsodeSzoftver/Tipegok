@@ -1,5 +1,4 @@
 @extends('layouts.szerkezet')
-@extends('layouts.torlesMegerosites')
 @section('head')
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/ajax.js"></script>
@@ -43,7 +42,82 @@ $db = 0;
   <li class="nav-item"><a class="nav-link" id="adatokT4">ID</a></li>
   <li class="nav-item"><a class="nav-link" id="adatokT5">egyéb adatok</a></li>
 </ul>
-<table class="table">
+<table class="table table-bordered mb-5">
+<thead>
+<tr class="table-active">
+  <th></th>
+  <th></th>
+<th scope="col">Név</th>
+              <th class="t1" scope="col">Cím</th>
+              <th class="t1" scope="col">Telefonszám</th>
+              <th class="t1" scope="col">Anyja neve</th>
+
+              <th class="t2" scope="col">Születési név</th>
+              <th class="t2" scope="col">Születési hely</th>
+              <th class="t2" scope="col">Születési idő</th>
+            
+              <th class="t3" scope="col">Állandó lakhely</th>
+              <th class="t3" scope="col">Tartozkodási hely</th>
+          
+              <th class="t4" scope="col">Tajszám</th>
+              <th class="t4" scope="col">Adóazonosító</th>
+              <th class="t4" scope="col">Bankszámla szám</th>
+          
+              <th class="t5" scope="col">Nem</th>
+              <th class="t5" scope="col">Házas</th>
+              <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
+              <th class="t5" scope="col">Állam polgárság</th>
+</tr>
+</thead>
+<tbody>
+@foreach($alkalmazotts as $data)
+<tr>
+<td class="modosit">
+		  <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
+			  data-target="#exampleModalLong">
+			  <i class='fa fa-edit'></i>
+		  </button>
+	  </td>
+	  <td class="torol">
+		  <button class="btn btn-primary" id="toroladat" type="button">
+			  <i class="fa fa-trash"></i>
+		  </button>
+	  </td>
+<th >{{ $data->nev }}</th>
+<td class="t1">{{ $data->allando_lakhely }}</td>
+<td class="t1">{{ $data->telefonszam }}</td>
+<td class="t1">{{ $data->anyja_neve }}</td>
+
+      <td class="t2" id="szulN">{{ $data->szul_nev }}</td>
+		  <td class="t2" id="szulH">{{ $data->szul_hely }}</td>
+		  <td class="t2" id="szulI">{{ $data->szul_ido }}</td>
+	   
+		  <td class="t3" id="cim">{{ $data->allando_lakhely }}</td>
+		  <td class="t3" id="tartHely">{{ $data->tartozkodasi_hely }}</td>
+		
+		  <td class="t4"id="taj">{{ $data->tajszam }}</td>
+		  <td class="t4"id="adoA">{{ $data->adoazon_jel }}</td>
+		  <td class="t4"id="bankSz">{{ $data->banszamla_szam }}</td>
+	   
+		  <td class="t5" id="nem">{{ $data->nem }}</td>
+		  <td class="t5" id="hazas">{{ $data->hazas_e }}</td>
+		  <td class="t5" id="gyerek">{{ $data->tizenhat_alatti_gyermek }}</td>
+		  <td class="t5" id="polgar">{{ $data->all_polgarsag }}</td>
+</tr>
+@endforeach
+</tbody>
+</table>
+<div>
+{!! $alkalmazotts->links('pagination::bootstrap-4') !!}
+</div>
+
+<!-- <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->nextPageUrl() }}">Next</a></li>
+        
+        <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->previousPageUrl() }}">Previous</a></li>
+    </ul> -->
+
+<!-- <table class="table">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -72,7 +146,7 @@ $db = 0;
             
           </tr>
         </thead>
-      </table>
+      </table> -->
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -228,7 +302,7 @@ $db = 0;
       </div>
   </div>
 
-<div class="container">
+<!-- <div class="container">
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href="#"><<</a></li>
     <li class="page-item">
@@ -251,7 +325,8 @@ $db = 0;
     </li>
     <li class="page-item"><a class="page-link" href="#">>></a></li>
   </ul>
-</div>
+</div> -->
+
 <!-- <input
   class="btn btn-secondary"
   style="width: 200px"

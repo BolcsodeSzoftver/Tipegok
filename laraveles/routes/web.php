@@ -23,8 +23,8 @@ Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
 
-/* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
-Route::get('/dolgozo/search', [dolgozController::class, 'search']);
+Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']);
+/* Route::get('/dolgozo/search', [dolgozController::class, 'search']); */
 
 /* Route::get('/felhasznalo', function () {
     return view('felhasznalo');
