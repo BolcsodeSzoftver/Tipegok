@@ -18,6 +18,7 @@ class CreateBelepesTable extends Migration
             $table->id();
             $table->foreignId('users')->references('id')->on('users');
             $table->foreignId('jogosultsags')->references('id')->on('jogosultsags');
+            $table->Integer('aktiv');
             $table->timestamps();
         });
     }

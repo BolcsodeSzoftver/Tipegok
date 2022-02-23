@@ -17,8 +17,8 @@ class CreateFenntartoValtozasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('fennt_id');
             //$table->foreign('fennt_id')->references('id')->on('fenntartos');
-            $table->date('meddig');
-            $table->string('regiadmin');
+            $table->string('mezonev');
+            $table->string('regiertek');
             $table->timestamps();
         });
     }

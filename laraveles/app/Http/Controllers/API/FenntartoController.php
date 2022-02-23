@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\fenntarto;
+use App\Models\fenntarto_valtozas;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\Environment\Console;
@@ -100,6 +101,13 @@ class FenntartoController extends Controller
     public function update(Request $request, $id)
     {
         $fenntarto = fenntarto::findOrFail($id);
+        $f_valtozas= new fenntarto_valtozas();
+        if($fenntarto->nev != $request->get('nev')){
+            $f_valtozas->mezonev =  'nev';
+            $f_valtozas->regiertek = $fenntarto->cim;
+            $f_valtozas->save();
+        }
+
         $fenntarto->nev = $request->get('nev');
         $fenntarto->szekhely  = $request->get('szekhely');
         $fenntarto->agazati_azon  = $request->get('agazati_azon');
