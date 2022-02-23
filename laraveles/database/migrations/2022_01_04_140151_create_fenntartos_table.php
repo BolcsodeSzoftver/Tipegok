@@ -28,7 +28,7 @@ class CreateFenntartosTable extends Migration
             $table->String('uzemorvos_nev');
             $table->String('uzemorvos_cim');
             $table->String('uzemorvos_telefonszam');
-            //$table->string('fennt_admin');
+            $table->Integer('aktiv');
             $table->timestamps();
         });
     }

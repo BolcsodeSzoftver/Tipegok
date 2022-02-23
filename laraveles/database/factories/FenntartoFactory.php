@@ -30,6 +30,7 @@ class FenntartoFactory extends Factory
             'uzemorvos_nev'=> $this->faker->name,
             'uzemorvos_cim'=> $this->faker->title,
             'uzemorvos_telefonszam'=> $this->faker->phoneNumber,
+            'aktiv'=>$this->faker->numberBetween(2)
         ];
     }
 }

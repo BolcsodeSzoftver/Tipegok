@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
-class CreateFenntartoValtozasTable extends Migration
+class CreateBelepesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +14,11 @@ class CreateFenntartoValtozasTable extends Migration
      */
     public function up()
     {
-        Schema::create('fenntarto_valtozas', function (Blueprint $table) {
+        Schema::create('belepes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('fennt_id');
-            //$table->foreign('fennt_id')->references('id')->on('fenntartos');
-            $table->string('mezonev');
-            $table->string('regiertek');
+            $table->foreignId('users')->references('id')->on('users');
+            $table->foreignId('jogosultsags')->references('id')->on('jogosultsags');
+            $table->Integer('aktiv');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateFenntartoValtozasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fenntarto_valtozas');
+        Schema::dropIfExists('belepes');
     }
 }

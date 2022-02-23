@@ -25,6 +25,7 @@ class CreateBolcsodesTable extends Migration
             $table->integer('feor');
             $table->integer('agazati_potlek');
             $table->foreignId('bolcsode_admin')->nullable(true)->references('id')->on('users');
+            $table->Integer('aktiv');
             $table->timestamps();
         });
     }

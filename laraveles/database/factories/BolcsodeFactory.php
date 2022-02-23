@@ -28,7 +28,9 @@ class BolcsodeFactory extends Factory
             'feor'=> $this->faker->numberBetween(3),
             'agazati_potlek'=> $this->faker->numberBetween(1000),
             'fennt_id'=>  $fenntIdrandom->id,
-            'bolcsode_admin'=> $adminRandom->jogosultsag_id
+            'bolcsode_admin'=> $adminRandom->jogosultsags,
+            'aktiv'=>$this->faker->numberBetween(2)
+
         ];
     }
 }
