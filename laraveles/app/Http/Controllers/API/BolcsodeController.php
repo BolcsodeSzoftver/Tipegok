@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\belepes;
 use Illuminate\Http\Request;
 use App\Models\bolcsode;
+use App\Models\bolcsode_valtozas;
 use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
@@ -23,7 +24,8 @@ class BolcsodeController extends Controller
     public function index()
     {
         //Storage::put('bolcsiadat.json', bolcsode::all());
-        $bolcsode=bolcsode::all();
+
+        $bolcsode = bolcsode::all();
         return response()->json(bolcsode::all());
     }
 
@@ -49,7 +51,7 @@ class BolcsodeController extends Controller
         $bolcsode->cim = $request->cim;
         $bolcsode->nev = $request->nev;
         $bolcsode->agazati_azon = $request->agazatiAzon;
-        $bolcsode->feor= $request->feorAzon;
+        $bolcsode->feor = $request->feorAzon;
         $bolcsode->szgyf_kod = $request->szgyfKod;
         $bolcsode->ferohelyek_szama = $request->ferohelyekSzama;
         $bolcsode->agazati_potlek = $request->agazatiPotlek;
@@ -104,6 +106,7 @@ class BolcsodeController extends Controller
         $bolcsode->ferohelyek_szama = $request->get('ferohelyek_szama');
         $bolcsode->feor = $request->get('feor');
         $bolcsode->agazati_potlek = $request->get('agazati_potlek');
+        $bolcsode->fennt_id = $request->get('fennt_id');
         $bolcsode->save();
         Storage::put('bolcsiadatValtozas.json', bolcsode::all());
         return response()->json($bolcsode);
@@ -123,20 +126,23 @@ class BolcsodeController extends Controller
         return response()->json($bolcsode::all());
     }
 
-    public function megjelenit(){
-        $fenntartok=fenntarto::all();;
-        return view('bolcsiadat',compact('fenntartok'));
+    public function megjelenit()
+    {
+        $fenntartok = fenntarto::all();
+        return view('bolcsiadat', compact('fenntartok'));
     }
-    public function megjeleniFenntartoId(){
-        $fenntartokId=fenntarto::all();
-        $megjelenitAdmin=belepes::all();
-        $megjelenitAdminNev=User::all();
-        return view('ujBolcsi',compact('fenntartokId','megjelenitAdmin','megjelenitAdminNev'));
+    public function megjeleniFenntartoId()
+    {
+        $fenntartokId = fenntarto::all();
+        $megjelenitAdmin = belepes::all();
+        $megjelenitAdminNev = User::all();
+        return view('ujBolcsi', compact('fenntartokId', 'megjelenitAdmin', 'megjelenitAdminNev'));
     }
 
 
-    public function fenntartoBolcsode($id){
-        $bolcsodek = bolcsode::where('fennt_id',$id)->get();
+    public function fenntartoBolcsode($id)
+    {
+        $bolcsodek = bolcsode::where('fennt_id', $id)->get();
         return response()->json($bolcsodek);
     }
 }

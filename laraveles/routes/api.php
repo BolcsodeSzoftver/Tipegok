@@ -32,3 +32,4 @@ Route::apiResource('bolcsode', BolcsodeController::class);
 Route::apiResource('fenntarto', FenntartoController::class);
 Route::apiResource('dolgozo', dolgozController::class);
 Route::apiResource('felhasznalo', FelhasznaloController::class);
+Route::delete('/felhasznalo/{id}', 'FelhasznaloController@destory');

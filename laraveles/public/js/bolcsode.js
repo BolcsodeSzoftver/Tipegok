@@ -4,7 +4,6 @@ $(function () {
     ajaxhivas.getAjax(fajlnev, adatLista);
 
     $(".megerositTorles").on("click", () => {
-
         ajaxhivas.deleteAjax(fajlnev, $(".megerositTorles").attr("id"));
         location.reload();
     });
@@ -20,6 +19,7 @@ $(function () {
         $("#ferohelyekSzama").attr("value", event.detail.ferohelyek_szama);
         $("#feorAzon").attr("value", event.detail.feor);
         $("#agazatiPotlek").attr("value", event.detail.agazati_potlek);
+        //$("#fenntarto").attr("value", event.detail.fennt_id);
 
         $("#idB").hide();
         $("#Ujmodositadat").on("click", function () {
@@ -32,6 +32,7 @@ $(function () {
             let ferohelyek_szama = $("#ferohelyekSzama").val();
             let feor = $("#feorAzon").val();
             let agazatiPotlek = $("#agazatiPotlek").val();
+            let fenntarto = $("#fenntarto").val();
             let adat = {
                 id: id,
                 cim: cim,
@@ -41,10 +42,12 @@ $(function () {
                 ferohelyek_szama: ferohelyek_szama,
                 feor: feor,
                 agazati_potlek: agazatiPotlek,
+                fennt_id: fenntarto,
             };
             console.log(adat);
             console.log(fajlnev);
             console.log(id);
+
             ajaxhivas.putAjax(fajlnev, adat, id);
 
             //$(".modositUrlap").hide();
@@ -61,7 +64,7 @@ $(function () {
         $("input").removeAttr("readonly");
     });
 
-    $("select").change(() => {
+    $(".bolcsiNev").change(() => {
         $(".table").empty();
         $(".table").append(`<thead><tr>
 			<th scope="col"></th>

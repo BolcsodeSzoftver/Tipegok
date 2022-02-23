@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 class FelhasznaloController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -22,10 +22,6 @@ class FelhasznaloController extends Controller
      */
     public function index()
     {
-        //Storage::put('fenntarto.json',fenntarto::all());
-        return response()->json(User::all());
-       
-     
     }
 
     /**
@@ -46,7 +42,6 @@ class FelhasznaloController extends Controller
      */
     public function store(Request $request)
     {
-      
     }
 
     /**
@@ -57,7 +52,7 @@ class FelhasznaloController extends Controller
      */
     public function show($id)
     {
-       /*  $comment = Comment::findOrFail($id);
+        /*  $comment = Comment::findOrFail($id);
         return response()->json($comment); */
     }
 
@@ -69,7 +64,6 @@ class FelhasznaloController extends Controller
      */
     public function edit($id)
     {
-       
     }
 
     /**
@@ -86,12 +80,11 @@ class FelhasznaloController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $felhasznalo = User::findOrFail($id);
-       $felhasznalo->name = $request->get('name');
-       $felhasznalo->email = $request->get('email');
-       $felhasznalo->save();
-       return response()->json($felhasznalo);
-
+        $felhasznalo = User::findOrFail($request->id);
+        $felhasznalo->name = $request->name;
+        $felhasznalo->email = $request->email;
+        $felhasznalo->save();
+        return redirect("/felhasznalo");
     }
 
     /**
@@ -100,19 +93,19 @@ class FelhasznaloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+   public function destroy($id)
     {
-        $felhasznalo = User::findOrFail($id);
-        $felhasznalo->delete();
+       /*  $felhasznalo = User::findOrFail($id);
+        $felhasznalo->delete(); */
+        $user = User::where('id', $id)->firstorfail()->delete();
+        return redirect("/felhasznalo");
+    } 
 
-        return response()->json($felhasznalo::all());
+    public function megjelenit()
+    {
+        $felhasznalok = belepes::all();
+        $admin = jogosultsag::all();
+        $user = User::all();
+        return view('felhasznalo', compact('felhasznalok', 'admin', 'user'));
     }
-
-    public function megjelenit(){
-        $felhasznalok=belepes::all();
-        $admin=jogosultsag::all();
-        $user=User::all();
-        return view('felhasznalo',compact('felhasznalok','admin','user'));
-    }
-    
 }
