@@ -174,11 +174,13 @@ class BolcsodeController extends Controller
         return view('bolcsiadat',compact('fenntartok'));
     }
 
+
     public function megjeleniFenntartoId()
     {
         $fenntartokId = fenntarto::all();
         $megjelenitAdminNev = User::all();
         return view('ujBolcsi', compact('fenntartokId','megjelenitAdminNev'));
+
 
     }
 
