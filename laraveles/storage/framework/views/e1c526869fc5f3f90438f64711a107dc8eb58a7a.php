@@ -50,7 +50,8 @@
                                                     <input id="form3Example1c" class="form-control" id="name"
                                                         type="text" name="name" :value="old('name')" required
                                                         autofocus />
-                                                    <label class="form-label" for="form3Example1c" for="name"  :value="__('Name')">
+                                                    <label class="form-label" for="form3Example1c" for="name"
+                                                        :value="__('Name')">
                                                         Felhasználó név</label>
                                                 </div>
                                             </div>
@@ -90,9 +91,24 @@
 
                                                 </div>
                                             </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
 
-                                           <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">                                            
-                                                <button type="submit" class="btn btn-primary"> <?php echo e(__('Regisztráció')); ?></button>                                   
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="form3Example4c" class="form-control"
+                                                        name="jogosultsag" required />
+                                                    <label class="form-label" for="form3Example4c" for="jogosultsag"> 
+                                                        <select name="" id="">
+                                                            <?php $__currentLoopData = $jogosultsagok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                            </select>                              
+
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <?php echo e(__('Regisztráció')); ?></button>
                                             </div>
 
                                         </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\jogosultsag;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -33,15 +34,18 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'jogosultsag' => ['required', 'string', 'jogosultsag', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'jogosultsag' => $request->jogosultsag,
             'password' => Hash::make($request->password),
         ]);
 

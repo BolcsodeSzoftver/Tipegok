@@ -25,10 +25,10 @@
             <tbody class="adatok">
 
 
-                <?php $__currentLoopData = $felhasznalok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
                     <?php $__currentLoopData = $admin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($f->jogosultsags == 1 and $f->jogosultsags == $a->id and $f->users == $u->id): ?>
+                            <?php if($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id): ?>
                                 <tr class="felhasznalo">
                                     <td class="modosit">
                                         <button class="btn btn-primary modositGomb" id=<?php echo e($u->id); ?> type="button"
@@ -44,7 +44,6 @@
                             <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
             </tbody>
         </table>

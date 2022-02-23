@@ -10,7 +10,7 @@ class alkalmazott extends Model
     use HasFactory;
     //interfacek, olyan funkciók amiket lehet végezni az adott osztályon
     protected $fillable = [
-        'belepes_id','szul_nev','szul_hely',
+        'users_id','szul_nev','szul_hely',
         'szul_ido','anyja_neve','adoazon_jel',
         'tajszam','nem','nev','banszamla_szam','telefonszam',
         'allando_lakhely','tartozkodasi_hely','hazas_e',

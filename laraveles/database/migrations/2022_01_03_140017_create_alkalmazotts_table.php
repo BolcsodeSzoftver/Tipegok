@@ -15,8 +15,8 @@ class CreateAlkalmazottsTable extends Migration
     {
         Schema::create('alkalmazotts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('belepes_id');
-            $table->foreign('belepes_id')->references('id')->on('belepes');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users');
             $table->String('szul_nev');
             $table->String('szul_hely');
             $table->date('szul_ido');

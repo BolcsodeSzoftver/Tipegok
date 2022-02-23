@@ -4,6 +4,7 @@ use App\Http\Controllers\API\BolcsodeController;
 use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
+use App\Http\Controllers\felhasznaloRegisztracio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\fenntarto;
@@ -32,4 +33,4 @@ Route::apiResource('bolcsode', BolcsodeController::class);
 Route::apiResource('fenntarto', FenntartoController::class);
 Route::apiResource('dolgozo', dolgozController::class);
 Route::apiResource('felhasznalo', FelhasznaloController::class);
-Route::delete('/felhasznalo/{id}', 'FelhasznaloController@destory');
+

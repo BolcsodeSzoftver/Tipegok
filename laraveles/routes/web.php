@@ -6,6 +6,7 @@ use App\Http\Controllers\API\BolcsodeController;
 use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\belepesController;
 use App\Http\Controllers\API\FelhasznaloController;
+use App\Http\Controllers\felhasznaloRegisztracio;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit',])->middle
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
+Route::resource('/felhasznaloRegisztracio',felhasznaloRegisztracio::class);
 
 /* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
 /* Route::get('/dolgozo/search', [dolgozController::class, 'search']); */
@@ -74,7 +76,6 @@ Route::get('/ujFenntarto', function () {
 Route::get('/belepes', function () {
     return view('belepes');
 });
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

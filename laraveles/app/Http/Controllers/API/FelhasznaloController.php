@@ -103,9 +103,8 @@ class FelhasznaloController extends Controller
 
     public function megjelenit()
     {
-        $felhasznalok = belepes::all();
         $admin = jogosultsag::all();
         $user = User::all();
-        return view('felhasznalo', compact('felhasznalok', 'admin', 'user'));
+        return view('felhasznalo', compact('admin', 'user'));
     }
 }

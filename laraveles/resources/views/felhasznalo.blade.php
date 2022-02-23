@@ -25,10 +25,10 @@
             <tbody class="adatok">
 
 
-                @foreach ($felhasznalok as $f)
+
                     @foreach ($admin as $a)
                         @foreach ($user as $u)
-                            @if ($f->jogosultsags == 1 and $f->jogosultsags == $a->id and $f->users == $u->id)
+                            @if ($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id)
                                 <tr class="felhasznalo">
                                     <td class="modosit">
                                         <button class="btn btn-primary modositGomb" id={{ $u->id }} type="button"
@@ -44,7 +44,6 @@
                             @endif
                         @endforeach
                     @endforeach
-                @endforeach
 
             </tbody>
         </table>

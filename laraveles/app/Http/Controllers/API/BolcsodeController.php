@@ -179,9 +179,8 @@ class BolcsodeController extends Controller
     public function megjeleniFenntartoId()
     {
         $fenntartokId = fenntarto::all();
-        $megjelenitAdmin = belepes::all();
         $megjelenitAdminNev = User::all();
-        return view('ujBolcsi', compact('fenntartokId', 'megjelenitAdmin', 'megjelenitAdminNev'));
+        return view('ujBolcsi', compact('fenntartokId','megjelenitAdminNev'));
     }
 
 
