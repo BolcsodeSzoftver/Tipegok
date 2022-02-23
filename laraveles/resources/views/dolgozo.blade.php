@@ -73,7 +73,7 @@
             @forelse ($alkalmazotts as $data)
                 <tr>
                     <td class="modosit">
-                        <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
+                        <button wire:click="edit({{ $data->id }})" class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
                             data-target="#exampleModalLong">
                             <i class='fa fa-edit'></i>
                         </button>
@@ -119,11 +119,6 @@
         {!! $alkalmazotts->links('pagination::bootstrap-4') !!}
     </div>
 
-    <!-- <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->nextPageUrl() }}">Next</a></li>
-            
-            <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->previousPageUrl() }}">Previous</a></li>
-        </ul> -->
 
     <!-- <table class="table">
             <thead>
@@ -157,7 +152,7 @@
           </table> -->
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -310,7 +305,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <div class="container">
       <ul class="pagination">

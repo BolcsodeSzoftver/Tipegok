@@ -81,7 +81,8 @@ class dolgozController extends Controller
      */
     public function edit($id)
     {
-        //
+        $alkalmazotts=alkalmazott::find($id);
+        return view('dolgozo', compact('alkalmazotts','id'));
     }
 
     /**
@@ -161,7 +162,7 @@ class dolgozController extends Controller
         $alkalmazotts = alkalmazott::paginate(5);
         
         return view('dolgozo', 
-            ['alkalmazott' => alkalmazott::search('nev', $this->search)->paginate(5)]
+            ['alkalmazott' => alkalmazott::search('nev', $this->search)->paginate()]
             ,compact('alkalmazott', 'alkalmazotts'));
     }
 

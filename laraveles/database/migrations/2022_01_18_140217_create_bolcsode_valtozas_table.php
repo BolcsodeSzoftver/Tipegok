@@ -16,8 +16,8 @@ class CreateBolcsodeValtozasTable extends Migration
         Schema::create('bolcsode_valtozas', function (Blueprint $table) {
             $table->id();
             //$table->foreign('bolcsode_id')->references('id')->on('bolcsodes');
-            $table->date('meddig');
-            $table->string('regiadmin');
+            $table->string('mezonev');
+            $table->string('regiertek');
             $table->timestamps();
         });
     }
