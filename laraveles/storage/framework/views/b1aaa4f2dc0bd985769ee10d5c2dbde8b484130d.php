@@ -1,10 +1,13 @@
 
 <?php $__env->startSection('head'); ?>
-<script src="js/ajax.js"></script>
-<script src="js/felhasznalo.js"></script>
-<script src="js/felhasznaloClass.js"></script>
-<script src="js/felhasznaloListazas.js"></script>
-
+    <style>
+        #mentes,
+        .ment {
+            width: 200px;
+            margin: auto;
+        }
+    </style>
+    <script src="js/felhasznalo.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div>
@@ -20,32 +23,29 @@
                 </tr>
             </thead>
             <tbody class="adatok">
-                <tr class="adatok">
-                    <?php $__currentLoopData = $felhasznalok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php $__currentLoopData = $admin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if($f->jogosultsags == 1 and $f->jogosultsags == $a->id and $f->users == $u->id): ?>
-                <tr>
-                    <td class="modosit">
-                        <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
-                            data-target="#modalLoginForm">
-                            <i class='fa fa-edit'></i>
-                        </button>
-                    </td>
-                    <td class="torol">
-                        <button class="btn btn-primary" id="toroladat" type="button">
-                            <i class="fa fa-trash"></i>
-                        </button>
-                    </td>
-                    <td class="nev"><?php echo e($u->name); ?></td>
-                    <td class="email"><?php echo e($u->email); ?></td>
-                    <td><?php echo e($a->megnevezes); ?></td>
-                </tr>
-                <?php endif; ?>
+
+
+                <?php $__currentLoopData = $felhasznalok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $admin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($f->jogosultsags == 1 and $f->jogosultsags == $a->id and $f->users == $u->id): ?>
+                                <tr class="felhasznalo">
+                                    <td class="modosit">
+                                        <button class="btn btn-primary modositGomb" id=<?php echo e($u->id); ?> type="button"
+                                            data-toggle="modal" data-target="#modalLoginForm">
+                                            <i class='fa fa-edit'></i>
+                                        </button>
+                                    </td>
+                                    <td></td>
+                                    <td class="nev" id=<?php echo e($u->id); ?>><?php echo e($u->name); ?></td>
+                                    <td class="email" id=<?php echo e($u->id); ?>><?php echo e($u->email); ?></td>
+                                    <td><?php echo e($a->megnevezes); ?></td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </tr>
+
             </tbody>
         </table>
 
@@ -60,34 +60,30 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="">
+                    <form action="api/felhasznalo/0" method="post">
+
+                        <?php echo csrf_field(); ?>
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="modal-body mx-3">
-                          <div class="col" id="usersId">
-                            <div class="form-outline" id="usersId">
-                                <input type="text" id="usersId" class="form-control" readonly>
-                                <label class="form-label" for="usersId">ID</label>
-                            </div>
-                        </div>
+                            <input type="hidden" id="usersId" class="form-control" name="id" readonly>
                             <div class="md-form mb-4">
-                                <label data-error="wrong" data-success="right" for="name">Felhasználó
+                                <label data-error="wrong" data-success="right" for="nameInput">Felhasználó
                                     név</label>
-                                <input type="text" id="name" class="form-control validate" value="">
+                                <input type="text" id="nameInput" class="form-control validate" name="name" value="">
 
                             </div>
                             <div class="md-form mb-4">
-                                <label data-error="wrong" data-success="right" for="email">Email</label>
-                                <input type="email" id="email" class="form-control validate" value="">
+                                <label data-error="wrong" data-success="right" for="emailInput">Email</label>
+                                <input type="email" id="emailInput" class="form-control validate" name="email" value="">
 
                             </div>
-                           
                         </div>
                         <div class="ment" style="padding: 10px">
-                            <input class="btn btn-dark" style="width:200px;" type="submit" class="adatMentes"
-                                value="Mentés">
+                            <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
                         </div>
                         <div class="modal-footer">
                             <div class="adatModositEnged">
-                                <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                                <button type="button" class="btn btn-primary" id="adatModosit">Adatok módosítása</button>
                             </div>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                         </div>

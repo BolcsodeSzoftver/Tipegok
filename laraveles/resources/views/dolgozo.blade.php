@@ -120,15 +120,6 @@
         {!! $alkalmazotts->links('pagination::bootstrap-4') !!}
     </div>
 
-    <<<<<<< HEAD <!-- <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->nextPageUrl() }}">Next</a></li>
-
-        <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->previousPageUrl() }}">Previous</a>
-        </li>
-        </ul> -->
-        =======
-        >>>>>>> 545b3e1c44424f1323bced9219a8300e6e6e3db7
-
         <!-- <table class="table">
                     <thead>
                       <tr>
