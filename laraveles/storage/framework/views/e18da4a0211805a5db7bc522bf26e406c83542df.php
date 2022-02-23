@@ -16,7 +16,7 @@
     <form class="form">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
-          
+
             <?php $__currentLoopData = $fenntartok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <option value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?></option>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -38,10 +38,11 @@
             </tr>
         </thead>
     </table>
-    
+
     <ul style="list-style-type: none;">
         <li>
-            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
+            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új
+                bölcsőde</a>
         </li>
     </ul>
 
@@ -109,6 +110,18 @@
                                     <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
                                 </div>
                             </div>
+                            <div class="form-outline">
+                                
+
+                                <select class="fenntartoModosit" name="fenntarto" id="fenntarto">
+                                    <?php $__currentLoopData = $fenntartok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option id="fenntarto" value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?>
+
+                                        </option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </select>
+
+                            </div>
 
                         </div>
                     </div>
@@ -131,12 +144,7 @@
             </div>
         </div>
     </div>
-
-
-   
 <?php $__env->stopSection(); ?>
-
-
 
 <?php echo $__env->make('layouts.torlesMegerosites', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/bolcsiadat.blade.php ENDPATH**/ ?>

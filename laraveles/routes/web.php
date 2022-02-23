@@ -18,7 +18,7 @@ use App\Http\Controllers\API\FelhasznaloController;
 |
 */
 
-Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit'])->middleware(['auth']);
+Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit',])->middleware(['auth']);
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);

@@ -1,42 +1,26 @@
 $(function () {
-    let vegpont = "/api/felhasznalo";
-    let ajax = new AjaxHivas();
-    $("#usersId").hide();
-
-    $(window).on("modosit", (event) => {
-        console.log('modosiiit')
-        console.log(event);
-
-        $("#usersId").attr("value", event.detail.id);
-        $("#name").attr("value", event.detail.name);
-        console.log(event.detail.name)
-        $("#email").attr("value", event.detail.email);
-
-        
+    $(".modositGomb").on("click", function () {
+        let id = this.id;
+        $("#usersId").val(id);
+        $(".adatok")
+            .find(".nev")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#nameInput").val($(this).text());
+                }
+            });
+        $(".adatok")
+            .find(".email")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#emailInput").val($(this).text());
+                }
+            });
 
         $("#adatMentes").on("click", function () {
-            console.log("ment");
-            let userId = $("#userId").val();
-            let nev = $("#name").val();
-            let email = $("#email").val();
-
-            let adat = {
-                id: userId,
-                name: nev,
-                email: email,
-            };
-            console.log(userId);
-            ajax.putAjax(vegpont, adat, userId);
-            // $(".urlap").hide();
-            location.reload();
+           console.log("ment")
         });
-    });
-    $(window).on("torol", (event) => {
-        console.log("törööl");
-
-    });
-    $(".adatModositEnged").on("click", function(){
-        console.log('modositEnged');
-
     });
 });

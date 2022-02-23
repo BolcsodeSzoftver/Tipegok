@@ -16,9 +16,9 @@
     <form class="form">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
-          
+
             @foreach ($fenntartok as $fenntarto)
-                <option value="{{$fenntarto->id}}">{{$fenntarto->nev}}</option>
+                <option value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
             @endforeach
         </select>
 
@@ -38,10 +38,11 @@
             </tr>
         </thead>
     </table>
-    
+
     <ul style="list-style-type: none;">
         <li>
-            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
+            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új
+                bölcsőde</a>
         </li>
     </ul>
 
@@ -109,6 +110,18 @@
                                     <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
                                 </div>
                             </div>
+                            <div class="form-outline">
+                                {{-- <input type="text" id="fenntarto" class="form-control" readonly />
+                                <label for="fenntarto">Fenntartó</label> --}}
+
+                                <select class="fenntartoModosit" name="fenntarto" id="fenntarto">
+                                    @foreach ($fenntartok as $fenntarto)
+                                        <option id="fenntarto" value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                            </div>
 
                         </div>
                     </div>
@@ -131,9 +144,4 @@
             </div>
         </div>
     </div>
-
-
-   
 @endsection
-
-
