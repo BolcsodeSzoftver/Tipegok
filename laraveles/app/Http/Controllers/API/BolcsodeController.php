@@ -97,7 +97,8 @@ class BolcsodeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $bolcsode = bolcsode::findOrFail($id);  
+        $bolcsode = bolcsode::findOrFail($id);
+/*          
         if($bolcsode->cim != $request->get('cim')){
             $b_valtozas= new bolcsode_valtozas();
             $b_valtozas->bolcsode_id = $bolcsode->id;
@@ -146,7 +147,7 @@ class BolcsodeController extends Controller
             $b_valtozas->mezonev =  'agazati_potlek';
             $b_valtozas->regiertek = $bolcsode->agazati_potlek;
             $b_valtozas->save();
-        }               
+        }    */            
         
         $bolcsode->cim = $request->get('cim');
         $bolcsode->nev = $request->get('nev');

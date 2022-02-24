@@ -1,5 +1,5 @@
 @extends('layouts.szerkezet')
-@extends('layouts.torlesMegerosites')
+@extends('layouts.torlesMegerositesDolgozo')
 @section('head')
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/dolgozo.js"></script>
@@ -68,48 +68,42 @@
         </thead>
         <tbody class="adatokDolgozo">
             @forelse ($alkalmazotts as $data)
-                <tr>
+                <tr class="dolgozo">
                     <td class="modosit">
-                        <button wire:click="edit({{ $data->id }})" class="btn btn-primary modositGomb" id={{$data->users_id}}
-                            type="button" data-toggle="modal" data-target="#exampleModalLong">
+                        <button wire:click="edit({{ $data->id }})" class="btn btn-primary modositGomb"
+                            id={{ $data->users_id }} type="submit" data-toggle="modal" data-target="#exampleModalLong">
                             <i class='fa fa-edit'></i>
                         </button>
                     </td>
                     <td class="torol">
                         <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal"
-                            data-target="#exampleModalCenter">
+                            data-target="#modalDolgozo">
                             <i class="fa fa-trash"></i>
                         </button>
                     </td>
-                    <th>{{ $data->nev }}</th>
-                    <td class="t1" id="allandoLakhely">{{ $data->allando_lakhely }}</td>
-                    <td class="t1" id="telefonszam">{{ $data->telefonszam }}</td>
-                    <td class="t1" id="anyjaNev">{{ $data->anyja_neve }}</td>
+                    <td class="nev" id={{ $data->id }}>{{ $data->nev }}</td>
+                    <td class="t1 allandoLakhely" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                    <td class="t1 telefonszam" id={{ $data->id }}>{{ $data->telefonszam }}</td>
+                    <td class="t1 anyjaNev" id={{ $data->id }}>{{ $data->anyja_neve }}</td>
 
-                    <td class="t2" id="szulN">{{ $data->szul_nev }}</td>
-                    <td class="t2" id="szulH">{{ $data->szul_hely }}</td>
-                    <td class="t2" id="szulI">{{ $data->szul_ido }}</td>
+                    <td class="t2 szulN" id={{ $data->id }}>{{ $data->szul_nev }}</td>
+                    <td class="t2 szulH" id={{ $data->id }}>{{ $data->szul_hely }}</td>
+                    <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}</td>
 
-                    <td class="t3" id="cim">{{ $data->allando_lakhely }}</td>
-                    <td class="t3" id="tartHely">{{ $data->tartozkodasi_hely }}</td>
+                    <td class="t3 cim" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                    <td class="t3 tartHely" id={{ $data->id }}>{{ $data->tartozkodasi_hely }}</td>
 
-                    <td class="t4" id="taj">{{ $data->tajszam }}</td>
-                    <td class="t4" id="adoA">{{ $data->adoazon_jel }}</td>
-                    <td class="t4" id="bankSz">{{ $data->banszamla_szam }}</td>
+                    <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}</td>
+                    <td class="t4 adoA" id={{ $data->id }}>{{ $data->adoazon_jel }}</td>
+                    <td class="t4 bankSz" id={{ $data->id }}>{{ $data->banszamla_szam }}</td>
 
-                    <td class="t5" id="nem">{{ $data->nem }}</td>
-                    <td class="t5" id="hazas">{{ $data->hazas_e }}</td>
-                    <td class="t5" id="gyerek">{{ $data->tizenhat_alatti_gyermek }}</td>
-                    <td class="t5" id="polgar">{{ $data->all_polgarsag }}</td>
+                    <td class="t5 nem" id={{ $data->id }}>{{ $data->nem }}</td>
+                    <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}</td>
+                    <td class="t5 gyerek" id={{ $data->id }}>{{ $data->tizenhat_alatti_gyermek }}
+                    </td>
+                    <td class="t5 polgar" id={{ $data->id }}>{{ $data->all_polgarsag }}</td>
                 </tr>
             @empty
-                <!-- <tr>
-                    <td>
-                        <div class="flex justify-center items-center">
-                            <span class="font-medium text-cool-gray-400">Nincs ilyen dolgozo</span>
-                        </div>
-                    </td>
-                </tr> -->
             @endforelse
         </tbody>
     </table>
@@ -128,146 +122,153 @@
                     </button>
                 </div>
 
-                <div class="modal-body">
-                    <div class="urlap">
-                        <div id="adatok1">
-                            <div class="col" id="gId">
-                                <div class="form-outline">
-                                    <input type="hidden" id="dolgozoId" class="form-control" readonly>
+                <form action="api/dolgozo/0" method="post">
+                    @csrf
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="modal-body">
+                        <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
+                        <div class="urlap">
+                            <div id="adatok1">
+                                <div class="col" id="gId">
+                                    <div class="form-outline">
+                                        <input type="hidden" id="dolgozoId" class="form-control" readonly>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
+                                <div class="row">
 
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="nev" class="form-control" readonly>
-                                        <label class="form-label" for="nev">Név</label>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="nev" class="form-control" name="nev" readonly>
+                                            <label class="form-label" for="nev">Név</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="anyjaNeve" class="form-control" name="anyjaNeve"
+                                                readonly>
+                                            <label class="form-label" for="anyjaNeve">Anyja neve</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="anyjaNeve" class="form-control" readonly>
-                                        <label class="form-label" for="anyjaNeve">Anyja neve</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulN" class="form-control" readonly>
-                                        <label class="form-label" for="szulN">Születési név</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="szulN" class="form-control" name="szulN" readonly>
+                                            <label class="form-label" for="szulN">Születési név</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="tel" class="form-control" name="tel" readonly>
+                                            <label class="form-label" for="tel">Telefonszám</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tel" class="form-control" readonly>
-                                        <label class="form-label" for="tel">Telefonszám</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulH" class="form-control" readonly>
-                                        <label class="form-label" for="szulH">Születési hely</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="szulH" class="form-control" name="szulH" readonly>
+                                            <label class="form-label" for="szulH">Születési hely</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="szulI" class="form-control" name="szulI" readonly>
+                                            <label class="form-label" for="szulI">Születési idő</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="allPorg" class="form-control" name="allPorg" readonly>
+                                            <label class="form-label" for="allPorg">Államporgárság</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulI" class="form-control" readonly>
-                                        <label class="form-label" for="szulI">Születési idő</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="allPorg" class="form-control" readonly>
-                                        <label class="form-label" for="allPorg">Államporgárság</label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tizenhatAGy" class="form-control" readonly>
-                                        <label class="form-label" for="tizenhatAGy">16 éven aluli gyermekek
-                                            száma</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="tizenhatAGy" class="form-control" name="tizenhatAGy"
+                                                readonly>
+                                            <label class="form-label" for="tizenhatAGy">16 éven aluli gyermekek
+                                                száma</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="nem" class="form-control" readonly>
-                                        <label class="form-label" for="nem">Nem</label>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="nem" class="form-control" name="nem" readonly>
+                                            <label class="form-label" for="nem">Nem</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="hazas" class="form-control" readonly>
-                                        <label class="form-label" for="hazas">Házas</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <div id="adatok2">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="allandoLak" class="form-control" readonly>
-                                        <label class="form-label" for="allandoLak">Állandó lakhely</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tartHely" class="form-control" readonly>
-                                        <label class="form-label" for="tartHely">Tartózkodási hely</label>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="hazas" class="form-control" name="hazas" readonly>
+                                            <label class="form-label" for="hazas">Házas</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="adoAzon" class="form-control" readonly>
-                                        <label class="form-label" for="adoAzon">Adóazonósító</label>
+                            <hr>
+
+                            <div id="adatok2">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input value="" type="text" id="allandoLak" class="form-control"
+                                                name="allandoLak" readonly>
+                                            <label class="form-label" for="allandoLak">Állandó lakhely</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tajSz" class="form-control" readonly>
-                                        <label class="form-label" for="tajSz">Tajszám</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="tartHely" class="form-control" name="tartHely"
+                                                readonly>
+                                            <label class="form-label" for="tartHely">Tartózkodási hely</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="adoAzon" class="form-control" name="adoAzon" readonly>
+                                            <label class="form-label" for="adoAzon">Adóazonósító</label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="tajSz" class="form-control" name="tajSz" readonly>
+                                            <label class="form-label" for="tajSz">Tajszám</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="bankSZ" class="form-control" name="bankSZ" readonly>
+                                            <label class="form-label" for="bankSZ">Bankszámla szám</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="bankSZ" class="form-control" readonly>
-                                        <label class="form-label" for="bankSZ">Bankszámla szám</label>
-                                    </div>
-                                </div>
+                            <div class="ment">
+                                <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
                             </div>
-                        </div>
-
-                        <div class="ment">
-                            <input class="btn btn-dark" style="width:200px;" type="submit" class="adatMentes"
-                                value="Mentés">
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="adatModositEnged">
-                        <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                    <div class="modal-footer">
+                        <div class="adatModositEnged">
+                            <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                     </div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-                </div>
 
             </div>
         </div>

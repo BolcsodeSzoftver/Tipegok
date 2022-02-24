@@ -5,11 +5,12 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Models\alkalmazott                  ;
+use App\Models\alkalmazott;
+use Illuminate\Support\Facades\DB;
 
 class dolgozController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,8 +20,8 @@ class dolgozController extends Controller
      */
     public function index()
     {
-        $alkalmazott= alkalmazott::all();
-        return response()->json(alkalmazott::all());
+        /*  $alkalmazott = alkalmazott::all();
+        return response()->json(alkalmazott::all()); */
     }
 
     /**
@@ -41,7 +42,7 @@ class dolgozController extends Controller
      */
     public function store(Request $request)
     {
-        $alkalmazott = new alkalmazott();
+        /*   $alkalmazott = new alkalmazott();
         $alkalmazott->szul_nev  = $request->szul_nev;
         $alkalmazott->szul_hely   = $request->szul_hely;
         $alkalmazott->szul_ido   = $request->szul_ido;
@@ -58,7 +59,7 @@ class dolgozController extends Controller
         $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhat_alatti_gyermek;
         $alkalmazott->all_polgarsag     = $request->all_polgarsag;
 
-        $alkalmazott->save();
+        $alkalmazott->save(); */
     }
 
     /**
@@ -69,8 +70,8 @@ class dolgozController extends Controller
      */
     public function show($id)
     {
-        $alkalmazott = alkalmazott::findOrFail($id);
-        return response()->json($alkalmazott);
+        /*   $alkalmazott = alkalmazott::findOrFail($id);
+        return response()->json($alkalmazott); */
     }
 
     /**
@@ -81,8 +82,8 @@ class dolgozController extends Controller
      */
     public function edit($id)
     {
-        $alkalmazotts=alkalmazott::find($id);
-        return view('dolgozo', compact('alkalmazotts','id'));
+        /*  $alkalmazotts = alkalmazott::find($id);
+        return view('dolgozo', compact('alkalmazotts', 'id')); */
     }
 
     /**
@@ -99,26 +100,24 @@ class dolgozController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $alkalmazott = alkalmazott::findOrFail($id);
-        $alkalmazott->szul_nev  = $request->get('szul_nev');
-        $alkalmazott->szul_hely   = $request->get('szul_hely');
-        $alkalmazott->szul_ido   = $request->get('szul_ido');
-        $alkalmazott->anyja_neve   = $request->get('anyja_neve');
-        $alkalmazott->adoazon_jel  = $request->get('adoazon_jel');
-        $alkalmazott->tajszam  = $request->get('tajszam');
-        $alkalmazott->nem  = $request->get('nem');
-        $alkalmazott->nev   = $request->get('nev');
-        $alkalmazott->banszamla_szam   = $request->get('banszamla_szam');
-        $alkalmazott->telefonszam   = $request->get('telefonszam');
-        $alkalmazott->allando_lakhely   = $request->get('allando_lakhely');
-        $alkalmazott->tartozkodasi_hely   = $request->get('tartozkodasi_hely');
-        $alkalmazott->hazas_e   = $request->get('hazas_e');
-        $alkalmazott->tizenhat_alatti_gyermek    = $request->get('tizenhat_alatti_gyermek');
-        $alkalmazott->all_polgarsag     = $request->get('all_polgarsag');
-
-        
+        $alkalmazott = alkalmazott::findOrFail($request->id);
+        $alkalmazott->szul_nev  = $request->szulN;
+        $alkalmazott->szul_hely   = $request->szulH;
+        $alkalmazott->szul_ido   = $request->szulI;
+        $alkalmazott->anyja_neve   = $request->anyjaNeve;
+        $alkalmazott->adoazon_jel  = $request->adoAzon;
+        $alkalmazott->tajszam  = $request->tajSz;
+        $alkalmazott->nem  = $request->nem;
+        $alkalmazott->nev   = $request->nev;
+        $alkalmazott->banszamla_szam   = $request->bankSZ;
+        $alkalmazott->telefonszam   = $request->tel;
+        $alkalmazott->allando_lakhely   = $request->allandoLak;
+        $alkalmazott->tartozkodasi_hely   = $request->tartHely;
+        $alkalmazott->hazas_e   = $request->hazas;
+        $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhatAGy;
+        $alkalmazott->all_polgarsag     = $request->allPorg;
         $alkalmazott->save();
-        return response()->json($alkalmazott);
+        return redirect("/dolgozo");
     }
 
     /**
@@ -129,17 +128,17 @@ class dolgozController extends Controller
      */
     public function destroy($id)
     {
-        $alkalmazott = alkalmazott::findOrFail($id);
-        $alkalmazott->delete();
-
-        return response()->json($alkalmazott::all());
+        $flight = alkalmazott::find($id);
+        $flight->delete();
+        return redirect("/dolgozo");
     }
 
-    public function dolgozoKeres($szo){
+    public function dolgozoKeres($szo)
+    {
         /* $alkalmazott = alkalmazott::where('nev',$szo)->get(); */
-        $alkalmazott=alkalmazott::all();
-        return response()->json($alkalmazott);
-    } 
+        /*    $alkalmazott = alkalmazott::all();
+        return response()->json($alkalmazott); */
+    }
 
     /* public function search(Request $request)
     {
@@ -156,17 +155,20 @@ class dolgozController extends Controller
         return $tasks->get();
     } */
 
-    public $search='';
-    public function allapot(){
-        $alkalmazott= alkalmazott::all();
+    public $search = '';
+    public function allapot()
+    {
+        $alkalmazott = alkalmazott::all();
         $alkalmazotts = alkalmazott::paginate(5);
-        
-        return view('dolgozo', 
-            ['alkalmazott' => alkalmazott::search('nev', $this->search)->paginate()]
-            ,compact('alkalmazott', 'alkalmazotts'));
+
+        return view(
+            'dolgozo',
+            ['alkalmazott' => alkalmazott::search('nev', $this->search)->paginate()],
+            compact('alkalmazott', 'alkalmazotts')
+        );
     }
 
-    
+
     /* public $sortField;
     public $sortDirection='asc';
 

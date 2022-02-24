@@ -1,37 +1,14 @@
 $(function () {
-
-   /*  $(".megerositTorles").on("click", () => {
+/*       $(".megerositTorles").on("click", () => {
         console.log("megerositTorles");
         ajax.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
         location.reload();
-    }); */
-    $(".modositGomb").on("click", function () {
-        let id = this.id;
-		console.log(this.id);
-        $("#dolgozoId").val(id);
-        $(".adatokDolgozo")
-            .find(".allandoLakhely")
-            .each(function () {
-                if (this.id === id) {
-                    console.log($(this).text());
-                    $("#nev").val($(this).text());
-                }
-            });
-        /* $(".adatok")
-            .find(".email")
-            .each(function () {
-                if (this.id === id) {
-                    console.log($(this).text());
-                    $("#emailInput").val($(this).text());
-                }
-            }); */
-    });
+    }); 
 
-
-   /*  $(window).on("torol", (event) => {
+      $(window).on("torol", (event) => {
         console.log("toroleees");
         $(".megerositTorles").attr("id", event.detail.id);
-    }); */
+    });  */
 
     $(".adatModositEnged").on("click", function () {
         console.log("modositEnged");
@@ -71,4 +48,138 @@ $(function () {
             $(".t" + i).show();
         });
     }
+
+    $(".modositGomb").on("click", function () {
+        let id = this.id;
+        console.log(this.id);
+        $("#dolgozoId").val(id);
+        $(".adatokDolgozo")
+            .find(".nev")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#nev").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".allandoLakhely")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#allandoLak").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".telefonszam")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#tel").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".anyjaNev")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#anyjaNeve").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".szulN")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#szulN").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".szulH")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#szulH").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".szulI")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#szulI").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".cim")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#allandoLak").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".tartHely")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#tartHely").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".taj")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#tajSz").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".adoA")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#adoAzon").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".bankSz")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#bankSZ").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".nem")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#nem").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".hazas")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#hazas").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".gyerek")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#tizenhatAGy").val($(this).text());
+                }
+            });
+        $(".adatokDolgozo")
+            .find(".polgar")
+            .each(function () {
+                if (this.id === id) {
+                    console.log($(this).text());
+                    $("#allPorg").val($(this).text());
+                }
+            });
+    });
 });

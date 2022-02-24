@@ -1,7 +1,7 @@
 class Bolcsode {
 	constructor(tabla, adat) {
 		this.sablon = ` <tr class="adatok">
-		<td class="modosit">
+		<td class="modositBolcsi">
 			<button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
 				data-target="#exampleModalLong">
 				<i class='fa fa-edit'></i>
@@ -24,7 +24,7 @@ class Bolcsode {
 		this.tabla.append(this.sablon);
 		this.elem = this.tabla.find('tr:last');
 		this.adat = adat;
-		this.gombModosit = this.elem.children('.modosit');
+		this.gombModosit = this.elem.children('.modositBolcsi');
 		this.gombTorol = this.elem.children('.torolBolcsi');
 		
 

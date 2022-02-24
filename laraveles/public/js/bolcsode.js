@@ -19,7 +19,7 @@ $(function () {
         $("#ferohelyekSzama").attr("value", event.detail.ferohelyek_szama);
         $("#feorAzon").attr("value", event.detail.feor);
         $("#agazatiPotlek").attr("value", event.detail.agazati_potlek);
-        //$("#fenntarto").attr("value", event.detail.fennt_id);
+        $("#fenntarto").attr("value", event.detail.fennt_id);
 
         $("#idB").hide();
         $("#Ujmodositadat").on("click", function () {
