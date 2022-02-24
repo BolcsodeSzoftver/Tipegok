@@ -128,8 +128,9 @@ class dolgozController extends Controller
      */
     public function destroy($id)
     {
-        $flight = alkalmazott::find($id);
-        $flight->delete();
+        alkalmazott::findOrFail($id)->torol();
+       /*  $flight = alkalmazott::find($id);
+        $flight->delete(); */
         return redirect("/dolgozo");
     }
 

@@ -77,7 +77,7 @@
                         </button>
                     </td>
                     <td class="torol">
-                        <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal"
+                        <button class="btn btn-primary dolgozoTorles" id={{ $data->id }}  type="button" data-toggle="modal"
                             data-target="#modalDolgozo">
                             <i class="fa fa-trash"></i>
                         </button>

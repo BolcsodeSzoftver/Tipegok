@@ -14,7 +14,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Nem</button>
                     <?php $__empty_1 = true; $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                        <form action="api/dolgozo/<?php echo e($data->id); ?>" method="post">
+                        <form action="" method="post" class="torles">
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php echo csrf_field(); ?>
                     <?php echo method_field("DELETE"); ?>

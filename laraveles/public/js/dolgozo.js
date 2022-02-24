@@ -1,14 +1,12 @@
 $(function () {
-/*       $(".megerositTorles").on("click", () => {
+    /*       $(".megerositTorles").on("click", () => {
         console.log("megerositTorles");
         ajax.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
         location.reload();
     }); 
 
-      $(window).on("torol", (event) => {
-        console.log("toroleees");
-        $(".megerositTorles").attr("id", event.detail.id);
-    });  */
+  
+     */
 
     $(".adatModositEnged").on("click", function () {
         console.log("modositEnged");
@@ -54,10 +52,10 @@ $(function () {
         console.log(this.id);
         $("#dolgozoId").val(id);
         $(".adatokDolgozo")
-            .find(".nev*")
+            .find(".nev")
             .each(function () {
-                console.log(this.id)
-                console.log(id)
+                console.log(this.id);
+                console.log(id);
                 if (this.id === id) {
                     console.log($(this).text());
                     $("#nev").val($(this).text());
@@ -183,5 +181,12 @@ $(function () {
                     $("#allPorg").val($(this).text());
                 }
             });
+    });
+
+    $(".dolgozoTorles").on("click", function () {
+        let id = this.id;
+        console.log(this.id);
+        let action = "/api/dolgozo/"+id;
+        $(".torles").attr("action",action);
     });
 });

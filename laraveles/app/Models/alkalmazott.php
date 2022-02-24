@@ -18,4 +18,10 @@ class alkalmazott extends Model
         'allando_lakhely','tartozkodasi_hely','hazas_e',
         'tizenhat_alatti_gyermek','all_polgarsag','allapot'
     ];
+
+    public function torol(){
+        $userId = $this->users_id;
+        $this->delete();
+        User::findOrFail($userId)->delete();
+    }
 }

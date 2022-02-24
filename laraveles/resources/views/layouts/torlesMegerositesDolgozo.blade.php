@@ -14,7 +14,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Nem</button>
                     @forelse ($alkalmazotts as $data)
-                        <form action="api/dolgozo/{{ $data->id }}" method="post">
+                        <form action="" method="post" class="torles">
                     @endforeach
                     @csrf
                     @method("DELETE")
