@@ -15,6 +15,7 @@ class CreateBolcsodeValtozasTable extends Migration
     {
         Schema::create('bolcsode_valtozas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('bolcsode_id');
             //$table->foreign('bolcsode_id')->references('id')->on('bolcsodes');
             $table->string('mezonev');
             $table->string('regiertek');

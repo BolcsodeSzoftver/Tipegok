@@ -28,7 +28,7 @@
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
 
-        <form method="POST" action="<?php echo e(route('register')); ?>">
+        <form method="POST" action="/felhasznaloRegisztracio">
             <?php echo csrf_field(); ?>
 
             <div class="container h-100">
@@ -92,20 +92,15 @@
                                                 </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
-
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input type="text" id="form3Example4c" class="form-control"
-                                                        name="jogosultsag" required />
-                                                    <label class="form-label" for="form3Example4c" for="jogosultsag"> 
-                                                        <select name="" id="">
-                                                            <?php $__currentLoopData = $jogosultsagok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                
-                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                            </select>                              
-
+                                                    <select name="Jogosultsag" id="jogosultsag">
+                                                        <?php $__currentLoopData = $jogosultsagok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($jogosultsag->id); ?>">
+                                                                <?php echo e($jogosultsag->megnevezes); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
                                                 </div>
                                             </div>
-
                                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <button type="submit" class="btn btn-primary">
                                                     <?php echo e(__('Regisztráció')); ?></button>
@@ -127,10 +122,6 @@
                     </div>
                 </div>
             </div>
-
-
-            
-
         </form>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -144,4 +135,4 @@
 <?php $component = $__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015; ?>
 <?php unset($__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015); ?>
 <?php endif; ?>
-<?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/auth/register.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/felhasznaloRegisztracio.blade.php ENDPATH**/ ?>

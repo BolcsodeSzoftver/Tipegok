@@ -100,42 +100,49 @@ class BolcsodeController extends Controller
         $bolcsode = bolcsode::findOrFail($id);  
         if($bolcsode->cim != $request->get('cim')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'cim';
             $b_valtozas->regiertek = $bolcsode->cim;
             $b_valtozas->save();
         }
         if($bolcsode->nev != $request->get('nev')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'nev';
             $b_valtozas->regiertek = $bolcsode->nev;
             $b_valtozas->save();
         }
         if($bolcsode->agazati_azon != $request->get('agazati_azon')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'agazati_azon';
             $b_valtozas->regiertek = $bolcsode->agazati_azon;
             $b_valtozas->save();
         }
         if($bolcsode->szgyf_kod != $request->get('szgyf_kod')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'szgyf_kod';
             $b_valtozas->regiertek = $bolcsode->szgyf_kod;
             $b_valtozas->save();
         }
         if($bolcsode->ferohelyek_szama != $request->get('ferohelyek_szama')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'ferohelyek_szama';
             $b_valtozas->regiertek = $bolcsode->ferohelyek_szama;
             $b_valtozas->save();
         }
         if($bolcsode->feor != $request->get('feor')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'feor';
             $b_valtozas->regiertek = $bolcsode->feor;
             $b_valtozas->save();
         }
         if($bolcsode->agazati_potlek != $request->get('agazati_potlek')){
             $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
             $b_valtozas->mezonev =  'agazati_potlek';
             $b_valtozas->regiertek = $bolcsode->agazati_potlek;
             $b_valtozas->save();
@@ -152,8 +159,7 @@ class BolcsodeController extends Controller
         Storage::put('bolcsiadatValtozas.json', bolcsode::all());
       
         return response()->json($bolcsode);
-    }
-    
+    }    
 
     /**
      * Remove the specified resource from storage.

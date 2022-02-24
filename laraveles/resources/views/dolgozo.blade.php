@@ -2,10 +2,7 @@
 @extends('layouts.torlesMegerosites')
 @section('head')
     <link rel="stylesheet" href="css/bolcsiadat.css" />
-    <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
-    <script src="js/dolgozoClass.js"></script>
-    <script src="js/dolgozoListazas.js"></script>
 @endsection
 @section('tartalom')
     <h3>Doldozó adatai</h3>
@@ -106,148 +103,20 @@
                     <td class="t5" id="polgar">{{ $data->all_polgarsag }}</td>
                 </tr>
             @empty
-                <tr>
+                <!-- <tr>
                     <td>
                         <div class="flex justify-center items-center">
                             <span class="font-medium text-cool-gray-400">Nincs ilyen dolgozo</span>
                         </div>
                     </td>
-                </tr>
+                </tr> -->
             @endforelse
         </tbody>
     </table>
     <div>
         {!! $alkalmazotts->links('pagination::bootstrap-4') !!}
     </div>
-    <!-- <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->nextPageUrl() }}">Next</a></li>
 
-    <<<<<<< HEAD
-
-                            <li class="page-item"><a class="page-link" href="{{ $alkalmazotts->previousPageUrl() }}">Previous</a>
-                            </li>
-                            </ul> -->
-    {{-- <table class="table">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th id="dNev" scope="col">Név</th>
-
-        <!-- <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th id="dNev" scope="col">Név</th>
-                        
-                          <th class="t1" scope="col">Cím</th>
-                          <th class="t1" scope="col">Telefonszám</th>
-                          <th class="t1" scope="col">Anyja neve</th>
-
-                          <th class="t2" scope="col">Születési név</th>
-                          <th class="t2" scope="col">Születési hely</th>
-                          <th class="t2" scope="col">Születési idő</th>
-                        
-                          <th class="t3" scope="col">Állandó lakhely</th>
-                          <th class="t3" scope="col">Tartozkodási hely</th>
-                      
-                          <th class="t4" scope="col">Tajszám</th>
-                          <th class="t4" scope="col">Adóazonosító</th>
-                          <th class="t4" scope="col">Bankszámla szám</th>
-                      
-                          <th class="t5" scope="col">Nem</th>
-                          <th class="t5" scope="col">Házas</th>
-                          <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
-                          <th class="t5" scope="col">Állam polgárság</th>
-                        
-                      </tr>
-                    </thead>
-                  </table> -->
-
-        <!-- Modal -->
-        <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Fenntartó adatai</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div class="urlap">
-                            <div id="adatok1">
-                                <div class="col" id="gId">
-                                    <div class="form-outline">
-                                        <input type="hidden" id="dolgozoId" class="form-control" readonly>
-                                    </div>
-                                </div>
-                                <div class="row">
->>>>>>> 30fe5fcb5b58b21d7abd65f3fa660a7381879391
-
-                <th class="t1" scope="col">Cím</th>
-                <th class="t1" scope="col">Telefonszám</th>
-                <th class="t1" scope="col">Anyja neve</th>
-
-
-                <th class="t2" scope="col">Születési név</th>
-                <th class="t2" scope="col">Születési hely</th>
-                <th class="t2" scope="col">Születési idő</th>
-
-                <th class="t3" scope="col">Állandó lakhely</th>
-                <th class="t3" scope="col">Tartozkodási hely</th>
-
-                <th class="t4" scope="col">Tajszám</th>
-                <th class="t4" scope="col">Adóazonosító</th>
-                <th class="t4" scope="col">Bankszámla szám</th>
-
-                <th class="t5" scope="col">Nem</th>
-                <th class="t5" scope="col">Házas</th>
-                <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
-                <th class="t5" scope="col">Állam polgárság</th>
-
-            </tr>
-        </thead>
-    </table> --}}
-
-
-
-    <!-- <div class="container">
-                                  <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#"><<</a></li>
-                                    <li class="page-item">
-                                      <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                      <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                      <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                      <a class="page-link" href="#">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                      <a class="page-link" href="#">...</a>
-                                    </li>
-                                    <li class="page-item">
-                                      <a class="page-link" href="#">10</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">>></a></li>
-                                  </ul>
-                                </div> -->
-
-    <!-- <input
-                                  class="btn btn-secondary"
-                                  style="width: 200px"
-                                  type="submit"
-                                  value="Új dolgozó"
-                                /> -->
-
-    <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
