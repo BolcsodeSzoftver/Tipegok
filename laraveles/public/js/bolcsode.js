@@ -47,12 +47,13 @@ $(function () {
             console.log(adat);
             console.log(fajlnev);
             console.log(id);
+            console.log(fenntarto);
 
             ajaxhivas.putAjax(fajlnev, adat, id);
 
             //$(".modositUrlap").hide();
             //ajaxhivas.getAjax(fajlnev, adatLista);
-            location.reload();
+            //location.reload();
         });
     });
     $(window).on("EsemenyTorolBolcsi", (event) => {

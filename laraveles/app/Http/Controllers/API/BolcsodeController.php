@@ -155,6 +155,7 @@ class BolcsodeController extends Controller
         $bolcsode->ferohelyek_szama = $request->get('ferohelyek_szama');
         $bolcsode->feor = $request->get('feor');
         $bolcsode->agazati_potlek = $request->get('agazati_potlek');
+        $bolcsode->fennt_id= $request->get('fennt_id');
         $bolcsode->save();
         Storage::put('bolcsiadatValtozas.json', bolcsode::all());
       
