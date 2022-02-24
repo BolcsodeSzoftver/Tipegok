@@ -28,6 +28,7 @@
                 <?php else: ?>
                     nincs
                 <?php endif; ?>
+                
             </button>
         </div>
     </div>
@@ -71,7 +72,7 @@
                 <tr class="dolgozo">
                     <td class="modosit">
                         <button wire:click="edit(<?php echo e($data->id); ?>)" class="btn btn-primary modositGomb"
-                            id=<?php echo e($data->users_id); ?> type="submit" data-toggle="modal" data-target="#exampleModalLong">
+                            id=<?php echo e($data->id); ?> type="submit" data-toggle="modal" data-target="#exampleModalLong">
                             <i class='fa fa-edit'></i>
                         </button>
                     </td>

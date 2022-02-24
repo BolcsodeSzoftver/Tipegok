@@ -72,7 +72,7 @@
                 <tr class="dolgozo">
                     <td class="modosit">
                         <button wire:click="edit({{ $data->id }})" class="btn btn-primary modositGomb"
-                            id={{ $data->users_id }} type="submit" data-toggle="modal" data-target="#exampleModalLong">
+                            id={{ $data->id }} type="submit" data-toggle="modal" data-target="#exampleModalLong">
                             <i class='fa fa-edit'></i>
                         </button>
                     </td>

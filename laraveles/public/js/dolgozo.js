@@ -54,8 +54,10 @@ $(function () {
         console.log(this.id);
         $("#dolgozoId").val(id);
         $(".adatokDolgozo")
-            .find(".nev")
+            .find(".nev*")
             .each(function () {
+                console.log(this.id)
+                console.log(id)
                 if (this.id === id) {
                     console.log($(this).text());
                     $("#nev").val($(this).text());
