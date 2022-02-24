@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('jogosultsag_id')->references('id')->on('jogosultsags');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

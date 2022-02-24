@@ -21,7 +21,7 @@ class BolcsodeFactory extends Factory
         $adminRandom = User::all()->random();
         return [
             'cim'=> $this->faker->address,
-            'nev' => $adminRandom->name,
+            'nev' => $this->faker->name,
             'agazati_azon'=> $this->faker->numberBetween(5),
             'szgyf_kod'=> $this->faker->numberBetween(7),
             'ferohelyek_szama'=> $this->faker->numberBetween(100),
@@ -29,7 +29,6 @@ class BolcsodeFactory extends Factory
             'agazati_potlek'=> $this->faker->numberBetween(1000),
             'fennt_id'=>  $fenntIdrandom->id,
             'bolcsode_admin'=> $adminRandom->jogosultsags,
-            'aktiv'=>$this->faker->numberBetween(2)
         ];
     }
 }

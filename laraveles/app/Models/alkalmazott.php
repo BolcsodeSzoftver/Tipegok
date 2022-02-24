@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class alkalmazott extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     //interfacek, olyan funkciók amiket lehet végezni az adott osztályon
     protected $fillable = [
         'users_id','szul_nev','szul_hely',
