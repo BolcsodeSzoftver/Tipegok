@@ -1,35 +1,35 @@
-
-
-
-<?php $__env->startSection('head'); ?>
+@extends('layouts.szerkezet')
+@extends('layouts.torlesMegerositesDolgozo')
+@extends('layouts.jovahagyasraVaroDolgozok')
+@section('head')
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/dolgozo.js"></script>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('tartalom'); ?>
+@endsection
+@section('tartalom')
     <h3>Doldozó adatai</h3>
     <?php
     $db = 0;
     ?>
-    <?php $__currentLoopData = $alkalmazott; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php if($alkalmazott->allapot == 0): ?>
+    @foreach ($alkalmazott as $alkalmazott)
+        @if ($alkalmazott->allapot == 0)
             <?php
             $db++;
             ?>
-        <?php endif; ?>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        @endif
+    @endforeach
     <div class=row>
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
-        </div>   
+        </div>
         <div class="col">
             <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
                 data-target="#exampleModal" sytle="float:left;">
                 Jóváhagyásra váró dolgozók :
-                <?php if($db > 0): ?>
+                @if ($db > 0)
                     <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
-                <?php else: ?>
+                @else
                     nincs
-                <?php endif; ?>
+                @endif
             </button>
         </div>
     </div>
@@ -70,138 +70,127 @@
         </thead>
 
 
-        <?php $__currentLoopData = $jogosultsags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php if($jogosultsag->megnevezes == 'szuperadmin'): ?>
-                <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
+        @foreach ($jogosultsags as $jogosultsag)
+            @if ($jogosultsag->megnevezes == 'szuperadmin')
+                @if (Auth::user()->jogosultsag_id == $jogosultsag->id)
                     <tbody class="adatokDolgozo">
-                        <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($data->allapot === 1): ?>
+                        @foreach ($alkalmazotts as $data)
+                            @if ($data->allapot === 1)
                                 <tr class="dolgozo">
                                     <td class="modosit">
-                                        <button wire:click="edit(<?php echo e($data->id); ?>)" class="btn btn-primary modositGomb"
-                                            id=<?php echo e($data->id); ?> type="submit" data-toggle="modal"
+                                        <button wire:click="edit({{ $data->id }})" class="btn btn-primary modositGomb"
+                                            id={{ $data->id }} type="submit" data-toggle="modal"
                                             data-target="#exampleModalLong">
                                             <i class='fa fa-edit'></i>
                                         </button>
                                     </td>
                                     <td class="torol">
-                                        <button class="btn btn-primary dolgozoTorles" id=<?php echo e($data->id); ?> type="button"
+                                        <button class="btn btn-primary dolgozoTorles" id={{ $data->id }} type="button"
                                             data-toggle="modal" data-target="#modalDolgozo">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </td>
-                                    <td class="nev" id=<?php echo e($data->id); ?>><?php echo e($data->nev); ?></td>
-                                    <td class="t1 allandoLakhely" id=<?php echo e($data->id); ?>><?php echo e($data->allando_lakhely); ?></td>
-                                    <td class="t1 telefonszam" id=<?php echo e($data->id); ?>><?php echo e($data->telefonszam); ?></td>
-                                    <td class="t1 anyjaNev" id=<?php echo e($data->id); ?>><?php echo e($data->anyja_neve); ?></td>
+                                    <td class="nev" id={{ $data->id }}>{{ $data->nev }}</td>
+                                    <td class="t1 allandoLakhely" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                                    <td class="t1 telefonszam" id={{ $data->id }}>{{ $data->telefonszam }}</td>
+                                    <td class="t1 anyjaNev" id={{ $data->id }}>{{ $data->anyja_neve }}</td>
 
-                                    <td class="t2 szulN" id=<?php echo e($data->id); ?>><?php echo e($data->szul_nev); ?></td>
-                                    <td class="t2 szulH" id=<?php echo e($data->id); ?>><?php echo e($data->szul_hely); ?></td>
-                                    <td class="t2 szulI" id=<?php echo e($data->id); ?>><?php echo e($data->szul_ido); ?></td>
+                                    <td class="t2 szulN" id={{ $data->id }}>{{ $data->szul_nev }}</td>
+                                    <td class="t2 szulH" id={{ $data->id }}>{{ $data->szul_hely }}</td>
+                                    <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}</td>
 
-                                    <td class="t3 cim" id=<?php echo e($data->id); ?>><?php echo e($data->allando_lakhely); ?></td>
-                                    <td class="t3 tartHely" id=<?php echo e($data->id); ?>><?php echo e($data->tartozkodasi_hely); ?>
-
+                                    <td class="t3 cim" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                                    <td class="t3 tartHely" id={{ $data->id }}>{{ $data->tartozkodasi_hely }}
                                     </td>
 
-                                    <td class="t4 taj" id=<?php echo e($data->id); ?>><?php echo e($data->tajszam); ?></td>
-                                    <td class="t4 adoA" id=<?php echo e($data->id); ?>><?php echo e($data->adoazon_jel); ?></td>
-                                    <td class="t4 bankSz" id=<?php echo e($data->id); ?>><?php echo e($data->banszamla_szam); ?></td>
+                                    <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}</td>
+                                    <td class="t4 adoA" id={{ $data->id }}>{{ $data->adoazon_jel }}</td>
+                                    <td class="t4 bankSz" id={{ $data->id }}>{{ $data->banszamla_szam }}</td>
 
-                                    <td class="t5 nem" id=<?php echo e($data->id); ?>><?php echo e($data->nem); ?></td>
-                                    <td class="t5 hazas" id=<?php echo e($data->id); ?>><?php echo e($data->hazas_e); ?></td>
-                                    <td class="t5 gyerek" id=<?php echo e($data->id); ?>>
-                                        <?php echo e($data->tizenhat_alatti_gyermek); ?>
-
+                                    <td class="t5 nem" id={{ $data->id }}>{{ $data->nem }}</td>
+                                    <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}</td>
+                                    <td class="t5 gyerek" id={{ $data->id }}>
+                                        {{ $data->tizenhat_alatti_gyermek }}
                                     </td>
-                                    <td class="t5 polgar" id=<?php echo e($data->id); ?>><?php echo e($data->all_polgarsag); ?></td>
+                                    <td class="t5 polgar" id={{ $data->id }}>{{ $data->all_polgarsag }}</td>
 
                                 </tr>
-                            <?php endif; ?>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            @endif
+                        @endforeach
                     </tbody>
-                <?php endif; ?>
-            <?php elseif($jogosultsag->megnevezes == 'admin'): ?>
-                <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
-                    <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php if($bolcsode->bolcsode_admin == Auth::user()->id): ?>
+                @endif
+            @elseif ($jogosultsag->megnevezes == 'admin')
+                @if (Auth::user()->jogosultsag_id == $jogosultsag->id)
+                    @foreach ($bolcsodek as $bolcsode)
+                        @if ($bolcsode->bolcsode_admin == Auth::user()->id)
                             <tbody class="adatokDolgozo">
-                                <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php if($data->allapot === 1): ?>
-                                        <?php if($bolcsode->id == $data->bolcsode_id): ?>
+                                @foreach ($alkalmazotts as $data)
+                                    @if ($data->allapot === 1)
+                                        @if ($bolcsode->id == $data->bolcsode_id)
                                             <tr class="dolgozo">
                                                 <td class="modosit">
-                                                    <button wire:click="edit(<?php echo e($data->id); ?>)"
-                                                        class="btn btn-primary modositGomb" id=<?php echo e($data->id); ?>
-
+                                                    <button wire:click="edit({{ $data->id }})"
+                                                        class="btn btn-primary modositGomb" id={{ $data->id }}
                                                         type="submit" data-toggle="modal" data-target="#exampleModalLong">
                                                         <i class='fa fa-edit'></i>
                                                     </button>
                                                 </td>
                                                 <td class="torol">
-                                                    <button class="btn btn-primary dolgozoTorles" id=<?php echo e($data->id); ?>
-
+                                                    <button class="btn btn-primary dolgozoTorles" id={{ $data->id }}
                                                         type="button" data-toggle="modal" data-target="#modalDolgozo">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </td>
-                                                <td class="nev" id=<?php echo e($data->id); ?>><?php echo e($data->nev); ?></td>
-                                                <td class="t1 allandoLakhely" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->allando_lakhely); ?></td>
-                                                <td class="t1 telefonszam" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->telefonszam); ?></td>
-                                                <td class="t1 anyjaNev" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->anyja_neve); ?></td>
+                                                <td class="nev" id={{ $data->id }}>{{ $data->nev }}</td>
+                                                <td class="t1 allandoLakhely" id={{ $data->id }}>
+                                                    {{ $data->allando_lakhely }}</td>
+                                                <td class="t1 telefonszam" id={{ $data->id }}>
+                                                    {{ $data->telefonszam }}</td>
+                                                <td class="t1 anyjaNev" id={{ $data->id }}>
+                                                    {{ $data->anyja_neve }}</td>
 
-                                                <td class="t2 szulN" id=<?php echo e($data->id); ?>><?php echo e($data->szul_nev); ?>
-
+                                                <td class="t2 szulN" id={{ $data->id }}>{{ $data->szul_nev }}
                                                 </td>
-                                                <td class="t2 szulH" id=<?php echo e($data->id); ?>><?php echo e($data->szul_hely); ?>
-
+                                                <td class="t2 szulH" id={{ $data->id }}>{{ $data->szul_hely }}
                                                 </td>
-                                                <td class="t2 szulI" id=<?php echo e($data->id); ?>><?php echo e($data->szul_ido); ?>
-
+                                                <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}
                                                 </td>
 
-                                                <td class="t3 cim" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->allando_lakhely); ?></td>
-                                                <td class="t3 tartHely" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->tartozkodasi_hely); ?></td>
+                                                <td class="t3 cim" id={{ $data->id }}>
+                                                    {{ $data->allando_lakhely }}</td>
+                                                <td class="t3 tartHely" id={{ $data->id }}>
+                                                    {{ $data->tartozkodasi_hely }}</td>
 
-                                                <td class="t4 taj" id=<?php echo e($data->id); ?>><?php echo e($data->tajszam); ?>
-
+                                                <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}
                                                 </td>
-                                                <td class="t4 adoA" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->adoazon_jel); ?></td>
-                                                <td class="t4 bankSz" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->banszamla_szam); ?></td>
+                                                <td class="t4 adoA" id={{ $data->id }}>
+                                                    {{ $data->adoazon_jel }}</td>
+                                                <td class="t4 bankSz" id={{ $data->id }}>
+                                                    {{ $data->banszamla_szam }}</td>
 
-                                                <td class="t5 nem" id=<?php echo e($data->id); ?>><?php echo e($data->nem); ?></td>
-                                                <td class="t5 hazas" id=<?php echo e($data->id); ?>><?php echo e($data->hazas_e); ?>
-
+                                                <td class="t5 nem" id={{ $data->id }}>{{ $data->nem }}</td>
+                                                <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}
                                                 </td>
-                                                <td class="t5 gyerek" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->tizenhat_alatti_gyermek); ?>
-
+                                                <td class="t5 gyerek" id={{ $data->id }}>
+                                                    {{ $data->tizenhat_alatti_gyermek }}
                                                 </td>
-                                                <td class="t5 polgar" id=<?php echo e($data->id); ?>>
-                                                    <?php echo e($data->all_polgarsag); ?></td>
+                                                <td class="t5 polgar" id={{ $data->id }}>
+                                                    {{ $data->all_polgarsag }}</td>
                                             </tr>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        @endif
+                                    @endif
+                                @endforeach
                             </tbody>
-                        <?php endif; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                <?php endif; ?>
-            <?php endif; ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        @endif
+                    @endforeach
+                @endif
+            @endif
+        @endforeach
 
 
     </table>
     <div>
-        <?php echo $alkalmazotts->links('pagination::bootstrap-4'); ?>
-
+        {!! $alkalmazotts->links('pagination::bootstrap-4') !!}
     </div>
 
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -216,7 +205,7 @@
                 </div>
 
                 <form action="api/dolgozo/0" method="post">
-                    <?php echo csrf_field(); ?>
+                    @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">
                         <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
@@ -371,8 +360,4 @@
             <a class="btn btn-secondary" style="width: 200px; " href="/ujDolgozo" target="_blank">Új dolgozó</a>
         </li>
     </ul>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.jovahagyasraVaroDolgozok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('layouts.torlesMegerositesDolgozo', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/dolgozo.blade.php ENDPATH**/ ?>
+@endsection

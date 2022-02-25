@@ -61,13 +61,13 @@
                             <a class="nav-link" href="/dolgozo">Dolgozók</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gyerekek</a>
+                            <a class="nav-link" href="/fejlesztesAlatt">Gyerekek</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Beosztás</a>
+                            <a class="nav-link " href="/fejlesztesAlatt">Beosztás</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Jelenlét</a>
+                            <a class="nav-link " href="/fejlesztesAlatt">Jelenlét</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="/">Bölcsőde</a>
@@ -79,10 +79,9 @@
                             <a class="nav-link " href="/mellekletek">Mellékletek</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Statisztikák</a>
+                            <a class="nav-link " href="/fejlesztesAlatt">Statisztikák</a>
                         </li>
                     </ul>
-
 
                 </section>
             </div>
@@ -92,10 +91,6 @@
                 </article>
 
             </div>
-
-
-
-
         </div>
     </div>
 </body>

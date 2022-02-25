@@ -15,7 +15,7 @@ class CreateDolgozosTable extends Migration
     {
         Schema::create('dolgozos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('bolcsode_id')->unique();
+            $table->unsignedBigInteger('bolcsode_id');
             $table->foreign('bolcsode_id')->references('id')->on('bolcsodes');
             $table->unsignedBigInteger('alkalmazott_id')->unique();
             $table->foreign('alkalmazott_id')->references('id')->on('alkalmazotts');
