@@ -16,6 +16,10 @@
             ?>
         @endif
     @endforeach
+
+    <!-- @if ((Auth::user()->jogosultsag_id)==2)        
+    @endif -->  
+
     <div class="row">
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />

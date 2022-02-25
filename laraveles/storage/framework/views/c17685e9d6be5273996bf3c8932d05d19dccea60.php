@@ -6,14 +6,31 @@
     <script src="js/bolcsodeAdatLista.js"></script>
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
-    <script src="js/fenntListazas.js"></script>
+    <!-- <script src="js/fenntListazas.js"></script>
     <script src="js/fenntClass.js"></script>
-    <script src="js/fennt.js"></script>
+    <script src="js/fennt.js"></script> -->
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('tartalom'); ?>
     <h3>Bölcsőde adatok</h3>
-    <form class="form">
+    <div class="IDk">
+    <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>">
+    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if((Auth::user()->id)==$user->id): ?>
+            <input type="number" id="alkalmazottID" value="<?php echo e($user->id); ?>">
+        <?php endif; ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if($jogosultsag->megnevezes=='admin'): ?>
+        <input type="number" id="adminID" value="<?php echo e($jogosultsag->id); ?>">
+        <?php endif; ?>
+        <?php if($jogosultsag->megnevezes=='szuperadmin'): ?>
+        <input type="number" id="szuperAdminID" value="<?php echo e($jogosultsag->id); ?>">
+        <?php endif; ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+
+    <form class="form" id="bolcsiForm">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
 

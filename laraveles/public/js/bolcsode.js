@@ -1,7 +1,20 @@
 $(function () {
-    let fajlnev = "/api/bolcsode";
     let ajaxhivas = new AjaxHivas();
-    ajaxhivas.getAjax(fajlnev, adatLista);
+
+    $('.IDk').hide();
+    let userJogo=$('#userJogosultsag').val();
+    console.log('jog:'+userJogo);
+
+    if(userJogo==$('#adminID').val()){
+        $("#bolcsiForm").hide();
+        let fajlnev = "/bolcsi/"+$('#alkalmazottID').val();
+        ajaxhivas.getAjax(fajlnev, adatLista);
+    }
+
+    if(userJogo==$('#szuperAdminID').val()){
+        let fajlnev = "/api/bolcsode";
+        ajaxhivas.getAjax(fajlnev, adatLista);
+    }
 
     $(".megerositTorles").on("click", () => {
         ajaxhivas.deleteAjax(fajlnev, $(".megerositTorles").attr("id"));

@@ -23,6 +23,9 @@ Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit',])->middle
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
+
+Route::get('/bolcsi/{id}',[BolcsodeController::class, 'bolcsi']);
+
 Route::resource('/felhasznaloRegisztracio',felhasznaloRegisztracio::class);
 
 /* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
