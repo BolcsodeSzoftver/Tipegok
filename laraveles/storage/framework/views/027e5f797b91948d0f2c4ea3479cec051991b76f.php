@@ -10,6 +10,27 @@
 <?php $__env->startSection('tartalom'); ?>
 
     <h3>Fenntartó adatok</h3>
+    <div class="IDk">
+    <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>" >
+    <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if((Auth::user()->id)==$alkalmazott->users_id): ?>
+            <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php if($bolcsode->bolcsode_admin==$alkalmazott->id): ?>
+                    <input type="text" id="fenntID" value="<?php echo e($bolcsode->fennt_id); ?>" >
+                <?php endif; ?>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php endif; ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if($jogosultsag->megnevezes=='admin'): ?>
+        <input type="number" id="adminID" value="<?php echo e($jogosultsag->id); ?>">
+        <?php endif; ?>
+        <?php if($jogosultsag->megnevezes=='szuperadmin'): ?>
+        <input type="number" id="szuperAdminID" value="<?php echo e($jogosultsag->id); ?>">
+        <?php endif; ?>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+
     <table class="table">
         <thead>
             <tr>

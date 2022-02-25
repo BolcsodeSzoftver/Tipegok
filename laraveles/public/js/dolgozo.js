@@ -194,6 +194,9 @@ $(function () {
         $(".pipa").on("click", function () {
             let id = this.id;
             console.log(this.id);
+            if(this.id == id){
+                $("#nevKiri").html(this.name);
+            }
             let action = "/api/dolgozo/" + id;
             $(".allapotModosit").attr("action", action);
             $(".adatokDolgozoAllapot")
@@ -204,12 +207,24 @@ $(function () {
                         $(this).text(value);
                     }
                 });
+                $(".adatokDolgozoAllapot")
+                .find(".id")
+                .each(function () {
+                    if (this.id === id) {
+                        console.log($(this).text());
+                        $("#alkalmazottId").val($(this).text());
+                    }
+                });
         });
+
+        
+
+
     });
 
-    $("#tabla tbody").filter(function() {
+  /*   $("#tabla tbody").filter(function() {
         $("#tabla").hide();
         $(".jovahagyasDiv").html("Jelenleg nincs jóváhanyásra váró dolgozó!");
 
-    })
+    }) */
 });

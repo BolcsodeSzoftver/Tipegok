@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\alkalmazott;
 use Illuminate\Support\Facades\DB;
+use App\Models\dolgozo;
 
 class dolgozController extends Controller
 {
@@ -42,24 +43,30 @@ class dolgozController extends Controller
      */
     public function store(Request $request)
     {
-        /*   $alkalmazott = new alkalmazott();
-        $alkalmazott->szul_nev  = $request->szul_nev;
-        $alkalmazott->szul_hely   = $request->szul_hely;
-        $alkalmazott->szul_ido   = $request->szul_ido;
-        $alkalmazott->anyja_neve   = $request->anyja_neve;
-        $alkalmazott->adoazon_jel  = $request->adoazon_jel;
-        $alkalmazott->tajszam  = $request->tajszam;
-        $alkalmazott->nem  = $request->nem;
-        $alkalmazott->nev   = $request->nev;
-        $alkalmazott->banszamla_szam   = $request->banszamla_szam;
-        $alkalmazott->telefonszam   = $request->telefonszam;
-        $alkalmazott->allando_lakhely   = $request->allando_lakhely;
-        $alkalmazott->tartozkodasi_hely   = $request->tartozkodasi_hely;
-        $alkalmazott->hazas_e   = $request->hazas_e;
-        $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhat_alatti_gyermek;
-        $alkalmazott->all_polgarsag     = $request->all_polgarsag;
+        $dolgozo = new dolgozo();
+        $dolgozo->bolcsode_id  = $request->bolcsodeId;
+        $dolgozo->alkalmazott_id  = $request->alkalmazottId;
+        $dolgozo->brutto_alapber  = $request->bruttoAlapber;
+        $dolgozo->heti_munkaora   = $request->hetiMunkaOra;
+        $dolgozo->besorolas_betu  = $request->besorolasiBetu;
+        $dolgozo->besorolas_szam  = $request->besorolasiSzam;
+        $dolgozo->feor_azon  = $request->feorAzonosito;
+        $dolgozo->agazati_potlek   = $request->agazataiPotlek;
+        $dolgozo->eves_szabi   = $request->evesSzabi;
+        $dolgozo->vegzettseg   = $request->vegzettseg;
+        $dolgozo->sz_szakkepzet  = $request->szSzakkepzet;
+        $dolgozo->belepesi_nap   = $request->belepes;
+        $dolgozo->kilepesi_nap   = $request->kilepes;
+        $dolgozo->szgf_kod   = $request->szgfKod;
+        $dolgozo->munkakor   = $request->munkakor;
+        if ($request->kezpenz) {
+            $dolgozo->kp_utalas   = $request->kezpenz;
+        } elseif ($request->utalas) {
+            $dolgozo->kp_utalas   = $request->utalas;
+        }
 
-        $alkalmazott->save(); */
+        $dolgozo->save();
+        return redirect("/dolgozo");
     }
 
     /**

@@ -55,18 +55,16 @@
                                         
                                         <label for="bolcsi">Admin:</label>
                                         <select class="bolcsiNev" name="admin">
-                                            <?php $__currentLoopData = $megjelenitAdmin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $admin): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php if($admin->jogosultsags === 1 and $admin->users === $adminNev->id): ?>
-                                                        <option value="<?php echo e($admin->id); ?>">
+                                                    <?php if($adminNev->jogosultsag_id === 1): ?>
+                                                        <option value="<?php echo e($adminNev->id); ?>">
                                                             <?php echo e($adminNev->name); ?>
 
                                                         </option>
                                                     <?php endif; ?>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="col">
 

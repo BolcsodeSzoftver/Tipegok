@@ -4,6 +4,7 @@
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/dolgozo.js"></script>
+    
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <h3>Doldozó adatai</h3>
@@ -17,22 +18,22 @@
             ?>
         <?php endif; ?>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
+   
     <div class="row">
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
         </div>
         <div class="col">
-                <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
-                    data-target="#exampleModal">
-                    Jóváhagyásra váró dolgozók :
-                    <?php if($db > 0): ?>
-                        <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
-                    <?php else: ?>
-                        nincs
-                    <?php endif; ?>
+            <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
+                data-target="#exampleModal">
+                Jóváhagyásra váró dolgozók :
+                <?php if($db > 0): ?>
+                    <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
+                <?php else: ?>
+                    nincs
+                <?php endif; ?>
 
-                </button>
+            </button>
         </div>
     </div>
 
@@ -126,7 +127,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Fenntartó adatai</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

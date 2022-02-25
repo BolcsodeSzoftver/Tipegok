@@ -4,6 +4,7 @@
 @section('head')
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/dolgozo.js"></script>
+    
 @endsection
 @section('tartalom')
     <h3>Doldozó adatai</h3>
@@ -17,8 +18,8 @@
             ?>
         @endif
     @endforeach
-    @if (Auth::user()->jogosultsag_id == 2)
-    @endif
+   {{--  @if (Auth::user()->jogosultsag_id == 2)
+    @endif --}}
     <div class="row">
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
@@ -125,7 +126,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Fenntartó adatai</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
