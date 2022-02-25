@@ -12,13 +12,9 @@
     <h3>Fenntartó adatok</h3>
     <div class="IDk">
     <input type="text" id="userJogosultsag" value="{{Auth::user()->jogosultsag_id}}" >
-    @foreach ($alkalmazotts as $alkalmazott)
-        @if ((Auth::user()->id)==$alkalmazott->users_id)
-            @foreach ($bolcsodek as $bolcsode)
-                @if ($bolcsode->bolcsode_admin==$alkalmazott->id)
-                    <input type="text" id="fenntID" value="{{$bolcsode->fennt_id}}" >
-                @endif
-            @endforeach
+    @foreach ($bolcsodek as $bolcsode)
+        @if ($bolcsode->bolcsode_admin==Auth::user()->id)
+            <input type="text" id="fenntID" value="{{$bolcsode->fennt_id}}" >
         @endif
     @endforeach
     @foreach ($jogosults as $jogosultsag)

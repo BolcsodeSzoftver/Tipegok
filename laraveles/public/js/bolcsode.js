@@ -1,5 +1,6 @@
 $(function () {
     let ajaxhivas = new AjaxHivas();
+    let fajlnev = "/api/bolcsode";
 
     $('.IDk').hide();
     let userJogo=$('#userJogosultsag').val();
@@ -7,7 +8,7 @@ $(function () {
 
     if(userJogo==$('#adminID').val()){
         $("#bolcsiForm").hide();
-        let fajlnev = "/bolcsi/"+$('#alkalmazottID').val();
+        let fajlnev = "/bolcsi/"+$('#userID').val();
         ajaxhivas.getAjax(fajlnev, adatLista);
     }
 

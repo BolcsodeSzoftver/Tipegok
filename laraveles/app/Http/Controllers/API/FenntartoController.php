@@ -10,7 +10,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\Environment\Console;
 use App\Models\bolcsode;
-use App\Models\alkalmazott;
 use App\Models\jogosultsag;
 
 class FenntartoController extends Controller
@@ -235,8 +234,7 @@ class FenntartoController extends Controller
 
     public function megjelenit(){
         $bolcsodek = bolcsode::all();
-        $alkalmazotts= alkalmazott::all();
         $jogosults=jogosultsag::all();
-        return view('fenntarto',compact('bolcsodek','alkalmazotts','jogosults'));
+        return view('fenntarto',compact('bolcsodek','jogosults'));
     }
 }

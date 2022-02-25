@@ -222,9 +222,5 @@ $(function () {
 
     });
 
-  /*   $("#tabla tbody").filter(function() {
-        $("#tabla").hide();
-        $(".jovahagyasDiv").html("Jelenleg nincs jóváhanyásra váró dolgozó!");
 
-    }) */
 });
