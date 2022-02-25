@@ -69,7 +69,8 @@ class dolgozController extends Controller
         }
 
         $dolgozo->save();
-        return redirect("/dolgozo");
+        $dolgozo->jovahagy();
+        return redirect("/dolgozo"); 
     }
 
     /**

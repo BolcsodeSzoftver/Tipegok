@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\belepes;
+use App\Models\bolcsode;
 use App\Models\User;
 
 class AlkalmazottFactory extends Factory
@@ -16,6 +17,7 @@ class AlkalmazottFactory extends Factory
     public function definition()
     {
         $belepesId = User::all()->random();
+        $bolcsodeId = bolcsode::all()->random();
         return [
             'users_id'=> $belepesId->id,
             'szul_nev'=> $belepesId->name,
@@ -34,7 +36,7 @@ class AlkalmazottFactory extends Factory
             'tizenhat_alatti_gyermek'=> $this->faker->numberBetween(10),
             'all_polgarsag'=> $this->faker->country,
             'allapot'=> $this->faker->numberBetween(1),
-            'bolcsode_id'=>  $this->faker->numberBetween(1)
+            'bolcsode_id'=>  $bolcsodeId->id,
         ];
     }
 }

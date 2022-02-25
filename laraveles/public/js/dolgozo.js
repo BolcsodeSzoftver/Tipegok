@@ -180,7 +180,13 @@ $(function () {
         let action = "/api/dolgozo/" + id;
         $(".torles").attr("action", action);
     });
-    $(".allapot").hide();
+
+/*     $(".allapot").hide();
+    $(".id").hide();
+    $(".bolcsodeIdTd").hide();
+    $("#bolcsodeId").hide();
+    $("#alkalmazottId").hide();  */
+
     $(".jovhagyas").on("click", function () {
         $(".adatokDolgozoAllapot")
             .find(".allapot")
@@ -191,7 +197,7 @@ $(function () {
                 }
             });
 
-        $(".pipa").on("click", function () {
+        $(".jovahagyasKezd").on("click", function () {
             let id = this.id;
             console.log(this.id);
             if(this.id == id){
@@ -199,20 +205,20 @@ $(function () {
             }
             let action = "/api/dolgozo/" + id;
             $(".allapotModosit").attr("action", action);
-            $(".adatokDolgozoAllapot")
-                .find(".allapot")
-                .each(function () {
-                    if ($(".allapot").attr("id") === "0") {
-                        var value = $("#allapot").val("1");
-                        $(this).text(value);
-                    }
-                });
                 $(".adatokDolgozoAllapot")
                 .find(".id")
                 .each(function () {
                     if (this.id === id) {
                         console.log($(this).text());
                         $("#alkalmazottId").val($(this).text());
+                    }
+                });
+                $(".adatokDolgozoAllapot")
+                .find(".bolcsodeIdTd")
+                .each(function () {
+                    if (this.id === id) {
+                        console.log($(this).text());
+                        $("#bolcsodeId").val($(this).text());
                     }
                 });
         });
