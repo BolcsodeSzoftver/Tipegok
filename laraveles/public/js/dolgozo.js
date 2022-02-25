@@ -181,11 +181,11 @@ $(function () {
         $(".torles").attr("action", action);
     });
 
-/*     $(".allapot").hide();
+    $(".allapot").hide();
     $(".id").hide();
     $(".bolcsodeIdTd").hide();
     $("#bolcsodeId").hide();
-    $("#alkalmazottId").hide();  */
+    $("#alkalmazottId").hide(); 
 
     $(".jovhagyas").on("click", function () {
         $(".adatokDolgozoAllapot")
