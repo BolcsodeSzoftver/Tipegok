@@ -4,6 +4,7 @@
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/dolgozo.js"></script>
+    
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <h3>Doldozó adatai</h3>
@@ -17,21 +18,19 @@
             ?>
         <?php endif; ?>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
-    <div class="row">
+    <div class=row>
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
-        </div>
+        </div>   
         <div class="col">
             <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
-                data-target="#exampleModal">
+                data-target="#exampleModal" sytle="float:left;">
                 Jóváhagyásra váró dolgozók :
                 <?php if($db > 0): ?>
                     <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
                 <?php else: ?>
                     nincs
                 <?php endif; ?>
-
             </button>
         </div>
     </div>
@@ -126,12 +125,10 @@
                 
             <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php if($bolcsode->bolcsode_admin==Auth::user()->id): ?>
-                    <?php echo e($bolcsode->id); ?>
-
                     <tbody class="adatokDolgozo">         
                     <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($data->allapot === 1): ?>
-                        <?php if($bolcsode->id==$data->bolcsode_id): ?>
+                            <?php if($bolcsode->id==$data->bolcsode_id): ?>
                             <tr class="dolgozo">
                                 <td class="modosit">
                                     <button wire:click="edit(<?php echo e($data->id); ?>)" class="btn btn-primary modositGomb"
@@ -192,7 +189,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Fenntartó adatai</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
