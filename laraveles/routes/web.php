@@ -6,6 +6,7 @@ use App\Http\Controllers\API\BolcsodeController;
 use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\belepesController;
 use App\Http\Controllers\API\FelhasznaloController;
+use App\Http\Controllers\API\FenntartoController;
 use App\Http\Controllers\felhasznaloRegisztracio;
 
 /*
@@ -21,10 +22,12 @@ use App\Http\Controllers\felhasznaloRegisztracio;
 
 Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit',])->middleware(['auth']);
 Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
+Route::get('/fenntarto', [FenntartoController::class,'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
 
 Route::get('/bolcsi/{id}',[BolcsodeController::class, 'bolcsi']);
+Route::get('/fennt/{id}',[BolcsodeController::class, 'fennt']);
 
 Route::resource('/felhasznaloRegisztracio',felhasznaloRegisztracio::class);
 
@@ -69,9 +72,9 @@ Route::get('/ujDolgozo4', function () {
     return view('ujdolgozo4');
 })->middleware(['auth']);
 
-Route::get('/fenntarto', function () {
+/* Route::get('/fenntarto', function () {
     return view('fenntarto');
-})->middleware(['auth']);
+})->middleware(['auth']); */
 Route::get('/ujFenntarto', function () {
     return view('ujFenntarto');
 })->middleware(['auth']);

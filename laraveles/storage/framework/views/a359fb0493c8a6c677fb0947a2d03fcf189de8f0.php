@@ -16,6 +16,10 @@
             ?>
         <?php endif; ?>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+    <!-- <?php if((Auth::user()->jogosultsag_id)==2): ?>        
+    <?php endif; ?> -->  
+
     <div class="row">
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />

@@ -1,9 +1,19 @@
 $(function () {
-    let vegpont = "/api/fenntarto";
     let ajax = new AjaxHivas();
 
-    ajax.getAjax(vegpont, fenntLista);
-    //$(".urlap").hide();
+    $('.IDk').hide();
+    let userJogo=$('#userJogosultsag').val();
+    console.log('jog:'+userJogo);
+
+    if(userJogo==$('#adminID').val()){
+        let vegpont = "/fennt/"+$('#fenntID').val();
+        ajax.getAjax(vegpont, fenntLista);
+    }
+
+    if(userJogo==$('#szuperAdminID').val()){
+        let vegpont = "/api/fenntarto";
+        ajax.getAjax(vegpont, fenntLista);
+    }
 
     $(".megerositTorles").on("click", () => {
         console.log("megerositTorles");

@@ -15,9 +15,9 @@
     <h3>Bölcsőde adatok</h3>
     <div class="IDk">
     <input type="text" id="userJogosultsag" value="{{Auth::user()->jogosultsag_id}}">
-    @foreach ($users as $user)
-        @if ((Auth::user()->id)==$user->id)
-            <input type="number" id="alkalmazottID" value="{{$user->id}}">
+    @foreach ($alkalmazotts as $alkalmazott)
+        @if ((Auth::user()->id)==$alkalmazott->users_id)
+            <input type="number" id="alkalmazottID" value="{{$alkalmazott->id}}">
         @endif
     @endforeach
     @foreach ($jogosults as $jogosultsag)

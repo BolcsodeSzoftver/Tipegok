@@ -15,9 +15,9 @@
     <h3>Bölcsőde adatok</h3>
     <div class="IDk">
     <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>">
-    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php if((Auth::user()->id)==$user->id): ?>
-            <input type="number" id="alkalmazottID" value="<?php echo e($user->id); ?>">
+    <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if((Auth::user()->id)==$alkalmazott->users_id): ?>
+            <input type="number" id="alkalmazottID" value="<?php echo e($alkalmazott->id); ?>">
         <?php endif; ?>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>

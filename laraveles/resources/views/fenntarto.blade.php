@@ -10,6 +10,27 @@
 @section('tartalom')
 
     <h3>Fenntartó adatok</h3>
+    <div class="IDk">
+    <input type="text" id="userJogosultsag" value="{{Auth::user()->jogosultsag_id}}" >
+    @foreach ($alkalmazotts as $alkalmazott)
+        @if ((Auth::user()->id)==$alkalmazott->users_id)
+            @foreach ($bolcsodek as $bolcsode)
+                @if ($bolcsode->bolcsode_admin==$alkalmazott->id)
+                    <input type="text" id="fenntID" value="{{$bolcsode->fennt_id}}" >
+                @endif
+            @endforeach
+        @endif
+    @endforeach
+    @foreach ($jogosults as $jogosultsag)
+        @if ($jogosultsag->megnevezes=='admin')
+        <input type="number" id="adminID" value="{{$jogosultsag->id}}">
+        @endif
+        @if ($jogosultsag->megnevezes=='szuperadmin')
+        <input type="number" id="szuperAdminID" value="{{$jogosultsag->id}}">
+        @endif
+    @endforeach
+    </div>
+
     <table class="table">
         <thead>
             <tr>
