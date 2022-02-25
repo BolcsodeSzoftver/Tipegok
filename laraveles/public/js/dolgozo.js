@@ -1,13 +1,4 @@
 $(function () {
-    /*       $(".megerositTorles").on("click", () => {
-        console.log("megerositTorles");
-        ajax.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
-        location.reload();
-    }); 
-
-  
-     */
-
     $(".adatModositEnged").on("click", function () {
         console.log("modositEnged");
         $("input").removeAttr("readonly");
@@ -186,7 +177,39 @@ $(function () {
     $(".dolgozoTorles").on("click", function () {
         let id = this.id;
         console.log(this.id);
-        let action = "/api/dolgozo/"+id;
-        $(".torles").attr("action",action);
+        let action = "/api/dolgozo/" + id;
+        $(".torles").attr("action", action);
     });
+    $(".allapot").hide();
+    $(".jovhagyas").on("click", function () {
+        $(".adatokDolgozoAllapot")
+            .find(".allapot")
+            .each(function () {
+                if ($(".allapot").attr("id") === "0") {
+                    console.log($(this).text());
+                    $("#allapot").val($(this).text());
+                }
+            });
+
+        $(".pipa").on("click", function () {
+            let id = this.id;
+            console.log(this.id);
+            let action = "/api/dolgozo/" + id;
+            $(".allapotModosit").attr("action", action);
+            $(".adatokDolgozoAllapot")
+                .find(".allapot")
+                .each(function () {
+                    if ($(".allapot").attr("id") === "0") {
+                        var value = $("#allapot").val("1");
+                        $(this).text(value);
+                    }
+                });
+        });
+    });
+
+    $("#tabla tbody").filter(function() {
+        $("#tabla").hide();
+        $(".jovahagyasDiv").html("Jelenleg nincs jóváhanyásra váró dolgozó!");
+
+    })
 });

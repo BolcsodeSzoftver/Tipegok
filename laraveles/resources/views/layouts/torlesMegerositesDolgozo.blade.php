@@ -13,9 +13,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Nem</button>
-                    @forelse ($alkalmazotts as $data)
                         <form action="" method="post" class="torles">
-                    @endforeach
                     @csrf
                     @method("DELETE")
                     <input type="submit" class="btn btn-primary megerositTorles" value="Igen" />

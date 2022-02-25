@@ -33,7 +33,7 @@ class AlkalmazottFactory extends Factory
             'hazas_e'=> $this->faker->boolean,
             'tizenhat_alatti_gyermek'=> $this->faker->numberBetween(10),
             'all_polgarsag'=> $this->faker->country,
-            'allapot'=> $this->faker->boolean
+            'allapot'=> $this->faker->numberBetween(1),
         ];
     }
 }

@@ -100,6 +100,14 @@ class dolgozController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if ($request->input('submit') === 'Save') {
+            $alkalmazottJovahagyas = alkalmazott::findOrFail($id);
+
+            $alkalmazottJovahagyas->allapot = $request->allapot;
+            $alkalmazottJovahagyas->save();
+            return redirect("/dolgozo");
+        }
+
         $alkalmazott = alkalmazott::findOrFail($request->id);
         $alkalmazott->szul_nev  = $request->szulN;
         $alkalmazott->szul_hely   = $request->szulH;
@@ -129,7 +137,7 @@ class dolgozController extends Controller
     public function destroy($id)
     {
         alkalmazott::findOrFail($id)->torol();
-       /*  $flight = alkalmazott::find($id);
+        /*  $flight = alkalmazott::find($id);
         $flight->delete(); */
         return redirect("/dolgozo");
     }
@@ -159,6 +167,7 @@ class dolgozController extends Controller
     public $search = '';
     public function allapot()
     {
+
         $alkalmazott = alkalmazott::all();
         $alkalmazotts = alkalmazott::paginate(5);
 
