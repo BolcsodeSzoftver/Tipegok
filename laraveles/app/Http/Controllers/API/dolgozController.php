@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\alkalmazott;
 use Illuminate\Support\Facades\DB;
+use App\Models\jogosultsag;
+use App\Models\bolcsode;
 
 class dolgozController extends Controller
 {
@@ -167,14 +169,15 @@ class dolgozController extends Controller
     public $search = '';
     public function allapot()
     {
-
         $alkalmazott = alkalmazott::all();
         $alkalmazotts = alkalmazott::paginate(5);
+        $jogosultsags=jogosultsag::all();
+        $bolcsodek=bolcsode::all();
 
         return view(
             'dolgozo',
             ['alkalmazott' => alkalmazott::search('nev', $this->search)->paginate()],
-            compact('alkalmazott', 'alkalmazotts')
+            compact('alkalmazott', 'alkalmazotts','jogosultsags','bolcsodek')
         );
     }
 

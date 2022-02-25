@@ -34,6 +34,7 @@ class AlkalmazottFactory extends Factory
             'tizenhat_alatti_gyermek'=> $this->faker->numberBetween(10),
             'all_polgarsag'=> $this->faker->country,
             'allapot'=> $this->faker->numberBetween(1),
+            'bolcsode_id'=>  $this->faker->numberBetween(1)
         ];
     }
 }

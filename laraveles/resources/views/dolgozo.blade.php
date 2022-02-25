@@ -17,8 +17,7 @@
             ?>
         @endif
     @endforeach
-    @if (Auth::user()->jogosultsag_id == 2)
-    @endif
+    
     <div class="row">
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
@@ -71,8 +70,14 @@
                 <th class="t5" scope="col">Állam polgárság</th>
             </tr>
         </thead>
-        <tbody class="adatokDolgozo">
-            @forelse ($alkalmazotts as $data)
+
+
+        @foreach ($jogosultsags as $jogosultsag)
+        @if ($jogosultsag->megnevezes=='szuperadmin')
+            @if (Auth::user()->jogosultsag_id==$jogosultsag->id)
+                
+            <tbody class="adatokDolgozo">         
+            @foreach ($alkalmazotts as $data)
                 @if ($data->allapot === 1)
                     <tr class="dolgozo">
                         <td class="modosit">
@@ -111,10 +116,68 @@
 
                     </tr>
                 @endif
+            @endforeach
+            </tbody>
 
-            @empty
-            @endforelse
-        </tbody>
+            @endif
+        @elseif ($jogosultsag->megnevezes=='admin')
+        @if (Auth::user()->jogosultsag_id==$jogosultsag->id)
+                
+            @foreach ($bolcsodek as $bolcsode)
+                @if ($bolcsode->bolcsode_admin==Auth::user()->id)
+                    {{$bolcsode->id}}
+                    <tbody class="adatokDolgozo">         
+                    @foreach ($alkalmazotts as $data)
+                        @if ($data->allapot === 1)
+                        @if ($bolcsode->id==$data->bolcsode_id)
+                            <tr class="dolgozo">
+                                <td class="modosit">
+                                    <button wire:click="edit({{ $data->id }})" class="btn btn-primary modositGomb"
+                                        id={{ $data->id }} type="submit" data-toggle="modal" data-target="#exampleModalLong">
+                                        <i class='fa fa-edit'></i>
+                                    </button>
+                                </td>
+                                <td class="torol">
+                                    <button class="btn btn-primary dolgozoTorles" id={{ $data->id }} type="button"
+                                        data-toggle="modal" data-target="#modalDolgozo">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                                <td class="nev" id={{ $data->id }}>{{ $data->nev }}</td>
+                                <td class="t1 allandoLakhely" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                                <td class="t1 telefonszam" id={{ $data->id }}>{{ $data->telefonszam }}</td>
+                                <td class="t1 anyjaNev" id={{ $data->id }}>{{ $data->anyja_neve }}</td>
+
+                                <td class="t2 szulN" id={{ $data->id }}>{{ $data->szul_nev }}</td>
+                                <td class="t2 szulH" id={{ $data->id }}>{{ $data->szul_hely }}</td>
+                                <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}</td>
+
+                                <td class="t3 cim" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                                <td class="t3 tartHely" id={{ $data->id }}>{{ $data->tartozkodasi_hely }}</td>
+
+                                <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}</td>
+                                <td class="t4 adoA" id={{ $data->id }}>{{ $data->adoazon_jel }}</td>
+                                <td class="t4 bankSz" id={{ $data->id }}>{{ $data->banszamla_szam }}</td>
+
+                                <td class="t5 nem" id={{ $data->id }}>{{ $data->nem }}</td>
+                                <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}</td>
+                                <td class="t5 gyerek" id={{ $data->id }}>{{ $data->tizenhat_alatti_gyermek }}
+                                </td>
+                                <td class="t5 polgar" id={{ $data->id }}>{{ $data->all_polgarsag }}</td>
+                            </tr>
+                            @endif
+                        @endif
+                    @endforeach
+                    </tbody>
+
+                @endif
+            @endforeach
+
+            @endif
+        @endif
+        @endforeach
+
+        
     </table>
     <div>
         {!! $alkalmazotts->links('pagination::bootstrap-4') !!}

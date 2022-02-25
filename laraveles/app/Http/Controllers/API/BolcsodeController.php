@@ -10,7 +10,6 @@ use App\Models\bolcsode_valtozas;
 use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
-use App\Models\alkalmazott;
 use App\Models\jogosultsag;
 
 class BolcsodeController extends Controller
@@ -100,7 +99,7 @@ class BolcsodeController extends Controller
     public function update(Request $request, $id)
     {
         $bolcsode = bolcsode::findOrFail($id);
-/*          
+                
         if($bolcsode->cim != $request->get('cim')){
             $b_valtozas= new bolcsode_valtozas();
             $b_valtozas->bolcsode_id = $bolcsode->id;
@@ -149,7 +148,14 @@ class BolcsodeController extends Controller
             $b_valtozas->mezonev =  'agazati_potlek';
             $b_valtozas->regiertek = $bolcsode->agazati_potlek;
             $b_valtozas->save();
-        }    */            
+        }   
+        if($bolcsode->fennt_id != $request->get('fennt_id')){
+            $b_valtozas= new bolcsode_valtozas();
+            $b_valtozas->bolcsode_id = $bolcsode->id;
+            $b_valtozas->mezonev =  'fennt_id';
+            $b_valtozas->regiertek = $bolcsode->fennt_id;
+            $b_valtozas->save();
+        }     
         
         $bolcsode->cim = $request->get('cim');
         $bolcsode->nev = $request->get('nev');
@@ -181,9 +187,8 @@ class BolcsodeController extends Controller
 
     public function megjelenit(){
         $fenntartok=fenntarto::all();
-        $alkalmazotts= alkalmazott::all();
         $jogosults=jogosultsag::all();
-        return view('bolcsiadat',compact('fenntartok','alkalmazotts','jogosults'));
+        return view('bolcsiadat',compact('fenntartok','jogosults'));
     }
 
 
