@@ -6,14 +6,31 @@
     <script src="js/bolcsodeAdatLista.js"></script>
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
-    <script src="js/fenntListazas.js"></script>
+    <!-- <script src="js/fenntListazas.js"></script>
     <script src="js/fenntClass.js"></script>
-    <script src="js/fennt.js"></script>
+    <script src="js/fennt.js"></script> -->
 @endsection
 
 @section('tartalom')
     <h3>Bölcsőde adatok</h3>
-    <form class="form">
+    <div class="IDk">
+    <input type="text" id="userJogosultsag" value="{{Auth::user()->jogosultsag_id}}">
+    @foreach ($alkalmazotts as $alkalmazott)
+        @if ((Auth::user()->id)==$alkalmazott->users_id)
+            <input type="number" id="alkalmazottID" value="{{$alkalmazott->id}}">
+        @endif
+    @endforeach
+    @foreach ($jogosults as $jogosultsag)
+        @if ($jogosultsag->megnevezes=='admin')
+        <input type="number" id="adminID" value="{{$jogosultsag->id}}">
+        @endif
+        @if ($jogosultsag->megnevezes=='szuperadmin')
+        <input type="number" id="szuperAdminID" value="{{$jogosultsag->id}}">
+        @endif
+    @endforeach
+    </div>
+
+    <form class="form" id="bolcsiForm">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
 

@@ -10,6 +10,8 @@ use App\Models\bolcsode_valtozas;
 use App\Models\fenntarto;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use App\Models\alkalmazott;
+use App\Models\jogosultsag;
 
 class BolcsodeController extends Controller
 {
@@ -178,8 +180,10 @@ class BolcsodeController extends Controller
     }
 
     public function megjelenit(){
-        $fenntartok=fenntarto::all();;
-        return view('bolcsiadat',compact('fenntartok'));
+        $fenntartok=fenntarto::all();
+        $alkalmazotts= alkalmazott::all();
+        $jogosults=jogosultsag::all();
+        return view('bolcsiadat',compact('fenntartok','alkalmazotts','jogosults'));
     }
 
 
@@ -188,13 +192,20 @@ class BolcsodeController extends Controller
         $fenntartokId = fenntarto::all();
         $megjelenitAdminNev = User::all();
         return view('ujBolcsi', compact('fenntartokId','megjelenitAdminNev'));
-
-
     }
-
 
     public function fenntartoBolcsode($id){
         $bolcsodek = bolcsode::where('fennt_id',$id)->get();
         return response()->json($bolcsodek);
+    }
+
+    public function bolcsi($id){
+        $bolcsode = bolcsode::where('bolcsode_admin',$id)->get();
+        return response()->json($bolcsode);
+    }
+
+    public function fennt($id){
+        $fenntarto = fenntarto::where('id',$id)->get();
+        return response()->json($fenntarto);
     }
 }

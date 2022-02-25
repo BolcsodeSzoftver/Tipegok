@@ -17,22 +17,23 @@
             ?>
         @endif
     @endforeach
-
+    @if (Auth::user()->jogosultsag_id == 2)
+    @endif
     <div class="row">
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
         </div>
         <div class="col">
-                <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
-                    data-target="#exampleModal">
-                    Jóváhagyásra váró dolgozók :
-                    @if ($db > 0)
-                        <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
-                    @else
-                        nincs
-                    @endif
+            <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
+                data-target="#exampleModal">
+                Jóváhagyásra váró dolgozók :
+                @if ($db > 0)
+                    <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
+                @else
+                    nincs
+                @endif
 
-                </button>
+            </button>
         </div>
     </div>
 
