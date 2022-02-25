@@ -18,19 +18,19 @@
             ?>
         @endif
     @endforeach
+    <div class=row>
         <div class="col">
             <input type="text" wire:model="search" name="szo" id="szo" placeholder="Keresés..." />
-        </div>
+        </div>   
         <div class="col">
             <button type="button" class="btn btn-primary btn-lg jovhagyas" id="kiscica" data-toggle="modal"
-                data-target="#exampleModal">
+                data-target="#exampleModal" sytle="float:left;">
                 Jóváhagyásra váró dolgozók :
                 @if ($db > 0)
                     <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
                 @else
                     nincs
                 @endif
-
             </button>
         </div>
     </div>
@@ -124,11 +124,10 @@
                 
             @foreach ($bolcsodek as $bolcsode)
                 @if ($bolcsode->bolcsode_admin==Auth::user()->id)
-                    {{$bolcsode->id}}
                     <tbody class="adatokDolgozo">         
                     @foreach ($alkalmazotts as $data)
                         @if ($data->allapot === 1)
-                        @if ($bolcsode->id==$data->bolcsode_id)
+                            @if ($bolcsode->id==$data->bolcsode_id)
                             <tr class="dolgozo">
                                 <td class="modosit">
                                     <button wire:click="edit({{ $data->id }})" class="btn btn-primary modositGomb"
