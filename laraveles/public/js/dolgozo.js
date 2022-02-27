@@ -4,15 +4,6 @@ $(function () {
         $("input").removeAttr("readonly");
     });
 
-    $("#urlap1").on("click", function () {
-        $("#adatok2").hide();
-        $("#adatok1").show();
-    });
-    $("#urlap2").on("click", function () {
-        $("#adatok1").hide();
-        $("#adatok2").show();
-    });
-
     tablazatFejlecElrejtese();
     function tablazatFejlecElrejtese() {
         for (let i = 2; i < 6; i++) {
