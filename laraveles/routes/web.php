@@ -44,12 +44,14 @@ Route::resource('/felhasznaloRegisztracio',felhasznaloRegisztracio::class);
     return view('dolgozo');
 })->middleware(['auth']); */
 Route::get('/dolgozo', [dolgozController::class,'allapot'])->middleware(['auth']);
+Route::get('/mellekletek', [dolgozController::class,'dolgozokNevei'])->middleware(['auth']);
+Route::get('/melleklet1/{id}', [dolgozController::class,'dolgozoAdatai']);
 
-Route::get('/mellekletek', function () {
+/* Route::get('/mellekletek', function () {
     return view('mellekletek');
-})->middleware(['auth']);
+})->middleware(['auth']); */
 
-Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']);
+Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']); 
 Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']);
 Route::get('/melleklet3', function () {return view('melleklet3');})->middleware(['auth']);
 Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(['auth']);

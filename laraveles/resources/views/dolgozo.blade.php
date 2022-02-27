@@ -100,8 +100,7 @@
                                     <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}</td>
 
                                     <td class="t3 cim" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
-                                    <td class="t3 tartHely" id={{ $data->id }}>{{ $data->tartozkodasi_hely }}
-                                    </td>
+                                    <td class="t3 tartHely" id={{ $data->id }}>{{ $data->tartozkodasi_hely }}</td>
 
                                     <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}</td>
                                     <td class="t4 adoA" id={{ $data->id }}>{{ $data->adoazon_jel }}</td>
@@ -109,9 +108,7 @@
 
                                     <td class="t5 nem" id={{ $data->id }}>{{ $data->nem }}</td>
                                     <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}</td>
-                                    <td class="t5 gyerek" id={{ $data->id }}>
-                                        {{ $data->tizenhat_alatti_gyermek }}
-                                    </td>
+                                    <td class="t5 gyerek" id={{ $data->id }}>{{ $data->tizenhat_alatti_gyermek }}</td>
                                     <td class="t5 polgar" id={{ $data->id }}>{{ $data->all_polgarsag }}</td>
 
                                 </tr>
@@ -142,40 +139,25 @@
                                                     </button>
                                                 </td>
                                                 <td class="nev" id={{ $data->id }}>{{ $data->nev }}</td>
-                                                <td class="t1 allandoLakhely" id={{ $data->id }}>
-                                                    {{ $data->allando_lakhely }}</td>
-                                                <td class="t1 telefonszam" id={{ $data->id }}>
-                                                    {{ $data->telefonszam }}</td>
-                                                <td class="t1 anyjaNev" id={{ $data->id }}>
-                                                    {{ $data->anyja_neve }}</td>
+                                                <td class="t1 allandoLakhely" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                                                <td class="t1 telefonszam" id={{ $data->id }}>{{ $data->telefonszam }}</td>
+                                                <td class="t1 anyjaNev" id={{ $data->id }}>{{ $data->anyja_neve }}</td>
 
-                                                <td class="t2 szulN" id={{ $data->id }}>{{ $data->szul_nev }}
-                                                </td>
-                                                <td class="t2 szulH" id={{ $data->id }}>{{ $data->szul_hely }}
-                                                </td>
-                                                <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}
-                                                </td>
+                                                <td class="t2 szulN" id={{ $data->id }}>{{ $data->szul_nev }}</td>
+                                                <td class="t2 szulH" id={{ $data->id }}>{{ $data->szul_hely }}</td>
+                                                <td class="t2 szulI" id={{ $data->id }}>{{ $data->szul_ido }}</td>
 
-                                                <td class="t3 cim" id={{ $data->id }}>
-                                                    {{ $data->allando_lakhely }}</td>
-                                                <td class="t3 tartHely" id={{ $data->id }}>
-                                                    {{ $data->tartozkodasi_hely }}</td>
+                                                <td class="t3 cim" id={{ $data->id }}>{{ $data->allando_lakhely }}</td>
+                                                <td class="t3 tartHely" id={{ $data->id }}>{{ $data->tartozkodasi_hely }}</td>
 
-                                                <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}
-                                                </td>
-                                                <td class="t4 adoA" id={{ $data->id }}>
-                                                    {{ $data->adoazon_jel }}</td>
-                                                <td class="t4 bankSz" id={{ $data->id }}>
-                                                    {{ $data->banszamla_szam }}</td>
+                                                <td class="t4 taj" id={{ $data->id }}>{{ $data->tajszam }}</td>
+                                                <td class="t4 adoA" id={{ $data->id }}>{{ $data->adoazon_jel }}</td>
+                                                <td class="t4 bankSz" id={{ $data->id }}>{{ $data->banszamla_szam }}</td>
 
                                                 <td class="t5 nem" id={{ $data->id }}>{{ $data->nem }}</td>
-                                                <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}
-                                                </td>
-                                                <td class="t5 gyerek" id={{ $data->id }}>
-                                                    {{ $data->tizenhat_alatti_gyermek }}
-                                                </td>
-                                                <td class="t5 polgar" id={{ $data->id }}>
-                                                    {{ $data->all_polgarsag }}</td>
+                                                <td class="t5 hazas" id={{ $data->id }}>{{ $data->hazas_e }}</td>
+                                                <td class="t5 gyerek" id={{ $data->id }}>{{ $data->tizenhat_alatti_gyermek }}</td>
+                                                <td class="t5 polgar" id={{ $data->id }}>{{ $data->all_polgarsag }}</td>
                                             </tr>
                                         @endif
                                     @endif

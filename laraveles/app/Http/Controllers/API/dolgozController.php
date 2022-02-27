@@ -24,8 +24,8 @@ class dolgozController extends Controller
      */
     public function index()
     {
-        /*  $alkalmazott = alkalmazott::all();
-        return response()->json(alkalmazott::all()); */
+         $alkalmazott = alkalmazott::all();
+        return response()->json(alkalmazott::all()); 
     }
 
     /**
@@ -208,4 +208,14 @@ class dolgozController extends Controller
             'alkalmazott' => alkalmazott::search('nev', $this->search)->orderBy($this->sortField, $this->sortDirection)->paginate(5),
         ]);
     } */
+
+    public function dolgozokNevei(){
+        $alkalmazotts=alkalmazott::all();
+        return view('mellekletek',compact('alkalmazotts'));
+    }
+
+    public function dolgozoAdatai($id){
+        $alkalmazotts=alkalmazott::where('id',$id)->get();
+        return response()->json($alkalmazotts);
+    }
 }

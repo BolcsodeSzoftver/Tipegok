@@ -54,8 +54,7 @@
 
     <ul style="list-style-type: none;">
         <li>
-            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új
-                bölcsőde</a>
+            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
         </li>
     </ul>
 
