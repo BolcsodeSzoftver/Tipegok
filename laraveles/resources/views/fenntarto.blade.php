@@ -8,23 +8,22 @@
     <script src="js/fennt.js"></script>
 @endsection
 @section('tartalom')
-
     <h3>Fenntartó adatok</h3>
     <div class="IDk">
-    <input type="text" id="userJogosultsag" value="{{Auth::user()->jogosultsag_id}}" >
-    @foreach ($bolcsodek as $bolcsode)
-        @if ($bolcsode->bolcsode_admin==Auth::user()->id)
-            <input type="text" id="fenntID" value="{{$bolcsode->fennt_id}}" >
-        @endif
-    @endforeach
-    @foreach ($jogosults as $jogosultsag)
-        @if ($jogosultsag->megnevezes=='admin')
-        <input type="number" id="adminID" value="{{$jogosultsag->id}}">
-        @endif
-        @if ($jogosultsag->megnevezes=='szuperadmin')
-        <input type="number" id="szuperAdminID" value="{{$jogosultsag->id}}">
-        @endif
-    @endforeach
+        <input type="text" id="userJogosultsag" value="{{ Auth::user()->jogosultsag_id }}">
+        @foreach ($bolcsodek as $bolcsode)
+            @if ($bolcsode->bolcsode_admin == Auth::user()->id)
+                <input type="text" id="fenntID" value="{{ $bolcsode->fennt_id }}">
+            @endif
+        @endforeach
+        @foreach ($jogosults as $jogosultsag)
+            @if ($jogosultsag->megnevezes == 'admin')
+                <input type="number" id="adminID" value="{{ $jogosultsag->id }}">
+            @endif
+            @if ($jogosultsag->megnevezes == 'szuperadmin')
+                <input type="number" id="szuperAdminID" value="{{ $jogosultsag->id }}">
+            @endif
+        @endforeach
     </div>
 
     <table class="table">
@@ -48,7 +47,8 @@
                     </button>
                 </td>
                 <td class="torol">
-                    <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal"
+                        data-target="#exampleModalCenter">
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
@@ -182,10 +182,9 @@
             </div>
         </div>
     </div>
-
-    <ul style="list-style-type: none;">
-  <li>
-    <a class="btn btn-secondary" style="width: 200px; " href="/ujFenntarto" target="_blank">Új fenntartó</a>
-  </li>
-</ul>
+    <div>
+        <button  class="btn btn-secondary ujFenntarto" >
+            <a href="/ujFenntarto" target="_blank" id="ujFenn">Új fenntartó</a>
+        </button>
+    </div>
 @endsection

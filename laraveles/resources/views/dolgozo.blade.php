@@ -6,6 +6,7 @@
     <script src="js/dolgozo.js"></script>
 @endsection
 @section('tartalom')
+
     <div class=row>
         <h3>Doldozó adatai</h3>
     </div>

@@ -1,23 +1,35 @@
 @charset "utf-8";
 h3 {
-  margin: 12px 0;
-  color: rgb(31, 144, 214);
+    margin: 12px 0;
+    color: rgb(31, 144, 214);
 }
-table{
-  background-color: #f3f3f3;
+table {
+    background-color: #f3f3f3;
 }
-th,td{
-  text-align: center;
+th,
+td {
+    text-align: center;
 }
-#jovhagyas{
-  padding: 5px;
-  margin: 5px;
-  float: right;
+#jovhagyas {
+    padding: 5px;
+    margin: 5px;
+    float: right;
 }
 .pagination {
-  float: right;
+    float: right;
 }
 
-.modosit{
-  text-align: center;
+.modosit {
+    text-align: center;
+}
+#ujFenntarto {
+    width: 200px;
+    color: white;
+}
+#ujFenn {
+    color: white;
+}
+#ujFenn:hover {
+    color: white;
+    text-decoration: none;
 }

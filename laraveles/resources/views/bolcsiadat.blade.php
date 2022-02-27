@@ -7,23 +7,23 @@
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
     <!-- <script src="js/fenntListazas.js"></script>
-    <script src="js/fenntClass.js"></script>
-    <script src="js/fennt.js"></script> -->
+        <script src="js/fenntClass.js"></script>
+        <script src="js/fennt.js"></script> -->
 @endsection
 
 @section('tartalom')
     <h3>Bölcsőde adatok</h3>
     <div class="IDk">
-    <input type="text" id="userJogosultsag" value="{{Auth::user()->jogosultsag_id}}">
-    <input type="number" id="userID" value="{{Auth::user()->id}}">
-    @foreach ($jogosults as $jogosultsag)
-        @if ($jogosultsag->megnevezes=='admin')
-        <input type="number" id="adminID" value="{{$jogosultsag->id}}">
-        @endif
-        @if ($jogosultsag->megnevezes=='szuperadmin')
-        <input type="number" id="szuperAdminID" value="{{$jogosultsag->id}}">
-        @endif
-    @endforeach
+        <input type="text" id="userJogosultsag" value="{{ Auth::user()->jogosultsag_id }}">
+        <input type="number" id="userID" value="{{ Auth::user()->id }}">
+        @foreach ($jogosults as $jogosultsag)
+            @if ($jogosultsag->megnevezes == 'admin')
+                <input type="number" id="adminID" value="{{ $jogosultsag->id }}">
+            @endif
+            @if ($jogosultsag->megnevezes == 'szuperadmin')
+                <input type="number" id="szuperAdminID" value="{{ $jogosultsag->id }}">
+            @endif
+        @endforeach
     </div>
 
     <form class="form" id="bolcsiForm">
@@ -51,12 +51,11 @@
             </tr>
         </thead>
     </table>
-
-    <ul style="list-style-type: none;">
-        <li>
-            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
-        </li>
-    </ul>
+    <div>
+        <button class="btn btn-secondary ujFenntarto">
+            <a href="/ujBolcsi" target="_blank" id="ujFenn">Új fenntartó</a>
+        </button>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"

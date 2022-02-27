@@ -8,23 +8,22 @@
     <script src="js/fennt.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
-
     <h3>Fenntartó adatok</h3>
     <div class="IDk">
-    <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>" >
-    <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php if($bolcsode->bolcsode_admin==Auth::user()->id): ?>
-            <input type="text" id="fenntID" value="<?php echo e($bolcsode->fennt_id); ?>" >
-        <?php endif; ?>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php if($jogosultsag->megnevezes=='admin'): ?>
-        <input type="number" id="adminID" value="<?php echo e($jogosultsag->id); ?>">
-        <?php endif; ?>
-        <?php if($jogosultsag->megnevezes=='szuperadmin'): ?>
-        <input type="number" id="szuperAdminID" value="<?php echo e($jogosultsag->id); ?>">
-        <?php endif; ?>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>">
+        <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($bolcsode->bolcsode_admin == Auth::user()->id): ?>
+                <input type="text" id="fenntID" value="<?php echo e($bolcsode->fennt_id); ?>">
+            <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($jogosultsag->megnevezes == 'admin'): ?>
+                <input type="number" id="adminID" value="<?php echo e($jogosultsag->id); ?>">
+            <?php endif; ?>
+            <?php if($jogosultsag->megnevezes == 'szuperadmin'): ?>
+                <input type="number" id="szuperAdminID" value="<?php echo e($jogosultsag->id); ?>">
+            <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 
     <table class="table">
@@ -48,7 +47,8 @@
                     </button>
                 </td>
                 <td class="torol">
-                    <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button class="btn btn-primary" id="toroladat" type="button" data-toggle="modal"
+                        data-target="#exampleModalCenter">
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
@@ -182,12 +182,11 @@
             </div>
         </div>
     </div>
-
-    <ul style="list-style-type: none;">
-  <li>
-    <a class="btn btn-secondary" style="width: 200px; " href="/ujFenntarto" target="_blank">Új fenntartó</a>
-  </li>
-</ul>
+    <div>
+        <button  class="btn btn-secondary ujFenntarto" >
+            <a href="/ujFenntarto" target="_blank" id="ujFenn">Új fenntartó</a>
+        </button>
+    </div>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.torlesMegerosites', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

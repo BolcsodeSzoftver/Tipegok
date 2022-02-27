@@ -6,6 +6,7 @@
     <script src="js/dolgozo.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
+
     <div class=row>
         <h3>Doldozó adatai</h3>
     </div>

@@ -17,4 +17,15 @@
   #jovahagyasGomb{
     float: right;
   }
+  .nev{
+    text-align: center;
+  }
+
+  table {
+    background-color: #f3f3f3;
+}
+th,
+td {
+    text-align: center;
+}
  

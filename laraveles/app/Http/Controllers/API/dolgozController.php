@@ -111,7 +111,6 @@ class dolgozController extends Controller
     {
         if ($request->input('submit') === 'Save') {
             $alkalmazottJovahagyas = alkalmazott::findOrFail($id);
-
             $alkalmazottJovahagyas->allapot = $request->allapot;
             $alkalmazottJovahagyas->save();
             return redirect("/dolgozo");
@@ -146,56 +145,15 @@ class dolgozController extends Controller
     public function destroy($id)
     {
         alkalmazott::findOrFail($id)->torol();
-        /*  $flight = alkalmazott::find($id);
-        $flight->delete(); */
         return redirect("/dolgozo");
     }
 
-    public function dolgozoKeres($szo)
-    {
-        /* $alkalmazott = alkalmazott::where('nev',$szo)->get(); */
-        /*    $alkalmazott = alkalmazott::all();
-        return response()->json($alkalmazott); */
-    }
 
-    /* public function search(Request $request)
-    {
-        $queryString = $request->query('q');
-        $tasks=alkalmazott::select('*');
-        $columns = \Schema::getColumnListing('alkalmazott');
-
-        foreach ($columns as $column) {
-            $tasks->orWhere(function ($tasks) use ($column, $queryString){
-                $tasks->orWhere($column,'like', '%' . $queryString . '%');
-            });
-        }
-
-        return $tasks->get();
-    } */
-
-   
-
-    /* public $sortField;
-    public $sortDirection='asc';
-
-    public function sortBy($field){
-        if($this->sortField===$field){
-            $this->sortDirection=$this->sortDirection==='asc' ? 'desc' : 'asc';
-        } else {
-            $this->sortDirection='asc';
-        }
-        $this->sortField=$field;
-    }
-
-    public function rendez(){
-        return view('dolgozo', [
-            'alkalmazott' => alkalmazott::search('nev', $this->search)->orderBy($this->sortField, $this->sortDirection)->paginate(5),
-        ]);
-    } */
 
     public function dolgozokNevei(){
+        $jogosultsag = jogosultsag::all();
         $alkalmazotts=alkalmazott::all();
-        return view('mellekletek',compact('alkalmazotts'));
+        return view('mellekletek',compact('alkalmazotts','jogosultsag'));
     }
 
     public function dolgozoAdatai($id){

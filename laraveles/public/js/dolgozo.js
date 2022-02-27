@@ -213,7 +213,7 @@ $(function () {
                     }
                 });
         });
-        $(document).on("click", "#gomb", function (event) {
+        $(document).on("click", "#gomb", function () {
             window.location.replace(window.location.href);
         });
     });

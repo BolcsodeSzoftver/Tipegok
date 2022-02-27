@@ -17,19 +17,15 @@ table {
     width: 6%;
 }
 
-/*}
-
-.gomb1 {
-    position: absolute;
-    right: -10px;
-    top: 80px;
+#ujFenntarto{
+    width: 200px;
+    color: white;
 }
-.gomb2 {
-    position: absolute;
-    right: -10px;
-    top: 100px;
+#ujFenn{
+    color: white; 
 }
-#adatMentes {
-    margin: 10px;
-}*/
+#ujFenn:hover{
+    color: white; 
+    text-decoration: none;
+}
 

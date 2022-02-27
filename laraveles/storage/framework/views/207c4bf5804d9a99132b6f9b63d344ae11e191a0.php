@@ -25,28 +25,35 @@
         <div class="row ">
             <div class="col-sm-12 ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Admin</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+                    <?php if(Auth::user()->id): ?>
+                        <a class="navbar-brand" href="#"><?php echo e(Auth::user()->name); ?></a>
+                    <?php endif; ?>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                      <ul class="navbar-nav">
-                        
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            profilom
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Beállítások</a>
-                            <a class="dropdown-item" href="#">...</a>
-                            <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
-                          </div>
-                        </li>
-                      </ul>
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    profilom
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Beállítások</a>
+                                    <a class="dropdown-item" href="#">...</a>
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                  </nav>
+                </nav>
             </div>
         </div>
+
+
+
         <div class="row pr-10">
 
             <div class="col-sm-2" id="menu">
@@ -82,6 +89,7 @@
                             <a class="nav-link " href="/fejlesztesAlatt">Statisztikák</a>
                         </li>
                     </ul>
+
 
                 </section>
             </div>

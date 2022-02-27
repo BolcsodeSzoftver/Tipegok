@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 
+
 class FelhasznaloController extends Controller
 {
     /**
@@ -93,18 +94,18 @@ class FelhasznaloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   public function destroy($id)
+    public function destroy($id)
     {
-       /*  $felhasznalo = User::findOrFail($id);
+        /*  $felhasznalo = User::findOrFail($id);
         $felhasznalo->delete(); */
         $user = User::where('id', $id)->firstorfail()->delete();
         return redirect("/felhasznalo");
-    } 
+    }
 
     public function megjelenit()
     {
-        $admin = jogosultsag::all();
+        $jogosultsag  = jogosultsag::all();
         $user = User::all();
-        return view('felhasznalo', compact('admin', 'user'));
+        return view('felhasznalo', compact('user', 'jogosultsag'));
     }
 }

@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody class="adatok">
-                    @foreach ($admin as $a)
+                    @foreach ($jogosultsag as $a)
                         @foreach ($user as $u)
                             @if ($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id)
                                 <tr class="felhasznalo">
