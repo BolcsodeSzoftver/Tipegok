@@ -24,8 +24,7 @@ class dolgozController extends Controller
      */
     public function index()
     {
-        /*  $alkalmazott = alkalmazott::all();
-        return response()->json(alkalmazott::all()); */
+        
     }
 
     /**
@@ -70,7 +69,7 @@ class dolgozController extends Controller
 
         $dolgozo->save();
         $dolgozo->jovahagy();
-        return redirect("/dolgozo"); 
+        return redirect("/dolgozo");
     }
 
     /**
@@ -175,21 +174,7 @@ class dolgozController extends Controller
         return $tasks->get();
     } */
 
-    public $search = '';
-    public function allapot()
-    {
-        $alkalmazott = alkalmazott::all();
-        $alkalmazotts = alkalmazott::paginate(5);
-        $jogosultsags=jogosultsag::all();
-        $bolcsodek=bolcsode::all();
-
-        return view(
-            'dolgozo',
-            ['alkalmazott' => alkalmazott::search('nev', $this->search)->paginate()],
-            compact('alkalmazott', 'alkalmazotts','jogosultsags','bolcsodek')
-        );
-    }
-
+   
 
     /* public $sortField;
     public $sortDirection='asc';

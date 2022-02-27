@@ -7,6 +7,7 @@ use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\belepesController;
 use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
+use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
 
 /*
@@ -20,16 +21,14 @@ use App\Http\Controllers\felhasznaloRegisztracio;
 |
 */
 
-Route::get('/felhasznalo', [FelhasznaloController::class,'megjelenit',])->middleware(['auth']);
-Route::get('/', [BolcsodeController::class,'megjelenit'])->middleware(['auth']);
-Route::get('/fenntarto', [FenntartoController::class,'megjelenit'])->middleware(['auth']);
-Route::get('/ujBolcsi', [BolcsodeController::class,'megjeleniFenntartoId'])->middleware(['auth']);
-Route::get('/teszt/{id}',[BolcsodeController::class, 'fenntartoBolcsode']);
-
-Route::get('/bolcsi/{id}',[BolcsodeController::class, 'bolcsi']);
-Route::get('/fennt/{id}',[BolcsodeController::class, 'fennt']);
-
-Route::resource('/felhasznaloRegisztracio',felhasznaloRegisztracio::class);
+Route::get('/felhasznalo', [FelhasznaloController::class, 'megjelenit',])->middleware(['auth']);
+Route::get('/', [BolcsodeController::class, 'megjelenit'])->middleware(['auth']);
+Route::get('/fenntarto', [FenntartoController::class, 'megjelenit'])->middleware(['auth']);
+Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->middleware(['auth']);
+Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
+Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
+Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
+Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class);
 
 /* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
 /* Route::get('/dolgozo/search', [dolgozController::class, 'search']); */
@@ -43,21 +42,38 @@ Route::resource('/felhasznaloRegisztracio',felhasznaloRegisztracio::class);
 /* Route::get('/dolgozo', function () {
     return view('dolgozo');
 })->middleware(['auth']); */
-Route::get('/dolgozo', [dolgozController::class,'allapot'])->middleware(['auth']);
+Route::resource('/dolgozo',dolgozoListaController::class)->middleware(['auth']);
+
 
 Route::get('/mellekletek', function () {
     return view('mellekletek');
 })->middleware(['auth']);
 
-Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']);
-Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']);
-Route::get('/melleklet3', function () {return view('melleklet3');})->middleware(['auth']);
-Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(['auth']);
-Route::get('/melleklet5', function () {return view('melleklet5');})->middleware(['auth']);
-Route::get('/melleklet6', function () {return view('melleklet6');})->middleware(['auth']);
-Route::get('/melleklet10', function () {return view('melleklet10');})->middleware(['auth']);
+Route::get('/melleklet1', function () {
+    return view('melleklet1');
+})->middleware(['auth']);
+Route::get('/melleklet2', function () {
+    return view('melleklet2');
+})->middleware(['auth']);
+Route::get('/melleklet3', function () {
+    return view('melleklet3');
+})->middleware(['auth']);
+Route::get('/melleklet4', function () {
+    return view('melleklet4');
+})->middleware(['auth']);
+Route::get('/melleklet5', function () {
+    return view('melleklet5');
+})->middleware(['auth']);
+Route::get('/melleklet6', function () {
+    return view('melleklet6');
+})->middleware(['auth']);
+Route::get('/melleklet10', function () {
+    return view('melleklet10');
+})->middleware(['auth']);
 
-Route::get('/fejlesztesAlatt', function () {return view('fejlesztesAlatt');})->middleware(['auth']);
+Route::get('/fejlesztesAlatt', function () {
+    return view('fejlesztesAlatt');
+})->middleware(['auth']);
 
 Route::get('/ujDolgozo', function () {
     return view('ujDolgozo');
@@ -86,4 +102,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

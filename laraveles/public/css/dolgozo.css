@@ -9,3 +9,12 @@
   .ikon{
     font-size:36px;
   }
+  #keresesToresGomb{
+    margin-left: 5px;
+    border-radius: 0;
+  }
+
+  #jovahagyasGomb{
+    float: right;
+  }
+ 
