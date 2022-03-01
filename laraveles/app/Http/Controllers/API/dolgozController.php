@@ -156,8 +156,10 @@ class dolgozController extends Controller
         return view('mellekletek',compact('alkalmazotts','jogosultsag'));
     }
 
-    public function dolgozoAdatai($id){
-        $alkalmazotts=alkalmazott::where('id',$id)->get();
-        return response()->json($alkalmazotts);
-    }
+    public function dolgozoAdatai(){
+        $alkalmazotts=alkalmazott::all();
+        return view('melleklet1', compact('alkalmazotts'));
+        /* $alkalmazotts=alkalmazott::where('id',$id)->get();
+        return response()->json($alkalmazotts); */
+    } 
 }

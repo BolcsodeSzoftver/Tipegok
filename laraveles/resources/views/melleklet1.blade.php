@@ -11,11 +11,18 @@
 
 <body>
     <main>
+        <select class="alkalmazottNevek">
+            @foreach ($alkalmazotts as $alkalmazott)
+                <option value={{ $alkalmazott->id }}>{{ $alkalmazott->nev }}</option>
+            @endforeach
+        </select>
+        <input type="button" value="Mentés" id={{ $alkalmazott->id }}>
         <div id="export">
         <header>
             <h2>1. Melléklet</h2><br>
             <h2 class="alcim">gyvt nyilatkozat</h2>
         </header>
+       
             <tr>
                 <td>Alulírott</td>
                 <td id="nev">...</td>
@@ -32,6 +39,7 @@
                 <td>anyja neve:</td>
                 <td id="anyjaNeve">...</td>
             </tr>
+            
         </table>
         <span>.....................................................................................................................................................</span><br>
         <p>szám alatti lakos ezúton jelentem, ki hogy a Gyvt.10/A. §(1)-ben rögzített kizáró okok velem szemben
