@@ -9,6 +9,9 @@ use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
 use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
+use App\Mail\yourMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +31,8 @@ Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->mi
 Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
 Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
-Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class);
+Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
+
 
 /* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
 /* Route::get('/dolgozo/search', [dolgozController::class, 'search']); */
@@ -43,22 +47,34 @@ Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class);
     return view('dolgozo');
 })->middleware(['auth']); */
 
-Route::resource('/dolgozo',dolgozoListaController::class)->middleware(['auth']);
-Route::get('/mellekletek', [dolgozController::class,'dolgozokNevei'])->middleware(['auth']);
-Route::get('/melleklet1/{id}', [dolgozController::class,'dolgozoAdatai']);
+Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
+/* Route::get('/mellekletek', [dolgozController::class,'dolgozokNevei'])->middleware(['auth']); */
+Route::get('/melleklet1', [dolgozController::class, 'dolgozoAdatai']);
 
 
 /* Route::get('/mellekletek', function () {
     return view('mellekletek');
 })->middleware(['auth']); */
 
-Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']); 
-Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']);
-Route::get('/melleklet3', function () {return view('melleklet3');})->middleware(['auth']);
-Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(['auth']);
-Route::get('/melleklet5', function () {return view('melleklet5');})->middleware(['auth']);
-Route::get('/melleklet6', function () {return view('melleklet6');})->middleware(['auth']);
-Route::get('/melleklet10', function () {return view('melleklet10');})->middleware(['auth']);
+/* Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']);  */
+Route::get('/melleklet2', function () {
+    return view('melleklet2');
+})->middleware(['auth']);
+Route::get('/melleklet3', function () {
+    return view('melleklet3');
+})->middleware(['auth']);
+Route::get('/melleklet4', function () {
+    return view('melleklet4');
+})->middleware(['auth']);
+Route::get('/melleklet5', function () {
+    return view('melleklet5');
+})->middleware(['auth']);
+Route::get('/melleklet6', function () {
+    return view('melleklet6');
+})->middleware(['auth']);
+Route::get('/melleklet10', function () {
+    return view('melleklet10');
+})->middleware(['auth']);
 
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
@@ -90,5 +106,7 @@ Route::get('/belepes', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
 
 require __DIR__ . '/auth.php';

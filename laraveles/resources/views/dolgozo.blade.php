@@ -4,6 +4,7 @@
 @section('head')
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/dolgozo.js"></script>
+    
 @endsection
 @section('tartalom')
 
@@ -132,6 +133,11 @@
                 @endif
             @endforeach
         </table>
+        <div>
+            <button class="btn btn-secondary ujFenntarto">
+                <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
+            </button>
+        </div>
     </div>
     <div>
         {!! $alkalmazotts->links('pagination::bootstrap-4') !!}

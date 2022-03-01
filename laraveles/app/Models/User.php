@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Dotenv\Util\Str;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -45,7 +47,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-   /*  public function isAdmin(){
-        
-    } */
+
+
+
+    public function isAdmin()
+    {      
+        if('admin' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+            return true;
+        }
+        return false;
+    }
+
+    public function isSzuperAdmin()
+    {      
+        if('szuperadmin' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+            return true;
+        }
+        return false;
+    }
+
+
 }

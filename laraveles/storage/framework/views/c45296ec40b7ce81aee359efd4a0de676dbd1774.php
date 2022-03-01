@@ -11,6 +11,11 @@
 
 <body>
     <main>
+        <select class="alkalmazottNevek">
+            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value="<?php echo e($alkalmazott->id); ?>"><?php echo e($alkalmazott->nev); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </select>
         <div id="export">
         <header>
             <h2>1. Melléklet</h2><br>

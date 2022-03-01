@@ -28,4 +28,15 @@ th,
 td {
     text-align: center;
 }
+#ujFenntarto {
+  width: 200px;
+  color: white;
+}
+#ujFenn {
+  color: white;
+}
+#ujFenn:hover {
+  color: white;
+  text-decoration: none;
+}
  

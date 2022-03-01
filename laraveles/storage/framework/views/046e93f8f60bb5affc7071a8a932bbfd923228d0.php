@@ -14,11 +14,11 @@
 <body>
     <main>
         <select class="alkalmazottNevek">
-            @foreach ($alkalmazotts as $alkalmazott)
-                <option class="nevekLista" id={{ $alkalmazott->nev }} value={{ $alkalmazott->nev }}>
-                    {{ $alkalmazott->nev }}</option>    
+            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option class="nevekLista" id=<?php echo e($alkalmazott->nev); ?> value=<?php echo e($alkalmazott->nev); ?>>
+                    <?php echo e($alkalmazott->nev); ?></option>    
                     
-            @endforeach      
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>      
         </select>
         <div id="export">
             <header>
@@ -66,3 +66,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views//melleklet1.blade.php ENDPATH**/ ?>

@@ -4,6 +4,7 @@
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/dolgozo.js"></script>
+    
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
 
@@ -139,6 +140,11 @@
                 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>
+        <div>
+            <button class="btn btn-secondary ujFenntarto">
+                <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
+            </button>
+        </div>
     </div>
     <div>
         <?php echo $alkalmazotts->links('pagination::bootstrap-4'); ?>
