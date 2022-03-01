@@ -23,7 +23,7 @@ td {
 }
 
 @media print {
-	#gomb {
+	#gomb, .alkalmazottNevek{
 	  display: none;
 	}
 
@@ -31,4 +31,8 @@ td {
 		width: 210mm;
 		height: 297mm;
 	  }
+}
+
+.adat{
+  border: none;
 }

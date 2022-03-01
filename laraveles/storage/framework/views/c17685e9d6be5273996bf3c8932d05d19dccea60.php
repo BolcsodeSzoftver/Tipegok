@@ -7,23 +7,23 @@
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
     <!-- <script src="js/fenntListazas.js"></script>
-    <script src="js/fenntClass.js"></script>
-    <script src="js/fennt.js"></script> -->
+        <script src="js/fenntClass.js"></script>
+        <script src="js/fennt.js"></script> -->
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('tartalom'); ?>
     <h3>Bölcsőde adatok</h3>
     <div class="IDk">
-    <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>">
-    <input type="number" id="userID" value="<?php echo e(Auth::user()->id); ?>">
-    <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <?php if($jogosultsag->megnevezes=='admin'): ?>
-        <input type="number" id="adminID" value="<?php echo e($jogosultsag->id); ?>">
-        <?php endif; ?>
-        <?php if($jogosultsag->megnevezes=='szuperadmin'): ?>
-        <input type="number" id="szuperAdminID" value="<?php echo e($jogosultsag->id); ?>">
-        <?php endif; ?>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        <input type="text" id="userJogosultsag" value="<?php echo e(Auth::user()->jogosultsag_id); ?>">
+        <input type="number" id="userID" value="<?php echo e(Auth::user()->id); ?>">
+        <?php $__currentLoopData = $jogosults; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($jogosultsag->megnevezes == 'admin'): ?>
+                <input type="number" id="adminID" value="<?php echo e($jogosultsag->id); ?>">
+            <?php endif; ?>
+            <?php if($jogosultsag->megnevezes == 'szuperadmin'): ?>
+                <input type="number" id="szuperAdminID" value="<?php echo e($jogosultsag->id); ?>">
+            <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 
     <form class="form" id="bolcsiForm">
@@ -51,12 +51,11 @@
             </tr>
         </thead>
     </table>
-
-    <ul style="list-style-type: none;">
-        <li>
-            <a class="btn btn-secondary" id="ujBolcsiGomb" style="width: 200px; " href="/ujBolcsi" target="_blank">Új bölcsőde</a>
-        </li>
-    </ul>
+    <div>
+        <button class="btn btn-secondary ujFenntarto">
+            <a href="/ujBolcsi" target="_blank" id="ujFenn">Új fenntartó</a>
+        </button>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
