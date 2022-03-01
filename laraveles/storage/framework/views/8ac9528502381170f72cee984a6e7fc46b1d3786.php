@@ -8,7 +8,10 @@
 <body>
     <h1><?php echo e($details['title']); ?></h1>
     <p><?php echo e($details['body']); ?></p>
-    <p>Thank you</p>
+    <p>Üdvözlettel, 
+        <?php echo e($details['kuldoNev']); ?>
+
+    </p>
 </body>
 
 </html>

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
-use App\Mail\yourMail;
+use App\Mail\emailKuldes;
 use Illuminate\Support\Str;
 
 
@@ -23,15 +23,15 @@ class felhasznaloRegisztracio extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        
-        if(Auth::user()->isAdmin() || Auth::user()->isSzuperAdmin()){
+    { 
+        if (Auth::user()->isAdmin() || Auth::user()->isSzuperAdmin()) {
             $jogosultsagok = jogosultsag::all();
             return view('felhasznaloRegisztracio', compact('jogosultsagok'));
-        }else{
+        } else {
             return redirect('/');
-        }
-    
+        } 
+
+  
     }
 
     /**
@@ -62,7 +62,7 @@ class felhasznaloRegisztracio extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->jogosultsag_id = $request->get('Jogosultsag');
+        $user->jogosultsag_id = $request->get('Jogosultsag'); 
         $user->password = Hash::make($pass);
         $user->save();
 
@@ -71,16 +71,17 @@ class felhasznaloRegisztracio extends Controller
         $details = [
             'title' => 'Kedves ' . $user->name . ",",
             'body' => 'Felhasználód létrehozása sikeresen megtörtént. További adatok megadása szükséges,
-            ezt a következő linkre kattintva tudod megtenni: TODO<br>
-            <br>
-            Bejelentkezéshez szükséges adatok:
-            <br>
-            -felhasználónév:email címed
-            <br>-jelszó:' . $pass . '
-            ',
-            'kuldoNev'=>Auth::user()->name
+                        ezt a következő linkre kattintva tudod megtenni: TODO<br>
+            
+                        Bejelentkezéshez szükséges adatok:
+
+                        -felhasználónév:email címed
+
+                        -jelszó:' . $pass . '
+                        ',
+            'kuldoNev' => Auth::user()->name
         ];
-        Mail::to($user->email)->send(new yourMail($details));
+        Mail::to($user->email)->send(new emailKuldes($details));
         return redirect('/dolgozo');
     }
 

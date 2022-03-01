@@ -134,7 +134,7 @@
             @endforeach
         </table>
         <div>
-            <button class="btn btn-secondary ujFenntarto">
+            <button class="btn btn-secondary regisztracio">
                 <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
             </button>
         </div>
