@@ -17,8 +17,14 @@
                         </tr>
                     </thead>
                     <tbody class="adatokDolgozoAllapot">
+                        <?php
+                            $db=0;
+                        ?>
                         @forelse ($alkalmazotts as $data)
                             @if ($data->allapot === 0)
+                            <?php
+                                $db++;
+                            ?>
                                 <tr class="dolgozo">
                                     <td class="modositAllapot">
                                         <div class="form-outline">
@@ -38,6 +44,9 @@
                             @endif
                         @empty
                         @endforelse
+                        @if ($db==0)
+                            <tr><td>Nincs jóváhagyásra váró dolgozó</td></tr>
+                        @endif
                     </tbody>
                 </table>
             </div>
