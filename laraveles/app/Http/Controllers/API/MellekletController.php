@@ -38,5 +38,8 @@ class MellekletController extends Controller
         return response()->json($fenntarto);
     }
 
-    
+    public function dolgozoAdatai3(){
+        $alkalmazotts=alkalmazott::all();
+        return view('melleklet3', compact('alkalmazotts'));
+    } 
 }

@@ -32,7 +32,7 @@ $(function() {
 
 	function adatLista3(tomb) {
 		tomb.forEach(function (ertek) {
-			console.log(ertek.uzemorvos_nev);
+			//console.log(ertek.uzemorvos_nev);
 			$('#orvosNeve').attr('value',ertek.uzemorvos_nev);
 			$('#orvosCime').attr('value',ertek.uzemorvos_cim);
 			$('#orvosTel').attr('value',ertek.uzemorvos_telefonszam);
