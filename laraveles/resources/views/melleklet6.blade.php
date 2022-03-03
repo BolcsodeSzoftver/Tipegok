@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/mellekletek_css/melleklet6.css">
-    <script src="js/melleklet.js"></script>
     <title>Dokumentum 6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/mellekletAdatok.js"></script>
+    <script src="js/melleklet.js"></script>
   </head>
   <body>
     <main>
+        <label class="alkalmazottNevek">Válasz dolgozót: </label>
+        <select class="alkalmazottNevek">
+            @foreach ($alkalmazotts as $alkalmazott)
+                <option class='nevekLista' value={{ $alkalmazott->id }}>{{ $alkalmazott->nev }}</option>
+            @endforeach
+        </select>
       <div id="export">
       <header>
         <h2>6. Melléklet</h2>
@@ -17,7 +26,7 @@
       </header>
       <article>
         
-          <p class="nev">NÉV:<span> ...................................................</span></p>
+          <p class="nev">NÉV:<input type="text" class="adat" id="nev"></p>
         <p>
           Alulírott elismerem hogy tűz esetén követendő magatartásra, a
           munkakörömmel kapcsolatos tűzvédelmi előírásokra valamint a

@@ -26,7 +26,7 @@ section {
 }
 
 @media print {
-  #gomb {
+  #gomb, .alkalmazottNevek {
     display: none;
   }
   #export {
@@ -34,4 +34,8 @@ section {
     width: 500px;
     font-size: 13px;
   }
+}
+
+.adat{
+  border: none;
 }

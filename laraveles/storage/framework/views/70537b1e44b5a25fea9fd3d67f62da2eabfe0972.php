@@ -6,11 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melléklet 5</title>
     <link rel="stylesheet" href="css/mellekletek_css/melleklet5.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/mellekletAdatok.js"></script>
     <script src="js/melleklet.js"></script>
 </head>
 
 <body>
     <main>
+        <label class="alkalmazottNevek">Válasz dolgozót: </label>
+        <select class="alkalmazottNevek">
+            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option class='nevekLista' value=<?php echo e($alkalmazott->id); ?>><?php echo e($alkalmazott->nev); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
         <div id="export">
         <header>
             <h2>5. Melléklet</h2><br>
@@ -22,25 +31,19 @@
             </tr>
             <tr>
                 <td>Név:</td>
-                <td class="teljesNev">
-                    ..............................................................................................</td></tr>
+                <td class="teljesNev"><input type="text" class="adat" id="nev"></td>
+            </tr>
             <tr>
                 <td>Születési hely, idő:</td>
-                <td id="szHely_szIdo">
-                    ..............................................................................................
-                </td>
+                <td id="szHely_szIdo"><input type="text" class="adat" id="szulHely"><input type="text" class="adat" id="szulIdo"></td>
             </tr>
             <tr>
                 <td>Anyja neve:</td>
-                <td id="aNev">
-                    ..............................................................................................
-                </td>
+                <td id="aNev"><input type="text" class="adat" id="anyjaNeve"></td>
             </tr>
             <tr>
                 <td>Cím:</td>
-                <td id="allHely">
-                    ..............................................................................................
-                </td>
+                <td id="allHely"><input type="text" class="adat" id="cim"></td>
             </tr>
         </table>
         <p>nyilatkozom, hogy a "bölcsődei szolátltatást nyújó személy" munkakör betöltéséhet szükséges 100 órás<br>

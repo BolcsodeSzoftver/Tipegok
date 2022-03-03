@@ -146,7 +146,7 @@ table, tr,td {
 }
 
 @media print {
-	#gomb {
+	#gomb, .alkalmazottNevek{
 	  display: none;
 	}
 
@@ -155,4 +155,8 @@ table, tr,td {
 		height: 297mm;
 		/* font-size: 13px; */
 	  }
+}
+
+.adat{
+  border: none;
 }

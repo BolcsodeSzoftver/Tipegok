@@ -6,12 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/mellekletek_css/melleklet2.css">
-    <script src="js/melleklet.js"></script>
     <title>Melléklet 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/mellekletAdatok.js"></script>
+    <script src="js/melleklet.js"></script>
 </head>
 
 <body>
     <main>
+    <label class="alkalmazottNevek">Válasz dolgozót: </label>
+        <select class="alkalmazottNevek">
+            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option class='nevekLista' value=<?php echo e($alkalmazott->id); ?>><?php echo e($alkalmazott->nev); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
         <div id="export">
         <header>
             <h2>2. melléklet</h2>
@@ -37,17 +46,17 @@
                     <p>Munkavállaló. tanuló, álláskereső vagy munkát végző személy (továbbiakban együtt: vizsgált</p>
                     <p>személy)</p>
                     </p>
-                    <p>Neve: <span>.......................................................................................................................................</span></p>
-                    <p>Címe: <span>.......................................................................................................................................</span></p>
-                    <p>Születési helye, ideje: <span>..............................................................................................................</span></p>
-                    <p>TAJ száma: <span>..............................................................................................................................</span></p>
-                    <p>Munka/tevékenységi köre: <span>......................................................................................................</span></p>
+                    <p >Neve: <input type="text" class="adat" id="nev"></p>
+                    <p class="adat">Címe: <input type="text" class="adat" id="cim"></p>
+                    <p class="adat">Születési helye, ideje: <input type="text" class="adat" id="szulHely"><input type="text" class="adat" id="szulIdo"></p>
+                    <p class="adat">TAJ száma: <input type="text" class="adat" id="tajSz"></p>
+                    <p class="adat">Munka/tevékenységi köre: <input type="text" class="adat" id="munkaKor"></p>
                 </div>
-                <div class="szoveg-2">
+                <div class="szoveg-2" style="margin-top: 10px;">
                     <p>Munkaköri, szakmai illetve személyi higiéniés alkalmasságot elbíráló orvos</p>
-                    <p>Neve: <span>.......................................................................................................................................</span></p>
-                    <p>Címe: <span>.......................................................................................................................................</span></p>
-                    <p>Telefonszáma: <span>..........................................................................................................................</span></p>
+                    <p >Neve: <input type="text" class="adat" id="orvosNeve"></p>
+                    <p class="adat">Címe: <input type="text" class="adat" id="orvosCime"></p>
+                    <p class="adat">Telefonszáma: <input type="text" class="adat" id="orvosTel"></p>
                 </div>
                 <div class="szoveg-3">
                     <p>A vizsgált személy nyilatkozata</p>

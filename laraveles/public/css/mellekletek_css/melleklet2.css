@@ -19,10 +19,10 @@ p{
     display: flex;
 }
 .ketto{
-    margin-top: 135px;
+    margin-top: 140px;
 }
 .harom{
-    margin-top: 75px;
+    margin-top: 80px;
 }
 article:nth-child(1){
     margin-right: 30px;
@@ -47,7 +47,7 @@ article:nth-child(1){
 }
 
 @media print {
-	#gomb {
+	#gomb, .alkalmazottNevek{
 	  display: none;
 	}
 
@@ -56,3 +56,11 @@ article:nth-child(1){
 		height: 297mm;
 	  }
 }
+
+.adat{
+    border: none;
+    margin-top: -7px;
+}
+
+#cim{width: 70%;}
+#szulHely{width: 20%;}
