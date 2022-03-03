@@ -1,6 +1,6 @@
 
 <?php $__env->startSection('UjdolgozoTartalom'); ?>
-    <form action="/api/ujDolgozo" method="post">
+    <form action="/ujdolgozo" method="post">
         <?php echo csrf_field(); ?>
         <div class="t1">
             <div class="row">
@@ -32,8 +32,8 @@
                 <div class="col">
                     <div class="form-outline">
                         <label for="telefonszam">Telefonszám:</label>
-                        <input type="tel" pattern="([\+](36)(20|30|70)\d{7})|((06)\d{9})" class="form-control"
-                            id="telefonszam" name="telefonszam" placeholder="+36301234567" required="required">
+                        <input type="text" class="form-control" id="telefonszam" name="telefonszam"
+                            placeholder="+36301234567" required="required">
                     </div>
                 </div>
             </div>
@@ -76,11 +76,15 @@
             <hr />
             <div class="row">
                 <div class="col-4">
-                    <label>Nem</label>
-                    <select class="custom-select" name="nem">
-                        <option value="N">Nő</option>
-                        <option value="F">Férfi</option>
-                    </select>
+                    <p>Nem</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="no" id="no" value="N">
+                        <label class="form-check-label" for="no">Nő</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ferfi" id="ferfi" value="F">
+                        <label class="form-check-label" for="ferfi">Férfi</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,16 +171,24 @@
             <hr />
             <div class="row">
                 <div class="col-4">
-                    <label>Házas</label>
-                    <select class="custom-select">
-                        <option>Igen</option>
-                        <option>Nem</option>
-                    </select>
+                    <p>Házas</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="igen" id="igen" value="i">
+                        <label class="form-check-label" for="igen">igen</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="nem" id="nem" value="n">
+                        <label class="form-check-label" for="nem">nem</label>
+                    </div>
                 </div>
             </div>
-            <button type="submit">Mentés</button>
         </div>
+        <div class="allapot">
+            <input type="text" id="form8Example3" class="form-control" name="allapot" value="0" />
+            <label class="form-label" for="form8Example3">Állapot</label>
+        </div>
+        <button type="submit" name="mentes" id="mentes">Mentés</button>
     </form>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.UjdolgozoSzerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/ujDolgozo.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.UjdolgozoSzerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/ujdolgozo.blade.php ENDPATH**/ ?>

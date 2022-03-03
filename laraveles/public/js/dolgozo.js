@@ -4,12 +4,12 @@ $(function () {
         $("input").removeAttr("readonly");
     });
 
-    tablazatFejlecElrejtese();
     function tablazatFejlecElrejtese() {
         for (let i = 2; i < 6; i++) {
             $(".t" + i).hide();
         }
-    }
+    }   tablazatFejlecElrejtese();
+ 
 
     $("#adatokT1").css("background-color", "gray");
     $("#adatokT1").css("color", "white");
