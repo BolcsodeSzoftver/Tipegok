@@ -8,6 +8,7 @@ use App\Models\alkalmazott;
 use App\Models\bolcsode;
 use App\Models\fenntarto;
 use App\Models\dolgozo;
+use App\Models\alkalmazott_bizonyitvany;
 
 class MellekletController extends Controller
 {
@@ -52,4 +53,19 @@ class MellekletController extends Controller
         $alkalmazotts=alkalmazott::all();
         return view('melleklet5', compact('alkalmazotts'));
     } 
+
+    public function dolgozoAdatai6(){
+        $alkalmazotts=alkalmazott::all();
+        return view('melleklet6', compact('alkalmazotts'));
+    } 
+
+    public function dolgozoAdatai10(){
+        $alkalmazotts=alkalmazott::all();
+        return view('melleklet10', compact('alkalmazotts'));
+    }
+
+    public function kivalasztottDolgozoBizonyitvany($id){
+        $bizonyitvany=alkalmazott_bizonyitvany::where('alkalmazott_id',$id)->get();
+        return response()->json($bizonyitvany);
+    }
 }

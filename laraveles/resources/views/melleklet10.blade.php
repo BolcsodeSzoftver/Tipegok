@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melléklet 10</title>
     <link rel="stylesheet" href="css/mellekletek_css/melleklet10.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/mellekletAdatok.js"></script>
     <script src="js/melleklet.js"></script>
 </head>
 <body>
     <main>
+        <label class="alkalmazottNevek">Válasz dolgozót: </label>
+        <select class="alkalmazottNevek">
+            @foreach ($alkalmazotts as $alkalmazott)
+                <option class='nevekLista' value={{ $alkalmazott->id }}>{{ $alkalmazott->nev }}</option>
+            @endforeach
+        </select>
         <div id="export">
         <header>
             <h2 id="vekony">10. melléklet</h2>
@@ -30,31 +39,31 @@
 
             <table>
                 <tr>
-                    <td><p>1. Megye:</p></td>
+                    <td><p>1. Megye: <input type="text" class="adat" id="megye"></p></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><p>2. Név: <span>....................................</span></p></td>
+                    <td><p>2. Név: <input type="text" class="adat" id="nev"></p></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><p>3. Születési családi és utónév:</p></td>
+                    <td><p>3. Születési családi és utónév: <input type="text" class="adat" id="szulNev"></p></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><p>4. Neme:</p></td>
+                    <td><p>4. Neme: <input type="text" class="adat" id="nem"></p></td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td><p>5. Születési hely:<span>.........................</span></td>
-                    <td><p>6. Születési idő:<span>.........................</span></td>
+                    <td><p>5. Születési hely: <input type="text" class="adat" id="szulHely"></td>
+                    <td><p>6. Születési idő: <input type="text" class="adat" id="szulIdo"></td>
                 </tr>
                 <tr>
-                    <td><p>7. Anyja neve:<span>.........................</span></td>
-                    <td><p>8. Állampolgárság:<span>.........................</span></td>
+                    <td><p>7. Anyja neve:<input type="text" class="adat" id="anyjaNeve"></td>
+                    <td><p>8. Állampolgárság:<input type="text" class="adat" id="allamP"></td>
                 </tr>
                 <tr>
-                    <td><p>9. Munkáltató székhelyének neve, címe:<span>.........................</span></td>
+                    <td><p>9. Munkáltató székhelyének neve, címe: <input type="text" class="adat" id="szekHely"></p></td>
                     <td></td>
                 </tr>
                 <tr>
@@ -266,16 +275,10 @@
                     <th>A bizonyítvány, oklevél kiállításánakideje</th>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input style="text-align:center;" type="text" class="adat" id="vegzettseg"></td>
+                    <td><input style="text-align:center;" type="text" class="adat" id="bizIntezmenyNev"></td>
+                    <td><input style="text-align:center;" type="text" class="adat" id="bizonyitvanySz"></td>
+                    <td><input style="text-align:center;" type="text" class="adat" id="kiadasDatum"></td>
                 </tr>
             </table>
             <div class="padding">

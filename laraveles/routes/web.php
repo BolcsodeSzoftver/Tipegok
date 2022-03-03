@@ -64,10 +64,11 @@ Route::get('/melleklet2/{id}', [MellekletController::class,'kivalasztottDolgozo2
 Route::get('/melleklet3', [MellekletController::class,'dolgozoAdatai3']);
 Route::get('/melleklet4', [MellekletController::class,'dolgozoAdatai4']);
 Route::get('/melleklet5', [MellekletController::class,'dolgozoAdatai5']);
+Route::get('/melleklet6', [MellekletController::class,'dolgozoAdatai6']);
 
-Route::get('/melleklet6', function () {return view('melleklet6');})->middleware(['auth']);
-Route::get('/melleklet10', function () {return view('melleklet10');})->middleware(['auth']);
+Route::get('/melleklet10', [MellekletController::class,'dolgozoAdatai10']);
 Route::get('/melleklet10/{id}', [MellekletController::class,'kivalasztottDolgozo10']);
+Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgozoBizonyitvany']);
 
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
