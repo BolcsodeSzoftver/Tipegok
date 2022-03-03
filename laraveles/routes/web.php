@@ -67,6 +67,7 @@ Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(
 Route::get('/melleklet5', function () {return view('melleklet5');})->middleware(['auth']);
 Route::get('/melleklet6', function () {return view('melleklet6');})->middleware(['auth']);
 Route::get('/melleklet10', function () {return view('melleklet10');})->middleware(['auth']);
+Route::get('/melleklet10/{id}', [MellekletController::class,'kivalasztottDolgozo10']);
 
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');

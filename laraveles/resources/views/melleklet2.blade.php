@@ -50,7 +50,7 @@
                     <p class="adat">Címe: <input type="text" class="adat" id="cim"></p>
                     <p class="adat">Születési helye, ideje: <input type="text" class="adat" id="szulHely"><input type="text" class="adat" id="szulIdo"></p>
                     <p class="adat">TAJ száma: <input type="text" class="adat" id="tajSz"></p>
-                    <p class="adat">Munka/tevékenységi köre: </p>
+                    <p class="adat">Munka/tevékenységi köre: <input type="text" class="adat" id="munkaKor"></p>
                 </div>
                 <div class="szoveg-2" style="margin-top: 10px;">
                     <p>Munkaköri, szakmai illetve személyi higiéniés alkalmasságot elbíráló orvos</p>

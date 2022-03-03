@@ -3,11 +3,13 @@ $(function() {
 
 	$('select').change(() => {
 		//console.log($('select').val());
-		let fajlnev1="/melleklet1/"+$('select').val();
-		let fajlnev2="/melleklet2/"+$('select').val();
-		console.log(fajlnev1, fajlnev2);
-		ajax.getAjax(fajlnev1, adatLista1);
-		ajax.getAjax(fajlnev2, adatLista2);
+		let dolgozo1="/melleklet1/"+$('select').val();
+		let dolgozo2="/melleklet2/"+$('select').val();
+		let fenntarto="/melleklet10/"+$('select').val();
+		console.log(dolgozo1, fenntarto);
+		ajax.getAjax(dolgozo1, adatLista1);
+		ajax.getAjax(dolgozo2, adatLista2);
+		ajax.getAjax(fenntarto, adatLista3);
 	});
 
 	function adatLista1(tomb) {
@@ -23,6 +25,12 @@ $(function() {
 	}
 
 	function adatLista2(tomb) {
+		tomb.forEach(function (ertek) {
+			$('#munkaKor').attr('value',ertek.munkakor);
+		});
+	}
+
+	function adatLista3(tomb) {
 		tomb.forEach(function (ertek) {
 			console.log(ertek.uzemorvos_nev);
 			$('#orvosNeve').attr('value',ertek.uzemorvos_nev);
