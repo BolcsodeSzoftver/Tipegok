@@ -17,8 +17,14 @@
                         </tr>
                     </thead>
                     <tbody class="adatokDolgozoAllapot">
+                        <?php
+                            $db=0;
+                        ?>
                         <?php $__empty_1 = true; $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                             <?php if($data->allapot === 0): ?>
+                            <?php
+                                $db++;
+                            ?>
                                 <tr class="dolgozo">
                                     <td class="modositAllapot">
                                         <div class="form-outline">
@@ -37,6 +43,9 @@
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                        <?php endif; ?>
+                        <?php if($db==0): ?>
+                            <tr><td>Nincs jóváhagyásra váró dolgozó</td></tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
