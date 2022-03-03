@@ -6,21 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Melléklet 4</title>
     <link rel="stylesheet" href="css/mellekletek_css/melleklet4.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/mellekletAdatok.js"></script>
     <script src="js/melleklet.js"></script>
 </head>
 <body>
     <main>
+        <label class="alkalmazottNevek">Válasz dolgozót: </label>
+        <select class="alkalmazottNevek">
+            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option class='nevekLista' value=<?php echo e($alkalmazott->id); ?>><?php echo e($alkalmazott->nev); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
         <div id="export">
         <header>
             <h2>4.MELLÉKLET</h1>
-    </header>
+        </header>
         <article>
             <h3>NYILATKOZAT A HELYETTESÍTÉSRŐL</h2>
-            <p>Alulírott: <span>....................................</span></p>
-            <p>Anyja neve: <span>....................................</span></p>
-            <p>Születési hely:<span>.........................</span> idő: <span>............................</span></p>
+            <p>Alulírott: <input type="text" class="adat" id="nev"></p>
+            <p>Anyja neve: <input type="text" class="adat" id="anyjaNeve"></p>
+            <p>Születési hely:<input type="text" class="adat" id="szulHely"> idő: <input type="text" class="adat" id="szulIdo"></p>
             <p>
-                Nyilatkozom arról, hogy a <br><span> .................................... </span> minden bölcsödéjében vállalom a helyettesítést.
+                Nyilatkozom arról, hogy a <input type="text" class="adat" id="fenntartoNev" style="text-align:center;"> minden bölcsödéjében vállalom a helyettesítést.
             </p>
             <p class="datum">Budapest, <span>....................</span></p>
             <p><span>....................................</span></p>

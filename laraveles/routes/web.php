@@ -58,15 +58,13 @@ Route::get('/mellekletek', function () {
 Route::get('/melleklet1', [MellekletController::class,'dolgozoAdatai1']);
 Route::get('/melleklet1/{id}', [MellekletController::class,'kivalasztottDolgozo1']); 
 
-/* Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']); */
 Route::get('/melleklet2', [MellekletController::class,'dolgozoAdatai2']);
 Route::get('/melleklet2/{id}', [MellekletController::class,'kivalasztottDolgozo2']); 
 
-/* Route::get('/melleklet3', function () {return view('melleklet3');})->middleware(['auth']); */
 Route::get('/melleklet3', [MellekletController::class,'dolgozoAdatai3']);
+Route::get('/melleklet4', [MellekletController::class,'dolgozoAdatai4']);
+Route::get('/melleklet5', [MellekletController::class,'dolgozoAdatai5']);
 
-Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(['auth']);
-Route::get('/melleklet5', function () {return view('melleklet5');})->middleware(['auth']);
 Route::get('/melleklet6', function () {return view('melleklet6');})->middleware(['auth']);
 Route::get('/melleklet10', function () {return view('melleklet10');})->middleware(['auth']);
 Route::get('/melleklet10/{id}', [MellekletController::class,'kivalasztottDolgozo10']);

@@ -20,7 +20,7 @@ article h3{
 }
 
 @media print {
-	#gomb {
+	#gomb, .alkalmazottNevek{
 	  display: none;
 	}
 
@@ -28,4 +28,8 @@ article h3{
 		width: 210mm;
 		height: 297mm;
 	  }
+}
+
+.adat{
+    border: none;
 }

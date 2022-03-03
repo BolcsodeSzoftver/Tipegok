@@ -42,4 +42,14 @@ class MellekletController extends Controller
         $alkalmazotts=alkalmazott::all();
         return view('melleklet3', compact('alkalmazotts'));
     } 
+
+    public function dolgozoAdatai4(){
+        $alkalmazotts=alkalmazott::all();
+        return view('melleklet4', compact('alkalmazotts'));
+    } 
+
+    public function dolgozoAdatai5(){
+        $alkalmazotts=alkalmazott::all();
+        return view('melleklet5', compact('alkalmazotts'));
+    } 
 }

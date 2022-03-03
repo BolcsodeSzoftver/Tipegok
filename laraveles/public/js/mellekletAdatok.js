@@ -3,12 +3,12 @@ $(function() {
 
 	$('select').change(() => {
 		//console.log($('select').val());
-		let dolgozo1="/melleklet1/"+$('select').val();
-		let dolgozo2="/melleklet2/"+$('select').val();
+		let alkalmazott="/melleklet1/"+$('select').val();
+		let dolgozo="/melleklet2/"+$('select').val();
 		let fenntarto="/melleklet10/"+$('select').val();
-		console.log(dolgozo1, fenntarto);
-		ajax.getAjax(dolgozo1, adatLista1);
-		ajax.getAjax(dolgozo2, adatLista2);
+		console.log(alkalmazott, fenntarto);
+		ajax.getAjax(alkalmazott, adatLista1);
+		ajax.getAjax(dolgozo, adatLista2);
 		ajax.getAjax(fenntarto, adatLista3);
 	});
 
@@ -36,6 +36,7 @@ $(function() {
 			$('#orvosNeve').attr('value',ertek.uzemorvos_nev);
 			$('#orvosCime').attr('value',ertek.uzemorvos_cim);
 			$('#orvosTel').attr('value',ertek.uzemorvos_telefonszam);
+			$('#fenntartoNev').attr('value',ertek.nev);
 		});
 	}
 });
