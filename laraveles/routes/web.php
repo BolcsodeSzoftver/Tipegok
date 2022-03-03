@@ -7,6 +7,7 @@ use App\Http\Controllers\API\dolgozController;
 use App\Http\Controllers\API\belepesController;
 use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
+use App\Http\Controllers\API\MellekletController;
 use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
 
@@ -45,17 +46,18 @@ Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class);
 
 Route::resource('/dolgozo',dolgozoListaController::class)->middleware(['auth']);
 
-Route::get('/melleklet1', [dolgozController::class,'dolgozoAdatai']);
-Route::get('/melleklet1/{id}', [dolgozController::class,'kivalasztottDolgozo']);
-
-
 Route::get('/mellekletek', function () {
     return view('mellekletek');
 })->middleware(['auth']);
 
-//Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']); 
+//Route::get('/melleklet1', function () {return view('melleklet1');})->middleware(['auth']);
+Route::get('/melleklet1', [MellekletController::class,'dolgozoAdatai1']);
+Route::get('/melleklet1/{id}', [MellekletController::class,'kivalasztottDolgozo1']); 
 
-Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']);
+/* Route::get('/melleklet2', function () {return view('melleklet2');})->middleware(['auth']); */
+Route::get('/melleklet2', [MellekletController::class,'dolgozoAdatai2']);
+Route::get('/melleklet2/{id}', [MellekletController::class,'kivalasztottDolgozo2']); 
+
 Route::get('/melleklet3', function () {return view('melleklet3');})->middleware(['auth']);
 Route::get('/melleklet4', function () {return view('melleklet4');})->middleware(['auth']);
 Route::get('/melleklet5', function () {return view('melleklet5');})->middleware(['auth']);
