@@ -49,8 +49,8 @@
         </thead>
     </table>
     <div>
-        <button class="btn btn-secondary ujFenntarto">
-            <a href="/ujBolcsi" target="_blank" id="ujFenn">Új fenntartó</a>
+        <button class="btn btn-secondary ujBolcsode">
+            <a href="/ujBolcsi" target="_blank" id="ujBolcsi">Új bölcsőde</a>
         </button>
     </div>
 

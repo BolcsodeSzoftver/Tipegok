@@ -28,4 +28,15 @@ th,
 td {
     text-align: center;
 }
+.regisztracio {
+  width: 200px;
+  color: white;
+}
+#ujDolgozo {
+  color: white;
+}
+#ujDolgozo:hover {
+  color: white;
+  text-decoration: none;
+}
  

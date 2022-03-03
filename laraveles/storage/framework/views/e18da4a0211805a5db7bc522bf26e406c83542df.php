@@ -6,9 +6,6 @@
     <script src="js/bolcsodeAdatLista.js"></script>
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
-    <!-- <script src="js/fenntListazas.js"></script>
-        <script src="js/fenntClass.js"></script>
-        <script src="js/fennt.js"></script> -->
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('tartalom'); ?>
@@ -52,8 +49,8 @@
         </thead>
     </table>
     <div>
-        <button class="btn btn-secondary ujFenntarto">
-            <a href="/ujBolcsi" target="_blank" id="ujFenn">Új fenntartó</a>
+        <button class="btn btn-secondary ujBolcsode">
+            <a href="/ujBolcsi" target="_blank" id="ujBolcsi">Új bölcsőde</a>
         </button>
     </div>
 

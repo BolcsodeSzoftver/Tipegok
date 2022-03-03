@@ -10,6 +10,9 @@ use App\Http\Controllers\API\FenntartoController;
 use App\Http\Controllers\API\MellekletController;
 use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
+use App\Mail\yourMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +32,8 @@ Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->mi
 Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
 Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
-Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class);
+Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
+
 
 /* Route::get('/dolgozo/{nev}',[dolgozController::class, 'dolgozoKeres']); */
 /* Route::get('/dolgozo/search', [dolgozController::class, 'search']); */
@@ -94,5 +98,7 @@ Route::get('/belepes', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
 
 require __DIR__ . '/auth.php';

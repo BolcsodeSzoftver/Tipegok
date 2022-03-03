@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Melléklet 1</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/mellekletek_css/melleklet1.css">
     <script src="js/ajax.js"></script>
     <script src="js/mellekletAdatok.js"></script>
     <script src="js/melleklet.js"></script>
+    <script src="js/mellekletAdatok.js"></script>
 </head>
 
 <body>
@@ -60,11 +62,11 @@
         <div class="alairas">
             <p><span>....................................................................</span><br>aláírás</p>
 
-        </div>
+            </div>
 
-    </div>
-    <input type="submit" value="word exportálása" id="gomb" onclick="Export2Word('export', 'melléklet_1');">
-    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
+        </div>
+        <input type="submit" value="word exportálása" id="gomb" onclick="Export2Word('export', 'melléklet_1');">
+        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb">
     </main>
 </body>
 

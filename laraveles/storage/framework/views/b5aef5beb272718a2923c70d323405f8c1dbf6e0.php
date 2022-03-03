@@ -70,28 +70,6 @@
                                             </div>
 
                                             <div class="d-flex flex-row align-items-center mb-4">
-
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="password" id="form3Example4cd" class="form-control"
-                                                        name="password" required autocomplete="new-password" />
-                                                    <label class="form-label" for="form3Example4cd"
-                                                        class="block mt-1 w-full" for="password"
-                                                        :value="__('Password')">Jelszó</label>
-
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center mb-4">
-
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="password" id="form3Example4c" class="form-control"
-                                                        name="password_confirmation" required />
-                                                    <label class="form-label" for="form3Example4c"
-                                                        for="password_confirmation"
-                                                        :value="__('Confirm Password')">Jelszó ismétlése</label>
-
-                                                </div>
-                                            </div>
-                                            <div class="d-flex flex-row align-items-center mb-4">
                                                 <div class="form-outline flex-fill mb-0">
                                                     <select name="Jogosultsag" id="jogosultsag">
                                                         <?php $__currentLoopData = $jogosultsagok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -101,11 +79,12 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                                                <button type="submit" class="btn btn-primary">
-                                                    <?php echo e(__('Regisztráció')); ?></button>
-                                            </div>
+                                                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
 
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <?php echo e(__('Regisztráció')); ?></button>
+
+                                                </div>
                                         </form>
 
                                     </div>

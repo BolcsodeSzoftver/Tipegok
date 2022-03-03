@@ -30,7 +30,7 @@ class CreateDolgozosTable extends Migration
             $table->boolean('kp_utalas');
             $table->string('sz_szakkepzet');
             $table->date('belepesi_nap')->unique();;
-            $table->date('kilepesi_nap');
+            $table->date('kilepesi_nap')->nullable();
             $table->integer('szgf_kod');
             $table->string('munkakor');
             $table->timestamps();

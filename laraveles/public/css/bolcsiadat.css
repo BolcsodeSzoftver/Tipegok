@@ -22,14 +22,14 @@ td {
 .modosit {
     text-align: center;
 }
-#ujFenntarto {
+#ujBolcsode {
     width: 200px;
     color: white;
 }
-#ujFenn {
+#ujBolcsi {
     color: white;
 }
-#ujFenn:hover {
+#ujBolcsi:hover {
     color: white;
     text-decoration: none;
 }

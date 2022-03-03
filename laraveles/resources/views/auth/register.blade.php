@@ -67,23 +67,10 @@
                                                     <label class="form-label" for="form3Example4c"
                                                         for="password_confirmation"
                                                         :value="__('Confirm Password')">Jelszó ismétlése</label>
-
                                                 </div>
                                             </div>
-                                            <div class="d-flex flex-row align-items-center mb-4">
 
-                                                <div class="form-outline flex-fill mb-0">
-                                                    <input type="text" id="form3Example4c" class="form-control"
-                                                        name="jogosultsag" required />
-                                                    <label class="form-label" for="form3Example4c" for="jogosultsag"> 
-                                                        <select name="" id="">
-                                                            @foreach ($jogosultsagok as $jogosultsag)
-                                                                
-                                                            @endforeach
-                                                            </select>                              
 
-                                                </div>
-                                            </div>
 
                                             <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                                 <button type="submit" class="btn btn-primary">
