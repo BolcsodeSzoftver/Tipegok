@@ -84,6 +84,7 @@ class FelhasznaloController extends Controller
         $felhasznalo = User::findOrFail($request->id);
         $felhasznalo->name = $request->name;
         $felhasznalo->email = $request->email;
+        $felhasznalo->jogosultsag_id = $request->jogosultsag;
         $felhasznalo->save();
         return redirect("/felhasznalo");
     }

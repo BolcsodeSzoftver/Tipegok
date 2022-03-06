@@ -24,4 +24,9 @@ class alkalmazott extends Model
         $this->delete();
         User::findOrFail($userId)->delete();
     }
+
+    public static function keresBolcsodeId($userId){
+      $id = alkalmazott::where('users_id',$userId)->first()->bolcsode_id;
+      return $id;
+    }
 }

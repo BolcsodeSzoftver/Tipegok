@@ -54,7 +54,7 @@ Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgoz
 Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
 Route::resource('/ujdolgozo', ujDolgozoController::class);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
-Route::resource('/dolgozo',dolgozoListaController::class)->middleware(['auth']);
+
 
 
 Route::get('/mellekletek', function () {

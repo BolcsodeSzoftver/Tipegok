@@ -6,6 +6,7 @@
             width: 200px;
             margin: auto;
         }
+
     </style>
     <script src="js/felhasznalo.js"></script>
 @endsection
@@ -23,24 +24,24 @@
                 </tr>
             </thead>
             <tbody class="adatok">
-                    @foreach ($jogosultsag as $a)
-                        @foreach ($user as $u)
-                            @if ($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id)
-                                <tr class="felhasznalo">
-                                    <td class="modosit">
-                                        <button class="btn btn-primary modositGomb" id={{ $u->id }} type="button"
-                                            data-toggle="modal" data-target="#modalLoginForm">
-                                            <i class='fa fa-edit'></i>
-                                        </button>
-                                    </td>
-                                    <td></td>
-                                    <td class="nev" id={{ $u->id }}>{{ $u->name }}</td>
-                                    <td class="email" id={{ $u->id }}>{{ $u->email }}</td>
-                                    <td>{{ $a->megnevezes }}</td>
-                                </tr>
-                            @endif
-                        @endforeach
+                @foreach ($jogosultsag as $a)
+                    @foreach ($user as $u)
+                        @if ($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id)
+                            <tr class="felhasznalo">
+                                <td class="modosit">
+                                    <button class="btn btn-primary modositGomb" id={{ $u->id }} type="button"
+                                        data-toggle="modal" data-target="#modalLoginForm">
+                                        <i class='fa fa-edit'></i>
+                                    </button>
+                                </td>
+                                <td></td>
+                                <td class="nev" id={{ $u->id }}>{{ $u->name }}</td>
+                                <td class="email" id={{ $u->id }}>{{ $u->email }}</td>
+                                <td>{{ $a->megnevezes }}</td>
+                            </tr>
+                        @endif
                     @endforeach
+                @endforeach
             </tbody>
         </table>
 
@@ -69,6 +70,15 @@
                             <div class="md-form mb-4">
                                 <label data-error="wrong" data-success="right" for="emailInput">Email</label>
                                 <input type="email" id="emailInput" class="form-control validate" name="email" value="">
+
+                            </div>
+                            <div class="md-form mb-4">
+                                <select name="jogosultsag" id="">
+                                    @foreach ($jogosultsag as $jogosultsag)
+                                        <option value={{ $jogosultsag->id }}>{{ $jogosultsag->megnevezes }}
+                                        </option>
+                                    @endforeach
+                                </select>
 
                             </div>
                         </div>

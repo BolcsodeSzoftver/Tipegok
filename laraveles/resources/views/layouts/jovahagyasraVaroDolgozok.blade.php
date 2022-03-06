@@ -1,5 +1,5 @@
-<div class="modal fade" id="jovahagyasaraVaroDolgozoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="jovahagyasaraVaroDolgozoModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,44 +10,60 @@
             </div>
             <div class="modal-body jovahagyasDiv">
                 <table class="table table-bordered mb-5" id="tabla">
+
                     <thead>
                         <tr class="table-active">
                             <th></th>
                             <th scope="col" sortable>Név</th>
                         </tr>
                     </thead>
+
+
                     <tbody class="adatokDolgozoAllapot">
-                        <?php
-                            $db=0;
-                        ?>
-                        @forelse ($alkalmazotts as $data)
-                            @if ($data->allapot === 0)
-                            <?php
-                                $db++;
-                            ?>
-                                <tr class="dolgozo">
-                                    <td class="modositAllapot">
-                                        <div class="form-outline">
-                                            <input type="hidden" id="allapot" class="form-control" name="allapot">
-                                        </div>
-                                        <button type="submit" name={{ $data->nev }} value="Save"
-                                            id={{ $data->id }} data-toggle="modal" data-target="#adatok"
-                                            class="btn btn-primary jovahagyasKezd">
-                                            <span>&#10003;</span>
-                                        </button>
-                                    </td>
-                                    <td class="nev" id={{ $data->id }}>{{ $data->nev }}</td>
-                                    <td class="allapot" id={{ $data->allapot }}>{{ $data->allapot }}</td>
-                                    <td class="id" id={{ $data->id }}>{{ $data->id }}</td>
-                                    <td class="bolcsodeIdTd" id={{ $data->id }}>{{ $data->bolcsode_id }}</td>
-                                </tr>
-                            @endif
-                        @empty
-                        @endforelse
-                        @if ($db==0)
-                            <tr><td>Nincs jóváhagyásra váró dolgozó</td></tr>
+                        @if (Auth::user()->isAdmin() or Auth::user()->isSzuperAdmin())
+                            @foreach ($alkalmazotts as $data)
+                                @php
+                                    $kiirasFeltetel = ($data->allapot == 0 and $data->bolcsode_id == Auth::user()->getBolcsodeId());
+                                    if (Auth::user()->isSzuperAdmin()) {
+                                        $kiirasFeltetel = $data->allapot == 0;
+                                    }
+                                @endphp
+                                @if ($kiirasFeltetel)
+                                    <tr class="dolgozo">
+                                        <td class="modositAllapot">
+                                            <div class="form-outline">
+                                                <input type="hidden" id="allapot" class="form-control" name="allapot">
+                                            </div>
+                                            <button type="submit" name={{ $data->nev }} value="Save"
+                                                id={{ $data->id }} data-toggle="modal" data-target="#adatok"
+                                                class="btn btn-primary jovahagyasKezd">
+                                                <span>&#10003;</span>
+                                            </button>
+                                        </td>
+                                        <td class="nev" id={{ $data->id }}>
+                                            {{ $data->nev }}</td>
+                                        <td class="allapot" id={{ $data->allapot }}>
+                                            {{ $data->allapot }}
+                                        </td>
+                                        <td class="id" id={{ $data->id }}>
+                                            {{ $data->id }}</td>
+                                        <td class="bolcsodeIdTd" id={{ $data->id }}>
+                                            {{ $data->bolcsode_id }}
+
+                                    </tr>
+                                @endif
+
+                                {{-- @if ($db == 0)
+                                    <tr>
+                                        <td>Nincs jóváhagyásra váró dolgozó</td>
+                                    </tr>
+                                @endif --}}
+                            @endforeach
                         @endif
+
                     </tbody>
+
+
                 </table>
             </div>
             <div class="modal-footer">

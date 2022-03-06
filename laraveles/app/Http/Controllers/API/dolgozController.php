@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\dolgozo;
 use App\Models\jogosultsag;
 use App\Models\bolcsode;
+use Illuminate\Support\Facades\Auth;
 
 
 class dolgozController extends Controller
@@ -24,6 +25,7 @@ class dolgozController extends Controller
      */
     public function index()
     {
+    
     }
 
     /**
