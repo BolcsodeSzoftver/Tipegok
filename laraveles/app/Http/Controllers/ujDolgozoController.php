@@ -119,8 +119,5 @@ class ujDolgozoController extends Controller
     {
         //
     }
-    public function megjelenitDolgozoUrlap1()
-    {
-        return view('ujDolgozo1');
-    }
+  
 }

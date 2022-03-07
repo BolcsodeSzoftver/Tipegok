@@ -13,6 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
+    <script src="js/nav.js"></script>
     @yield('head')
 </head>
 
@@ -53,12 +54,12 @@
             <div class="col-sm-2" id="menu">
 
                 <nav class="menu menu--puck">
-                    <ul class="menu__list">
+                    <ul class="menu__list" id="navMenu">
                         <li class="menu__item"><a href="/dolgozo" class="menu__link">Dolgozók</a></li>
                         <li class="menu__item"><a href="/felhasznalo" class="menu__link">Felhasználók</a></li>
                         <li class="menu__item"><a href="/" class="menu__link">Bölcsöde</a></li>
                         <li class="menu__item"><a href="/fenntarto" class="menu__link">Fenntartó</a></li>
-                        <li class="menu__item menu__item--current"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
+                        <li class="menu__item"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
                     </ul>
                 </nav>
 

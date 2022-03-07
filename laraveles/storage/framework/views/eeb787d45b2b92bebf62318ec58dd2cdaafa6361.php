@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>szerkezet</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -13,11 +13,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
+    <script src="js/nav.js"></script>
     <?php echo $__env->yieldContent('head'); ?>
-
 </head>
 
-<body>
+<body id="body-pd">
     <div class="container-fluid p-0">
         <div class="row ">
             <div class="col-sm-12 ">
@@ -49,19 +49,17 @@
             </div>
         </div>
 
-
-
         <div class="row pr-10">
 
             <div class="col-sm-2" id="menu">
 
                 <nav class="menu menu--puck">
-                    <ul class="menu__list">
+                    <ul class="menu__list" id="navMenu">
                         <li class="menu__item"><a href="/dolgozo" class="menu__link">Dolgozók</a></li>
                         <li class="menu__item"><a href="/felhasznalo" class="menu__link">Felhasználók</a></li>
                         <li class="menu__item"><a href="/" class="menu__link">Bölcsöde</a></li>
                         <li class="menu__item"><a href="/fenntarto" class="menu__link">Fenntartó</a></li>
-                        <li class="menu__item menu__item--current"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
+                        <li class="menu__item"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
                     </ul>
                 </nav>
 
@@ -73,7 +71,13 @@
 
             </div>
         </div>
-    </div>
+    </div> 
+
+
+
+
+
+
 </body>
 
 </html>
