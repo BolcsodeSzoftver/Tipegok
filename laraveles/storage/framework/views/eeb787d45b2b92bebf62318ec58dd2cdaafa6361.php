@@ -12,10 +12,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/szerkezet.css">
-
-
-
-
+    <link rel="stylesheet" href="css/nav.css">
     <?php echo $__env->yieldContent('head'); ?>
 
 </head>
@@ -58,40 +55,16 @@
 
             <div class="col-sm-2" id="menu">
 
-                <section>
-
-                    <ul class="nav flex-column bg-white mb-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/felhasznalo">Felhasználók</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/dolgozo">Dolgozók</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/fejlesztesAlatt">Gyerekek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/fejlesztesAlatt">Beosztás</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/fejlesztesAlatt">Jelenlét</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/">Bölcsőde</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/fenntarto">Fenntartó</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/mellekletek">Mellékletek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/fejlesztesAlatt">Statisztikák</a>
-                        </li>
+                <nav class="menu menu--puck">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="/dolgozo" class="menu__link">Dolgozók</a></li>
+                        <li class="menu__item"><a href="/felhasznalo" class="menu__link">Felhasználók</a></li>
+                        <li class="menu__item"><a href="/" class="menu__link">Bölcsöde</a></li>
+                        <li class="menu__item"><a href="/fenntarto" class="menu__link">Fenntartó</a></li>
+                        <li class="menu__item menu__item--current"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
                     </ul>
+                </nav>
 
-
-                </section>
             </div>
             <div class="col-sm-9">
                 <article>
