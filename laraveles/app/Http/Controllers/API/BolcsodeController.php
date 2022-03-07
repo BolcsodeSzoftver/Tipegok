@@ -58,7 +58,7 @@ class BolcsodeController extends Controller
         $bolcsode->fennt_id = $request->fenntarto;
         $bolcsode->bolcsode_admin = $request->admin;
         $bolcsode->save();
-        return redirect('/');
+        return redirect('/bolcsode');
     }
 
     /**

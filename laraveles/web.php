@@ -18,7 +18,7 @@ use App\Models\fenntarto;
 |
 */
 
-Route::get('/', function () {
+Route::get('/bolcsode', function () {
     return view('bolcsiadat');
 });
 Route::get('/felhasznalo', function () {

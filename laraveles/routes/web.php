@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/felhasznalo', [FelhasznaloController::class, 'megjelenit',])->middleware(['auth']);
-Route::get('/', [BolcsodeController::class, 'megjelenit'])->middleware(['auth']);
+Route::get('/bolcsode', [BolcsodeController::class, 'megjelenit'])->middleware(['auth']);
 Route::get('/fenntarto', [FenntartoController::class, 'megjelenit'])->middleware(['auth']);
 Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->middleware(['auth']);
 Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
@@ -60,7 +60,9 @@ Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth'])
 Route::get('/mellekletek', function () {
     return view('mellekletek');
 })->middleware(['auth']);
-
+Route::get('/', function () {
+    return redirect("/bolcsode");
+});
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
 })->middleware(['auth']);
