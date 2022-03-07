@@ -6,6 +6,7 @@
             width: 200px;
             margin: auto;
         }
+
     </style>
     <script src="js/felhasznalo.js"></script>
 <?php $__env->stopSection(); ?>
@@ -23,24 +24,24 @@
                 </tr>
             </thead>
             <tbody class="adatok">
-                    <?php $__currentLoopData = $jogosultsag; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id): ?>
-                                <tr class="felhasznalo">
-                                    <td class="modosit">
-                                        <button class="btn btn-primary modositGomb" id=<?php echo e($u->id); ?> type="button"
-                                            data-toggle="modal" data-target="#modalLoginForm">
-                                            <i class='fa fa-edit'></i>
-                                        </button>
-                                    </td>
-                                    <td></td>
-                                    <td class="nev" id=<?php echo e($u->id); ?>><?php echo e($u->name); ?></td>
-                                    <td class="email" id=<?php echo e($u->id); ?>><?php echo e($u->email); ?></td>
-                                    <td><?php echo e($a->megnevezes); ?></td>
-                                </tr>
-                            <?php endif; ?>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $jogosultsag; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $u): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id): ?>
+                            <tr class="felhasznalo">
+                                <td class="modosit">
+                                    <button class="btn btn-primary modositGomb" id=<?php echo e($u->id); ?> type="button"
+                                        data-toggle="modal" data-target="#modalLoginForm">
+                                        <i class='fa fa-edit'></i>
+                                    </button>
+                                </td>
+                                <td></td>
+                                <td class="nev" id=<?php echo e($u->id); ?>><?php echo e($u->name); ?></td>
+                                <td class="email" id=<?php echo e($u->id); ?>><?php echo e($u->email); ?></td>
+                                <td><?php echo e($a->megnevezes); ?></td>
+                            </tr>
+                        <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
 
@@ -69,6 +70,16 @@
                             <div class="md-form mb-4">
                                 <label data-error="wrong" data-success="right" for="emailInput">Email</label>
                                 <input type="email" id="emailInput" class="form-control validate" name="email" value="">
+
+                            </div>
+                            <div class="md-form mb-4">
+                                <select name="jogosultsag" id="">
+                                    <?php $__currentLoopData = $jogosultsag; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value=<?php echo e($jogosultsag->id); ?>><?php echo e($jogosultsag->megnevezes); ?>
+
+                                        </option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </select>
 
                             </div>
                         </div>

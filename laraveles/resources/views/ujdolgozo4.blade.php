@@ -1,6 +1,6 @@
-@extends('layouts.UjdolgozoSzerkezet')
-@section('UjdolgozoTartalom')
-<div class="row">
+{{-- @extends('layouts.UjdolgozoSzerkezet')
+@section('UjdolgozoTartalom') --}}
+{{-- <div class="row">
     <div class="col">
         <div class="form-outline">
             <input type="nev" id="form8Example1" class="form-control" />
@@ -74,5 +74,5 @@
 <button class="btn btn-primary" id="gomb2" type="submit" >
     Adatok feltöltése
   </button>
-@endsection
+@endsection --}}
 

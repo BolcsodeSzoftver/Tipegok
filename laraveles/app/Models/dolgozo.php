@@ -13,5 +13,6 @@ class dolgozo extends Model
         $alkalmazott->allapot = "1";
         $alkalmazott->save();
     }
+    
  
 }

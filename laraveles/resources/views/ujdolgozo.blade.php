@@ -1,83 +1,191 @@
-
-
 @extends('layouts.UjdolgozoSzerkezet')
 @section('UjdolgozoTartalom')
-    <div class="row">
-        
-        <div class="col-6">
-            <div class="form-outline">
-                <input type="text" id="form8Example1" class="form-control" name="nev"/>
-                <label class="form-label" for="form8Example1">Teljes név</label>
+    <form action="/ujdolgozo" method="post">
+        @csrf
+        <div class="t1">
+            <div class="row">
+                <div class="col-6" id="munkalatoNeve">
+                    <h6>Munkáltató neve</h6>
+                    <select class="custom-select" name="bolcsodeID" id="bolcsode">
+                        @foreach ($bolcsiID as $bolcsode)
+                            <option id="bolcsode" value="{{ $bolcsode->id }}">{{ $bolcsode->nev }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" id="munkalatoNeve">
+                    <label class="form-label" for="form8Example1">User ID</label>
+                    <input type="text" id="form8Example1" class="form-control" name="userID" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="form-label" for="form8Example1">Teljes név</label>
+                        <input type="text" id="form8Example1" class="form-control" name="nev" />
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <label for="telefonszam">Telefonszám:</label>
+                        <input type="text" class="form-control" id="telefonszam" name="telefonszam"
+                            placeholder="+36301234567" required="required">
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="form-label" for="form8Example2">Születési név</label>
+                        <input type="text" id="form8Example2" class="form-control" name="szulNev" />
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="form-label" for="form8Example2">Anyja neve</label>
+                        <input type="text" id="form8Example2" class="form-control" name="anyjaNeve" />
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-outline">
+                        <label class="form-label" for="form8Example1">Születési hely</label>
+                        <input type="text" id="form8Example1" class="form-control" name="szulHely" />
+
+                    </div>
+                </div>
+                <div class="col">
+                    <label class="form-label" for="form8Example1">Születési idő</label>
+                    <input type="date" class="form-control" id="szulIdo" name="szulIdo">
+                </div>
+                <div class="col-4">
+                    <div class="form-outline">
+                        <label class="form-label" for="form8Example1">Állam polgárság</label>
+                        <input type="text" id="form8Example1" class="form-control" name="allPolgarsag" />
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-4">
+                    <p>Nem</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="no" id="no" value="N">
+                        <label class="form-check-label" for="no">Nő</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ferfi" id="ferfi" value="F">
+                        <label class="form-check-label" for="ferfi">Férfi</label>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col">
-            <div class="form-outline">
-                <input type="text" id="form8Example2" class="form-control" name="szul_nev"/>
-                <label class="form-label" for="form8Example2">Születési név</label>
+
+
+        <div class="t2">
+            <label class="form-label" for="form8Example1">Állandó lakhely</label>
+            <div class="row">
+                <div class="form-row">
+                    <div class="col-md-5 mb-3">
+                        <label>Város</label>
+                        <input name="allandoLakhely" type="text" class="form-control" id="validationTooltip03"
+                            placeholder="Város" required />
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label>Utca</label>
+                        <input name="allandoLakhely" type="text" class="form-control" id="validationTooltip04"
+                            placeholder="Utca" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Irányítószám</label>
+                        <input name="allandoLakhely" type="text" class="form-control" id="validationTooltip05"
+                            placeholder="Irányítószám" required />
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <label class="form-label" for="form8Example1">Tartózkodási hely</label>
+            <div class="row">
+                <div class="form-row">
+                    <div class="col-md-5 mb-3">
+                        <label>Város</label>
+                        <input name="tartozkodasiHely" type="text" class="form-control" id="validationTooltip03"
+                            placeholder="Város" required />
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label>Utca</label>
+                        <input name="tartozkodasiHely" type="text" class="form-control" id="validationTooltip04"
+                            placeholder="Utca" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Irányítószám</label>
+                        <input name="tartozkodasiHely" type="text" class="form-control" id="validationTooltip05"
+                            placeholder="Irányítószám" required />
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col">
-            <div class="form-outline">
-                <input type="text" id="form8Example2" class="form-control" name="anyja_neve"/>
-                <label class="form-label" for="form8Example2">Anyja neve</label>
+
+
+        <div class="t3">
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example3" class="form-control" name="adoazonJel" />
+                        <label class="form-label" for="form8Example3">Adóazonósító</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example4" class="form-control" name="tajszam" />
+                        <label class="form-label" for="form8Example4">Tajszám</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="nev" id="form8Example1" class="form-control" name="tizenhatAlattiGyermek" />
+                        <label class="form-label" for="form8Example1">16 éven aluli gyermekek száma</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example3" class="form-control" name="bakszamlaSzam" />
+                        <label class="form-label" for="form8Example3">Bankszámla szám</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-4">
+                    <p>Házas</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="igen" id="igen" value="i">
+                        <label class="form-check-label" for="igen">igen</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="nem" id="nem" value="n">
+                        <label class="form-check-label" for="nem">nem</label>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col-4">
-            <div class="form-outline">
-                <input type="text" id="form8Example1" class="form-control" name="szul_hely"/>
-                <label class="form-label" for="form8Example1">Születési hely</label>
-            </div>
+        <div class="allapot">
+            <input type="text" id="form8Example3" class="form-control" name="allapot" value="0" />
+            <label class="form-label" for="form8Example3">Állapot</label>
         </div>
-        <div class="col">
-            <input id="datepicker" width="276" name="szul_ido"/>
-            <script>
-                $('#datepicker').datepicker({
-                    uiLibrary: 'bootstrap4'
-                });
-            </script>
-            <label class="form-label" for="form8Example1">Születési idő</label>
-        </div>
-        <div class="col-4">
-            <div class="form-outline">
-                <input type="text" id="form8Example1" class="form-control" name="all_polgarsag"/>
-                <label class="form-label" for="form8Example1">Állam polgárság</label>
-            </div>
-        </div>
-    </div>
-    </div>
-    <hr />
-    <div class="row">
-       <!--  <div class="col">
-            <div class="form-outline">
-                <input type="email" id="form8Example1" class="form-control" name=""/>
-                <label class="form-label" for="form8Example1">Email cím</label>
-            </div>
-        </div> -->
-        <div class="col">
-            <div class="form-outline">
-                <input type="tel" id="form8Example2" class="form-control" name="telefonszam"/>
-                <label class="form-label" for="form8Example2">Telefonszám</label>
-            </div>
-        </div>
-    </div>
-    <hr />
-    <div class="row">
-        <div class="col">
-            <label class="form-label" for="form8Example4">Nem</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="nem" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Nő</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="nem" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Férfi</label>
-            </div>
-        </div>
-    </div>
+        <button type="submit" name="mentes" id="mentes">Mentés</button>
+    </form>
 @endsection

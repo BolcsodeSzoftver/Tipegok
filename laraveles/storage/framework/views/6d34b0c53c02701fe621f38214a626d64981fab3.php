@@ -1,5 +1,5 @@
-<div class="modal fade" id="jovahagyasaraVaroDolgozoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="jovahagyasaraVaroDolgozoModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,35 +10,58 @@
             </div>
             <div class="modal-body jovahagyasDiv">
                 <table class="table table-bordered mb-5" id="tabla">
+
                     <thead>
                         <tr class="table-active">
                             <th></th>
                             <th scope="col" sortable>Név</th>
                         </tr>
                     </thead>
+
+
                     <tbody class="adatokDolgozoAllapot">
-                        <?php $__empty_1 = true; $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-                            <?php if($data->allapot === 0): ?>
-                                <tr class="dolgozo">
-                                    <td class="modositAllapot">
-                                        <div class="form-outline">
-                                            <input type="hidden" id="allapot" class="form-control" name="allapot">
-                                        </div>
-                                        <button type="submit" name=<?php echo e($data->nev); ?> value="Save"
-                                            id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#adatok"
-                                            class="btn btn-primary jovahagyasKezd">
-                                            <span>&#10003;</span>
-                                        </button>
-                                    </td>
-                                    <td class="nev" id=<?php echo e($data->id); ?>><?php echo e($data->nev); ?></td>
-                                    <td class="allapot" id=<?php echo e($data->allapot); ?>><?php echo e($data->allapot); ?></td>
-                                    <td class="id" id=<?php echo e($data->id); ?>><?php echo e($data->id); ?></td>
-                                    <td class="bolcsodeIdTd" id=<?php echo e($data->id); ?>><?php echo e($data->bolcsode_id); ?></td>
-                                </tr>
-                            <?php endif; ?>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                        <?php if(Auth::user()->isAdmin() or Auth::user()->isSzuperAdmin()): ?>
+                            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php
+                                    $kiirasFeltetel = ($data->allapot == 0 and $data->bolcsode_id == Auth::user()->getBolcsodeId());
+                                    if (Auth::user()->isSzuperAdmin()) {
+                                        $kiirasFeltetel = $data->allapot == 0;
+                                    }
+                                ?>
+                                <?php if($kiirasFeltetel): ?>
+                                    <tr class="dolgozo">
+                                        <td class="modositAllapot">
+                                            <div class="form-outline">
+                                                <input type="hidden" id="allapot" class="form-control" name="allapot">
+                                            </div>
+                                            <button type="submit" name=<?php echo e($data->nev); ?> value="Save"
+                                                id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#adatok"
+                                                class="btn btn-primary jovahagyasKezd">
+                                                <span>&#10003;</span>
+                                            </button>
+                                        </td>
+                                        <td class="nev" id=<?php echo e($data->id); ?>>
+                                            <?php echo e($data->nev); ?></td>
+                                        <td class="allapot" id=<?php echo e($data->allapot); ?>>
+                                            <?php echo e($data->allapot); ?>
+
+                                        </td>
+                                        <td class="id" id=<?php echo e($data->id); ?>>
+                                            <?php echo e($data->id); ?></td>
+                                        <td class="bolcsodeIdTd" id=<?php echo e($data->id); ?>>
+                                            <?php echo e($data->bolcsode_id); ?>
+
+
+                                    </tr>
+                                <?php endif; ?>
+
+                                
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
+
                     </tbody>
+
+
                 </table>
             </div>
             <div class="modal-footer">

@@ -66,5 +66,11 @@ class User extends Authenticatable
         return false;
     }
 
+    public function getBolcsodeId(){
+       
+       return alkalmazott::keresBolcsodeId($this->id);
+   
+    }
+
 
 }
