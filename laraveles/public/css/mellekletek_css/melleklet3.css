@@ -32,7 +32,7 @@ main{
 }
 
 @media print {
-	#gomb, .alkalmazottNevek{
+	#gomb, .kereso_box{
 	  display: none;
 	}
 

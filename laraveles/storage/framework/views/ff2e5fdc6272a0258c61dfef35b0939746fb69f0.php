@@ -13,7 +13,7 @@
 </head>
 <body>
     <main>
-        @include('layouts.dolgozoKivalasztas')
+        <?php echo $__env->make('layouts.dolgozoKivalasztas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div id="export">
         <header>
         <h2>3. melléklet</h2>
@@ -36,4 +36,4 @@
     </main>
     </main>
 </body>
-</html>
+</html><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views//melleklet3.blade.php ENDPATH**/ ?>

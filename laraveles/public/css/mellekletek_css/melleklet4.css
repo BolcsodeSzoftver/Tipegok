@@ -20,7 +20,7 @@ article h3{
 }
 
 @media print {
-	#gomb, .alkalmazottNevek{
+	#gomb, .kereso_box{
 	  display: none;
 	}
 
