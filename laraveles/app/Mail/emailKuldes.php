@@ -27,6 +27,7 @@ class emailKuldes extends Mailable
      */
     public function build()
     {
+
         return $this->subject('Sikeres felhasználó regisztráció: Bölcsineve')
             ->view('email.ujFelhasznalo');
     }
