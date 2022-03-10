@@ -14,12 +14,7 @@
 
 <body>
     <main>
-        <label class="alkalmazottNevek">Válasz dolgozót: </label>
-        <select class="alkalmazottNevek">
-            @foreach ($alkalmazotts as $alkalmazott)
-                <option class='nevekLista' value={{ $alkalmazott->id }}>{{ $alkalmazott->nev }}</option>
-            @endforeach
-        </select>
+        @include('layouts.dolgozoKivalasztas')
         <div id="export">
         <header>
             <h2>5. Melléklet</h2><br>

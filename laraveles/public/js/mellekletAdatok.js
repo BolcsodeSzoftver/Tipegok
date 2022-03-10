@@ -1,11 +1,12 @@
 $(function() {
+	$('.kereso_box select').selectpicker();
 	let ajax = new AjaxHivas();
 
 	$('select').change(() => {
 		//console.log($('select').val());
-		let alkalmazott="/melleklet1/"+$('select').val();
-		let dolgozo="/melleklet2/"+$('select').val();
-		let fenntarto="/melleklet10/"+$('select').val();
+		let alkalmazott="/alkalmazott/"+$('select').val();
+		let dolgozo="/dolgozo/"+$('select').val();
+		let fenntarto="/fenntarto/"+$('select').val();
 		let bizonyitvany="/bizonyitvany/"+$('select').val();
 		console.log(alkalmazott, fenntarto);
 		ajax.getAjax(alkalmazott, adatLista1);

@@ -35,31 +35,23 @@ Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
 Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
 
 Route::get('/melleklet1', [dolgozController::class, 'dolgozoAdatai']);
-Route::get('/melleklet1/{id}', [dolgozController::class, 'kivalasztottDolgozo']);
 Route::get('/melleklet1', [MellekletController::class,'dolgozoAdatai1']);
-Route::get('/melleklet1/{id}', [MellekletController::class,'kivalasztottDolgozo1']); 
-
 Route::get('/melleklet2', [MellekletController::class,'dolgozoAdatai2']);
-Route::get('/melleklet2/{id}', [MellekletController::class,'kivalasztottDolgozo2']); 
-
 Route::get('/melleklet3', [MellekletController::class,'dolgozoAdatai3']);
 Route::get('/melleklet4', [MellekletController::class,'dolgozoAdatai4']);
 Route::get('/melleklet5', [MellekletController::class,'dolgozoAdatai5']);
 Route::get('/melleklet6', [MellekletController::class,'dolgozoAdatai6']);
-
 Route::get('/melleklet10', [MellekletController::class,'dolgozoAdatai10']);
-Route::get('/melleklet10/{id}', [MellekletController::class,'kivalasztottDolgozo10']);
+Route::get('/mellekletek', function () {return view('mellekletek');})->middleware(['auth']);
+Route::get('/alkalmazott/{id}', [MellekletController::class,'kivalasztottAlkalmazott']); 
+Route::get('/dolgozo/{id}', [MellekletController::class,'kivalasztottDolgozo']); 
+Route::get('/fenntarto/{id}', [MellekletController::class,'kivalasztottFenntarto']);
 Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgozoBizonyitvany']);
 
 Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
 Route::resource('/ujdolgozo', ujDolgozoController::class);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
 
-
-
-Route::get('/mellekletek', function () {
-    return view('mellekletek');
-})->middleware(['auth']);
 Route::get('/', function () {
     return redirect("/bolcsode");
 });

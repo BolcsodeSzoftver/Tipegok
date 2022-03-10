@@ -4,24 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Melléklet 1</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/mellekletek_css/melleklet1.css">
     <script src="js/ajax.js"></script>
     <script src="js/mellekletAdatok.js"></script>
     <script src="js/melleklet.js"></script>
-    <script src="js/mellekletAdatok.js"></script>
 </head>
 
 <body>
     <main>
-        <label class="alkalmazottNevek">Válasz dolgozót: </label>
-        <select class="alkalmazottNevek">
-            @foreach ($alkalmazotts as $alkalmazott)
-                <option class='nevekLista' value={{ $alkalmazott->id }}>{{ $alkalmazott->nev }}</option>
-            @endforeach
-        </select>
+        @include('layouts.dolgozoKivalasztas')
         <div id="export">
         <header>
             <h2>1. Melléklet</h2><br>
