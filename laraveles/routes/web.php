@@ -56,7 +56,7 @@ Route::resource('/ujBolcsi', UjBolcsode::class)->middleware(['auth']);
 
 Route::get('/', function () {
     return redirect("/bolcsode");
-});
+})->name('kezdolap');
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
 })->middleware(['auth']);
