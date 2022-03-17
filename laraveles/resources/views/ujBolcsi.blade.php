@@ -24,7 +24,7 @@
 
 <body>
     <main>
-        <form action="/api/bolcsode" method="POST">
+        <form action="/ujBolcsi" method="POST">
             @csrf
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -46,6 +46,10 @@
                                                 <option value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
                                             @endforeach
                                         </select>
+                                        <br>
+                                        @error('fennt_id')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
 
 
                                     </div>
@@ -56,28 +60,42 @@
                                         {{-- <input type="text" id="cim" class="form-control" name="admin" />
                                         <label class="form-label" for="cim">Admin</label> --}}
                                         <label for="bolcsi">Admin:</label>
+                                        
                                         <select class="bolcsiNev" name="admin">
-                                                @foreach ($megjelenitAdminNev as $adminNev)
-                                                    @if ($adminNev->jogosultsag_id === 1)
-                                                        <option value="{{ $adminNev->id }}">
-                                                            {{$adminNev->name }}
-                                                        </option>
-                                                    @endif
-                                                @endforeach
+                                            @foreach ($megjelenitAdminNev as $adminNev)
+                                                @if ($adminNev->jogosultsag_id === 1)
+                                                    <option value="{{ $adminNev->id }}">
+                                                        {{ $adminNev->name }}
+                                                    </option>
+                                                @endif
+                                            @endforeach
                                         </select>
-                                    </div> 
+                                        <br>
+                                        @error('bolcsode_admin')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="col">
-
                                     <div class="form-outline">
                                         <input type="text" id="cim" class="form-control" name="cim" />
+
+
                                         <label class="form-label" for="cim">Cím</label>
+                                        <br>
+                                        @error('cim')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="text" id="nev" class="form-control" name="nev" />
                                         <label class="form-label" for="nev">Név</label>
+                                        <br>
+                                        @error('nev')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -86,12 +104,20 @@
                                     <div class="form-outline">
                                         <input type="text" id="agazatiAzon" class="form-control" name="agazatiAzon" />
                                         <label class="form-label" for="agazatiAzon">Ágazati azonosító</label>
+                                        <br>
+                                        @error('agazati_azon')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="text" id="feorAzon" class="form-control" name="feorAzon" />
                                         <label class="form-label" for="feorAzon">FEOR azonosító</label>
+                                        <br>
+                                        @error('feor')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +126,10 @@
                                     <div class="form-outline">
                                         <input type="text" id="szgyfKod" class="form-control" name="szgyfKod" />
                                         <label class="form-label" for="szgyfKod">SZGYF kód</label>
+                                        <br>
+                                        @error('szgyf_kod')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col">
@@ -107,6 +137,10 @@
                                         <input type="number" id="ferohelyekSzama" class="form-control"
                                             name="ferohelyekSzama" />
                                         <label class="form-label" for="ferohelyekSzama">Férőhelyek száma</label>
+                                        <br>
+                                        @error('ferohelyek_szama')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col">
@@ -114,12 +148,17 @@
                                         <input type="text" id="agazatiPotlek" class="form-control"
                                             name="agazatiPotlek" />
                                         <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
+                                        <br>
+                                        @error('agazati_potlek')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
+
 
                     <div class="modal-footer">
                         <div class="col">
@@ -131,6 +170,7 @@
                         </div>
                     </div>
                 </div>
+
         </form>
     </main>
 </body>

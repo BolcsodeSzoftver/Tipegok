@@ -71,6 +71,8 @@ class User extends Authenticatable
        return alkalmazott::keresBolcsodeId($this->id);
    
     }
-
+    
+    
+ 
 
 }

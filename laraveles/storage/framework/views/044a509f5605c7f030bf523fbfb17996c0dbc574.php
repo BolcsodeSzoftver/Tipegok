@@ -21,11 +21,6 @@
         <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet6" target="_blank">Melleklet 6</a></td>
       </tr>
       <tr>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 7"> </td>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 8"> </td>
-        <td><input class="btn btn-dark" style="width:200px" type="submit" value="Melléklet 9"> </td>
-      </tr>
-      <tr>
         <td><a class="btn btn-secondary" style="width: 200px; " href="/melleklet10" target="_blank">Melleklet 10</a></td>
         <td><input class="btn btn-dark" style="width:200px" type="submit" value="Új melléklet"> </td>
         <td> </td>

@@ -51,12 +51,12 @@
                                 <div class="form-group">
                                     <label for="email" :value="__('Email')">Email cím</label>
                                     <input class="form-control" id="email" class="block mt-1 w-full" type="email"
-                                        name="email" :value="old('email')" required autofocus placeholder="Email">
+                                        name="email" :value="old('email')"  autofocus placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label for="password" :value="__('Password')">Jelszó</label>
                                     <input class="form-control" type="password" id="password"
-                                        class="block mt-1 w-full" type="password" name="password" required
+                                        class="block mt-1 w-full" type="password" name="password" 
                                         autocomplete="current-password" placeholder="Jelszó">
                                 </div>
                                 <div class="flex items-center justify-end mt-4">
