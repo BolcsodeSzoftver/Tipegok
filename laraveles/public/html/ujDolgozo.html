@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -29,8 +30,12 @@
             rel="stylesheet"
             type="text/css"
         />
-        <script src="ujDolgozo.js"></script>
-        <link rel="stylesheet" href="ujDolgoz.css" />
+        <link rel="stylesheet" href="../css/Ujdolgoz.css" />
+        <script src="../js/ajax.js"></script>
+        <script src="../js/ujdolgozClass.js"></script>
+        <script src="../js/ujdolgozo.js"></script>
+        <script src="../js/ujdolgoz.js"></script>
+       
     </head>
     <body>
         <main>
@@ -56,8 +61,6 @@
                     </ul>
                 </div>
                 <h1>Dolgozó adatai</h1>
-
-                <form action="ujdolgozo.php" method="POST">
                     <div class="t1">
                         <div class="row">
                             <div class="col-6" id="munkalatoNeve">
@@ -66,7 +69,7 @@
                                 >
                                 <input
                                     type="text"
-                                    id="form8Example1"
+                                    id="munkNev"
                                     class="form-control"
                                     name="munkNev"
                                 />
@@ -79,7 +82,7 @@
                                 >
                                 <input
                                     type="text"
-                                    id="form8Example1"
+                                    id="userID"
                                     class="form-control"
                                     name="userID"
                                 />
@@ -95,7 +98,7 @@
                                     >
                                     <input
                                         type="text"
-                                        id="form8Example1"
+                                        id="nev"
                                         class="form-control"
                                         name="nev"
                                     />
@@ -128,7 +131,7 @@
                                     >
                                     <input
                                         type="text"
-                                        id="form8Example2"
+                                        id="szulNev"
                                         class="form-control"
                                         name="szulNev"
                                     />
@@ -143,7 +146,7 @@
                                     >
                                     <input
                                         type="text"
-                                        id="form8Example2"
+                                        id="anyjaNeve"
                                         class="form-control"
                                         name="anyjaNeve"
                                     />
@@ -161,7 +164,7 @@
                                     >
                                     <input
                                         type="text"
-                                        id="form8Example1"
+                                        id="szulHely"
                                         class="form-control"
                                         name="szulHely"
                                     />
@@ -187,7 +190,7 @@
                                     >
                                     <input
                                         type="text"
-                                        id="form8Example1"
+                                        id="allPolgarsag"
                                         class="form-control"
                                         name="allPolgarsag"
                                     />
@@ -195,7 +198,7 @@
                             </div>
                         </div>
                         <hr />
-                        <div class="row">
+                       <div class="row">
                             <div class="col-4">
                                 <p>Nem</p>
                                 <div class="form-check form-check-inline">
@@ -238,7 +241,7 @@
                                         name="allandoLakhely"
                                         type="text"
                                         class="form-control"
-                                        id="validationTooltip03"
+                                        id="allandoLakhely"
                                         placeholder="Város"
                                         required
                                     />
@@ -249,7 +252,7 @@
                                         name="allandoLakhely"
                                         type="text"
                                         class="form-control"
-                                        id="validationTooltip04"
+                                        id="allandoLakhely"
                                         placeholder="Utca"
                                         required
                                     />
@@ -260,7 +263,7 @@
                                         name="allandoLakhely"
                                         type="text"
                                         class="form-control"
-                                        id="validationTooltip05"
+                                        id="allandoLakhely"
                                         placeholder="Irányítószám"
                                         required
                                     />
@@ -279,7 +282,7 @@
                                         name="tartozkodasiHely"
                                         type="text"
                                         class="form-control"
-                                        id="validationTooltip03"
+                                        id="tartozkodasiHely"
                                         placeholder="Város"
                                         required
                                     />
@@ -290,7 +293,7 @@
                                         name="tartozkodasiHely"
                                         type="text"
                                         class="form-control"
-                                        id="validationTooltip04"
+                                        id="tartozkodasiHely"
                                         placeholder="Utca"
                                         required
                                     />
@@ -301,7 +304,7 @@
                                         name="tartozkodasiHely"
                                         type="text"
                                         class="form-control"
-                                        id="validationTooltip05"
+                                        id="tartozkodasiHely"
                                         placeholder="Irányítószám"
                                         required
                                     />
@@ -316,7 +319,7 @@
                                 <div class="form-outline">
                                     <input
                                         type="text"
-                                        id="form8Example3"
+                                        id="adoazonJel"
                                         class="form-control"
                                         name="adoazonJel"
                                     />
@@ -331,7 +334,7 @@
                                 <div class="form-outline">
                                     <input
                                         type="text"
-                                        id="form8Example4"
+                                        id="tajszam"
                                         class="form-control"
                                         name="tajszam"
                                     />
@@ -349,7 +352,7 @@
                                 <div class="form-outline">
                                     <input
                                         type="nev"
-                                        id="form8Example1"
+                                        id="tizenhatAlattiGyermek"
                                         class="form-control"
                                         name="tizenhatAlattiGyermek"
                                     />
@@ -367,7 +370,7 @@
                                 <div class="form-outline">
                                     <input
                                         type="text"
-                                        id="form8Example3"
+                                        id="bankszamlaSzam"
                                         class="form-control"
                                         name="bankszamlaSzam"
                                     />
@@ -380,7 +383,7 @@
                             </div>
                         </div>
                         <hr />
-                        <div class="row">
+                         <div class="row">
                             <div class="col-4">
                                 <p>Házas</p>
                                 <div class="form-check form-check-inline">
@@ -408,12 +411,12 @@
                                     >
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <div class="allapot">
                         <input
                             type="text"
-                            id="form8Example3"
+                            id="allapot"
                             class="form-control"
                             name="allapot"
                             value="0"
@@ -422,10 +425,9 @@
                             >Állapot</label
                         >
                     </div>
-                    <button type="submit" name="mentes" id="mentes">
+                    <button type="submit" name="mentes" id="mentes" class="mentes">
                         Mentés
                     </button>
-                </form>
             </article>
         </main>
     </body>

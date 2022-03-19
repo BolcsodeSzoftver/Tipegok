@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/nav.js"></script>
-    @yield('head')
+    <?php echo $__env->yieldContent('head'); ?>
 </head>
 
 <body id="body-pd">
@@ -22,9 +22,9 @@
         <div class="row ">
             <div class="col-sm-12 ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    @if (Auth::user()->id)
-                        <a class="navbar-brand" href="#">{{ Auth::user()->name }}</a>
-                    @endif
+                    <?php if(Auth::user()->id): ?>
+                        <a class="navbar-brand" href="#"><?php echo e(Auth::user()->name); ?></a>
+                    <?php endif; ?>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -40,44 +40,35 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="#">Beállítások</a>
                                     <a class="dropdown-item" href="#">...</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
+                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                                 </div>
                             </li>
-                            <div class="menuk">
-                                <div class="menu1">
-                                <li class="nav-items"><a href="/dolgozo"     class="">Dolgozók</a></li>
-                                <li class="nav-items"><a href="/felhasznalo" class="">Felhasználók</a></li>
-                                <li class="nav-items"><a href="/bolcsode"    class="">Bölcsöde</a></li>
-                                </div>
-                                <div class="menu2">
-                                <li class="nav-items"><a href="/fenntarto"   class="">Fenntartó</a></li>
-                                <li class="nav-items"><a href="/mellekletek" class="">Mellékletek</a></li>
-                                </div>
-                            </div>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
 
-        <div class="row pr-12 ">
+        <div class="row pr-10">
 
             <div class="col-sm-2" id="menu">
+
                 <nav class="menu menu--puck">
                     <ul class="menu__list" id="navMenu">
                         <li class="menu__item"><a href="/dolgozo" class="menu__link">Dolgozók</a></li>
                         <li class="menu__item"><a href="/felhasznalo" class="menu__link">Felhasználók</a></li>
-                        <li class="menu__item"><a href="{{route('kezdolap')}}" class="menu__link">Bölcsöde</a></li>
+                        <li class="menu__item"><a href="<?php echo e(route('kezdolap')); ?>" class="menu__link">Bölcsöde</a></li>
                         <li class="menu__item"><a href="/fenntarto" class="menu__link">Fenntartó</a></li>
                         <li class="menu__item"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
                     </ul>
                 </nav>
+
             </div>
-            
-            <div class="col-sm-9" >
-                <article id='tartalom'>
-                    @yield('tartalom')
+            <div class="col-sm-9">
+                <article>
+                    <?php echo $__env->yieldContent('tartalom'); ?>
                 </article>
+
             </div>
         </div>
     </div> 
@@ -90,3 +81,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\xampp\htdocs\tipegok\Tipegok\laraveles\resources\views/layouts/szerkezet.blade.php ENDPATH**/ ?>

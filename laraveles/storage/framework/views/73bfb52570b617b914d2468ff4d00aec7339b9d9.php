@@ -51,12 +51,12 @@
                                 <div class="form-group">
                                     <label for="email" :value="__('Email')">Email cím</label>
                                     <input class="form-control" id="email" class="block mt-1 w-full" type="email"
-                                        name="email" :value="old('email')"  autofocus placeholder="Email">
+                                        name="email" :value="old('email')" required autofocus placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label for="password" :value="__('Password')">Jelszó</label>
                                     <input class="form-control" type="password" id="password"
-                                        class="block mt-1 w-full" type="password" name="password" 
+                                        class="block mt-1 w-full" type="password" name="password" required
                                         autocomplete="current-password" placeholder="Jelszó">
                                 </div>
                                 <div class="flex items-center justify-end mt-4">
@@ -93,4 +93,4 @@
 <?php $component = $__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015; ?>
 <?php unset($__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015); ?>
 <?php endif; ?>
-<?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/auth/login.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\tipegok\Tipegok\laraveles\resources\views/auth/login.blade.php ENDPATH**/ ?>

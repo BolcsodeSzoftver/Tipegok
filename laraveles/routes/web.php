@@ -10,6 +10,7 @@ use App\Http\Controllers\API\FenntartoController;
 use App\Http\Controllers\API\MellekletController;
 use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
+use App\Http\Controllers\UjBolcsode;
 use App\Http\Controllers\ujDolgozoController;
 use App\Mail\yourMail;
 use Illuminate\Support\Facades\Auth;
@@ -29,8 +30,8 @@ use Illuminate\Support\Facades\Mail;
 Route::get('/felhasznalo', [FelhasznaloController::class, 'megjelenit',])->middleware(['auth']);
 Route::get('/bolcsode', [BolcsodeController::class, 'megjelenit'])->middleware(['auth']);
 Route::get('/fenntarto', [FenntartoController::class, 'megjelenit'])->middleware(['auth']);
-Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->middleware(['auth']);
-Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
+/* Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->middleware(['auth']);
+ */Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
 Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
 
@@ -51,10 +52,11 @@ Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgoz
 Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
 Route::resource('/ujdolgozo', ujDolgozoController::class);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
+Route::resource('/ujBolcsi', UjBolcsode::class)->middleware(['auth']);
 
 Route::get('/', function () {
     return redirect("/bolcsode");
-});
+})->name('kezdolap');
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
 })->middleware(['auth']);

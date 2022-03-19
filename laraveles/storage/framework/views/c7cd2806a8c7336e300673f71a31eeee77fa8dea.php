@@ -24,7 +24,7 @@
 
 <body>
     <main>
-        <form action="/api/bolcsode" method="POST">
+        <form action="/ujBolcsi" method="POST">
             <?php echo csrf_field(); ?>
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -45,6 +45,17 @@
                                                 <option value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
+                                        <br>
+                                        <?php $__errorArgs = ['fennt_id'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 
 
                                     </div>
@@ -54,29 +65,64 @@
                                     <div class="form-outline">
                                         
                                         <label for="bolcsi">Admin:</label>
+                                        
                                         <select class="bolcsiNev" name="admin">
-                                                <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php if($adminNev->jogosultsag_id === 1): ?>
-                                                        <option value="<?php echo e($adminNev->id); ?>">
-                                                            <?php echo e($adminNev->name); ?>
+                                            <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php if($adminNev->jogosultsag_id === 1): ?>
+                                                    <option value="<?php echo e($adminNev->id); ?>">
+                                                        <?php echo e($adminNev->name); ?>
 
-                                                        </option>
-                                                    <?php endif; ?>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </option>
+                                                <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
-                                    </div> 
+                                        <br>
+                                        <?php $__errorArgs = ['bolcsode_admin'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                    </div>
                                 </div>
                                 <div class="col">
-
                                     <div class="form-outline">
                                         <input type="text" id="cim" class="form-control" name="cim" />
+
+
                                         <label class="form-label" for="cim">Cím</label>
+                                        <br>
+                                        <?php $__errorArgs = ['cim'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="text" id="nev" class="form-control" name="nev" />
                                         <label class="form-label" for="nev">Név</label>
+                                        <br>
+                                        <?php $__errorArgs = ['nev'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                             </div>
@@ -85,12 +131,34 @@
                                     <div class="form-outline">
                                         <input type="text" id="agazatiAzon" class="form-control" name="agazatiAzon" />
                                         <label class="form-label" for="agazatiAzon">Ágazati azonosító</label>
+                                        <br>
+                                        <?php $__errorArgs = ['agazati_azon'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="text" id="feorAzon" class="form-control" name="feorAzon" />
                                         <label class="form-label" for="feorAzon">FEOR azonosító</label>
+                                        <br>
+                                        <?php $__errorArgs = ['feor'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                             </div>
@@ -99,6 +167,17 @@
                                     <div class="form-outline">
                                         <input type="text" id="szgyfKod" class="form-control" name="szgyfKod" />
                                         <label class="form-label" for="szgyfKod">SZGYF kód</label>
+                                        <br>
+                                        <?php $__errorArgs = ['szgyf_kod'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -106,6 +185,17 @@
                                         <input type="number" id="ferohelyekSzama" class="form-control"
                                             name="ferohelyekSzama" />
                                         <label class="form-label" for="ferohelyekSzama">Férőhelyek száma</label>
+                                        <br>
+                                        <?php $__errorArgs = ['ferohelyek_szama'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -113,12 +203,24 @@
                                         <input type="text" id="agazatiPotlek" class="form-control"
                                             name="agazatiPotlek" />
                                         <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
+                                        <br>
+                                        <?php $__errorArgs = ['agazati_potlek'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <span style="color: red"><?php echo e($message); ?> </span>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
                     </div>
+
 
                     <div class="modal-footer">
                         <div class="col">
@@ -130,6 +232,7 @@
                         </div>
                     </div>
                 </div>
+
         </form>
     </main>
 </body>
