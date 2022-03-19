@@ -43,16 +43,26 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
                                 </div>
                             </li>
+                            <div class="menuk">
+                                <div class="menu1">
+                                <li class="nav-items"><a href="/dolgozo"     class="">Dolgozók</a></li>
+                                <li class="nav-items"><a href="/felhasznalo" class="">Felhasználók</a></li>
+                                <li class="nav-items"><a href="/bolcsode"    class="">Bölcsöde</a></li>
+                                </div>
+                                <div class="menu2">
+                                <li class="nav-items"><a href="/fenntarto"   class="">Fenntartó</a></li>
+                                <li class="nav-items"><a href="/mellekletek" class="">Mellékletek</a></li>
+                                </div>
+                            </div>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
 
-        <div class="row pr-10">
+        <div class="row pr-12 ">
 
             <div class="col-sm-2" id="menu">
-
                 <nav class="menu menu--puck">
                     <ul class="menu__list" id="navMenu">
                         <li class="menu__item"><a href="/dolgozo" class="menu__link">Dolgozók</a></li>
@@ -62,13 +72,12 @@
                         <li class="menu__item"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
                     </ul>
                 </nav>
-
             </div>
-            <div class="col-sm-9">
-                <article>
+            
+            <div class="col-sm-9" >
+                <article id='tartalom'>
                     @yield('tartalom')
                 </article>
-
             </div>
         </div>
     </div> 

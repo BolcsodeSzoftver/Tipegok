@@ -26,7 +26,7 @@
     <form class="form" id="bolcsiForm">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
-
+            <option >Válassz egy fenntartót</option>
             @foreach ($fenntartok as $fenntarto)
                 <option value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
             @endforeach
