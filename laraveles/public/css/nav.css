@@ -131,19 +131,20 @@ a {
 	z-index:1;
 	overflow: hidden;
 	background-image: url("https://images.unsplash.com/photo-1589306994259-a806e14b775a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
+	/* background-image: url("https://colorlib.com/etc/bootstrap-sidebar/sidebar-10/images/bg_1.jpg"); */
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
 }
 
-.dropdown-menu{
+/* .dropdown-menu{
 	background-image: url("https://images.unsplash.com/photo-1589306994259-a806e14b775a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
-}
+} */
   
-  .sidebar a, .dropdown-btn,  .dropbtn{
+  .sidebar a /* .dropdown-btn,  .dropbtn */{
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 20px;
@@ -161,6 +162,14 @@ a {
 	color: #000000;
   }
  */
+
+ #jobb-menu{background-color: #4e8ee2; opacity: 0.2; width: 250px; height: 290px;
+	margin-top: 55px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: -1; }
+
   .hover:hover{ background-color: #4e8ee2; }
   
   .sidebar .closebtn {

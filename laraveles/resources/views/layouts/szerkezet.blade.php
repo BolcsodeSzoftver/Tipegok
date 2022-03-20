@@ -75,6 +75,7 @@
     </div> 
     <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div id="jobb-menu"></div>
             <div class="dropdown">
                 <a class="hover" class="dropbtn" href="#">Profilom <i class='fa fa-angle-down'></i></a>
                 <div class="dropdown-content">
