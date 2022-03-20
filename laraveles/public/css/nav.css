@@ -130,7 +130,7 @@ a {
 	padding-top: 60px;
 	z-index:1;
 	overflow: hidden;
-	background-color: rgb(226, 226, 226);
+	background-color: #ebebeb;
 	/* background-image: url("https://images.unsplash.com/photo-1589306994259-a806e14b775a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"); */
 	/* background-image: url("https://colorlib.com/etc/bootstrap-sidebar/sidebar-10/images/bg_1.jpg"); */
 	background-position: center;

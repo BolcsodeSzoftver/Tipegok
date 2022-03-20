@@ -1,0 +1,13 @@
+@charset "utf-8";
+table {
+	background-color: #f3f3f3;
+}
+th,
+td {
+	text-align: center;
+}
+
+.lapozos{
+	width: 230px;
+	margin: auto;
+}
