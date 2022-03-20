@@ -61,6 +61,7 @@
                         <li class="menu__item"><a href="{{route('kezdolap')}}" class="menu__link">Bölcsöde</a></li>
                         <li class="menu__item"><a href="/fenntarto" class="menu__link">Fenntartó</a></li>
                         <li class="menu__item"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
+                        <li class="menu__item"><a href="/agaztatiPotlek" class="menu__link">Ágazati potlék</a></li>
                     </ul>
                 </nav>
             </div>
@@ -85,11 +86,12 @@
                 </div>
             </div>
             
-            <a class="hover" href="/dolgozo"              >Dolgozók</a>
-            <a class="hover" href="/felhasznalo"          >Felhasználók</a>
-            <a class="hover" href="{{route('kezdolap')}}" >Bölcsöde</a>
-            <a class="hover" href="/fenntarto"            >Fenntartó</a>
-            <a class="hover" href="/mellekletek"          >Mellékletek</a>
+            <a class="hover" href="/dolgozo"        >Dolgozók</a>
+            <a class="hover" href="/felhasznalo"    >Felhasználók</a>
+            <a class="hover" href="/bolcsode"       >Bölcsöde</a>
+            <a class="hover" href="/fenntarto"      >Fenntartó</a>
+            <a class="hover" href="/mellekletek"    >Mellékletek</a>
+            <a class="hover" href="/agaztatiPotlek" >Ágazati potlék</a>
         </div>
 
     <script>
