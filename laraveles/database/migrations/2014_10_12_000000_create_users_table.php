@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('jogosultsag_id')->nullable()->references('id')->on('jogosultsags');
+            $table->string('allapot');
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
@@ -32,6 +33,7 @@ class CreateUsersTable extends Migration
         $user-> name = "szuperAdmin";
         $user->email = "szuperadmin@gmail.com";
         $user->jogosultsag_id = 2;
+        $user->allapot = 1;
         $user->password = Hash::make(123);
         $user->save();
 

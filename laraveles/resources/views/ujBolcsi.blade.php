@@ -29,7 +29,8 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Bölcsőde adatai</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Bölcsőde adatai
+                        </h5>
                     </div>
                     <div class="modal-body">
                         <div class="modositUrlap">
@@ -38,12 +39,13 @@
 
                                     <div class="form-outline">
                                         {{-- <input type="text" id="cim" class="form-control" name="fenntarto" />
-                                        <label class="form-label" for="cim">Fenntartó</label> --}}
+                                                            <label class="form-label" for="cim">Fenntartó</label> --}}
                                         <label for="bolcsi">Fenntartók:</label>
-                                        <select class="bolcsiNev" name="fenntarto">
+                                        <select class="bolcsiNev" name="fennt_id">
 
                                             @foreach ($fenntartokId as $fenntarto)
-                                                <option value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
+                                                <option value="{{ $fenntarto->id }}">
+                                                    {{ $fenntarto->nev }}</option>
                                             @endforeach
                                         </select>
                                         <br>
@@ -58,10 +60,10 @@
 
                                     <div class="form-outline">
                                         {{-- <input type="text" id="cim" class="form-control" name="admin" />
-                                        <label class="form-label" for="cim">Admin</label> --}}
+                                                            <label class="form-label" for="cim">Admin</label> --}}
                                         <label for="bolcsi">Admin:</label>
-                                        
-                                        <select class="bolcsiNev" name="admin">
+
+                                        <select class="bolcsiNev" name="bolcsode_admin">
                                             @foreach ($megjelenitAdminNev as $adminNev)
                                                 @if ($adminNev->jogosultsag_id === 1)
                                                     <option value="{{ $adminNev->id }}">
@@ -78,7 +80,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="cim" class="form-control" name="cim" />
+                                        <input type="text" id="cim" class="form-control" name="cim"
+                                            value="{{ old('cim') }}" />
 
 
                                         <label class="form-label" for="cim">Cím</label>
@@ -90,7 +93,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="nev" class="form-control" name="nev" />
+                                        <input type="text" id="nev" class="form-control" name="nev"
+                                            value="{{ old('nev') }}" />
                                         <label class="form-label" for="nev">Név</label>
                                         <br>
                                         @error('nev')
@@ -102,8 +106,10 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="agazatiAzon" class="form-control" name="agazatiAzon" />
-                                        <label class="form-label" for="agazatiAzon">Ágazati azonosító</label>
+                                        <input type="text" id="agazatiAzon" class="form-control" name="agazati_azon"
+                                            value="{{ old('agazati_azon') }}" />
+                                        <label class="form-label" for="agazatiAzon">Ágazati
+                                            azonosító</label>
                                         <br>
                                         @error('agazati_azon')
                                             <span style="color: red">{{ $message }} </span>
@@ -112,8 +118,10 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="feorAzon" class="form-control" name="feorAzon" />
-                                        <label class="form-label" for="feorAzon">FEOR azonosító</label>
+                                        <input type="text" id="feorAzon" class="form-control" name="feor"
+                                            value="{{ old('feor') }}" />
+                                        <label class="form-label" for="feorAzon">FEOR
+                                            azonosító</label>
                                         <br>
                                         @error('feor')
                                             <span style="color: red">{{ $message }} </span>
@@ -124,8 +132,10 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="szgyfKod" class="form-control" name="szgyfKod" />
-                                        <label class="form-label" for="szgyfKod">SZGYF kód</label>
+                                        <input type="text" id="szgyfKod" class="form-control" name="szgyf_kod"
+                                            value="{{ old('szgyf_kod') }}" />
+                                        <label class="form-label" for="szgyfKod">SZGYF
+                                            kód</label>
                                         <br>
                                         @error('szgyf_kod')
                                             <span style="color: red">{{ $message }} </span>
@@ -135,7 +145,7 @@
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="number" id="ferohelyekSzama" class="form-control"
-                                            name="ferohelyekSzama" />
+                                            name="ferohelyek_szama" value="{{ old('ferohelyek_szama') }}" />
                                         <label class="form-label" for="ferohelyekSzama">Férőhelyek száma</label>
                                         <br>
                                         @error('ferohelyek_szama')
@@ -146,7 +156,7 @@
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="text" id="agazatiPotlek" class="form-control"
-                                            name="agazatiPotlek" />
+                                            name="agazati_potlek" value="{{ old('agazati_potlek') }}" />
                                         <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
                                         <br>
                                         @error('agazati_potlek')
@@ -170,8 +180,8 @@
                         </div>
                     </div>
                 </div>
-
         </form>
+
     </main>
 </body>
 

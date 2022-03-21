@@ -57,6 +57,14 @@ class User extends Authenticatable
         }
         return false;
     }
+    
+    public function isDolgozo()
+    {      
+        if('dolgozo' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+            return true;
+        }
+        return false;
+    }
 
     public function isSzuperAdmin()
     {      
@@ -64,6 +72,13 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+    public function isEngedejezettBejelentkezo()
+    {      
+      if('regisztraltDolgozo' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+          return false;
+      }
+      return true;
     }
 
     public function getBolcsodeId(){

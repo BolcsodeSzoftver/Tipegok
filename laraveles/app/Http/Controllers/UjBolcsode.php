@@ -17,6 +17,7 @@ class UjBolcsode extends Controller
      */
     public function index()
     {
+        
         $fenntartokId = fenntarto::all();
         $megjelenitAdminNev = User::all();
         return view('ujBolcsi', compact('fenntartokId', 'megjelenitAdminNev'));
@@ -40,19 +41,19 @@ class UjBolcsode extends Controller
      */
     public function store(urlapEllenorzes $request)
     {
-      
-      $bolcsode = new bolcsode();
+
+        $bolcsode = new bolcsode();
 
         $bolcsode->cim = $request->cim;
         $bolcsode->nev = $request->nev;
-        $bolcsode->agazati_azon = $request->agazatiAzon;
-        $bolcsode->feor = $request->feorAzon;
-        $bolcsode->szgyf_kod = $request->szgyfKod;
-        $bolcsode->ferohelyek_szama = $request->ferohelyekSzama;
-        $bolcsode->agazati_potlek = $request->agazatiPotlek;
-        $bolcsode->fennt_id = $request->fenntarto;
-        $bolcsode->bolcsode_admin = $request->admin;
-        $bolcsode->save(); 
+        $bolcsode->agazati_azon = $request->agazati_azon;
+        $bolcsode->feor = $request->feor;
+        $bolcsode->szgyf_kod = $request->szgyf_kod;
+        $bolcsode->ferohelyek_szama = $request->ferohelyek_szama;
+        $bolcsode->agazati_potlek = $request->agazati_potlek;
+        $bolcsode->fennt_id = $request->fennt_id;
+        $bolcsode->bolcsode_admin = $request->bolcsode_admin;
+        $bolcsode->save();
         return redirect('/bolcsode');
     }
 

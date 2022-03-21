@@ -62,6 +62,7 @@ class felhasznaloRegisztracio extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->allapot = $request->get('allapot'); 
         $user->jogosultsag_id = $request->get('Jogosultsag'); 
         $user->password = Hash::make($pass);
         $user->save();

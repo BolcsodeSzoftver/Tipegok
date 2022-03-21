@@ -140,16 +140,20 @@
                 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>
-        <div>
+        
+    </div>
+    <div class="row">
+        <div class="col">
             <button class="btn btn-secondary regisztracio">
                 <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
             </button>
         </div>
-    </div>
-    <div>
-        <?php echo $alkalmazotts->links('pagination::bootstrap-4'); ?>
+        <div>
+            <?php echo $alkalmazotts->links('pagination::bootstrap-4'); ?>
 
+        </div>
     </div>
+    
 
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">

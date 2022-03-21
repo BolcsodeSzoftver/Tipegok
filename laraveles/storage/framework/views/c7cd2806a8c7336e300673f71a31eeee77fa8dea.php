@@ -29,7 +29,8 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Bölcsőde adatai</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Bölcsőde adatai
+                        </h5>
                     </div>
                     <div class="modal-body">
                         <div class="modositUrlap">
@@ -39,10 +40,11 @@
                                     <div class="form-outline">
                                         
                                         <label for="bolcsi">Fenntartók:</label>
-                                        <select class="bolcsiNev" name="fenntarto">
+                                        <select class="bolcsiNev" name="fennt_id">
 
                                             <?php $__currentLoopData = $fenntartokId; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?></option>
+                                                <option value="<?php echo e($fenntarto->id); ?>">
+                                                    <?php echo e($fenntarto->nev); ?></option>
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         </select>
                                         <br>
@@ -65,8 +67,8 @@ unset($__errorArgs, $__bag); ?>
                                     <div class="form-outline">
                                         
                                         <label for="bolcsi">Admin:</label>
-                                        
-                                        <select class="bolcsiNev" name="admin">
+
+                                        <select class="bolcsiNev" name="bolcsode_admin">
                                             <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <?php if($adminNev->jogosultsag_id === 1): ?>
                                                     <option value="<?php echo e($adminNev->id); ?>">
@@ -91,7 +93,8 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="cim" class="form-control" name="cim" />
+                                        <input type="text" id="cim" class="form-control" name="cim"
+                                            value="<?php echo e(old('cim')); ?>" />
 
 
                                         <label class="form-label" for="cim">Cím</label>
@@ -110,7 +113,8 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="nev" class="form-control" name="nev" />
+                                        <input type="text" id="nev" class="form-control" name="nev"
+                                            value="<?php echo e(old('nev')); ?>" />
                                         <label class="form-label" for="nev">Név</label>
                                         <br>
                                         <?php $__errorArgs = ['nev'];
@@ -129,8 +133,10 @@ unset($__errorArgs, $__bag); ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="agazatiAzon" class="form-control" name="agazatiAzon" />
-                                        <label class="form-label" for="agazatiAzon">Ágazati azonosító</label>
+                                        <input type="text" id="agazatiAzon" class="form-control" name="agazati_azon"
+                                            value="<?php echo e(old('agazati_azon')); ?>" />
+                                        <label class="form-label" for="agazatiAzon">Ágazati
+                                            azonosító</label>
                                         <br>
                                         <?php $__errorArgs = ['agazati_azon'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -146,8 +152,10 @@ unset($__errorArgs, $__bag); ?>
                                 </div>
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="feorAzon" class="form-control" name="feorAzon" />
-                                        <label class="form-label" for="feorAzon">FEOR azonosító</label>
+                                        <input type="text" id="feorAzon" class="form-control" name="feor"
+                                            value="<?php echo e(old('feor')); ?>" />
+                                        <label class="form-label" for="feorAzon">FEOR
+                                            azonosító</label>
                                         <br>
                                         <?php $__errorArgs = ['feor'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -165,8 +173,10 @@ unset($__errorArgs, $__bag); ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline">
-                                        <input type="text" id="szgyfKod" class="form-control" name="szgyfKod" />
-                                        <label class="form-label" for="szgyfKod">SZGYF kód</label>
+                                        <input type="text" id="szgyfKod" class="form-control" name="szgyf_kod"
+                                            value="<?php echo e(old('szgyf_kod')); ?>" />
+                                        <label class="form-label" for="szgyfKod">SZGYF
+                                            kód</label>
                                         <br>
                                         <?php $__errorArgs = ['szgyf_kod'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -183,7 +193,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="number" id="ferohelyekSzama" class="form-control"
-                                            name="ferohelyekSzama" />
+                                            name="ferohelyek_szama" value="<?php echo e(old('ferohelyek_szama')); ?>" />
                                         <label class="form-label" for="ferohelyekSzama">Férőhelyek száma</label>
                                         <br>
                                         <?php $__errorArgs = ['ferohelyek_szama'];
@@ -201,7 +211,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col">
                                     <div class="form-outline">
                                         <input type="text" id="agazatiPotlek" class="form-control"
-                                            name="agazatiPotlek" />
+                                            name="agazati_potlek" value="<?php echo e(old('agazati_potlek')); ?>" />
                                         <label class="form-label" for="agazatiPotlek">Ágazati pótlék</label>
                                         <br>
                                         <?php $__errorArgs = ['agazati_potlek'];
@@ -232,8 +242,8 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-
         </form>
+
     </main>
 </body>
 

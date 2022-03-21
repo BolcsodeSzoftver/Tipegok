@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\jogosultsag;
 use Dotenv\Validator;
 use App\Http\Requests\urlapEllenorzes;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\MessageBag;
 
 class BolcsodeController extends Controller
@@ -50,34 +51,7 @@ class BolcsodeController extends Controller
      */
     public function store(Request $request)
     {
-        echo ("szia");
-        $validated = $request->validate([
-            "cim"  => 'required',
-        ]);
-     echo("juhu");
-        /*      $request->validate([
-            'cim' => 'required',
-            'nev' => 'required',
-            'agazati_azon' => 'required'
-        ], [
-          'cim.required' => 'A article name is required',
-          'nev.required'  => 'A article body is required',
-          'agazati_azon.required' => 'A article body is required',
-        ]); */
-       
-     /*    $bolcsode = new bolcsode();
-
-        $bolcsode->cim = $request->cim;
-        $bolcsode->nev = $request->nev;
-        $bolcsode->agazati_azon = $request->agazatiAzon;
-        $bolcsode->feor = $request->feorAzon;
-        $bolcsode->szgyf_kod = $request->szgyfKod;
-        $bolcsode->ferohelyek_szama = $request->ferohelyekSzama;
-        $bolcsode->agazati_potlek = $request->agazatiPotlek;
-        $bolcsode->fennt_id = $request->fenntarto;
-        $bolcsode->bolcsode_admin = $request->admin;
-        $bolcsode->save(); */
-        //return redirect('/bolcsode');
+        
     }
 
 

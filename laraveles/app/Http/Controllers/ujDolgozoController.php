@@ -6,6 +6,7 @@ use App\Models\alkalmazott;
 use App\Models\bolcsode;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ujDolgozoController extends Controller
 {
@@ -16,9 +17,13 @@ class ujDolgozoController extends Controller
      */
     public function index()
     {
-        $userID = User::all();
-        $bolcsiID = bolcsode::all();
-        return view('ujdolgozo', compact("userID", "bolcsiID"));
+        if (Auth::user()->isEngedejezettBejelentkezo())  {
+            $userID = User::all();
+            $bolcsiID = bolcsode::all();
+            return view('ujdolgozo', compact("userID", "bolcsiID"));
+        }
+       
+      
     }
 
     /**

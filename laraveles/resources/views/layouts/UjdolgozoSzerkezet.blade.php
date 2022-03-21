@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
-    <script src="js/ujDolgozo.js"></script>
+    <script src="../js/ujdolgoz.js"></script>
 </head>
 
 <body>
@@ -34,9 +34,6 @@
                     <li class="nav-item" id="megjelenikGomb">
                         <a class="nav-link " id="adatokT3">3</a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link " href="/ujDolgozo4">4</a>
-                    </li> --}}
                 </ul>
             </div>
             <h1>Dolgozó adatai</h1>

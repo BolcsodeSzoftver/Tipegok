@@ -28,11 +28,22 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+
         $request->authenticate();
 
         $request->session()->regenerate();
+        if (Auth::user()->isEngedejezettBejelentkezo()) {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
+      
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/bolcsode');
     }
 
     /**

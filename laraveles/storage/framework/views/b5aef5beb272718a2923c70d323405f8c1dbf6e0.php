@@ -68,6 +68,13 @@
 
                                                 </div>
                                             </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" id="form3Example3c" class="form-control"
+                                                        name="allapot" value="0" required autofocus />
+                                                </div>
+                                            </div>
+
 
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <div class="form-outline flex-fill mb-0">

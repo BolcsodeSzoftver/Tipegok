@@ -14,10 +14,9 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" class="userId">
                 <div class="col-6" id="munkalatoNeve">
-                    <label class="form-label" for="form8Example1">User ID</label>
-                    <input type="text" id="form8Example1" class="form-control" name="userID" />
+                    <input type="text" id="form8Example1" class="form-control userId" name="userID" value={{Auth::user()->id}} />
                 </div>
             </div>
             <div class="row">

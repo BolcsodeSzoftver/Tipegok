@@ -19,7 +19,7 @@ class CreateBolcsodesTable extends Migration
             $table->foreign('fennt_id')->references('id')->on('fenntartos');
             $table->String('cim');
             $table->String('nev');
-            $table->integer('agazati_azon');
+            $table->char('agazati_azon');
             $table->integer('szgyf_kod');
             $table->integer('ferohelyek_szama');
             $table->integer('feor');

@@ -52,7 +52,7 @@ Route::get('/fenntarto/{id}', [MellekletController::class,'kivalasztottFenntarto
 Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgozoBizonyitvany']);
 
 Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
-Route::resource('/ujdolgozo', ujDolgozoController::class);
+Route::resource('/ujdolgozo', ujDolgozoController::class)->middleware(['auth']);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
 Route::resource('/ujBolcsi', UjBolcsode::class)->middleware(['auth']);
 
