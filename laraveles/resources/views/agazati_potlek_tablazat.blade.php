@@ -1,6 +1,7 @@
 @extends('layouts.szerkezet')
 @section('head')
     <link rel="stylesheet" href="css/agazatiPotlek.css" />
+    <script src="js/agazatiPotlek.js"></script>
 @endsection
 @section('tartalom')
     <table class="table table-bordered mb-5">
@@ -20,25 +21,25 @@
                 <th scope="col">J</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="adatok">
             @foreach ($agazatiPotlek as $agazatiP)
                 <tr>
                     <td class="modositAgazatiP">
-			            <button class="btn btn-primary" id="modositadat" type="button" data-toggle="modal"
+			            <button class="btn btn-primary modositGomb"  id={{ $agazatiP->id }} type="button" data-toggle="modal"
 				            data-target="#exampleModalLong"><i class='fa fa-edit'></i>
 			            </button>
 		            </td>
-                    <td>{{ $agazatiP->eletkor }}</td>
-                    <td>{{ $agazatiP->A }}</td>
-                    <td>{{ $agazatiP->B }}</td>
-                    <td>{{ $agazatiP->C }}</td>
-                    <td>{{ $agazatiP->D }}</td>
-                    <td>{{ $agazatiP->E }}</td>
-                    <td>{{ $agazatiP->F }}</td>
-                    <td>{{ $agazatiP->G }}</td>
-                    <td>{{ $agazatiP->H }}</td>
-                    <td>{{ $agazatiP->I }}</td>
-                    <td>{{ $agazatiP->J }}</td>
+                    <td class="eletkor" id={{ $agazatiP->id }}>{{ $agazatiP->eletkor }}</td>
+                    <td class="a" id={{ $agazatiP->id }}>{{ $agazatiP->A }}</td>
+                    <td class="b" id={{ $agazatiP->id }}>{{ $agazatiP->B }}</td>
+                    <td class="c" id={{ $agazatiP->id }}>{{ $agazatiP->C }}</td>
+                    <td class="d" id={{ $agazatiP->id }}>{{ $agazatiP->D }}</td>
+                    <td class="e" id={{ $agazatiP->id }}>{{ $agazatiP->E }}</td>
+                    <td class="f" id={{ $agazatiP->id }}>{{ $agazatiP->F }}</td>
+                    <td class="g" id={{ $agazatiP->id }}>{{ $agazatiP->G }}</td>
+                    <td class="h" id={{ $agazatiP->id }}>{{ $agazatiP->H }}</td>
+                    <td class="i" id={{ $agazatiP->id }}>{{ $agazatiP->I }}</td>
+                    <td class="j" id={{ $agazatiP->id }}>{{ $agazatiP->J }}</td>
                 </tr>
             @endforeach
         </thead>
@@ -70,9 +71,9 @@
                                             <label class="form-label" for="agazatiPID">ID</label>
                                         </div>
                                     </div>
-                                    <div class="col">
+                                    <div class="col-7" style="transform: translateX(35%); text-align:center;">
                                         <div class="form-outline">
-                                            <input type="text" id="eletkor" class="form-control" readonly>
+                                            <input type="text" id="eletkor" class="form-control" nev="eletkor" readonly style="text-align:center;">
                                             <label class="form-label" for="eletkor">Életkor</label>
                                         </div>
                                     </div>
@@ -80,31 +81,31 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="a" class="form-control" readonly>
+                                            <input type="text" id="a" class="form-control" name="a" readonly>
                                             <label class="form-label" for="a">A</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="b" class="form-control" readonly>
+                                            <input type="text" id="b" class="form-control" name="b" readonly>
                                             <label class="form-label" for="b">B</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="c" class="form-control" readonly>
+                                            <input type="text" id="c" class="form-control" name="c" readonly>
                                             <label class="form-label" for="c">C</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="d" class="form-control" readonly>
+                                            <input type="text" id="d" class="form-control" name="d" readonly>
                                             <label class="form-label" for="d">D</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="e" class="form-control" readonly>
+                                            <input type="text" id="e" class="form-control" name="e" readonly>
                                             <label class="form-label" for="e">E</label>
                                         </div>
                                     </div>
@@ -112,31 +113,31 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="f" class="form-control" readonly>
+                                            <input type="text" id="f" class="form-control" name="f" readonly>
                                             <label class="form-label" for="f">F</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="g" class="form-control" readonly>
+                                            <input type="text" id="g" class="form-control" name="g" readonly>
                                             <label class="form-label" for="g">G</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="h" class="form-control" readonly>
+                                            <input type="text" id="h" class="form-control" name="h" readonly> 
                                             <label class="form-label" for="h">H</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="i" class="form-control" readonly>
+                                            <input type="text" id="i" class="form-control" name="i" readonly>
                                             <label class="form-label" for="i">I</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="j" class="form-control" readonly>
+                                            <input type="text" id="j" class="form-control" name="j" readonly>
                                             <label class="form-label" for="j">J</label>
                                         </div>
                                     </div>
