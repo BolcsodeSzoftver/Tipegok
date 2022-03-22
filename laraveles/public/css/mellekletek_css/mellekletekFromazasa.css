@@ -1,0 +1,21 @@
+.melleklet-gombok{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 40px 0  0  40px;
+}
+.melleklet-gombok a{
+    margin: 5px;
+    width: 90%;
+}
+
+@media only screen and (max-width: 990px) {
+    .melleklet-gombok{
+        margin: 0  0  0  0;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .melleklet-gombok{
+        grid-template-columns: 50% 50%;
+    }
+}
