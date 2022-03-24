@@ -29,4 +29,5 @@ class alkalmazott extends Model
       $id = alkalmazott::where('users_id',$userId)->first()->bolcsode_id;
       return $id;
     }
+
 }

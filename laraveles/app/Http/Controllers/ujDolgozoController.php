@@ -17,13 +17,16 @@ class ujDolgozoController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->isEngedejezettBejelentkezo())  {
+        if(Auth::user()->regisztralFelhasznalo()){
+            return redirect('');
+        }
+        if (Auth::user()->isDolgozo() || Auth::user()->isSzuperAdmin() || Auth::user()->isAdmin()) {
             $userID = User::all();
             $bolcsiID = bolcsode::all();
             return view('ujdolgozo', compact("userID", "bolcsiID"));
         }
        
-      
+        
     }
 
     /**
@@ -45,7 +48,7 @@ class ujDolgozoController extends Controller
     public function store(Request $request)
     {
         $ujDolgozo = new alkalmazott();
-        $ujDolgozo->bolcsode_id = $request->bolcsodeID;
+       $ujDolgozo->bolcsode_id = $request->bolcsodeID;
         $ujDolgozo->users_id = $request->userID;
         $ujDolgozo->szul_nev = $request->szulNev;
         $ujDolgozo->szul_hely = $request->szulHely;
@@ -76,8 +79,14 @@ class ujDolgozoController extends Controller
             $ujDolgozo->hazas_e   = $request->nem;
         }
 
+
         $ujDolgozo->save();
-        return "sikeres feltöltés";
+        Auth::user()->bejelentkezesTiltasa();
+      
+
+
+
+        return  "sikeres adat kitöltés<br>";
     }
 
     /**
@@ -111,7 +120,7 @@ class ujDolgozoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -124,5 +133,4 @@ class ujDolgozoController extends Controller
     {
         //
     }
-  
 }

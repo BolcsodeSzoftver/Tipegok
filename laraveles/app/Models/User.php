@@ -51,43 +51,54 @@ class User extends Authenticatable
 
 
     public function isAdmin()
-    {      
-        if('admin' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+    {
+        if ('admin' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes) {
             return true;
         }
         return false;
     }
-    
+
     public function isDolgozo()
-    {      
-        if('dolgozo' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+    {
+        if ('dolgozo' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes) {
             return true;
         }
         return false;
     }
 
     public function isSzuperAdmin()
-    {      
-        if('szuperadmin' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
+    {
+        if ('szuperadmin' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes) {
             return true;
         }
         return false;
     }
     public function isEngedejezettBejelentkezo()
-    {      
-      if('regisztraltDolgozo' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes){
-          return false;
-      }
-      return true;
+    {
+        if('dolgozo' == jogosultsag::findOrFail($this->jogosultsag_id)->megnevezes && $this->regisztralFelhasznalo()){
+            return false;
+        }
+        return true;
+        if ($this->allapot === "0") {
+            return true;
+        }
+    }
+    public function bejelentkezesTiltasa()
+    {
+        $this->allapot = "1";
+        $this->save();
+    }
+    public function regisztralFelhasznalo()
+    {
+        if ($this->allapot === "0") {
+            return false;
+        }
+        return true;
     }
 
-    public function getBolcsodeId(){
-       
-       return alkalmazott::keresBolcsodeId($this->id);
-   
-    }
-    
-    
- 
+    public function getBolcsodeId()
+    {
 
+        return alkalmazott::keresBolcsodeId($this->id);
+    }
 }

@@ -16,7 +16,8 @@
             </div>
             <div class="row" class="userId">
                 <div class="col-6" id="munkalatoNeve">
-                    <input type="text" id="form8Example1" class="form-control userId" name="userID" value={{Auth::user()->id}} />
+                    <input type="text" id="form8Example1" class="form-control userId" name="userID"
+                        value={{ Auth::user()->id }} />
                 </div>
             </div>
             <div class="row">
@@ -185,6 +186,10 @@
             <input type="text" id="form8Example3" class="form-control" name="allapot" value="0" />
             <label class="form-label" for="form8Example3">Állapot</label>
         </div>
-        <button type="submit" name="mentes" id="mentes">Mentés</button>
+  
+        <button type="submit" name="mentes" id="mentes"  class="mentes">Mentés</button>
+      
+       
     </form>
+    
 @endsection

@@ -1,3 +1,9 @@
+
+@php
+    if(!Auth::user()->regisztralFelhasznalo()){
+        echo("<script>window.location.replace('/ujdolgozo')</script>");   
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="hu">
 

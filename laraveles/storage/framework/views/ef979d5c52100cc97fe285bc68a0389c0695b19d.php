@@ -17,7 +17,8 @@
             </div>
             <div class="row" class="userId">
                 <div class="col-6" id="munkalatoNeve">
-                    <input type="text" id="form8Example1" class="form-control userId" name="userID" value=<?php echo e(Auth::user()->id); ?> />
+                    <input type="text" id="form8Example1" class="form-control userId" name="userID"
+                        value=<?php echo e(Auth::user()->id); ?> />
                 </div>
             </div>
             <div class="row">
@@ -186,8 +187,12 @@
             <input type="text" id="form8Example3" class="form-control" name="allapot" value="0" />
             <label class="form-label" for="form8Example3">Állapot</label>
         </div>
-        <button type="submit" name="mentes" id="mentes">Mentés</button>
+  
+        <button type="submit" name="mentes" id="mentes"  class="mentes">Mentés</button>
+      
+       
     </form>
+    
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.UjdolgozoSzerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/ujdolgozo.blade.php ENDPATH**/ ?>
