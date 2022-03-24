@@ -8,6 +8,9 @@ main{
     max-height: 297mm;
     margin: auto;
 }
+header h2{
+    font-size: 15px !important;
+  }
 .szoveg{
     margin-top: 150px;
     line-height: 10mm;

@@ -3,6 +3,9 @@ h2:nth-child(1){
     margin-top: 50px;
     margin-bottom: 30px;
 }
+header h2{
+    font-size: 15px !important;
+  }
 h2{
     font-size: 20px;
     text-align: center;
@@ -16,13 +19,14 @@ p{
     line-height: 1mm;
 }
 .foresz{
+    margin-top: 50px;
     display: flex;
 }
 .ketto{
-    margin-top: 140px;
+    margin-top: 170px;
 }
 .harom{
-    margin-top: 80px;
+    margin-top: 100px;
 }
 article:nth-child(1){
     margin-right: 30px;

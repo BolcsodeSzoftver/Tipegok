@@ -1,35 +1,36 @@
 @charset "utf-8";
-*{
-    box-sizing: border-box;
- 
+* {
+	box-sizing: border-box;
 }
-main{
-    width:210mm;
-    height:297mm;
-    margin:auto;
+main {
+	width: 210mm;
+	height: 297mm;
+	margin: auto;
 }
-header{
- text-align: center;
+header {
+	text-align: center;
+	font-size: 15px !important;
 }
-article h3{
-    text-align: center;
-    padding-bottom: 50px;
+article h3 {
+	text-align: center;
+	padding-bottom: 50px;
 }
-.datum{
-    padding:50px 0 50px 0;
+.datum {
+	padding: 50px 0 50px 0;
 }
 
 @media print {
-	#gomb, .kereso_box{
-	  display: none;
+	#gomb,
+	.kereso_box {
+		display: none;
 	}
 
 	#export {
 		width: 210mm;
 		height: 297mm;
-	  }
+	}
 }
 
-.adat{
-    border: none;
+.adat {
+	border: none;
 }
