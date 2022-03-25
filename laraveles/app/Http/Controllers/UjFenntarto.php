@@ -38,7 +38,7 @@ class UjFenntarto extends Controller
      */
     public function store(fenntUrlapEllenorzes $request)
     {
-        $fenntarto = new fenntarto();
+         $fenntarto = new fenntarto();
         $fenntarto->nev = $request->nev;
         $fenntarto->szekhely  = $request->szekhely;
         $fenntarto->agazati_azon  = $request->agazati_azon;
@@ -53,7 +53,8 @@ class UjFenntarto extends Controller
         $fenntarto->uzemorvos_cim   = $request->uzemorvos_cim;
         $fenntarto->uzemorvos_telefonszam   = $request->uzemorvos_telefonszam;
         $fenntarto->save();
-        return redirect('/fenntarto');
+        return redirect('/fenntarto'); 
+       
     }
 
     /**
