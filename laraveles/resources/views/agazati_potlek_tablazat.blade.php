@@ -4,7 +4,7 @@
     <script src="js/agazatiPotlek.js"></script>
 @endsection
 @section('tartalom')
-    <table class="table table-bordered mb-5">
+    <table class="table table-bordered mb-5 table-responsive">
         <thead>
             <tr class="table-active">
                 <th></th>
