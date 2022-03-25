@@ -1,6 +1,6 @@
 $(function () {
     let ajaxhivas = new AjaxHivas();
-    let fajlnev = "/api/bolcsode";
+    let vegpont = "/api/bolcsode";
 
     $('.IDk').hide();
     let userJogo=$('#userJogosultsag').val();
@@ -8,17 +8,17 @@ $(function () {
 
     if(userJogo==$('#adminID').val()){
         $("#bolcsiForm").hide();
-        let fajlnev = "/bolcsi/"+$('#userID').val();
-        ajaxhivas.getAjax(fajlnev, adatLista);
+        let vegpont = "/bolcsi/"+$('#userID').val();
+        ajaxhivas.getAjax(vegpont, adatLista);
     }
 
     if(userJogo==$('#szuperAdminID').val()){
-        let fajlnev = "/api/bolcsode";
-        ajaxhivas.getAjax(fajlnev, adatLista);
+        let vegpont = "/api/bolcsode";
+        ajaxhivas.getAjax(vegpont, adatLista);
     }
 
     $(".megerositTorles").on("click", () => {
-        ajaxhivas.deleteAjax(fajlnev, $(".megerositTorles").attr("id"));
+        ajaxhivas.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
         location.reload();
     });
 
@@ -59,14 +59,14 @@ $(function () {
                 fennt_id: fenntarto,
             };
             console.log(adat);
-            console.log(fajlnev);
+            console.log(vegpont);
             console.log(id);
             console.log(fenntarto);
 
-            ajaxhivas.putAjax(fajlnev, adat, id);
+            ajaxhivas.putAjax(vegpont, adat, id);
 
             //$(".modositUrlap").hide();
-            //ajaxhivas.getAjax(fajlnev, adatLista);
+            //ajaxhivas.getAjax(vegpont, adatLista);
             location.reload();
         });
     });
@@ -92,8 +92,8 @@ $(function () {
 			<th scope="col">FEOR azonosító</th>
 			<th scope="col">Ágazati pótlék</th>
 		</tr></thead>`);
-        let fajlnev = "/teszt/" + $("select").val();
-        ajaxhivas.getAjax(fajlnev, adatLista);
+        let vegpont = "/teszt/" + $("select").val();
+        ajaxhivas.getAjax(vegpont, adatLista);
         console.log("muksziik");
         console.log($("select").val());
     });

@@ -1,9 +1,9 @@
 class AjaxHivas {
     constructor() {}
-    getAjax(fajlnev, myCallback) {
+    getAjax(eleresiUt, myCallback) {
         const bolcsodek = [];
         $.ajax({
-            url: fajlnev,
+            url: eleresiUt,
             type: "GET",
             success: function (result) {
                 
@@ -15,18 +15,18 @@ class AjaxHivas {
             },
         });
     }
-    postAjax(fajlnev, adat) {
+    postAjax(eleresiUt, adat) {
         $.ajax({
-            url: fajlnev,
+            url: eleresiUt,
             type: "POST",
             data: adat,
             success: function (result) {},
         });
     }
-    putAjax(fajlnev, adat, id) {
+    putAjax(eleresiUt, adat, id) {
         console.log(adat);
         $.ajax({
-            url: fajlnev + "/" + id,
+            url: eleresiUt + "/" + id,
             type: "PUT",
             data: adat,
             success: function (result) {},
@@ -37,9 +37,9 @@ class AjaxHivas {
             },
         });
     }
-    deleteAjax(fajlnev, id) {
+    deleteAjax(eleresiUt, id) {
         $.ajax({
-            url: fajlnev + "/" + id,
+            url: eleresiUt + "/" + id,
             type: "DELETE",
             success: function (result) {},
         });
