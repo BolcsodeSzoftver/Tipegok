@@ -22,35 +22,35 @@
                 <div class="col">
                     <div class="row">
                         <label class="col-sm-3" for="nev">Fenntartó neve:</label>
-                        <input class="col-sm-6" type="text" id="nev" name="nev">
+                        <input class="col-sm-6" type="text" id="nev" name="nev" value="{{ old('nev')}}">
                         @error('nev')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                     </div>
                    <div class="row"> 
                         <label class="col-sm-3" for="szekh">Székhely:</label>
-                        <input class="col-sm-6" type="text" id="szekh" name="szekhely">
+                        <input class="col-sm-6" type="text" id="szekh" name="szekhely" value="{{ old('szekhely')}}">
                         @error('szekhely')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                    </div> 
                    <div class="row">
                         <label class="col-sm-3" for="megye">Megye:</label>
-                        <input class="col-sm-6" type="text" id="megye" name="megye">
+                        <input class="col-sm-6" type="text" id="megye" name="megye" value="{{ old('megye')}}">
                         @error('megye')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                    </div>
                    <div class="row">
                         <label class="col-sm-3" for="kepv">Képviselő:</label>
-                        <input class="col-sm-6" type="text" id="kepv" name="kepviselo">
+                        <input class="col-sm-6" type="text" id="kepv" name="kepviselo" value="{{ old('kepviselo')}}">
                         @error('kepviselo')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                    </div>
                    <div class="row">
                         <label class="col-sm-3" for="agazatia">Ágazati azon:</label>
-                        <input class="col-sm-6" type="text" id="agazatia" name="agazati_azon">
+                        <input class="col-sm-6" type="text" id="agazatia" name="agazati_azon" value="{{ old('agazati_azon')}}">
                         @error('agazati_azon')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -59,35 +59,35 @@
                 <div class="col">
                     <div class="row">
                         <label class="col-sm-5" for="adoSzam">Adószám:</label>
-                        <input class="col-sm-6" type="number" id="adoSzam" name="adoszam">
+                        <input class="col-sm-6" type="number" id="adoSzam" name="adoszam" value="{{ old('adoszam')}}">
                         @error('adoszam')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="cegsz">Cégjegyzékszám:</label>
-                        <input class="col-sm-6" type="number" id="cegsz" name="cegjegyzekszam">
+                        <input class="col-sm-6" type="number" id="cegsz" name="cegjegyzekszam" value="{{ old('cegjegyzekszam')}}">
                         @error('cegjegyzekszam')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="stat">Statisztikaiszám:</label>
-                        <input class="col-sm-6" type="number" id="stat" name="statisztikaiszam">
+                        <input class="col-sm-6" type="number" id="stat" name="statisztikaiszam" value="{{ old('statisztikaiszam')}}">
                         @error('statisztikaiszam')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="kormanyHivatal">Illetékes kormány hivatal:</label>
-                        <input class="col-sm-6" type="text" id="kormanyHivatal" name="illetekes_kormányh">
+                        <input class="col-sm-6" type="text" id="kormanyHivatal" name="illetekes_kormányh" value="{{ old('illetekes_kormányh')}}">
                         @error('illetekes_kormányh')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="bsz">Bölcsödék száma:</label>
-                        <input class="col-sm-6" type="number" id="bsz" name="bolcsodek_szama">
+                        <input class="col-sm-6" type="number" id="bsz" name="bolcsodek_szama" value="{{ old('bolcsodek_szama')}}">
                         @error('bolcsodek_szama')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -99,15 +99,24 @@
                 <legend>Üzemorvos:</legend>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oNeve">Név:</label>
-                    <input class="col-sm-4" type="text" id="oNeve" name="uzemorvos_nev">
+                    <input class="col-sm-4" type="text" id="oNeve" name="uzemorvos_nev" value="{{ old('uzemorvos_nev')}}">
+                    @error('uzemorvos_nev')
+                            <span style="color: red">{{ $message }} </span>
+                    @enderror
                 </div>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oCim">Cím:</label>
-                    <input class="col-sm-4" type="text" id="oCim" name="uzemorvos_cim">
+                    <input class="col-sm-4" type="text" id="oCim" name="uzemorvos_cim" value="{{ old('uzemorvos_cim')}}">
+                    @error('uzemorvos_cim')
+                            <span style="color: red">{{ $message }} </span>
+                    @enderror
                 </div>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oTel">Telefonszám:</label>
-                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam">
+                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam" value="{{ old('uzemorvos_telefonszam')}}">
+                    @error('uzemorvos_telefonszam')
+                            <span style="color: red">{{ $message }} </span>
+                    @enderror
                 </div>
             </fieldset>
             <div id="ment">

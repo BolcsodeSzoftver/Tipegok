@@ -1,24 +1,24 @@
 $(function () {
     let ajax = new AjaxHivas();
-    let vegpont = "/api/fenntarto";
+    let eleresiUt = "/api/fenntarto";
 
     $('.IDk').hide();
     let userJogo=$('#userJogosultsag').val();
     console.log('jog:'+userJogo);
 
     if(userJogo==$('#adminID').val()){
-        let vegpont = "/fennt/"+$('#fenntID').val();
-        ajax.getAjax(vegpont, fenntLista);
+        let eleresiUt = "/fennt/"+$('#fenntID').val();
+        ajax.getAjax(eleresiUt, fenntLista);
     }
 
     if(userJogo==$('#szuperAdminID').val()){
-       /*  let vegpont = "/api/fenntarto"; */
-        ajax.getAjax(vegpont, fenntLista);
+       /*  let eleresiUt = "/api/fenntarto"; */
+        ajax.getAjax(eleresiUt, fenntLista);
     }
 
     $(".megerositTorles").on("click", () => {
         console.log("megerositTorles");
-        ajax.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
+        ajax.deleteAjax(eleresiUt, $(".megerositTorles").attr("id"));
         location.reload();
     });
 
@@ -78,10 +78,10 @@ $(function () {
                 uzemorvos_telefonszam: oTel,
             };
             console.log(fId);
-            ajax.putAjax(vegpont, adat, fId);
+            ajax.putAjax(eleresiUt, adat, fId);
             // $(".urlap").hide();
             location.reload();//Az aktuális dokumentum újratöltése
-            //ajax.getAjax(vegpont, fenntLista);
+            //ajax.getAjax(eleresiUt, fenntLista);
         });
     });
 

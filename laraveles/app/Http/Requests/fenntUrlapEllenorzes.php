@@ -15,7 +15,7 @@ class fenntUrlapEllenorzes extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,13 +29,13 @@ class fenntUrlapEllenorzes extends FormRequest
             "nev"  => 'required',
             "szekhely" => 'required',
             "agazati_azon" => 'required|between:8,8',
-            "kepviselo" => 'required|digits_between:6,6|numeric',
-            "adoszam" => 'required',
-            "megye" => 'required|digits_between:4,4|numeric',
+            "kepviselo" => 'required',
+            "adoszam" => 'required|digits_between:10,10|numeric',
+            "megye" => 'required',
             "cegjegyzekszam" => 'required',
             "statisztikaiszam" => 'required',
             "illetekes_kormányh" => 'required',
-            "bolcsodek_szama" => 'required|digits_between:4,4|numeric',
+            "bolcsodek_szama" => 'required|digits_between:1,1000|numeric',
             "uzemorvos_nev" => 'required',
             "uzemorvos_cim" => 'required',
             "uzemorvos_telefonszam" => 'required',
@@ -46,20 +46,22 @@ class fenntUrlapEllenorzes extends FormRequest
     public function messages()
     {
         return [
-            'nev.required' => 'A cím kitöltése kötelező!',
-            'szekhely.required'  => 'A név kitöltése kötelező!',
+            'nev.required' => 'A név kitöltése kötelező!',
+            'szekhely.required'  => 'A székhely kitöltése kötelező!',
             'agazati_azon.required' => 'A ágazati azonosíró kitöltése kötelező!', 
-            'kepviselo.required' => 'A szgyf kód kitöltése kötelező!',
-            'adoszam.required' => 'A férőhelyek száma kitöltése kötelező!',
-            'megye.required' => 'A feor azonosíó kitöltése kötelező!',
-            'cegjegyzekszam.required' => 'A ágazati pótlék kitöltése kötelező!',
-            'statisztikaiszam.required' => 'A fenntartó kiválasztása kötelező!',
-            'illetekes_kormányh.required' => 'Az admin kiválasztása kötelező!',
-            'bolcsodek_szama.required' => 'A feor azonosíó kitöltése kötelező!',
-            'uzemorvos_nev.required' => 'A ágazati pótlék kitöltése kötelező!',
-            'uzemorvos_cim.required' => 'A fenntartó kiválasztása kötelező!',
-            'uzemorvos_telefonszam.required' => 'Az admin kiválasztása kötelező!',
+            'kepviselo.required' => 'A képviselő kitöltése kötelező!',
+            'adoszam.required' => 'A adószám kitöltése kötelező!',
+            'megye.required' => 'A megye kitöltése kötelező!',
+            'cegjegyzekszam.required' => 'A cégjegyzékszám kitöltése kötelező!',
+            'statisztikaiszam.required' => 'A statisztikaiszám kitöltése kötelező!',
+            'illetekes_kormányh.required' => 'A illetékes kormányhivatal kitöltése kötelező!',
+            'bolcsodek_szama.required' => 'A bölcsödék száma kitöltése kötelező!',
+            'uzemorvos_nev.required' => 'A uzemorvos neve kitöltése kötelező!',
+            'uzemorvos_cim.required' => 'A uzemorvos címe kitöltése kötelező!',
+            'uzemorvos_telefonszam.required' => 'A uzemorvos telefonszáma kitöltése kötelező!',
  
+            'agazati_azon.between' => ['string' => 'Az ágazati azonosító 8 karakter hosszúnak kell lennnie.',],
+            'adoszam.digits_between' => 'Az adószám 10 karakter hosszúnak kell lennnie.',
         ];
     } 
 }

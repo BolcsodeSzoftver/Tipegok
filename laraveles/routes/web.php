@@ -12,8 +12,8 @@ use App\Http\Controllers\API\AgazatiPotlekController;
 use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
 use App\Http\Controllers\UjBolcsode;
-use App\Http\Controllers\ujFenntarto;
 use App\Http\Controllers\ujDolgozoController;
+use App\Http\Controllers\UjFenntarto;
 use App\Mail\yourMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -56,7 +56,7 @@ Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->mid
 Route::resource('/ujdolgozo', ujDolgozoController::class)->middleware(['auth']);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
 Route::resource('/ujBolcsi', UjBolcsode::class)->middleware(['auth']);
-Route::resource('/ujFenntarto', ujFenntarto::class)->middleware(['auth']);
+Route::resource('/ujFenntarto', UjFenntarto::class)->middleware(['auth']);
 
 Route::get('/', function () {
     return redirect("/bolcsode");
@@ -67,9 +67,7 @@ Route::get('/fejlesztesAlatt', function () {
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
 })->middleware(['auth']);
-Route::get('/ujFenntarto', function () {
-    return view('ujFenntarto');
-})->middleware(['auth']);
+
 Route::get('/belepes', function () {
     return view('belepes');
 });

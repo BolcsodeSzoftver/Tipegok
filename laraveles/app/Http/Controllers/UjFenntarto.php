@@ -17,6 +17,7 @@ class UjFenntarto extends Controller
     {
        /*  $fenntarto = fenntarto::all();
         return view('ujFenntarto', compact( 'fenntarto')); */
+        return view('ujFenntarto');
     }
 
     /**

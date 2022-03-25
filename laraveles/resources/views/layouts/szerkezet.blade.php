@@ -44,8 +44,8 @@
                                         profilom
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Beállítások</a>
-                                        <a class="dropdown-item" href="#">...</a>
+                                        <a class="dropdown-item" href="#">Saját adatok</a>
+                                        <a class="dropdown-item" href="#">Jelszó modosítása</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
                                     </div>
                                 </li>
@@ -86,8 +86,8 @@
             <div class="dropdown">
                 <a class="hover" class="dropbtn" href="#">Profilom <i class='fa fa-angle-down'></i></a>
                 <div class="dropdown-content">
-                    <a class="hover dropdown-item" href="#">Beállítások</a>
-                    <a class="hover dropdown-item" href="#">...</a>
+                    <a class="hover dropdown-item" href="#">Saját adatok</a>
+                    <a class="hover dropdown-item" href="#">Jelszó modosítása</a>
                     <a class="hover dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
                 </div>
             </div>
