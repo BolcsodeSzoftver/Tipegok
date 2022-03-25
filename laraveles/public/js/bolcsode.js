@@ -67,7 +67,7 @@ $(function () {
 
             //$(".modositUrlap").hide();
             //ajaxhivas.getAjax(fajlnev, adatLista);
-            //location.reload();
+            location.reload();
         });
     });
     $(window).on("EsemenyTorolBolcsi", (event) => {

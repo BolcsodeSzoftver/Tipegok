@@ -16,50 +16,81 @@
         <header class="text-center bg-secondary text-white">
             <h3>Fenntartó</h3>
         </header>
-        <form action="/api/fenntarto" method="post">
+        <form action="/ujFenntarto" method="post">
+        @csrf
             <div class="row">
                 <div class="col">
                     <div class="row">
                         <label class="col-sm-3" for="nev">Fenntartó neve:</label>
                         <input class="col-sm-6" type="text" id="nev" name="nev">
+                        @error('nev')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                     </div>
                    <div class="row"> 
                         <label class="col-sm-3" for="szekh">Székhely:</label>
                         <input class="col-sm-6" type="text" id="szekh" name="szekhely">
+                        @error('szekhely')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                    </div> 
                    <div class="row">
                         <label class="col-sm-3" for="megye">Megye:</label>
                         <input class="col-sm-6" type="text" id="megye" name="megye">
+                        @error('megye')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                    </div>
                    <div class="row">
                         <label class="col-sm-3" for="kepv">Képviselő:</label>
                         <input class="col-sm-6" type="text" id="kepv" name="kepviselo">
+                        @error('kepviselo')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                    </div>
                    <div class="row">
                         <label class="col-sm-3" for="agazatia">Ágazati azon:</label>
                         <input class="col-sm-6" type="text" id="agazatia" name="agazati_azon">
+                        @error('agazati_azon')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                    </div>
                 </div>
                 <div class="col">
                     <div class="row">
                         <label class="col-sm-5" for="adoSzam">Adószám:</label>
                         <input class="col-sm-6" type="number" id="adoSzam" name="adoszam">
+                        @error('adoszam')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="cegsz">Cégjegyzékszám:</label>
                         <input class="col-sm-6" type="number" id="cegsz" name="cegjegyzekszam">
+                        @error('cegjegyzekszam')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="stat">Statisztikaiszám:</label>
                         <input class="col-sm-6" type="number" id="stat" name="statisztikaiszam">
+                        @error('statisztikaiszam')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="kormanyHivatal">Illetékes kormány hivatal:</label>
                         <input class="col-sm-6" type="text" id="kormanyHivatal" name="illetekes_kormányh">
+                        @error('illetekes_kormányh')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                     </div>
                     <div class="row"> 
                         <label class="col-sm-5" for="bsz">Bölcsödék száma:</label>
                         <input class="col-sm-6" type="number" id="bsz" name="bolcsodek_szama">
+                        @error('bolcsodek_szama')
+                            <span style="color: red">{{ $message }} </span>
+                        @enderror
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 $(function () {
     let ajax = new AjaxHivas();
+    let vegpont = "/api/fenntarto";
 
     $('.IDk').hide();
     let userJogo=$('#userJogosultsag').val();
@@ -11,7 +12,7 @@ $(function () {
     }
 
     if(userJogo==$('#szuperAdminID').val()){
-        let vegpont = "/api/fenntarto";
+       /*  let vegpont = "/api/fenntarto"; */
         ajax.getAjax(vegpont, fenntLista);
     }
 
