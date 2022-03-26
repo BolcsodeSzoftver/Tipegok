@@ -3,6 +3,7 @@
 @extends('layouts.jovahagyasraVaroDolgozok')
 @section('head')
     <link rel="stylesheet" href="css/dolgozo.css" />
+    <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
     
 @endsection
@@ -162,9 +163,17 @@
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">
+
+                         <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok1">1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok2">2</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok3">3</a></li>
+                        </ul>
+
                         <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                         <div class="urlap">
                             <div id="adatok1">
+                                <h5></h5>
                                 <div class="col" id="gId">
                                     <div class="form-outline">
                                         <input type="hidden" id="dolgozoId" class="form-control" readonly>
@@ -245,11 +254,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr> 
                             </div>
 
-                            <hr>
-
-                            <div id="adatok2">
+                            <div id="adatok2"> 
+                                <h5></h5>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
@@ -292,7 +301,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr> 
                             </div>
+
+                            <div id="bizAdatok"></div>
 
                             <div class="ment">
                                 <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">

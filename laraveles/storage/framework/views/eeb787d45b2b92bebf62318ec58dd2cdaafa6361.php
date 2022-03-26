@@ -1,3 +1,9 @@
+
+<?php
+    if(!Auth::user()->regisztralFelhasznalo()){
+        echo("<script>window.location.replace('/ujdolgozo')</script>");   
+    }
+?>
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -38,8 +44,8 @@
                                         profilom
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Beállítások</a>
-                                        <a class="dropdown-item" href="#">...</a>
+                                        <a class="dropdown-item" href="#">Saját adatok</a>
+                                        <a class="dropdown-item" href="#">Jelszó modosítása</a>
                                         <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                                     </div>
                                 </li>
@@ -58,7 +64,7 @@
                     <ul class="menu__list" id="navMenu">
                         <li class="menu__item"><a href="/dolgozo" class="menu__link">Dolgozók</a></li>
                         <li class="menu__item"><a href="/felhasznalo" class="menu__link">Felhasználók</a></li>
-                        <li class="menu__item"><a href="<?php echo e(route('kezdolap')); ?>" class="menu__link">Bölcsöde</a></li>
+                        <li class="menu__item"><a href="/bolcsode" class="menu__link">Bölcsöde</a></li>
                         <li class="menu__item"><a href="/fenntarto" class="menu__link">Fenntartó</a></li>
                         <li class="menu__item"><a href="/mellekletek" class="menu__link">Mellékletek</a></li>
                         <li class="menu__item"><a href="/agaztatiPotlek" class="menu__link">Ágazati potlék</a></li>
@@ -80,8 +86,8 @@
             <div class="dropdown">
                 <a class="hover" class="dropbtn" href="#">Profilom <i class='fa fa-angle-down'></i></a>
                 <div class="dropdown-content">
-                    <a class="hover dropdown-item" href="#">Beállítások</a>
-                    <a class="hover dropdown-item" href="#">...</a>
+                    <a class="hover dropdown-item" href="#">Saját adatok</a>
+                    <a class="hover dropdown-item" href="#">Jelszó modosítása</a>
                     <a class="hover dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                 </div>
             </div>
