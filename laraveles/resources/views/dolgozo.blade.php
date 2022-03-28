@@ -175,28 +175,19 @@
                     </button>
                 </div>
 
-                <form action="api/dolgozo/0" method="post">
+                <form action="api/alkalmazott/0" method="post">
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">
-
-                         <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok1">1</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok2">2</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok3">3</a></li> -->
-                        </ul>
-
                         <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                         <div class="urlap">
-                            <div id="adatok1">
-                                <h5></h5>
+                        <div id="adatok1">
                                 <div class="col" id="gId">
                                     <div class="form-outline">
                                         <input type="hidden" id="dolgozoId" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="row">
-
                                     <div class="col">
                                         <div class="form-outline">
                                             <input type="text" id="nev" class="form-control" name="nev" readonly>
@@ -211,7 +202,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
@@ -226,7 +216,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
@@ -247,7 +236,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
@@ -348,25 +336,10 @@
                     </button>
                 </div>
 
-                <form action="api/dolgozo/0" method="post">
-                    @csrf
-                    <input type="hidden" name="_method" value="PUT">
-                    <div class="modal-body">
-                        <div class="urlap">
-
-                            <div id="bizAdatok"></div>
-
-                            <div class="ment">
-                                <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="adatModositEnged">
-                            <button type="button" class="btn btn-primary">Adatok módosítása</button>
-                        </div>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-                    </div>
+                <div class="modal-body"><div id="bizAdatok"></div></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                </div>
 
             </div>
         </div>
@@ -404,7 +377,7 @@
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                     </div>
-
+                </form>
             </div>
         </div>
     </div>
@@ -421,26 +394,10 @@
                     </button>
                 </div>
 
-                <form action="api/dolgozo/0" method="post">
-                    @csrf
-                    <input type="hidden" name="_method" value="PUT">
-                    <div class="modal-body">
-                        <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
-                        <div class="urlap">
-                            
-                            <div id="orvosiAdatok"></div>
-
-                            <div class="ment">
-                                <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="adatModositEnged">
-                            <button type="button" class="btn btn-primary">Adatok módosítása</button>
-                        </div>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-                    </div>
+                <div class="modal-body"><div id="orvosiAdatok"></div></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                </div>
 
             </div>
         </div>
