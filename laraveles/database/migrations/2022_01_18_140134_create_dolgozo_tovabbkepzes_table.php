@@ -16,7 +16,7 @@ class CreateDolgozoTovabbkepzesTable extends Migration
         Schema::create('dolgozo_tovabbkepzes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dolgozo_id');
-            //$table->foreign('dolgozo_id')->references('id')->on('dolgozos');
+            $table->foreign('dolgozo_id')->references('id')->on('dolgozos');
             $table->year('kotelezettseg');
             $table->date('datumig');
             $table->timestamps();

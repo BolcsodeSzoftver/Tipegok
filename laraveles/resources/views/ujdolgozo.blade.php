@@ -1,7 +1,7 @@
 @extends('layouts.UjdolgozoSzerkezet')
 @section('UjdolgozoTartalom')
-    <form action="/ujdolgozo" method="post">
-        @csrf
+    <form action="/ujdolgozo" method="post" enctype="multipart/form-data">
+        {{ csrf_field() }}
         <div class="t1">
             <div class="row">
                 <div class="col-6" id="munkalatoNeve">
@@ -182,14 +182,80 @@
                 </div>
             </div>
         </div>
+
+        <div class="t4">
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example1" class="form-control" name="vegzettseg" />
+                        <label class="form-label" for="form8Example1">végzettség</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example1" class="form-control" name="biz_intezmeny_nev" />
+                        <label class="form-label" for="form8Example1">Intézmény neve</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example1" class="form-control" name="pontokszama" />
+                        <label class="form-label" for="form8Example1">Pontok száma</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <input type="text" id="form8Example1" class="form-control" name="bizonyitvany_szam" />
+                        <label class="form-label" for="form8Example1">Bizonyitvány száma</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-outline">
+
+                        <input type="date" class="form-control" id="kiadas_datuma" name="kiadas_datuma">
+                        <label for="kiadas_datuma">Kiadás dátuma</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="custom-file-label" for="customFileGyakIg">Gyakorlait igazolás</label>
+                        <input type="file" class="custom-file-input" id="customFileGyakIg" name="gyakorlati_igazolas">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="custom-file-label" for="customFileOEP">OEP könyv másolat</label>
+                        <input type="file" class="custom-file-input" id="customFileOEP" name="oep_konyv_masolat">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-outline">
+                        <label class="custom-file-label" for="customFileDok">Dokumentum feltöltése</label>
+                        <input type="file" class="custom-file-input" id="customFileDok" name="dokumentum_feltoltese">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" name="mentes" id="mentes" class="mentes">Mentés</button>
+        </div>
         <div class="allapot">
             <input type="text" id="form8Example3" class="form-control" name="allapot" value="0" />
             <label class="form-label" for="form8Example3">Állapot</label>
         </div>
-  
-        <button type="submit" name="mentes" id="mentes"  class="mentes">Mentés</button>
-      
+
        
+
+
     </form>
-    
 @endsection

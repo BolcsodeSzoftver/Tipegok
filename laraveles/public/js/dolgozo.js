@@ -175,6 +175,11 @@ $(function() {
                                                         '<label class="form-label" for="'+adat.pontokszama+'">Pontokszáma</label>'+
                                                     '</div>'+
                                                 '</div>'+
+												'<div class="col">'+
+												'<div class="form-outline">'+
+													'<img src="'+adat.gyakorlati_igazolas+'" alt="" width="200" height="300">'+
+												'</div>'+
+											'</div>'+
                                             '</div>');
                     $("#bizAdatok").append('<hr>');
                 }

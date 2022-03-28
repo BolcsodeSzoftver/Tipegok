@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\alkalmazott;
+use App\Models\alkalmazott_bizonyitvany;
 use App\Models\bolcsode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Input\Input;
 
 class ujDolgozoController extends Controller
 {
@@ -25,8 +27,8 @@ class ujDolgozoController extends Controller
             $bolcsiID = bolcsode::all();
             return view('ujdolgozo', compact("userID", "bolcsiID"));
         }
-       
-        
+
+
     }
 
     /**
@@ -48,7 +50,7 @@ class ujDolgozoController extends Controller
     public function store(Request $request)
     {
         $ujDolgozo = new alkalmazott();
-       $ujDolgozo->bolcsode_id = $request->bolcsodeID;
+        $ujDolgozo->bolcsode_id = $request->bolcsodeID;
         $ujDolgozo->users_id = $request->userID;
         $ujDolgozo->szul_nev = $request->szulNev;
         $ujDolgozo->szul_hely = $request->szulHely;
@@ -78,16 +80,26 @@ class ujDolgozoController extends Controller
         } elseif ($request->nem) {
             $ujDolgozo->hazas_e   = $request->nem;
         }
+        $ujDolgzoBiznyitvany = new alkalmazott_bizonyitvany();
+        $ujDolgzoBiznyitvany->alkalmazott_id = $request->userID;
+        $ujDolgzoBiznyitvany->vegzettseg = $request->vegzettseg;
+        $ujDolgzoBiznyitvany->biz_intezmeny_nev = $request->biz_intezmeny_nev;
+        $ujDolgzoBiznyitvany->kiadas_datuma = $request->kiadas_datuma;
+        $ujDolgzoBiznyitvany->bizonyitvany_szam = $request->bizonyitvany_szam;
+        $ujDolgzoBiznyitvany->pontokszama = $request->pontokszama;
+        $ujDolgzoBiznyitvany->gyakorlati_igazolas = $request->gyakorlati_igazolas;
+        $ujDolgzoBiznyitvany->oep_konyv_masolat = $request->oep_konyv_masolat;
+        $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $request->dokumentum_feltoltese;
+
+
+        
 
 
         $ujDolgozo->save();
+        $ujDolgzoBiznyitvany->save();
         Auth::user()->bejelentkezesTiltasa();
-      
-
-
-
         return  "sikeres adat kitöltés<br>";
-    }
+       }
 
     /**
      * Display the specified resource.
@@ -120,7 +132,6 @@ class ujDolgozoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
     }
 
     /**

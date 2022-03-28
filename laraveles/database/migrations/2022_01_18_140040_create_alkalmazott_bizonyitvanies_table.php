@@ -16,15 +16,15 @@ class CreateAlkalmazottBizonyitvaniesTable extends Migration
         Schema::create('alkalmazott_bizonyitvanies', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('alkalmazott_id');
-            //$table->foreign('alkalmazott_id')->references('id')->on('alkalmazotts');
+            $table->foreign('alkalmazott_id')->references('id')->on('alkalmazotts');
             $table->string('vegzettseg');
             $table->string('biz_intezmeny_nev');
             $table->date('kiadas_datuma');
             $table->integer('bizonyitvany_szam')->unique();
-            //$table->string('gyakorlati_igazolas');
-            //$table->string('oep_konyv_masolat');
+            $table->string('gyakorlati_igazolas');
+            $table->string('oep_konyv_masolat');
             $table->integer('pontokszama');
-           // $table->string('dokumentum_feltoltese');
+            $table->string('dokumentum_feltoltese');
             $table->timestamps();
         });
     }
