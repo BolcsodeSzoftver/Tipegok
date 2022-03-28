@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\fenntarto;
 use App\Http\Controllers\API\BolcsodeController;
 use App\Http\Controllers\API\dolgozController;
+use App\Http\Controllers\API\AlkalmazottController;
 use App\Http\Controllers\API\belepesController;
 use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
@@ -38,7 +39,6 @@ Route::get('/agaztatiPotlek', [AgazatiPotlekController::class, 'megjelenit'])->m
 Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
 Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
 
-Route::get('/melleklet1', [dolgozController::class, 'dolgozoAdatai']);
 Route::get('/melleklet1', [MellekletController::class,'dolgozoAdatai1']);
 Route::get('/melleklet2', [MellekletController::class,'dolgozoAdatai2']);
 Route::get('/melleklet3', [MellekletController::class,'dolgozoAdatai3']);

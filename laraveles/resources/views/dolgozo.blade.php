@@ -172,7 +172,7 @@
                     </button>
                 </div>
 
-                <form action="api/dolgozo/0" method="post">
+                <form action="api/alkalmazott/0" method="post">
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">

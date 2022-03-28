@@ -180,7 +180,7 @@
                     </button>
                 </div>
 
-                <form action="api/dolgozo/0" method="post">
+                <form action="api/alkalmazott/0" method="post">
                     <?php echo csrf_field(); ?>
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">

@@ -4,13 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use App\Models\alkalmazott;
-use Illuminate\Support\Facades\DB;
 use App\Models\dolgozo;
-use App\Models\jogosultsag;
-use App\Models\bolcsode;
-use Illuminate\Support\Facades\Auth;
 
 
 class dolgozController extends Controller
@@ -46,31 +40,7 @@ class dolgozController extends Controller
      */
     public function store(Request $request)
     {
-        $dolgozo = new dolgozo();
-        $dolgozo->bolcsode_id  = $request->bolcsodeId;
-        $dolgozo->alkalmazott_id  = $request->alkalmazottId;
-        $dolgozo->brutto_alapber  = $request->bruttoAlapber;
-        $dolgozo->heti_munkaora   = $request->hetiMunkaOra;
-        $dolgozo->besorolas_betu  = $request->besorolasiBetu;
-        $dolgozo->besorolas_szam  = $request->besorolasiSzam;
-        $dolgozo->feor_azon  = $request->feorAzonosito;
-        $dolgozo->agazati_potlek   = $request->agazataiPotlek;
-        $dolgozo->eves_szabi   = $request->evesSzabi;
-        $dolgozo->vegzettseg   = $request->vegzettseg;
-        $dolgozo->sz_szakkepzet  = $request->szSzakkepzet;
-        $dolgozo->belepesi_nap   = $request->belepes;
-        $dolgozo->kilepesi_nap   = $request->kilepes;
-        $dolgozo->szgf_kod   = $request->szgfKod;
-        $dolgozo->munkakor   = $request->munkakor;
-        if ($request->kezpenz) {
-            $dolgozo->kp_utalas   = $request->kezpenz;
-        } elseif ($request->utalas) {
-            $dolgozo->kp_utalas   = $request->utalas;
-        }
-
-        $dolgozo->save();
-        $dolgozo->jovahagy();
-        return redirect("/dolgozo");
+        
     }
 
     /**
@@ -111,31 +81,6 @@ class dolgozController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->input('submit') === 'Save') {
-            $alkalmazottJovahagyas = alkalmazott::findOrFail($id);
-            $alkalmazottJovahagyas->allapot = $request->allapot;
-            $alkalmazottJovahagyas->save();
-            return redirect("/dolgozo");
-        }
-
-        $alkalmazott = alkalmazott::findOrFail($request->id);
-        $alkalmazott->szul_nev  = $request->szulN;
-        $alkalmazott->szul_hely   = $request->szulH;
-        $alkalmazott->szul_ido   = $request->szulI;
-        $alkalmazott->anyja_neve   = $request->anyjaNeve;
-        $alkalmazott->adoazon_jel  = $request->adoAzon;
-        $alkalmazott->tajszam  = $request->tajSz;
-        $alkalmazott->nem  = $request->nem;
-        $alkalmazott->nev   = $request->nev;
-        $alkalmazott->banszamla_szam   = $request->bankSZ;
-        $alkalmazott->telefonszam   = $request->tel;
-        $alkalmazott->allando_lakhely   = $request->allandoLak;
-        $alkalmazott->tartozkodasi_hely   = $request->tartHely;
-        $alkalmazott->hazas_e   = $request->hazas;
-        $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhatAGy;
-        $alkalmazott->all_polgarsag     = $request->allPorg;
-        $alkalmazott->save();
-
         $dolgozo=dolgozo::findOrFail($request->id);
         $dolgozo->brutto_alapber=$request->brutto_alapber;
         $dolgozo->heti_munkaora=$request->heti_munkaora;
@@ -147,7 +92,7 @@ class dolgozController extends Controller
         $dolgozo->vegzettseg=$request->vegzettseg;
         $dolgozo->kp_utalas=$request->kp_utalas;
         $dolgozo->sz_szakkepzet=$request->sz_szakkepzet;
-        $dolgozo->save();
+        $dolgozo->save(); 
         return redirect("/dolgozo");
     }
 
@@ -159,7 +104,6 @@ class dolgozController extends Controller
      */
     public function destroy($id)
     {
-        alkalmazott::findOrFail($id)->torol();
-        return redirect("/dolgozo");
+        
     }
 }
