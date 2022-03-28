@@ -31,8 +31,11 @@
                     <li class="nav-item" id="nincsGomb2">
                         <a class="nav-link" id="adatokT2">2</a>
                     </li>
-                    <li class="nav-item" id="megjelenikGomb">
+                    <li class="nav-item" id="nincsGomb3">
                         <a class="nav-link " id="adatokT3">3</a>
+                    </li>
+                    <li class="nav-item" id="megjelenikGomb">
+                        <a class="nav-link " id="adatokT4">4</a>
                     </li>
                 </ul>
             </div>

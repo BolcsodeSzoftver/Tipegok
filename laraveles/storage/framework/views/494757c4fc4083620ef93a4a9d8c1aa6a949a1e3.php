@@ -3,6 +3,7 @@
 
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/dolgozo.css" />
+    <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
     
 <?php $__env->stopSection(); ?>
@@ -10,6 +11,9 @@
 
     <div class=row>
         <h3>Doldozó adatai</h3>
+        
+     
+        
     </div>
     <div class=row>
         <div class="form-group">
@@ -51,6 +55,7 @@
         <table class="table table-bordered mb-5">
             <thead>
                 <tr class="table-active">
+                    <th></th>
                     <th></th>
                     <th></th>
                     <th scope="col" sortable>Név</th>
@@ -97,6 +102,18 @@
                                                 type="button" data-toggle="modal" data-target="#modalDolgozo">
                                                 <i class="fa fa-trash"></i>
                                             </button>
+                                        </td>
+                                        <td class="egyeb">
+                                            <div class="dropdown">
+                                                <button class="btn btn-primary">
+                                                    <i class="fa fa-bars"></i>
+                                                </button>
+                                                <div class="dropdown-c">
+                                                    <a class="hover dropdown-item bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
+                                                    <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Dolgozo</a>
+                                                    <a class="hover dropdown-item orvosiAdatokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#orvosiModal">Orvosi adatok</a>
+                                                </div>
+                                            </div>
                                         </td>
                                         <td class="nev" id=<?php echo e($data->id); ?>><?php echo e($data->nev); ?></td>
                                         <td class="t1 allandoLakhely" id=<?php echo e($data->id); ?>><?php echo e($data->allando_lakhely); ?>
@@ -170,9 +187,17 @@
                     <?php echo csrf_field(); ?>
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">
+
+                         <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok1">1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok2">2</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="#" id="dolgozoModalAdatok3">3</a></li> -->
+                        </ul>
+
                         <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                         <div class="urlap">
                             <div id="adatok1">
+                                <h5></h5>
                                 <div class="col" id="gId">
                                     <div class="form-outline">
                                         <input type="hidden" id="dolgozoId" class="form-control" readonly>
@@ -253,11 +278,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr> 
                             </div>
 
-                            <hr>
-
-                            <div id="adatok2">
+                            <div id="adatok2"> 
+                                <h5></h5>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
@@ -300,7 +325,118 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr> 
                             </div>
+
+                            <div class="ment">
+                                <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="adatModositEnged">
+                            <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: bizonyitvany -->
+    <div class="modal fade" id="bizonyitvanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó bizonyitvány(ok)</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="api/dolgozo/0" method="post">
+                    <?php echo csrf_field(); ?>
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="modal-body">
+                        <div class="urlap">
+
+                            <div id="bizAdatok"></div>
+
+                            <div class="ment">
+                                <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="adatModositEnged">
+                            <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: munkaber.. -->
+    <div class="modal fade" id="dolgozoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="api/dolgozo/0" method="post">
+                    <?php echo csrf_field(); ?>
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="modal-body">
+                        <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
+                        <div class="urlap">
+                        
+                            <div id="dolgozoAdatok"></div>
+
+                            <div class="ment">
+                                <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="adatModositEnged">
+                            <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: orvosi adatok -->
+    <div class="modal fade" id="orvosiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó orvosi adatok</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="api/dolgozo/0" method="post">
+                    <?php echo csrf_field(); ?>
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="modal-body">
+                        <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
+                        <div class="urlap">
+                            
+                            <div id="orvosiAdatok"></div>
 
                             <div class="ment">
                                 <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">

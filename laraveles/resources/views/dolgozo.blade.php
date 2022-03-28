@@ -11,6 +11,9 @@
 
     <div class=row>
         <h3>Doldozó adatai</h3>
+        
+     
+        
     </div>
     <div class=row>
         <div class="form-group">
@@ -328,7 +331,7 @@
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                     </div>
-
+                </form>
             </div>
         </div>
     </div>

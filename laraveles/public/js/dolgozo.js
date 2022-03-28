@@ -154,7 +154,7 @@ $(function() {
 		console.log(this.id);
 		ajax.getAjax(bizonyitvanyEleresiUt, bizonyitvanyLista);
         function bizonyitvanyLista(tomb) {
-			/* console.log(tomb); */
+			 console.log(tomb); 
             $("#bizAdatok").empty();
             tomb.forEach(function (adat) {
                 if(adat.alkalmazott_id==id){
@@ -193,13 +193,18 @@ $(function() {
                                                 '</div>'+
 												'<div class="col">'+
 												'<div class="form-outline">'+
-													'<img src="'+adat.gyakorlati_igazolas+'" alt="" width="200" height="300">'+
+													'<img src="storage/'+adat.gyakorlati_igazolas+'" alt="" width="200" height="300">'+
+													'<img src="storage/'+adat.oep_konyv_masolat+'" alt="" width="200" height="300">'+
+													'<img src="storage/'+adat.dokumentum_feltoltese+'" alt="" width="200" height="300">'+
 												'</div>'+
 											'</div>'+
                                             '</div>');
+											console.log(adat.gyakorlati_igazolas);
                     $("#bizAdatok").append('<hr>');
+					
                 }
             });
+			
         }
 	});
 

@@ -99,16 +99,16 @@ class ujDolgozoController extends Controller
         } else {
             echo ("juh");
             $name = $request->file('gyakorlati_igazolas')->getClientOriginalName();
-            $file = $request->file('gyakorlati_igazolas')->storeAs('kepek', $name);
+            $file = $request->file('gyakorlati_igazolas')->storeAs('public', $name);
             $ujDolgzoBiznyitvany->gyakorlati_igazolas = $name;
 
             $name = $request->file('oep_konyv_masolat')->getClientOriginalName();
-            $file = $request->file('oep_konyv_masolat')->storeAs('kepek', $name);
+            $file = $request->file('oep_konyv_masolat')->storeAs('public', $name);
             $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
 
             $name = $request->file('dokumentum_feltoltese')->getClientOriginalName();
-            $file = $request->file('dokumentum_feltoltese')->storeAs('kepek', $name);
-            $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $name;
+            $file = $request->file('dokumentum_feltoltese')->storeAs('public', $name);
+            $ujDolgzoBiznyitvany->dokumentum_feltoltese = $name;
         }
 
 
@@ -150,6 +150,7 @@ class ujDolgozoController extends Controller
      */
     public function update(Request $request, $id)
     {
+
     }
 
     /**

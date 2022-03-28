@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\alkalmazott;
+use App\Models\alkalmazott_bizonyitvany;
 use Illuminate\Support\Facades\DB;
 use App\Models\dolgozo;
 use App\Models\jogosultsag;
@@ -134,6 +135,7 @@ class dolgozController extends Controller
         $alkalmazott->hazas_e   = $request->hazas;
         $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhatAGy;
         $alkalmazott->all_polgarsag     = $request->allPorg;
+        
         $alkalmazott->save();
         return redirect("/dolgozo");
     }
