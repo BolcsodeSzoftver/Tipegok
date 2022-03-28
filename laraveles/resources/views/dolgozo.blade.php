@@ -316,7 +316,7 @@
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                     </div>
-
+                </form>
             </div>
         </div>
     </div>
@@ -354,7 +354,7 @@
                     </button>
                 </div>
 
-                <form action="#" method="post">
+                <form action="api/dolgozo/0" method="post">
                     @csrf
                     <input type="hidden" name="_method" value="PUT">
                     <div class="modal-body">
@@ -374,7 +374,7 @@
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                     </div>
-
+                </form>
             </div>
         </div>
     </div>

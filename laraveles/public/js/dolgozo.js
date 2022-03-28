@@ -230,12 +230,6 @@ $(function() {
 													'<label class="form-label" for="'+adat.sz_szakkepzet+'">Sz szakképzet</label>'+
 												'</div>'+
 											'</div>'+
-											'<div class="col">'+
-												'<div class="form-outline">'+
-													'<input type="text" id="'+adat.belepesi_nap+'" class="form-control" name="'+adat.belepesi_nap	+'" value="'+adat.belepesi_nap	+'" readonly>'+
-													'<label class="form-label" for="'+adat.belepesi_nap+'">Belépés napja</label>'+
-												'</div>'+
-											'</div>'+
 										'</div>');
 				}						
 			});
