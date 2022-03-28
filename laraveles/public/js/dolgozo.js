@@ -137,18 +137,6 @@ $(function() {
 		});
 	});
 
-    $('#adatok2').hide();
-
-    $('#dolgozoModalAdatok1').on('click', function(){
-        $('#adatok1').show();
-        $('#adatok2').hide();  
-    });
-
-    $('#dolgozoModalAdatok2').on('click', function(){
-        $('#adatok2').show();
-        $('#adatok1').hide();
-    });
-
 	$('.bizonyitvanyokGomb').on('click',function(){
 		let id = this.id;
 		console.log(this.id);
@@ -156,43 +144,10 @@ $(function() {
         function bizonyitvanyLista(tomb) {
 			/* console.log(tomb); */
             $("#bizAdatok").empty();
+            $("#bizAdatok").append('<table class="table table-bordered mb-5"><thead><tr><th>Végzettség</th><th>Bizonyítványt kiállító intézmény neve</th><th>Kiadás dátuma</th><th>Bizonyítvány száma</th><th>Pontokszáma</th></tr></thead></table>');
             tomb.forEach(function (adat) {
                 if(adat.alkalmazott_id==id){
-                    $("#bizAdatok").append('<div class="row">'+
-                                                '<div class="col">'+
-                                                    '<div class="form-outline">'+
-                                                        '<input type="text" id="'+adat.vegzettseg+'" class="form-control" name="'+adat.vegzettseg+'" value="'+adat.vegzettseg+'" readonly>'+
-                                                        '<label class="form-label" for="'+adat.vegzettseg+'">Végzettség</label>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col">'+
-                                                    '<div class="form-outline">'+
-                                                        '<input type="text" id="'+adat.biz_intezmeny_nev+'" class="form-control" name="'+adat.biz_intezmeny_nev+'" value="'+adat.biz_intezmeny_nev+'" readonly>'+
-                                                        '<label class="form-label" for="'+adat.biz_intezmeny_nev+'">Bizonyítványt kiállító intézmény neve</label>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>');
-                    $("#bizAdatok").append('<div class="row">'+
-                                                '<div class="col"> '+
-                                                    '<div class="form-outline">'+
-                                                        '<input type="text" id="'+adat.kiadas_datuma+'" class="form-control" name="'+adat.kiadas_datuma+'" value="'+adat.kiadas_datuma+'" readonly>'+
-                                                        '<label class="form-label" for="'+adat.kiadas_datuma+'">Kiadás dátuma</label>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col">'+
-                                                    '<div class="form-outline">'+
-                                                        '<input type="text" id="'+adat.bizonyitvany_szam+'" class="form-control" name="'+adat.bizonyitvany_szam	+'" value="'+adat.bizonyitvany_szam	+'" readonly>'+
-                                                        '<label class="form-label" for="'+adat.bizonyitvany_szam+'">Bizonyítvány száma</label>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col">'+
-                                                    '<div class="form-outline">'+
-                                                        '<input type="text" id="'+adat.pontokszama+'" class="form-control" name="'+adat.pontokszama+'" value="'+adat.pontokszama+'" readonly>'+
-                                                        '<label class="form-label" for="'+adat.pontokszama+'">Pontokszáma</label>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>');
-                    $("#bizAdatok").append('<hr>');
+                    $("#bizAdatok table").append('<tbody><tr><td>'+adat.vegzettseg+'</td><td>'+adat.biz_intezmeny_nev+'</td><td>'+adat.kiadas_datuma+'</td><td>'+adat.bizonyitvany_szam+'</td><td>'+adat.pontokszama+'</td></tr></tbody>');    
                 }
             });
         }
@@ -291,6 +246,15 @@ $(function() {
 		let id = this.id;
 		console.log(this.id);
 		ajax.getAjax(eleresiUt, orvosiAdatLista);
+		function orvosiAdatLista(tomb) {
+            $("#orvosiAdatok").empty();
+            $("#orvosiAdatok").append('<table class="table table-bordered mb-5"><thead><tr><th>tartosbeteg</th><th>Érvényesség kezdete</th></tr></thead></table>');
+            tomb.forEach(function (adat) {
+                if(adat.alkalmazott_id==id){
+                    $("#orvosiAdatok table").append('<tbody><tr><td>'+adat.tartosbeteg+'</td><td>'+adat.ervenyeseg_kezd+'</td></tr></tbody>');    
+                }
+            });
+        }
 	});
 	
 
