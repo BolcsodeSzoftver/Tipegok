@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\alkalmazott;
+use App\Models\alkalmazott_bizonyitvany;
 use App\Models\bolcsode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Input\Input;
 
 class ujDolgozoController extends Controller
 {
@@ -17,7 +19,7 @@ class ujDolgozoController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->regisztralFelhasznalo()){
+        if (Auth::user()->regisztralFelhasznalo()) {
             return redirect('');
         }
         if (Auth::user()->isDolgozo() || Auth::user()->isSzuperAdmin() || Auth::user()->isAdmin()) {
@@ -25,8 +27,6 @@ class ujDolgozoController extends Controller
             $bolcsiID = bolcsode::all();
             return view('ujdolgozo', compact("userID", "bolcsiID"));
         }
-       
-        
     }
 
     /**
@@ -48,7 +48,7 @@ class ujDolgozoController extends Controller
     public function store(Request $request)
     {
         $ujDolgozo = new alkalmazott();
-       $ujDolgozo->bolcsode_id = $request->bolcsodeID;
+        $ujDolgozo->bolcsode_id = $request->bolcsodeID;
         $ujDolgozo->users_id = $request->userID;
         $ujDolgozo->szul_nev = $request->szulNev;
         $ujDolgozo->szul_hely = $request->szulHely;
@@ -78,14 +78,44 @@ class ujDolgozoController extends Controller
         } elseif ($request->nem) {
             $ujDolgozo->hazas_e   = $request->nem;
         }
+        $ujDolgzoBiznyitvany = new alkalmazott_bizonyitvany();
+        $ujDolgzoBiznyitvany->alkalmazott_id = $request->userID;
+        $ujDolgzoBiznyitvany->vegzettseg = $request->vegzettseg;
+        $ujDolgzoBiznyitvany->biz_intezmeny_nev = $request->biz_intezmeny_nev;
+        $ujDolgzoBiznyitvany->kiadas_datuma = $request->kiadas_datuma;
+        $ujDolgzoBiznyitvany->bizonyitvany_szam = $request->bizonyitvany_szam;
+        $ujDolgzoBiznyitvany->pontokszama = $request->pontokszama;
+        $ujDolgzoBiznyitvany->gyakorlati_igazolas = $request->gyakorlati_igazolas;
+        $ujDolgzoBiznyitvany->oep_konyv_masolat = $request->oep_konyv_masolat;
+        $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $request->dokumentum_feltoltese;
+
+        if (
+            $request->file('gyakorlati_igazolas') == null ||
+            $request->file('oep_konyv_masolat') == null ||
+            $request->file('dokumentum_feltoltese') == null
+        ) {
+            $file = "";
+            echo ("hiba");
+        } else {
+            echo ("juh");
+            $name = $request->file('gyakorlati_igazolas')->getClientOriginalName();
+            $file = $request->file('gyakorlati_igazolas')->storeAs('kepek', $name);
+            $ujDolgzoBiznyitvany->gyakorlati_igazolas = $name;
+
+            $name = $request->file('oep_konyv_masolat')->getClientOriginalName();
+            $file = $request->file('oep_konyv_masolat')->storeAs('kepek', $name);
+            $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
+
+            $name = $request->file('dokumentum_feltoltese')->getClientOriginalName();
+            $file = $request->file('dokumentum_feltoltese')->storeAs('kepek', $name);
+            $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $name;
+        }
+
 
 
         $ujDolgozo->save();
+        $ujDolgzoBiznyitvany->save();
         Auth::user()->bejelentkezesTiltasa();
-      
-
-
-
         return  "sikeres adat kitöltés<br>";
     }
 
@@ -120,7 +150,6 @@ class ujDolgozoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
     }
 
     /**

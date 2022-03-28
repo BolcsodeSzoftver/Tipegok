@@ -15,10 +15,10 @@ class CreateDolgozoOrvosiAdatsTable extends Migration
     {
         Schema::create('dolgozo_orvosi_adats', function (Blueprint $table) {
             $table->id();
-            //$table->foreign('dolgozo_id')->references('id')->on('dolgozos');
+            $table->foreignId('dolgozo_id')->references('id')->on('dolgozos');
             $table->boolean('tartosbeteg');
-            //$table->boolean('egeszsegugyi_konyv');
-            //$table->string('dokumentum');
+            $table->boolean('egeszsegugyi_konyv');
+            $table->string('dokumentum');
             $table->date('ervenyeseg_kezd');
             $table->date('ervenyeseg_veg');
             $table->timestamps();

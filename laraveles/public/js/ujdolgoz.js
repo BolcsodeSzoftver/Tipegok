@@ -2,7 +2,7 @@ $(function () {
     $("#mentes").hide();
     $(".allapot").hide();
     $(".userId").hide();
-
+    
     $("#megjelenikGomb").on("click",function(){
         $("#mentes").show();
     });
@@ -12,7 +12,7 @@ $(function () {
     });
     $("#nincsGomb2").on("click",function(){
         $("#mentes").hide();
-    });
+    });   
 
     $(".nav-link").click(function () {
         if ($(this).hasClass("active")) {
@@ -22,7 +22,7 @@ $(function () {
             $(this).addClass("active");
         }
     });
-    
+
     function urlapFejlecElrejtese() {
         for (let i = 2; i < 6; i++) {
             $(".t" + i).hide();
@@ -39,4 +39,11 @@ $(function () {
             $(".t" + i).show();
         });
     }
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this)
+            .siblings(".custom-file-label")
+            .addClass("selected")
+            .html(fileName);
+    });
 });
