@@ -25,7 +25,7 @@ class dolgozController extends Controller
      */
     public function index()
     {
-    
+        return response()->json(dolgozo::all());
     }
 
     /**
