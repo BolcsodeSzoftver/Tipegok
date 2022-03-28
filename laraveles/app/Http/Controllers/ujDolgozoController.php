@@ -19,7 +19,7 @@ class ujDolgozoController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->regisztralFelhasznalo()){
+        if (Auth::user()->regisztralFelhasznalo()) {
             return redirect('');
         }
         if (Auth::user()->isDolgozo() || Auth::user()->isSzuperAdmin() || Auth::user()->isAdmin()) {
@@ -27,8 +27,6 @@ class ujDolgozoController extends Controller
             $bolcsiID = bolcsode::all();
             return view('ujdolgozo', compact("userID", "bolcsiID"));
         }
-
-
     }
 
     /**
@@ -91,15 +89,35 @@ class ujDolgozoController extends Controller
         $ujDolgzoBiznyitvany->oep_konyv_masolat = $request->oep_konyv_masolat;
         $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $request->dokumentum_feltoltese;
 
+        if (
+            $request->file('gyakorlati_igazolas') == null ||
+            $request->file('oep_konyv_masolat') == null ||
+            $request->file('dokumentum_feltoltese') == null
+        ) {
+            $file = "";
+            echo ("hiba");
+        } else {
+            echo ("juh");
+            $name = $request->file('gyakorlati_igazolas')->getClientOriginalName();
+            $file = $request->file('gyakorlati_igazolas')->storeAs('kepek', $name);
+            $ujDolgzoBiznyitvany->gyakorlati_igazolas = $name;
 
-        
+            $name = $request->file('oep_konyv_masolat')->getClientOriginalName();
+            $file = $request->file('oep_konyv_masolat')->storeAs('kepek', $name);
+            $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
+
+            $name = $request->file('dokumentum_feltoltese')->getClientOriginalName();
+            $file = $request->file('dokumentum_feltoltese')->storeAs('kepek', $name);
+            $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $name;
+        }
+
 
 
         $ujDolgozo->save();
         $ujDolgzoBiznyitvany->save();
         Auth::user()->bejelentkezesTiltasa();
         return  "sikeres adat kitöltés<br>";
-       }
+    }
 
     /**
      * Display the specified resource.
