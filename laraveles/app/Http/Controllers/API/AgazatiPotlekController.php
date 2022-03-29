@@ -13,16 +13,16 @@ class AgazatiPotlekController extends Controller
     {
         $felhasznalo = agazati_potlek::findOrFail($request->id);
         $felhasznalo->eletkor = $request->eletkor;
-        $felhasznalo->A = $request->a;
-        $felhasznalo->B = $request->b;
-        $felhasznalo->C = $request->c;
-        $felhasznalo->D = $request->d;
-        $felhasznalo->E = $request->e;
-        $felhasznalo->F = $request->f;
-        $felhasznalo->G = $request->g;
-        $felhasznalo->H = $request->h;
-        $felhasznalo->I = $request->i;
-        $felhasznalo->J = $request->j;
+        $felhasznalo->A = $request->A;
+        $felhasznalo->B = $request->B;
+        $felhasznalo->C = $request->C;
+        $felhasznalo->D = $request->D;
+        $felhasznalo->E = $request->E;
+        $felhasznalo->F = $request->E;
+        $felhasznalo->G = $request->G;
+        $felhasznalo->H = $request->H;
+        $felhasznalo->I = $request->I;
+        $felhasznalo->J = $request->J;
         $felhasznalo->save();
         return redirect("/agazati_potlek_tablazat");
     }

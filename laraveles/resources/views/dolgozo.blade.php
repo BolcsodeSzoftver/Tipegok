@@ -9,7 +9,7 @@
 @section('tartalom')
 
 <div class=row>
-    <h3>Doldozó adatai</h3>
+    <h3>Dolgozó adatai</h3>
 
 
 

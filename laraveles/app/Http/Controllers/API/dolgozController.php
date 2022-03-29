@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\dolgozo;
+use App\Models\agazati_potlek;
 
 
 class dolgozController extends Controller
@@ -88,7 +89,11 @@ class dolgozController extends Controller
         $dolgozo->besorolas_betu=$request->besorolas_betu;
         $dolgozo->besorolas_szam=$request->besorolas_szam;
         $dolgozo->feor_azon=$request->feor_azon;
-        $dolgozo->agazati_potlek=$request->agazati_potlek;
+        
+        $agazatiPotlek = agazati_potlek::findOrFail($request->besorolasiSzam);
+        $betu=$request->besorolasiBetu;
+        $dolgozo->agazati_potlek   = $agazatiPotlek->$betu;
+
         $dolgozo->eves_szabi=$request->eves_szabi;
         $dolgozo->vegzettseg=$request->vegzettseg;
         $dolgozo->kp_utalas=$request->kp_utalas;

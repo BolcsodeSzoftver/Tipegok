@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\dolgozo;
 use App\Models\alkalmazott;
+use App\Models\agazati_potlek;
+use App\Http\Requests\dolgozoUrlapEllenorzes;
 
 class AlkalmazottController extends Controller
 {
@@ -48,12 +50,15 @@ class AlkalmazottController extends Controller
         $dolgozo->besorolas_betu  = $request->besorolasiBetu;
         $dolgozo->besorolas_szam  = $request->besorolasiSzam;
         $dolgozo->feor_azon  = $request->feorAzonosito;
-        $dolgozo->agazati_potlek   = $request->agazataiPotlek;
+
+        $agazatiPotlek = agazati_potlek::findOrFail($request->besorolasiSzam);
+        $betu=$request->besorolasiBetu;
+        $dolgozo->agazati_potlek   = $agazatiPotlek->$betu;
+        
         $dolgozo->eves_szabi   = $request->evesSzabi;
         $dolgozo->vegzettseg   = $request->vegzettseg;
         $dolgozo->sz_szakkepzet  = $request->szSzakkepzet;
         $dolgozo->belepesi_nap   = $request->belepes;
-        $dolgozo->kilepesi_nap   = $request->kilepes;
         $dolgozo->szgf_kod   = $request->szgfKod;
         $dolgozo->munkakor   = $request->munkakor;
         if ($request->kezpenz) {

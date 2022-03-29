@@ -105,21 +105,33 @@
                             <div class="row">
                                 <div class="col">
                                     <label for="bruttoAlapber">Bruttó alapbér</label>
-                                    <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber">
+                                    <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber" value="{{ old('bruttoAlapber')}}">
+                                        @error('bruttoAlapber')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                 </div>
                                 <div class="col">
                                     <label for="hetiMunkaOra">Heti munkaóra</label>
-                                    <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra">
+                                    <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra" value="{{ old('hetiMunkaOra')}}">
+                                        @error('hetiMunkaOra')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="besorolasiBetu">Besorolási betű</label>
-                                    <input type="text" class="form-control" id="besorolasiBetu" name="besorolasiBetu">
+                                    <input type="text" class="form-control" id="besorolasiBetu" name="besorolasiBetu" value="{{ old('besorolasiBetu')}}">
+                                        @error('besorolasiBetu')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                 </div>
                                 <div class="col">
                                     <label for="besorolasiSzam">Besorolási szám</label>
-                                    <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam">
+                                    <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam" value="{{ old('besorolasiSzam')}}">
+                                        @error('besorolasiSzam')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                                 </div>
                             </div>
                         </div>
@@ -127,39 +139,60 @@
                         <div class="row">
                             <div class="col">
                                 <label for="feorAzonosito">Feor azonosító</label>
-                                <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito">
+                                <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito" value="{{ old('feorAzonosito')}}">
+                                        @error('feorAzonosito')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                             </div>
-                            <div class="col">
-                                <label for="agazataiPotlek">Ágazati pótlék</label>
-                                <input type="text" class="form-control" id="agazataiPotlek" name="agazataiPotlek">
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col">
                                 <label for="evesSzabi">Éves szabadság</label>
-                                <input type="text" class="form-control" id="evesSzabi" name="evesSzabi">
+                                <input type="text" class="form-control" id="evesSzabi" name="evesSzabi" value="{{ old('evesSzabi')}}">
+                                        @error('evesSzabi')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <label for="vegzettseg">Végzettség</label>
-                                <input type="text" class="form-control" id="vegzettseg" name="vegzettseg">
+                                <input type="text" class="form-control" id="vegzettseg" name="vegzettseg" value="{{ old('vegzettseg')}}">
+                                        @error('vegzettseg')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                             </div>
-                        </div>
-                        <hr>
-                        <div class="row">
                             <div class="col">
                                 <label for="szgfKod">SZGF kód</label>
-                                <input type="text" class="form-control" id="szgfKod" name="szgfKod">
-                            </div>
-                            <div class="col">
-                                <label for="munkakor">Munkakör</label>
-                                <input type="text" class="form-control" id="munkakor" name="munkakor">
+                                <input type="text" class="form-control" id="szgfKod" name="szgfKod" value="{{ old('szgfKod')}}">
+                                        @error('szgfKod')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col">
+                                <label for="munkakor">Munkakör</label>
+                                <input type="text" class="form-control" id="munkakor" name="munkakor" value="{{ old('munkakor')}}">
+                                        @error('munkakor')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
+                            </div>
+                            <div class="col">
                                 <label for="szSzakkepzet">Sz_szakképzett</label>
-                                <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet">
+                                <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet" value="{{ old('szSzakkepzet')}}">
+                                        @error('szSzakkepzet')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <label for="belepes">Belépési nap</label>
+                                <input type="date" class="form-control" id="belepes" name="belepes" value="{{ old('belepes')}}">
+                                        @error('belepes')
+                                            <span style="color: red">{{ $message }} </span>
+                                        @enderror
                             </div>
                             <div class="col">
                                 <p>Kifizetés módja</p>
@@ -171,17 +204,6 @@
                                     <input class="form-check-input" type="radio" name="utalas" id="utalas" value="2">
                                     <label class="form-check-label" for="utalas">Utalás</label>
                                 </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col">
-                                <label for="belepes">Belépési nap</label>
-                                <input type="date" class="form-control" id="belepes" name="belepes">
-                            </div>
-                            <div class="col">
-                                <label for="kilepes">Kilépési nap</label>
-                                <input type="date" class="form-control" id="kilepes" name="kilepes">
                             </div>
                         </div>
                     </div>

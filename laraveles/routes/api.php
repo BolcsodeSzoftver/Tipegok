@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AlkalmazottController;
 use App\Http\Controllers\API\FelhasznaloController;
 use App\Http\Controllers\API\FenntartoController;
 use App\Http\Controllers\API\BizonyitvanyController;
+use App\Http\Controllers\API\AgazatiPotlekController;
 use App\Http\Controllers\felhasznaloRegisztracio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -37,4 +38,5 @@ Route::apiResource('dolgozo', dolgozController::class);
 Route::apiResource('alkalmazott', AlkalmazottController::class);
 Route::apiResource('bizonyitvany', BizonyitvanyController::class);
 Route::apiResource('felhasznalo', FelhasznaloController::class);
+Route::apiResource('agazatiPotlek', AgazatiPotlekController::class);
 
