@@ -83,7 +83,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/api/dolgozo" method="POST">
+            <form action="/api/alkalmazott" method="POST">
                 <?php echo csrf_field(); ?>
                 <div class="modal-body">
                     <div class="urlap">

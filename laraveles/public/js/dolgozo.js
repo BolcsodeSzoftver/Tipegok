@@ -208,20 +208,21 @@ $(function () {
                     );
                 }
                 let idKep = 1;
+                $("#dokumentumok").empty();
                 $("#dokumentumok").append(
-                    '<p>Gyakorlati igazolás:</p><img src="storage/' +
+                    '<p>Gyakorlati igazolás:</p><img src="public/' +
                         adat.gyakorlati_igazolas +
                         '" id="dokumentum' +
                         idKep++ +
-                        '"><hr><p>OEP könyv másolat:</p><img src="storage/' +
+                        '"><hr><p>OEP könyv másolat:</p><img src="public/' +
                         adat.oep_konyv_masolat +
                         '" id="dokumentum' +
                         idKep++ +
-                        '"><p>Egyébb dokumentumok:</p><hr><img src="storage/' +
+                        '"><p>Egyébb dokumentumok:</p><hr><img src="public/' +
                         adat.dokumentum_feltoltese +
                         '" id="dokumentum' +
                         idKep++ +
-                        '">'
+                        '" data-toggle="modal" data-target="#dokumentumokNagyKepModal">'
                 );
                 $("img").click(function (event) {
                    /*  alert(event.target.id); */
@@ -425,7 +426,7 @@ $(function () {
     $(".dolgozoTorles").on("click", function () {
         let id = this.id;
         console.log(this.id);
-        let action = "/api/dolgozo/" + id;
+        let action = "/api/alkalmazott/" + id;
         $(".torles").attr("action", action);
     });
 
@@ -451,7 +452,7 @@ $(function () {
             if (this.id == id) {
                 $("#nevKiri").html(this.name);
             }
-            let action = "/api/dolgozo/" + id;
+            let action = "/api/alkalmazott/" + id;
             $(".allapotModosit").attr("action", action);
             $(".adatokDolgozoAllapot")
                 .find(".id")

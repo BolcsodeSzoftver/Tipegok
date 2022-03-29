@@ -99,15 +99,15 @@ class ujDolgozoController extends Controller
         } else {
             echo ("juh");
             $name = $request->file('gyakorlati_igazolas')->getClientOriginalName();
-            $file = $request->file('gyakorlati_igazolas')->storeAs('public', $name);
+            $file = $request->file('gyakorlati_igazolas')->storeAs('dokumentumok', $name);
             $ujDolgzoBiznyitvany->gyakorlati_igazolas = $name;
 
             $name = $request->file('oep_konyv_masolat')->getClientOriginalName();
-            $file = $request->file('oep_konyv_masolat')->storeAs('public', $name);
+            $file = $request->file('oep_konyv_masolat')->storeAs('dokumentumok', $name);
             $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
 
             $name = $request->file('dokumentum_feltoltese')->getClientOriginalName();
-            $file = $request->file('dokumentum_feltoltese')->storeAs('public', $name);
+            $file = $request->file('dokumentum_feltoltese')->storeAs('dokumentumok', $name);
             $ujDolgzoBiznyitvany->dokumentum_feltoltese = $name;
         }
 

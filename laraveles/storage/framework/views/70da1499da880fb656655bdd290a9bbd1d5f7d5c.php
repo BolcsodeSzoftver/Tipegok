@@ -4,7 +4,7 @@
     <script src="js/agazatiPotlek.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
-    <table class="table table-bordered mb-5">
+    <table class="table table-bordered mb-5 ">
         <thead>
             <tr class="table-active">
                 <th></th>
