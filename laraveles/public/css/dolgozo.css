@@ -65,3 +65,12 @@ td {
   }
   
   .dropdown:hover .dropdown-c {display: block;}
+
+
+
+  /* letölt gomb képre*/
+img{
+	width: 30%;
+	height: 30%;
+}
+

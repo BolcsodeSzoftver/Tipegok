@@ -19,6 +19,7 @@ class dolgozController extends Controller
      */
     public function index()
     {
+        
         return response()->json(dolgozo::all());
     }
 
@@ -93,6 +94,7 @@ class dolgozController extends Controller
         $dolgozo->kp_utalas=$request->kp_utalas;
         $dolgozo->sz_szakkepzet=$request->sz_szakkepzet;
         $dolgozo->save(); 
+
         return redirect("/dolgozo");
     }
 

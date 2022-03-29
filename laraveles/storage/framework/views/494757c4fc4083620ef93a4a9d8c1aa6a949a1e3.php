@@ -5,15 +5,14 @@
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
-    
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
 
     <div class=row>
         <h3>Doldozó adatai</h3>
-        
-     
-        
+
+
+
     </div>
     <div class=row>
         <div class="form-group">
@@ -109,9 +108,15 @@
                                                     <i class="fa fa-bars"></i>
                                                 </button>
                                                 <div class="dropdown-c">
-                                                    <a class="hover dropdown-item bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
-                                                    <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Dolgozo</a>
-                                                    <a class="hover dropdown-item orvosiAdatokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#orvosiModal">Orvosi adatok</a>
+                                                    <a class="hover dropdown-item bizonyitvanyokGomb" href="#"
+                                                        id=<?php echo e($data->id); ?> data-toggle="modal"
+                                                        data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
+                                                    <a class="hover dropdown-item dolgozoGomb" href="#"
+                                                        id=<?php echo e($data->id); ?> data-toggle="modal"
+                                                        data-target="#dolgozoModal">Dolgozo</a>
+                                                    <a class="hover dropdown-item orvosiAdatokGomb" href="#"
+                                                        id=<?php echo e($data->id); ?> data-toggle="modal"
+                                                        data-target="#orvosiModal">Orvosi adatok</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -157,7 +162,7 @@
                 <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>
-        
+
     </div>
     <div class="row">
         <div class="col">
@@ -170,7 +175,7 @@
 
         </div>
     </div>
-    
+
 
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
@@ -189,7 +194,7 @@
                     <div class="modal-body">
                         <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                         <div class="urlap">
-                        <div id="adatok1">
+                            <div id="adatok1">
                                 <div class="col" id="gId">
                                     <div class="form-outline">
                                         <input type="hidden" id="dolgozoId" class="form-control" readonly>
@@ -266,10 +271,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr> 
+                                <hr>
                             </div>
 
-                            <div id="adatok2"> 
+                            <div id="adatok2">
                                 <h5></h5>
                                 <div class="row">
                                     <div class="col">
@@ -313,7 +318,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <hr> 
+                                <hr>
                             </div>
 
                             <div class="ment">
@@ -344,7 +349,9 @@
                     </button>
                 </div>
 
-                <div class="modal-body"><div id="bizAdatok"></div></div>
+                <div class="modal-body">
+                    <div id="bizAdatok"></div>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                 </div>
@@ -371,7 +378,7 @@
                     <div class="modal-body">
                         <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                         <div class="urlap">
-                        
+
                             <div id="dolgozoAdatok"></div>
 
                             <div class="ment">
@@ -402,7 +409,27 @@
                     </button>
                 </div>
 
-                <div class="modal-body"><div id="orvosiAdatok"></div></div>
+                <div class="modal-body">
+                    <div id="orvosiAdatok"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitleDokumentumok" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+
+                <div class="modal-body">
+                    <div id="dokumentumok" class="dokumentumok">
+                       
+                    </div>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                 </div>

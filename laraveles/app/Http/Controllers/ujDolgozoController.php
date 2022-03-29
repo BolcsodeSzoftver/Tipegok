@@ -117,6 +117,7 @@ class ujDolgozoController extends Controller
         $ujDolgzoBiznyitvany->save();
         Auth::user()->bejelentkezesTiltasa();
         return  "sikeres adat kitöltés<br>";
+        
     }
 
     /**
