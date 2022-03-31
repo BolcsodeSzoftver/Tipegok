@@ -6,73 +6,79 @@
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
+<<<<<<< HEAD
     <script src="js/munkakoriAdatokModosit.js"></script>
+=======
+    <script src="js/dolgozoModosit.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
+>>>>>>> 191a11c1ce41cf6db27ce1fb218fddfb2b945f46
 @endsection
 @section('tartalom')
     <div class=row>
         <h3>Dolgozó adatai</h3>
 
 
-        </div>
-<div class=row>
-    <div class="form-group">
-        <form action="/dolgozo" method="get">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Keresés" name="keresesDolgozo">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" type="submit" id="keresesGomb">
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <button class="btn btn-secondary" type="submit" id="keresesToresGomb">
-                        <i class="fa fa-trash"></i>
-                    </button>
+    </div>
+    <div class=row>
+        <div class="form-group">
+            <form action="/dolgozo" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Keresés" name="keresesDolgozo">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="submit" id="keresesGomb">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button class="btn btn-secondary" type="submit" id="keresesToresGomb">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary btn-lg jovhagyas" id="jovahagyasGomb" data-toggle="modal"
+                data-target="#jovahagyasaraVaroDolgozoModal" sytle="float:left;">
+                Jóváhagyásra váró dolgozók :
+                @if ($db > 0)
+                    <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
+                @else
+                    nincs
+                @endif
+            </button>
+        </div>
     </div>
-    <div class="col">
-        <button type="button" class="btn btn-primary btn-lg jovhagyas" id="jovahagyasGomb" data-toggle="modal" data-target="#jovahagyasaraVaroDolgozoModal" sytle="float:left;">
-            Jóváhagyásra váró dolgozók :
-            @if ($db > 0)
-            <?php echo $db; ?> <i class="fa fa-bell" style="font-size:24px;color:white"></i>
-            @else
-            nincs
-            @endif
-        </button>
-    </div>
-</div>
-<div class=row>
-    <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link" id="adatokT1">saját adatok</a></li>
-        <li class="nav-item"><a class="nav-link" id="adatokT2">születési adatok</a></li>
-        <li class="nav-item"><a class="nav-link" id="adatokT3">lakhely</a></li>
-        <li class="nav-item"><a class="nav-link" id="adatokT4">ID</a></li>
-        <li class="nav-item"><a class="nav-link" id="adatokT5">egyéb adatok</a></li>
-    </ul>
-    <table class="table table-bordered mb-5">
-        <thead>
-            <tr class="table-active">
-                <th></th>
-                <th></th>
-                <th></th>
-                <th scope="col" sortable>Név</th>
-                <th class="t1" sortable scope="col">Cím</th>
-                <th class="t1" sortable scope="col">Telefonszám</th>
-                <th class="t1" sortable scope="col">Anyja neve</th>
-                <th class="t2" scope="col">Születési név</th>
-                <th class="t2" scope="col">Születési hely</th>
-                <th class="t2" scope="col">Születési idő</th>
-                <th class="t3" scope="col">Állandó lakhely</th>
-                <th class="t3" scope="col">Tartozkodási hely</th>
-                <th class="t4" scope="col">Tajszám</th>
-                <th class="t4" scope="col">Adóazonosító</th>
-                <th class="t4" scope="col">Bankszámla szám</th>
-                <th class="t5" scope="col">Nem</th>
-                <th class="t5" scope="col">Házas</th>
-                <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
-                <th class="t5" scope="col">Állam polgárság</th>
-            </tr>
-        </thead>
+    <div class=row>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" id="adatokT1">saját adatok</a></li>
+            <li class="nav-item"><a class="nav-link" id="adatokT2">születési adatok</a></li>
+            <li class="nav-item"><a class="nav-link" id="adatokT3">lakhely</a></li>
+            <li class="nav-item"><a class="nav-link" id="adatokT4">ID</a></li>
+            <li class="nav-item"><a class="nav-link" id="adatokT5">egyéb adatok</a></li>
+        </ul>
+        <table class="table table-bordered mb-5">
+            <thead>
+                <tr class="table-active">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th scope="col" sortable>Név</th>
+                    <th class="t1" sortable scope="col">Cím</th>
+                    <th class="t1" sortable scope="col">Telefonszám</th>
+                    <th class="t1" sortable scope="col">Anyja neve</th>
+                    <th class="t2" scope="col">Születési név</th>
+                    <th class="t2" scope="col">Születési hely</th>
+                    <th class="t2" scope="col">Születési idő</th>
+                    <th class="t3" scope="col">Állandó lakhely</th>
+                    <th class="t3" scope="col">Tartozkodási hely</th>
+                    <th class="t4" scope="col">Tajszám</th>
+                    <th class="t4" scope="col">Adóazonosító</th>
+                    <th class="t4" scope="col">Bankszámla szám</th>
+                    <th class="t5" scope="col">Nem</th>
+                    <th class="t5" scope="col">Házas</th>
+                    <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
+                    <th class="t5" scope="col">Állam polgárság</th>
+                </tr>
+            </thead>
 
 
             @foreach ($jogosultsags as $jogosultsag)
@@ -194,22 +200,23 @@
             </tr>
                                             @endif
                                             @endif
-                                            @endforeach
+                                        @endif
+                                    @endforeach
                                 </tbody>
                             @endif
                         @endforeach
                     @endif
-                    @endif
-                    @endforeach
-    </table>
+                @endif
+            @endforeach
+        </table>
 
     </div>
     <div class="row">
-        <div class="col">
+        {{-- <div class="col">
             <button class="btn btn-secondary regisztracio">
                 <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
             </button>
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col">
                 <button class="btn btn-secondary regisztracio">
@@ -222,303 +229,301 @@
         </div>
 
 
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="api/alkalmazott/0" method="post">
-                @csrf
-                <input type="hidden" name="_method" value="PUT">
-                <div class="modal-body">
-                <ul class="nav nav-tabs">
-                            <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
-                            <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
-                        </ul>
-                    <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
-                    <div class="urlap">
-                        <div class="adatok1">
-                            <div class="col" id="gId">
-                                <div class="form-outline">
-                                    <input type="hidden" id="dolgozoId" class="form-control" readonly>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="nev" class="form-control" name="nev" readonly>
-                                        <label class="form-label" for="nev">Név</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="anyjaNeve" class="form-control" name="anyjaNeve" readonly>
-                                        <label class="form-label" for="anyjaNeve">Anyja neve</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulN" class="form-control" name="szulN" readonly>
-                                        <label class="form-label" for="szulN">Születési név</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tel" class="form-control" name="tel" readonly>
-                                        <label class="form-label" for="tel">Telefonszám</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulH" class="form-control" name="szulH" readonly>
-                                        <label class="form-label" for="szulH">Születési hely</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulI" class="form-control" name="szulI" readonly>
-                                        <label class="form-label" for="szulI">Születési idő</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="allPorg" class="form-control" name="allPorg" readonly>
-                                        <label class="form-label" for="allPorg">Államporgárság</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tizenhatAGy" class="form-control" name="tizenhatAGy" readonly>
-                                        <label class="form-label" for="tizenhatAGy">16 éven aluli gyermekek
-                                            száma</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="nem" class="form-control" name="nem" readonly>
-                                        <label class="form-label" for="nem">Nem</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="hazas" class="form-control" name="hazas" readonly>
-                                        <label class="form-label" for="hazas">Házas</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-
-                        <div class="adatok2">
-                            <h5></h5>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input value="" type="text" id="allandoLak" class="form-control" name="allandoLak" readonly>
-                                        <label class="form-label" for="allandoLak">Állandó lakhely</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tartHely" class="form-control" name="tartHely" readonly>
-                                        <label class="form-label" for="tartHely">Tartózkodási hely</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="adoAzon" class="form-control" name="adoAzon" readonly>
-                                        <label class="form-label" for="adoAzon">Adóazonósító</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="tajSz" class="form-control" name="tajSz" readonly>
-                                        <label class="form-label" for="tajSz">Tajszám</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="bankSZ" class="form-control" name="bankSZ" readonly>
-                                        <label class="form-label" for="bankSZ">Bankszámla szám</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="ment">
-                            <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
-                        </div>
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="adatModositEnged">
-                        <button type="button" class="btn btn-primary">Adatok módosítása</button>
-                    </div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-                            <!-- Modal: bizonyitvany -->
-                            <div class="modal fade" id="bizonyitvanyModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó bizonyitvány(ok)
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                    <form action="api/alkalmazott/0" method="post">
+                        @csrf
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="modal-body">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
+                                <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
+                            </ul>
+                            <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
+                            <div class="urlap">
+                                <div class="adatok1">
+                                    <div class="col" id="gId">
+                                        <div class="form-outline">
+                                            <input type="hidden" id="dolgozoId" class="form-control" readonly>
                                         </div>
-
-                                        <div class="modal-body">
-                                            <div id="bizAdatok"></div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Bezár</button>
-                                        </div>
-
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal: munkaber.. -->
-                            <div class="modal fade" id="dolgozoModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai:</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="nev" class="form-control" name="nev" readonly>
+                                                <label class="form-label" for="nev">Név</label>
+                                            </div>
                                         </div>
-
-                                        <form action="api/dolgozo/0" method="post">
-                                            @csrf
-                                            <input type="hidden" name="_method" value="PUT">
-                                            <div class="modal-body">
-                                                <input type="hidden" id="dolgozoId" class="form-control" name="id"
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="anyjaNeve" class="form-control" name="anyjaNeve"
                                                     readonly>
-                                                <div class="urlap">
-
-                                                    <div id="dolgozoAdatok"></div>
-
-                                                    <div class="ment">
-                                                        <input class="btn btn-dark" type="submit" id="mentes"
-                                                            value="Mentés">
-                                                    </div>
-                                                </div>
+                                                <label class="form-label" for="anyjaNeve">Anyja neve</label>
                                             </div>
-                                            <div class="modal-footer">
-                                                <div class="adatModositEnged">
-                                                    <button type="button" class="btn btn-primary">Adatok
-                                                        módosítása</button>
-                                                </div>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Bezár</button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="szulN" class="form-control" name="szulN" readonly>
+                                                <label class="form-label" for="szulN">Születési név</label>
                                             </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal: orvosi adatok -->
-                            <div class="modal fade" id="orvosiModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó orvosi adatok
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
                                         </div>
-
-                                        <div class="modal-body">
-                                            <div id="orvosiAdatok"></div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Bezár</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLongTitleDokumentumok" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="menuKepek">
-                                            <ul class="nav nav-tabs">
-                                                <li class="nav-item">
-                                                    <a class="nav-link active" aria-current="page"
-                                                        id="adatokKepT1">Gyakorlati igazolás</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" id="adatokKepT2">OEP könyv másolat</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div id="dokumentumok" class="dokumentumok">
-
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="tel" class="form-control" name="tel" readonly>
+                                                <label class="form-label" for="tel">Telefonszám</label>
                                             </div>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Bezár</button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- modal : nagykep -->
-                            <div class="modal fade" id="dokumentumokNagyKepModal" tabindex="-1" role="dialog"
-                                aria-labelledby="DokumentumokNagykep" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal"><span
-                                                    aria-hidden="true">&times;</span><span
-                                                    class="sr-only">Close</span></button>
-                                            <img src="" class="nagyKep" style="width: 100%;">
-                                            <a href="" id="letoltGomb" download><button id="letoltKep">Letöltés</button></a>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="szulH" class="form-control" name="szulH" readonly>
+                                                <label class="form-label" for="szulH">Születési hely</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="szulI" class="form-control" name="szulI" readonly>
+                                                <label class="form-label" for="szulI">Születési idő</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="allPorg" class="form-control" name="allPorg"
+                                                    readonly>
+                                                <label class="form-label" for="allPorg">Államporgárság</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="tizenhatAGy" class="form-control"
+                                                    name="tizenhatAGy" readonly>
+                                                <label class="form-label" for="tizenhatAGy">16 éven aluli gyermekek
+                                                    száma</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="nem" class="form-control" name="nem" readonly>
+                                                <label class="form-label" for="nem">Nem</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="hazas" class="form-control" name="hazas" readonly>
+                                                <label class="form-label" for="hazas">Házas</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+
+                                <div class="adatok2">
+                                    <h5></h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input value="" type="text" id="allandoLak" class="form-control"
+                                                    name="allandoLak" readonly>
+                                                <label class="form-label" for="allandoLak">Állandó lakhely</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="tartHely" class="form-control" name="tartHely"
+                                                    readonly>
+                                                <label class="form-label" for="tartHely">Tartózkodási hely</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="adoAzon" class="form-control" name="adoAzon"
+                                                    readonly>
+                                                <label class="form-label" for="adoAzon">Adóazonósító</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="tajSz" class="form-control" name="tajSz" readonly>
+                                                <label class="form-label" for="tajSz">Tajszám</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-outline">
+                                                <input type="text" id="bankSZ" class="form-control" name="bankSZ"
+                                                    readonly>
+                                                <label class="form-label" for="bankSZ">Bankszámla szám</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="ment">
+                                    <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
                                 </div>
                             </div>
-                        @endsection
+                        </div>
+                        <div class="modal-footer">
+                            <div class="adatModositEnged">
+                                <button type="button" class="btn btn-primary">Adatok módosítása</button>
+                            </div>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: bizonyitvany -->
+        <div class="modal fade" id="bizonyitvanyModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó bizonyitvány(ok)
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="bizAdatok"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: munkaber.. -->
+        <div class="modal fade" id="dolgozoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai:</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <form action="api/dolgozo/0" method="post">
+                        @csrf
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="modal-body">
+                            <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
+                            <div class="urlap">
+
+                                <div id="dolgozoAdatok"></div>
+
+                                <div class="ment">
+                                    <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="adatModositEnged">
+                                <button type="button" class="btn btn-primary">Adatok
+                                    módosítása</button>
+                            </div>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: orvosi adatok -->
+        <div class="modal fade" id="orvosiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó orvosi adatok
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="orvosiAdatok"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitleDokumentumok" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" id="adatokKepT1">Gyakorlati igazolás</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " id="adatokKepT2">OEP könyv másolat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
+                            </li>
+                        </ul>
+
+                        <div id="dokumentumok" class="dokumentumok">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- modal : nagykep -->
+        <div class="modal fade" id="dokumentumokNagyKepModal" tabindex="-1" role="dialog"
+            aria-labelledby="DokumentumokNagykep" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <img src="" class="nagyKep" style="width: 100%;">
+                        <a href="" id="letoltGomb" download><button id="letoltKep">Letöltés</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endsection

@@ -1,7 +1,7 @@
 $(function () {
     $("#mentes").hide();
     $(".allapot").hide();
-    $(".userId").hide();
+   $(".userId").hide(); 
     $("#megjelenikGomb").on("click",function(){
         $("#mentes").show();
     });

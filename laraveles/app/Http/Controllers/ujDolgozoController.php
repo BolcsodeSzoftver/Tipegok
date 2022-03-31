@@ -89,27 +89,37 @@ class ujDolgozoController extends Controller
         $ujDolgzoBiznyitvany->oep_konyv_masolat = $request->oep_konyv_masolat;
         $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $request->dokumentum_feltoltese;
 
+
+        $fileNevek = array();
         $files =  $request->file('gyakorlati_igazolas');
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();
             $file = $file->storeAs('dokumentumok', $name);
-            $ujDolgzoBiznyitvany->gyakorlati_igazolas = $name;
-            
+            array_push($fileNevek, $name);
         }
-
+        print_r($fileNevek);
+        $ujDolgzoBiznyitvany->gyakorlati_igazolas = json_encode($fileNevek);
         $files =  $request->file('oep_konyv_masolat');
+
+        $fileNevek = array();
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();
             $file = $file->storeAs('dokumentumok', $name);
-            $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
+            array_push($fileNevek, $name);
         }
-        
+        print_r($fileNevek);
+        $ujDolgzoBiznyitvany->oep_konyv_masolat = json_encode($fileNevek);
+
         $files =  $request->file('dokumentum_feltoltese');
+        
+        $fileNevek = array();
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();
             $file = $file->storeAs('dokumentumok', $name);
-            $ujDolgzoBiznyitvany->dokumentum_feltoltese = $name;
-            }
+            array_push($fileNevek, $name);
+        }
+        print_r($fileNevek);
+        $ujDolgzoBiznyitvany->dokumentum_feltoltese = json_encode($fileNevek);
 
         $ujDolgozo->save();
         $ujDolgzoBiznyitvany->save();

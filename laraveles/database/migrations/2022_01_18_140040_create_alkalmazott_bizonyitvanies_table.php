@@ -20,7 +20,7 @@ class CreateAlkalmazottBizonyitvaniesTable extends Migration
             $table->string('vegzettseg');
             $table->string('biz_intezmeny_nev');
             $table->date('kiadas_datuma');
-            $table->integer('bizonyitvany_szam')->unique();
+            $table->integer('bizonyitvany_szam');
             $table->string('gyakorlati_igazolas');
             $table->string('oep_konyv_masolat');
             $table->integer('pontokszama');

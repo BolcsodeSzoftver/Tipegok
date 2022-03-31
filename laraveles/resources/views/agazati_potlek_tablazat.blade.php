@@ -3,6 +3,7 @@
 @section('head')
     <link rel="stylesheet" href="css/agazatiPotlek.css" />
     <script src="js/agazatiPotlek.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 @endsection
 @section('tartalom')
     <table class="table table-bordered mb-5 ">

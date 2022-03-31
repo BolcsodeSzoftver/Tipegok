@@ -134,22 +134,11 @@ $(function () {
 		});
 	});
 
-	$('.adatok2').hide();
-
-	$('.dolgozoModalAdatok1').on('click', function() {
-		$('.adatok1').show();
-		$('.adatok2').hide();
-	});
-
-	$('.dolgozoModalAdatok2').on('click', function() {
-		$('.adatok2').show();
-		$('.adatok1').hide();
-	});
-
     $(".bizonyitvanyokGomb").on("click", function () {
         let id = this.id;
         console.log(this.id);
         ajax.getAjax(bizonyitvanyEleresiUt, bizonyitvanyLista);
+
         function bizonyitvanyLista(tomb) {
             /* console.log(tomb); */
             $("#bizAdatok").empty();
@@ -171,56 +160,75 @@ $(function () {
                             adat.pontokszama +
                             '</td><td><button class="dokumentum" data-toggle="modal" data-target="#dokumentumokModal">Dokumentumok</button></td></tr></tbody>'
                     );
-                }
-                let idKep = 1;
-                $("#dokumentumok").empty();
-                $("#dokumentumok").append(
-                    '<div class="kep1"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="storage/' +
-                        adat.gyakorlati_igazolas +
-                        '" id="dokumentum' +
-                        idKep++ +
-                        '"" data-toggle="modal" data-target="#dokumentumokNagyKepModal"></a></div><div class="kep2"><p>OEP könyv másolat:</p><a href="#" class="adatKep"><img src="storage/' +
-                        adat.oep_konyv_masolat +
-                        '" id="dokumentum' +
-                        idKep++ +
-                        '" " data-toggle="modal" data-target="#dokumentumokNagyKepModal"></a></div><div class="kep3"><p>Egyébb dokumentumok:</p><a href="#" class="adatKep"><img src="storage/' +
-                        adat.dokumentum_feltoltese +
-                        '" id="dokumentum' +
-                        idKep++ +
-                        '" data-toggle="modal" data-target="#dokumentumokNagyKepModal"></a></div>'
-                );
-                $(".adatKep").on("click", function () {
-                    console.log("asd");
-                    $(".nagyKep").attr("src", $(this).find("img").attr("src"));                  
-                    $("#dokumentumokNagyKepModal").modal("show");
-                    console.log( $(this).find("img").attr("src"));
-                    $("#letoltGomb").attr("href", $(this).find("img").attr("src"));               
-                });
-               
-                
-                $(".nav-link").click(function () {
-                    if ($(this).hasClass("active")) {
-                        $(".nav-link").removeClass("active");
-                    } else {
-                        $(".nav-link").removeClass("active");
-                        $(this).addClass("active");
-                    }
-                });
-                function urlapFejlecElrejtese() {
-                    for (let i = 2; i < 6; i++) {
-                        $(".kep" + i).hide();
-                    }
-                }
-                urlapFejlecElrejtese();
 
-                for (let i = 1; i < 6; i++) {
-                    $("#adatokKepT" + i).on("click", function () {
-                        for (let k = 1; k < 5; k++) {
-                            $(".kep" + (i + k)).hide();
-                            $(".kep" + (i - k)).hide();
-                        }
-                        $(".kep" + i).show();
+                    let idKep = 1;
+                    $("#dokumentumok").empty();
+                    let kepek = JSON.parse(adat.gyakorlati_igazolas);
+                    kepek.forEach((element) => {
+                        console.log(element);
+                        $("#dokumentumok").append(
+                            '<div class="kep1"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="dokumentumok/' +
+                                element +
+                                '" id="dokumentum' +
+                                idKep++ +
+                                '"" data-toggle="modal" data-target="#dokumentumokNagyKepModal"></a></div>'
+                        );
                     });
+
+                    let kepek2 = JSON.parse(adat.oep_konyv_masolat);
+                    kepek2.forEach((element) => {
+                        console.log(element);
+                        $("#dokumentumok").append(
+                            '<div class="kep2"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="dokumentumok/' +
+                                element +
+                                '" id="dokumentum' +
+                                idKep++ +
+                                '"" data-toggle="modal" data-target="#dokumentumokNagyKepModal"></a></div>'
+                        );
+                    });
+
+                    let kepek3 = JSON.parse(adat.dokumentum_feltoltese);
+                    kepek3.forEach((element) => {
+                        console.log(element);
+                        $("#dokumentumok").append(
+                            '<div class="kep3"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="dokumentumok/' +
+                                element +
+                                '" id="dokumentum' +
+                                idKep++ +
+                                '"" data-toggle="modal" data-target="#dokumentumokNagyKepModal"></a></div>'
+                        );
+                    });
+
+                    $(".adatKep").on("click", function () {
+                        console.log("asd");
+                        $(".nagyKep").attr(
+                            "src",
+                            $(this).find("img").attr("src")
+                        );
+                        $("#dokumentumokNagyKepModal").modal("show");
+                        console.log($(this).find("img").attr("src"));
+                        $("#letoltGomb").attr(
+                            "href",
+                            $(this).find("img").attr("src")
+                        );
+                    });
+
+                    function urlapFejlecElrejtese() {
+                        for (let i = 2; i < 6; i++) {
+                            $(".kep" + i).hide();
+                        }
+                    }
+                    urlapFejlecElrejtese();
+
+                    for (let i = 1; i < 6; i++) {
+                        $("#adatokKepT" + i).on("click", function () {
+                            for (let k = 1; k < 5; k++) {
+                                $(".kep" + (i + k)).hide();
+                                $(".kep" + (i - k)).hide();
+                            }
+                            $(".kep" + i).show();
+                        });
+                    }
                 }
             });
         }
