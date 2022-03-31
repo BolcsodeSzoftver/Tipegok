@@ -1,11 +1,13 @@
 
 
+
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/fennt.css" />
     <script src="js/ajax.js"></script>
     <script src="js/fenntClass.js"></script>
     <script src="js/fenntListazas.js"></script>
     <script src="js/fennt.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <h3>Fenntartó adatok</h3>
@@ -189,5 +191,6 @@
     </div>
 <?php $__env->stopSection(); ?>
 
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.torlesMegerosites', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/fenntarto.blade.php ENDPATH**/ ?>

@@ -7,6 +7,7 @@
     <script src="js/bolcsodeAdatLista.js"></script>
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 @endsection
 
 @section('tartalom')

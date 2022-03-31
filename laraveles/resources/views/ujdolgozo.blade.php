@@ -254,8 +254,5 @@
             <label class="form-label" for="form8Example3">Állapot</label>
         </div>
 
-       
-
-
     </form>
 @endsection
