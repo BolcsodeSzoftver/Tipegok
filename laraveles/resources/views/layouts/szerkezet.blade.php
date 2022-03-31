@@ -44,7 +44,7 @@
                                         profilom
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Saját adatok</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sajatModal">Saját adatok</a>
                                         <a class="dropdown-item" href="#">Jelszó modosítása</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
                                     </div>

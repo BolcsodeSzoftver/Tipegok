@@ -1,4 +1,5 @@
 @extends('layouts.szerkezet')
+@extends('layouts.sajatAdatok')
 @section('head')
   <link rel="stylesheet" href="css/mellekletek_css/mellekletekFromazasa.css">
 @endsection

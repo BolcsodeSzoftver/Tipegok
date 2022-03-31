@@ -12,6 +12,10 @@ use App\Models\alkalmazott_bizonyitvany;
 
 class MellekletController extends Controller
 { 
+    public function megjelenit(){
+        $alkalmazotts=alkalmazott::all();
+        return view('mellekletek',compact('alkalmazotts'));
+    }
 
     public function kivalasztottAlkalmazott($id){
         $alkalmazotts=alkalmazott::where('id',$id)->get();

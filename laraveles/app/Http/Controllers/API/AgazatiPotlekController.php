@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\agazati_potlek;
+use App\Models\alkalmazott;
 
 class AgazatiPotlekController extends Controller
 {
@@ -29,7 +30,8 @@ class AgazatiPotlekController extends Controller
 
     public function megjelenit()
     {
+        $alkalmazotts=alkalmazott::all();
         $agazatiPotlek  = agazati_potlek::paginate(10);
-        return view('agazati_potlek_tablazat', compact('agazatiPotlek'));
+        return view('agazati_potlek_tablazat', compact('agazatiPotlek', 'alkalmazotts'));
     }
 }

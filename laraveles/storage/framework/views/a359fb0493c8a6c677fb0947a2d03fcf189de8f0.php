@@ -1,6 +1,7 @@
 
 
 
+
 <?php $__env->startSection('head'); ?>
 <link rel="stylesheet" href="css/dolgozo.css" />
 <script src="js/ajax.js"></script>
@@ -85,7 +86,7 @@
         <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
         <tbody class="adatokDolgozo">
             <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php if($data->allapot === 1): ?>
+            <?php if($data->allapot === 1 && $data->users_id != Auth::user()->id): ?>
             <tr class="dolgozo">
                 <td class="modosit">
                     <button wire:click="edit(<?php echo e($data->id); ?>)" class="btn btn-primary modositGomb" id=<?php echo e($data->id); ?> type="submit" data-toggle="modal" data-target="#exampleModalLong">
@@ -148,9 +149,82 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
         <?php endif; ?>
-        <?php endif; ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </table>
+        <?php elseif($jogosultsag->megnevezes == 'admin'): ?>
+                    <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
+                        <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($bolcsode->bolcsode_admin == Auth::user()->id): ?>
+                                <tbody class="adatokDolgozo">
+                                    <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($data->allapot === 1): ?>
+                                            <?php if($bolcsode->id == $data->bolcsode_id && $data->users_id != Auth::user()->id): ?>
+                                            <tr class="dolgozo">
+                <td class="modosit">
+                    <button wire:click="edit(<?php echo e($data->id); ?>)" class="btn btn-primary modositGomb" id=<?php echo e($data->id); ?> type="submit" data-toggle="modal" data-target="#exampleModalLong">
+                        <i class='fa fa-edit'></i>
+                    </button>
+                </td>
+                <td class="torol">
+                    <button class="btn btn-primary dolgozoTorles" id=<?php echo e($data->id); ?> type="button" data-toggle="modal" data-target="#modalDolgozo">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+                <td class="egyeb">
+                    <div class="dropdown">
+                        <button class="btn btn-primary">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <div class="dropdown-c">
+                            <a class="hover dropdown-item bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
+                            <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Dolgozo</a>
+                            <a class="hover dropdown-item orvosiAdatokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#orvosiModal">Orvosi adatok</a>
+                        </div>
+                    </div>
+                </td>
+                <td class="nev" id=<?php echo e($data->id); ?>><?php echo e($data->nev); ?></td>
+                <td class="t1 allandoLakhely" id=<?php echo e($data->id); ?>><?php echo e($data->allando_lakhely); ?>
+
+                </td>
+                <td class="t1 telefonszam" id=<?php echo e($data->id); ?>><?php echo e($data->telefonszam); ?></td>
+                <td class="t1 anyjaNev" id=<?php echo e($data->id); ?>><?php echo e($data->anyja_neve); ?></td>
+
+                <td class="t2 szulN" id=<?php echo e($data->id); ?>><?php echo e($data->szul_nev); ?></td>
+                <td class="t2 szulH" id=<?php echo e($data->id); ?>><?php echo e($data->szul_hely); ?></td>
+                <td class="t2 szulI" id=<?php echo e($data->id); ?>><?php echo e($data->szul_ido); ?></td>
+
+                <td class="t3 cim" id=<?php echo e($data->id); ?>><?php echo e($data->allando_lakhely); ?>
+
+                </td>
+                <td class="t3 tartHely" id=<?php echo e($data->id); ?>><?php echo e($data->tartozkodasi_hely); ?>
+
+                </td>
+
+                <td class="t4 taj" id=<?php echo e($data->id); ?>><?php echo e($data->tajszam); ?></td>
+                <td class="t4 adoA" id=<?php echo e($data->id); ?>><?php echo e($data->adoazon_jel); ?></td>
+                <td class="t4 bankSz" id=<?php echo e($data->id); ?>><?php echo e($data->banszamla_szam); ?>
+
+                </td>
+
+                <td class="t5 nem" id=<?php echo e($data->id); ?>><?php echo e($data->nem); ?></td>
+                <td class="t5 hazas" id=<?php echo e($data->id); ?>><?php echo e($data->hazas_e); ?></td>
+                <td class="t5 gyerek" id=<?php echo e($data->id); ?>>
+                    <?php echo e($data->tizenhat_alatti_gyermek); ?>
+
+                </td>
+                <td class="t5 polgar" id=<?php echo e($data->id); ?>><?php echo e($data->all_polgarsag); ?>
+
+                </td>
+
+            </tr>
+                                            <?php endif; ?>
+                                            <?php endif; ?>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </tbody>
+                            <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
+                    <?php endif; ?>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </table>
 
 </div>
 <div class="row">
@@ -180,9 +254,13 @@
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="_method" value="PUT">
                 <div class="modal-body">
+                <ul class="nav nav-tabs">
+                            <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
+                            <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
+                        </ul>
                     <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                     <div class="urlap">
-                        <div id="adatok1">
+                        <div class="adatok1">
                             <div class="col" id="gId">
                                 <div class="form-outline">
                                     <input type="hidden" id="dolgozoId" class="form-control" readonly>
@@ -260,7 +338,7 @@
                             <hr>
                         </div>
 
-                        <div id="adatok2">
+                        <div class="adatok2">
                             <h5></h5>
                             <div class="row">
                                 <div class="col">
@@ -428,6 +506,7 @@
 
 
 <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.jovahagyasraVaroDolgozok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.torlesMegerositesDolgozo', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/dolgozo.blade.php ENDPATH**/ ?>

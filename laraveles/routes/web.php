@@ -46,7 +46,8 @@ Route::get('/melleklet4', [MellekletController::class,'dolgozoAdatai4']);
 Route::get('/melleklet5', [MellekletController::class,'dolgozoAdatai5']);
 Route::get('/melleklet6', [MellekletController::class,'dolgozoAdatai6']);
 Route::get('/melleklet10', [MellekletController::class,'dolgozoAdatai10']);
-Route::get('/mellekletek', function () {return view('mellekletek');})->middleware(['auth']);
+Route::get('/mellekletek', [MellekletController::class, 'megjelenit',])->middleware(['auth']);
+
 Route::get('/alkalmazott/{id}', [MellekletController::class,'kivalasztottAlkalmazott']); 
 Route::get('/dolgozo/{id}', [MellekletController::class,'kivalasztottDolgozo']); 
 Route::get('/fenntarto/{id}', [MellekletController::class,'kivalasztottFenntarto']);
