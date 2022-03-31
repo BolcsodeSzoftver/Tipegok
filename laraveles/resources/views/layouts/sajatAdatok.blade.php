@@ -18,7 +18,7 @@
                     <div class="urlap">
                     @foreach ($alkalmazotts as $data)
                     @if ($data->users_id == Auth::user()->id)
-                        <div class="adatok1">
+                        <div id="adatok1">
                             <div class="col" id="gId">
                                 <div class="form-outline">
                                     <input type="hidden" id="dolgozoId" class="form-control" value={{ $data->id }} readonly>
@@ -96,7 +96,7 @@
                             <hr>
                         </div>
 
-                        <div class="adatok2">
+                        <div id="adatok2">
                             <h5></h5>
                             <div class="row">
                                 <div class="col">

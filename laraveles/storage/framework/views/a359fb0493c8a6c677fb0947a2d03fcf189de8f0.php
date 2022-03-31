@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/ajax.js"></script>
     <script src="js/dolgozo.js"></script>
+    <script src="js/munkakoriAdatokModosit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div class=row>
@@ -98,7 +99,7 @@
                         </button>
                         <div class="dropdown-c">
                             <a class="hover dropdown-item bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
-                            <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Dolgozo</a>
+                            <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Munkaköri adatok</a>
                             <a class="hover dropdown-item orvosiAdatokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#orvosiModal">Orvosi adatok</a>
                         </div>
                     </div>
@@ -163,7 +164,7 @@
                         </button>
                         <div class="dropdown-c">
                             <a class="hover dropdown-item bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
-                            <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Dolgozo</a>
+                            <a class="hover dropdown-item dolgozoGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#dolgozoModal">Munkaköri adatok</a>
                             <a class="hover dropdown-item orvosiAdatokGomb" href="#" id=<?php echo e($data->id); ?> data-toggle="modal" data-target="#orvosiModal">Orvosi adatok</a>
                         </div>
                     </div>
