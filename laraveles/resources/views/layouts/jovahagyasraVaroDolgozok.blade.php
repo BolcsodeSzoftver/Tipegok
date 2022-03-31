@@ -120,8 +120,14 @@
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label for="besorolasiBetu">Besorolási betű</label>
-                                    <input type="text" class="form-control" id="besorolasiBetu" name="besorolasiBetu" value="{{ old('besorolasiBetu')}}">
+                                    <label for="besorolasiBetu">Besorolási betű</label><br>
+                                    <select id="besorolasiBetu" name="besorolasiBetu" style="width: 100%; height: 35px; border-radius: 3px;">
+                                        <option value="A">A</option><option value="B">B</option>
+                                        <option value="C">C</option><option value="D">D</option>
+                                        <option value="E">E</option><option value="F">F</option>
+                                        <option value="G">G</option><option value="H">H</option>
+                                        <option value="I">I</option><option value="J">J</option>
+                                    </select>
                                         @error('besorolasiBetu')
                                             <span style="color: red">{{ $message }} </span>
                                         @enderror

@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class dolgozoUrlapEllenorzes extends FormRequest
 {
+    protected $redirect = '/dolgozo';
     /**
      * Determine if the user is authorized to make this request.
      *

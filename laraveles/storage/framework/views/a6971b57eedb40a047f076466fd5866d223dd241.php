@@ -197,7 +197,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oTel">Telefonszám:</label>
-                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam" value="<?php echo e(old('uzemorvos_telefonszam')); ?>">
+                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam" value="+36<?php echo e(old('uzemorvos_telefonszam')); ?>">
                     <?php $__errorArgs = ['uzemorvos_telefonszam'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

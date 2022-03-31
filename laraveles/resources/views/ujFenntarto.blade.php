@@ -113,7 +113,7 @@
                 </div>
                 <div class="row-cols-6">
                     <label class="col-sm-2" for="oTel">Telefonszám:</label>
-                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam" value="{{ old('uzemorvos_telefonszam')}}">
+                    <input class="col-sm-4" type="number" id="oTel" name="uzemorvos_telefonszam" value="+36{{ old('uzemorvos_telefonszam')}}">
                     @error('uzemorvos_telefonszam')
                             <span style="color: red">{{ $message }} </span>
                     @enderror

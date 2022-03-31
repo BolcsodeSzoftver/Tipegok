@@ -32,7 +32,7 @@ class fenntUrlapEllenorzes extends FormRequest
             "kepviselo" => 'required',
             "adoszam" => 'required|digits_between:10,10|numeric',
             "megye" => 'required',
-            "cegjegyzekszam" => 'required',
+            "cegjegyzekszam" => 'required|digits_between:10,10|numeric',
             "statisztikaiszam" => 'required',
             "illetekes_kormányh" => 'required',
             "bolcsodek_szama" => 'required|digits_between:1,1000|numeric',
@@ -62,6 +62,7 @@ class fenntUrlapEllenorzes extends FormRequest
  
             'agazati_azon.between' => ['string' => 'Az ágazati azonosító 8 karakter hosszúnak kell lennnie.',],
             'adoszam.digits_between' => 'Az adószám 10 karakter hosszúnak kell lennnie.',
+            'cegjegyzekszam.digits_between' => 'Az adószám 10 karakter hosszúnak kell lennnie.',
         ];
     } 
 }

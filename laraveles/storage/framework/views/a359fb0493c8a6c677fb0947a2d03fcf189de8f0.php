@@ -3,18 +3,16 @@
 
 
 <?php $__env->startSection('head'); ?>
-<link rel="stylesheet" href="css/dolgozo.css" />
-<script src="js/ajax.js"></script>
-<script src="js/dolgozo.js"></script>
+    <link rel="stylesheet" href="css/dolgozo.css" />
+    <script src="js/ajax.js"></script>
+    <script src="js/dolgozo.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
-
-<div class=row>
-    <h3>Dolgozó adatai</h3>
-
+    <div class=row>
+        <h3>Dolgozó adatai</h3>
 
 
-</div>
+        </div>
 <div class=row>
     <div class="form-group">
         <form action="/dolgozo" method="get">
@@ -50,7 +48,6 @@
         <li class="nav-item"><a class="nav-link" id="adatokT4">ID</a></li>
         <li class="nav-item"><a class="nav-link" id="adatokT5">egyéb adatok</a></li>
     </ul>
-
     <table class="table table-bordered mb-5">
         <thead>
             <tr class="table-active">
@@ -61,18 +58,14 @@
                 <th class="t1" sortable scope="col">Cím</th>
                 <th class="t1" sortable scope="col">Telefonszám</th>
                 <th class="t1" sortable scope="col">Anyja neve</th>
-
                 <th class="t2" scope="col">Születési név</th>
                 <th class="t2" scope="col">Születési hely</th>
                 <th class="t2" scope="col">Születési idő</th>
-
                 <th class="t3" scope="col">Állandó lakhely</th>
                 <th class="t3" scope="col">Tartozkodási hely</th>
-
                 <th class="t4" scope="col">Tajszám</th>
                 <th class="t4" scope="col">Adóazonosító</th>
                 <th class="t4" scope="col">Bankszámla szám</th>
-
                 <th class="t5" scope="col">Nem</th>
                 <th class="t5" scope="col">Házas</th>
                 <th class="t5" scope="col">16 éven aluli gyermekek száma</th>
@@ -81,9 +74,9 @@
         </thead>
 
 
-        <?php $__currentLoopData = $jogosultsags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $jogosultsags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <?php if($jogosultsag->megnevezes == 'szuperadmin'): ?>
-        <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
+            <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
         <tbody class="adatokDolgozo">
             <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <?php if($data->allapot === 1 && $data->users_id != Auth::user()->id): ?>
@@ -116,24 +109,20 @@
                 </td>
                 <td class="t1 telefonszam" id=<?php echo e($data->id); ?>><?php echo e($data->telefonszam); ?></td>
                 <td class="t1 anyjaNev" id=<?php echo e($data->id); ?>><?php echo e($data->anyja_neve); ?></td>
-
                 <td class="t2 szulN" id=<?php echo e($data->id); ?>><?php echo e($data->szul_nev); ?></td>
                 <td class="t2 szulH" id=<?php echo e($data->id); ?>><?php echo e($data->szul_hely); ?></td>
                 <td class="t2 szulI" id=<?php echo e($data->id); ?>><?php echo e($data->szul_ido); ?></td>
-
                 <td class="t3 cim" id=<?php echo e($data->id); ?>><?php echo e($data->allando_lakhely); ?>
 
                 </td>
                 <td class="t3 tartHely" id=<?php echo e($data->id); ?>><?php echo e($data->tartozkodasi_hely); ?>
 
                 </td>
-
                 <td class="t4 taj" id=<?php echo e($data->id); ?>><?php echo e($data->tajszam); ?></td>
                 <td class="t4 adoA" id=<?php echo e($data->id); ?>><?php echo e($data->adoazon_jel); ?></td>
                 <td class="t4 bankSz" id=<?php echo e($data->id); ?>><?php echo e($data->banszamla_szam); ?>
 
                 </td>
-
                 <td class="t5 nem" id=<?php echo e($data->id); ?>><?php echo e($data->nem); ?></td>
                 <td class="t5 hazas" id=<?php echo e($data->id); ?>><?php echo e($data->hazas_e); ?></td>
                 <td class="t5 gyerek" id=<?php echo e($data->id); ?>>
@@ -143,13 +132,12 @@
                 <td class="t5 polgar" id=<?php echo e($data->id); ?>><?php echo e($data->all_polgarsag); ?>
 
                 </td>
-
             </tr>
             <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
         <?php endif; ?>
-        <?php elseif($jogosultsag->megnevezes == 'admin'): ?>
+            <?php elseif($jogosultsag->megnevezes == 'admin'): ?>
                     <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
                         <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php if($bolcsode->bolcsode_admin == Auth::user()->id): ?>
@@ -224,23 +212,29 @@
                     <?php endif; ?>
                     <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </table>
-
-</div>
-<div class="row">
-    <div class="col">
-        <button class="btn btn-secondary regisztracio">
-            <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
-        </button>
-    </div>
-    <div>
-        <?php echo $alkalmazotts->links('pagination::bootstrap-4'); ?>
+    </table>
 
     </div>
-</div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-secondary regisztracio">
+                <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
+            </button>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-secondary regisztracio">
+                    <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
+                </button>
+            </div>
+            <div>
+                <?php echo $alkalmazotts->links('pagination::bootstrap-4'); ?>
+
+            </div>
+        </div>
 
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -249,7 +243,6 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <form action="api/alkalmazott/0" method="post">
                 <?php echo csrf_field(); ?>
                 <input type="hidden" name="_method" value="PUT">
@@ -356,7 +349,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline">
@@ -371,7 +363,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col">
                                     <div class="form-outline">
@@ -382,7 +373,6 @@
                             </div>
                             <hr>
                         </div>
-
                         <div class="ment">
                             <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
                         </div>
@@ -399,113 +389,152 @@
     </div>
 </div>
 
-<!-- Modal: bizonyitvany -->
-<div class="modal fade" id="bizonyitvanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó bizonyitvány(ok)</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+                            <!-- Modal: bizonyitvany -->
+                            <div class="modal fade" id="bizonyitvanyModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó bizonyitvány(ok)
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
 
-            <div class="modal-body">
-                <div id="bizAdatok"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-            </div>
+                                        <div class="modal-body">
+                                            <div id="bizAdatok"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Bezár</button>
+                                        </div>
 
-        </div>
-    </div>
-</div>
+                                    </div>
+                                </div>
+                            </div>
 
-<!-- Modal: munkaber.. -->
-<div class="modal fade" id="dolgozoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+                            <!-- Modal: munkaber.. -->
+                            <div class="modal fade" id="dolgozoModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó adatai:</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
 
-            <form action="api/dolgozo/0" method="post">
-                <?php echo csrf_field(); ?>
-                <input type="hidden" name="_method" value="PUT">
-                <div class="modal-body">
-                    <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
-                    <div class="urlap">
+                                        <form action="api/dolgozo/0" method="post">
+                                            <?php echo csrf_field(); ?>
+                                            <input type="hidden" name="_method" value="PUT">
+                                            <div class="modal-body">
+                                                <input type="hidden" id="dolgozoId" class="form-control" name="id"
+                                                    readonly>
+                                                <div class="urlap">
 
-                        <div id="dolgozoAdatok"></div>
+                                                    <div id="dolgozoAdatok"></div>
 
-                        <div class="ment">
-                            <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="adatModositEnged">
-                        <button type="button" class="btn btn-primary">Adatok módosítása</button>
-                    </div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+                                                    <div class="ment">
+                                                        <input class="btn btn-dark" type="submit" id="mentes"
+                                                            value="Mentés">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div class="adatModositEnged">
+                                                    <button type="button" class="btn btn-primary">Adatok
+                                                        módosítása</button>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Bezár</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
 
-<!-- Modal: orvosi adatok -->
-<div class="modal fade" id="orvosiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó orvosi adatok</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+                            <!-- Modal: orvosi adatok -->
+                            <div class="modal fade" id="orvosiModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó orvosi adatok
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
 
-            <div class="modal-body">
-                <div id="orvosiAdatok"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-            </div>
+                                        <div class="modal-body">
+                                            <div id="orvosiAdatok"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Bezár</button>
+                                        </div>
 
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitleDokumentumok" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-
-
-            <div class="modal-body">
-                <div id="dokumentumok" class="dokumentumok">
-
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<!-- modal : nagykep -->
-<div class="modal fade" id="dokumentumokNagyKepModal" tabindex="-1" role="dialog" aria-labelledby="DokumentumokNagykep" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        
-    </div>
-</div>
+                                    </div>
+                                </div>
+                            </div>
 
 
-<?php $__env->stopSection(); ?>
+
+                            <div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLongTitleDokumentumok" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="menuKepek">
+                                            <ul class="nav nav-tabs">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" aria-current="page"
+                                                        id="adatokKepT1">Gyakorlati igazolás</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="adatokKepT2">OEP könyv másolat</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="dokumentumok" class="dokumentumok">
+
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Bezár</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- modal : nagykep -->
+                            <div class="modal fade" id="dokumentumokNagyKepModal" tabindex="-1" role="dialog"
+                                aria-labelledby="DokumentumokNagykep" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <button type="button" class="close" data-dismiss="modal"><span
+                                                    aria-hidden="true">&times;</span><span
+                                                    class="sr-only">Close</span></button>
+                                            <img src="" class="nagyKep" style="width: 100%;">
+                                            <a href="" id="letoltGomb" download><button id="letoltKep">Letöltés</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.jovahagyasraVaroDolgozok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.torlesMegerositesDolgozo', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
