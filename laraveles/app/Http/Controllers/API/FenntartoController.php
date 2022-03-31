@@ -12,6 +12,7 @@ use SebastianBergmann\Environment\Console;
 use App\Models\bolcsode;
 use App\Models\jogosultsag;
 use App\Models\alkalmazott;
+use App\Models\dolgozo;
 
 class FenntartoController extends Controller
 {
@@ -235,8 +236,9 @@ class FenntartoController extends Controller
 
     public function megjelenit(){
         $alkalmazotts=alkalmazott::all();
+        $dolgozok=dolgozo::all();
         $bolcsodek = bolcsode::all();
         $jogosults=jogosultsag::all();
-        return view('fenntarto',compact('bolcsodek','jogosults','alkalmazotts'));
+        return view('fenntarto',compact('bolcsodek','jogosults','alkalmazotts','dolgozok'));
     }
 }

@@ -3,6 +3,7 @@
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/agazatiPotlek.css" />
     <script src="js/agazatiPotlek.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <table class="table table-bordered mb-5 ">

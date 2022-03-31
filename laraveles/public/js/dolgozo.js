@@ -1,8 +1,7 @@
 $(function () {
     let ajax = new AjaxHivas();
     let bizonyitvanyEleresiUt = "/api/bizonyitvany";
-    let dolgozoEleresiUt = "/api/dolgozo";
-
+    
     $('.adatModositEnged').on('click', function() {
 		console.log('modositEnged');
 		$('input').removeAttr('readonly');

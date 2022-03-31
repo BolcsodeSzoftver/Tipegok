@@ -1,4 +1,3 @@
-
 <!-- Modal: sajat adat -->
 <div class="modal fade" id="sajatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -18,36 +17,19 @@
                     <ul class="nav nav-tabs">
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
+                        <li class="nav-item"><a class="nav-link dolgozoModalAdatok3" href="#">3</a></li>
+                        <li class="nav-item"><a class="nav-link dolgozoModalAdatok4" href="#">4</a></li>
                     </ul>
                     <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                     <div class="urlap">
-                    @foreach ($alkalmazotts as $data)
-                    @if ($data->users_id == Auth::user()->id)
-                        <div id="adatok1">
-                            <div class="col" id="gId">
-                                <div class="form-outline">
-                                    <input type="hidden" id="dolgozoId" class="form-control" value={{ $data->id }} readonly>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="nev" class="form-control" name="nev" value={{ $data->nev }} readonly>
-                                        <label class="form-label" for="nev">Név</label>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="anyjaNeve" class="form-control" name="anyjaNeve" value={{ $data->anyja_neve }}  readonly>
-                                        <label class="form-label" for="anyjaNeve">Anyja neve</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input type="text" id="szulN" class="form-control" name="szulN" value={{ $data->szul_nev }}  readonly>
-                                        <label class="form-label" for="szulN">Születési név</label>
+                        @foreach ($alkalmazotts as $data)
+                            @if ($data->users_id == Auth::user()->id)
+                                <div class="adatok1">
+                                    <div class="col" id="gId">
+                                        <div class="form-outline">
+                                            <input type="hidden" id="dolgozoId" class="form-control"
+                                                value={{ $data->id }} readonly>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
@@ -131,15 +113,6 @@
                                     <hr>
                                 </div>
 
-<<<<<<< HEAD
-                        <div id="adatok2">
-                            <h5></h5>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-outline">
-                                        <input value="" type="text" id="allandoLak" class="form-control" name="allandoLak" value={{ $data->allando_lakhely }} readonly>
-                                        <label class="form-label" for="allandoLak">Állandó lakhely</label>
-=======
                                 <div class="adatok2">
                                     <h5></h5>
                                     <div class="row">
@@ -150,7 +123,6 @@
                                                 <label class="form-label" for="allandoLak">Állandó lakhely</label>
                                             </div>
                                         </div>
->>>>>>> 191a11c1ce41cf6db27ce1fb218fddfb2b945f46
                                     </div>
                                     <div class="row">
                                         <div class="col">
@@ -190,8 +162,75 @@
                                     </div>
                                     <hr>
                                 </div>
+
+                                <div class="adatok3">
+                                @foreach ($dolgozok as $dolgozo)
+                                @if ($dolgozo->alkalmazott_id == $data->id)
+                                        <div class="row">
+							                <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->brutto_alapber}} value={{$dolgozo->brutto_alapber}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->brutto_alapber}}>Bruttó alapbér</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->heti_munkaora}} value={{$dolgozo->heti_munkaora}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->heti_munkaora}}>Heti munkaóra</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+							                <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->besorolas_betu}} value={{$dolgozo->besorolas_betu}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->besorolas_betu}}>Besorolás betű</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->besorolas_szam}} value={{$dolgozo->besorolas_szam}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->besorolas_szam}}>Besorolás szám</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->agazati_potlek}} value={{$dolgozo->agazati_potlek}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->agazati_potlek}}>Ágazati pótlék</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+							                <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->feor_azon}} value={{$dolgozo->feor_azon}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->feor_azon}}>Feor azonosító</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->eves_szabi}} value={{$dolgozo->eves_szabi}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->eves_szabi}}>Éves szabadság</label>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+							                    <div class="form-outline">
+                                                    <input type="text" class="form-control" name={{$dolgozo->vegzettseg}} value={{$dolgozo->vegzettseg}} readonly>
+                                                    <label class="form-label" for={{$dolgozo->vegzettseg}}>Végzettség</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                @endif
+                                @endforeach
+                                </div>
+                                
                             @endif
                         @endforeach
+
+                        
+                        <div class="adatok4">
+                            <label for="">Bizonyitvagy(ok)</label>
+                        </div>
 
                         <div class="ment">
                             <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\agazati_potlek;
 use App\Models\alkalmazott;
+use App\Models\dolgozo;
 
 class AgazatiPotlekController extends Controller
 {
@@ -31,7 +32,8 @@ class AgazatiPotlekController extends Controller
     public function megjelenit()
     {
         $alkalmazotts=alkalmazott::all();
+        $dolgozok=dolgozo::all();
         $agazatiPotlek  = agazati_potlek::paginate(10);
-        return view('agazati_potlek_tablazat', compact('agazatiPotlek', 'alkalmazotts'));
+        return view('agazati_potlek_tablazat', compact('agazatiPotlek', 'alkalmazotts','dolgozok'));
     }
 }

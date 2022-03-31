@@ -1,6 +1,7 @@
 
 
 <?php $__env->startSection('head'); ?>
+
     <style>
         #mentes,
         .ment {
@@ -10,6 +11,7 @@
 
     </style>
     <script src="js/felhasznalo.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div>

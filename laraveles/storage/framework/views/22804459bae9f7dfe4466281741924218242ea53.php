@@ -7,6 +7,7 @@
     <script src="js/fenntClass.js"></script>
     <script src="js/fenntListazas.js"></script>
     <script src="js/fennt.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <h3>Fenntartó adatok</h3>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\alkalmazott;
 use App\Models\bolcsode;
 use App\Models\jogosultsag;
+use App\Models\dolgozo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,9 +30,10 @@ class dolgozoListaController extends Controller
         } 
         $jogosultsags = jogosultsag::all();
         $bolcsodek = bolcsode::all();
+        $dolgozok=dolgozo::all();
         return view(
             'dolgozo',
-            compact('db', 'alkalmazotts', 'jogosultsags', 'bolcsodek')
+            compact('db', 'alkalmazotts', 'jogosultsags', 'bolcsodek','dolgozok')
         );
     }
 

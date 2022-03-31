@@ -8,6 +8,7 @@ use App\Models\belepes;
 use App\Models\jogosultsag;
 use App\Models\User;
 use App\Models\alkalmazott;
+use App\Models\dolgozo;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -107,8 +108,9 @@ class FelhasznaloController extends Controller
     public function megjelenit()
     {
         $alkalmazotts=alkalmazott::all();
+        $dolgozok=dolgozo::all();
         $jogosultsag  = jogosultsag::all();
         $user = User::all();
-        return view('felhasznalo', compact('user', 'jogosultsag','alkalmazotts'));
+        return view('felhasznalo', compact('user', 'jogosultsag','alkalmazotts','dolgozok'));
     }
 }

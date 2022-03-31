@@ -2,6 +2,7 @@
 
 <?php $__env->startSection('head'); ?>
   <link rel="stylesheet" href="css/mellekletek_css/mellekletekFromazasa.css">
+  <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
 
