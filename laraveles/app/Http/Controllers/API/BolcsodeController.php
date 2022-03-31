@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\bolcsode;
 use App\Models\bolcsode_valtozas;
 use App\Models\fenntarto;
+use App\Models\alkalmazott;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\jogosultsag;
@@ -181,9 +182,10 @@ class BolcsodeController extends Controller
 
     public function megjelenit()
     {
+        $alkalmazotts=alkalmazott::all();
         $fenntartok = fenntarto::all();
         $jogosults = jogosultsag::all();
-        return view('bolcsiadat', compact('fenntartok', 'jogosults'));
+        return view('bolcsiadat', compact('fenntartok', 'jogosults','alkalmazotts'));
     }
 
 

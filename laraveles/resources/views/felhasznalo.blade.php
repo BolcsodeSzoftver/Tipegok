@@ -1,4 +1,5 @@
 @extends('layouts.szerkezet')
+@extends('layouts.sajatAdatok')
 @section('head')
     <style>
         #mentes,

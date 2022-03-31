@@ -1,4 +1,5 @@
 
+
 <?php $__env->startSection('head'); ?>
     <style>
         #mentes,
@@ -100,4 +101,5 @@
     </div>
 <?php $__env->stopSection(); ?>
 
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/felhasznalo.blade.php ENDPATH**/ ?>

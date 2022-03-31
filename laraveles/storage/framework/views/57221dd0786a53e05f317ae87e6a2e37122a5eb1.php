@@ -1,4 +1,5 @@
 
+
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/agazatiPotlek.css" />
     <script src="js/agazatiPotlek.js"></script>
@@ -62,8 +63,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                    <form action="/api/agazatiPotlek/0" method="POST">
-                    <?php echo csrf_field(); ?>
+                <form action="api/agazatiPotlek/0" method="post">
+                <?php echo csrf_field(); ?>
+                    <input type="hidden" name="_method" value="PUT">
                         <div class="modal-body">
                             <div class="urlap">
                                 <div class="row">
@@ -163,4 +165,5 @@
     </div>
 <?php $__env->stopSection(); ?>
 
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/agazati_potlek_tablazat.blade.php ENDPATH**/ ?>

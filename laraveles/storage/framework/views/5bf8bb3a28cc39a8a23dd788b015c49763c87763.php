@@ -1,4 +1,5 @@
 
+
 <?php $__env->startSection('head'); ?>
   <link rel="stylesheet" href="css/mellekletek_css/mellekletekFromazasa.css">
 <?php $__env->stopSection(); ?>
@@ -16,4 +17,5 @@
   </div>
   
   <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/mellekletek.blade.php ENDPATH**/ ?>

@@ -169,6 +169,7 @@ $(function () {
             });
     });
 
+<<<<<<< HEAD
     $("#adatok2").hide();
 
     $("#dolgozoModalAdatok1").on("click", function () {
@@ -180,6 +181,19 @@ $(function () {
         $("#adatok2").show();
         $("#adatok1").hide();
     });
+=======
+	$('.adatok2').hide();
+
+	$('.dolgozoModalAdatok1').on('click', function() {
+		$('.adatok1').show();
+		$('.adatok2').hide();
+	});
+
+	$('.dolgozoModalAdatok2').on('click', function() {
+		$('.adatok2').show();
+		$('.adatok1').hide();
+	});
+>>>>>>> e496f035f3e39297c36120db9055a41049ccc4de
 
     $(".bizonyitvanyokGomb").on("click", function () {
         let id = this.id;
