@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
         $user-> name = "szuperAdmin";
         $user->email = "szuperadmin@gmail.com";
         $user->jogosultsag_id = 2;
-        $user->allapot = 1;
+        $user->allapot = 0;
         $user->password = Hash::make(123);
         $user->save();
 

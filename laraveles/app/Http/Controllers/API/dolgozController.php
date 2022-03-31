@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\dolgozo;
 use App\Models\agazati_potlek;
-
+use Facade\FlareClient\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class dolgozController extends Controller
 {
@@ -113,4 +114,5 @@ class dolgozController extends Controller
     {
         
     }
+
 }

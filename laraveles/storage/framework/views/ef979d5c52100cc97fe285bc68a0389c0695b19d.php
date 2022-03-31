@@ -231,13 +231,13 @@
                 <div class="col">
                     <div class="form-outline">
                         <label class="custom-file-label" for="customFileGyakIg">Gyakorlait igazolás</label>
-                        <input type="file" class="custom-file-input" id="customFileGyakIg" name="gyakorlati_igazolas">
+                        <input type="file" class="custom-file-input" id="customFileGyakIg" name="gyakorlati_igazolas[]" multiple> 
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-outline">
                         <label class="custom-file-label" for="customFileOEP">OEP könyv másolat</label>
-                        <input type="file" class="custom-file-input" id="customFileOEP" name="oep_konyv_masolat">
+                        <input type="file" class="custom-file-input" id="customFileOEP" name="oep_konyv_masolat[]" multiple>
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@
                 <div class="col">
                     <div class="form-outline">
                         <label class="custom-file-label" for="customFileDok">Dokumentum feltöltése</label>
-                        <input type="file" class="custom-file-input" id="customFileDok" name="dokumentum_feltoltese">
+                        <input type="file" class="custom-file-input" id="customFileDok" name="dokumentum_feltoltese[]" multiple>
                     </div>
                 </div>
             </div>

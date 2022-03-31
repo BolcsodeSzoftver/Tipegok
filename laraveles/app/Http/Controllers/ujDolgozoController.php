@@ -89,35 +89,32 @@ class ujDolgozoController extends Controller
         $ujDolgzoBiznyitvany->oep_konyv_masolat = $request->oep_konyv_masolat;
         $ujDolgzoBiznyitvany->dokumentum_feltoltese     = $request->dokumentum_feltoltese;
 
-        if (
-            $request->file('gyakorlati_igazolas') == null ||
-            $request->file('oep_konyv_masolat') == null ||
-            $request->file('dokumentum_feltoltese') == null
-        ) {
-            $file = "";
-            echo ("hiba");
-        } else {
-            echo ("juh");
-            $name = $request->file('gyakorlati_igazolas')->getClientOriginalName();
-            $file = $request->file('gyakorlati_igazolas')->storeAs('dokumentumok', $name);
+        $files =  $request->file('gyakorlati_igazolas');
+        foreach ($files as $file) {
+            $name = $file->getClientOriginalName();
+            $file = $file->storeAs('dokumentumok', $name);
             $ujDolgzoBiznyitvany->gyakorlati_igazolas = $name;
-
-            $name = $request->file('oep_konyv_masolat')->getClientOriginalName();
-            $file = $request->file('oep_konyv_masolat')->storeAs('dokumentumok', $name);
-            $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
-
-            $name = $request->file('dokumentum_feltoltese')->getClientOriginalName();
-            $file = $request->file('dokumentum_feltoltese')->storeAs('dokumentumok', $name);
-            $ujDolgzoBiznyitvany->dokumentum_feltoltese = $name;
+            
         }
 
-
+        $files =  $request->file('oep_konyv_masolat');
+        foreach ($files as $file) {
+            $name = $file->getClientOriginalName();
+            $file = $file->storeAs('dokumentumok', $name);
+            $ujDolgzoBiznyitvany->oep_konyv_masolat = $name;
+        }
+        
+        $files =  $request->file('dokumentum_feltoltese');
+        foreach ($files as $file) {
+            $name = $file->getClientOriginalName();
+            $file = $file->storeAs('dokumentumok', $name);
+            $ujDolgzoBiznyitvany->dokumentum_feltoltese = $name;
+            }
 
         $ujDolgozo->save();
         $ujDolgzoBiznyitvany->save();
         Auth::user()->bejelentkezesTiltasa();
         return  "sikeres adat kitöltés<br>";
-        
     }
 
     /**
@@ -151,7 +148,6 @@ class ujDolgozoController extends Controller
      */
     public function update(Request $request, $id)
     {
-
     }
 
     /**

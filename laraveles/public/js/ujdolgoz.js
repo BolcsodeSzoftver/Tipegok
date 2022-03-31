@@ -2,18 +2,10 @@ $(function () {
     $("#mentes").hide();
     $(".allapot").hide();
     $(".userId").hide();
-    
     $("#megjelenikGomb").on("click",function(){
         $("#mentes").show();
     });
-
-    $("#nincsGomb").on("click",function(){
-        $("#mentes").hide();
-    });
-    $("#nincsGomb2").on("click",function(){
-        $("#mentes").hide();
-    });   
-
+  
     $(".nav-link").click(function () {
         if ($(this).hasClass("active")) {
             $(".nav-link").removeClass("active");

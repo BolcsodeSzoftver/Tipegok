@@ -9,7 +9,7 @@
 <?php $__env->startSection('tartalom'); ?>
 
     <div class=row>
-        <h3>Doldozó adatai</h3>
+        <h3>Dolgozó adatai</h3>
 
 
 
@@ -419,16 +419,31 @@
             </div>
         </div>
     </div>
+
+
+
     <div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLongTitleDokumentumok" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-
-
+                <div class="menuKepek">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" id="adatokKepT1">Gyakorlati igazolás</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="adatokKepT2">OEP könyv másolat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="modal-body">
                     <div id="dokumentumok" class="dokumentumok">
-                       
+
                     </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
@@ -437,6 +452,22 @@
             </div>
         </div>
     </div>
+
+    <!-- modal : nagykep -->
+    <div class="modal fade" id="dokumentumokNagyKepModal" tabindex="-1" role="dialog"
+        aria-labelledby="DokumentumokNagykep" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="" class="nagyKep" style="width: 100%;">
+                    <a href="" id="letoltGomb" download><button id="letoltKep">Letöltés</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.jovahagyasraVaroDolgozok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
