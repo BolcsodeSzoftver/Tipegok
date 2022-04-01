@@ -1,5 +1,7 @@
 
+
 <?php $__env->startSection('head'); ?>
+
     <style>
         #mentes,
         .ment {
@@ -9,6 +11,7 @@
 
     </style>
     <script src="js/felhasznalo.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div>
@@ -100,4 +103,5 @@
     </div>
 <?php $__env->stopSection(); ?>
 
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Balogh.Biborka\Desktop\Tipegok\laraveles\resources\views/felhasznalo.blade.php ENDPATH**/ ?>

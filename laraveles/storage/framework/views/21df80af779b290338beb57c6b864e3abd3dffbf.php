@@ -1,6 +1,8 @@
 
+
 <?php $__env->startSection('head'); ?>
   <link rel="stylesheet" href="css/mellekletek_css/mellekletekFromazasa.css">
+  <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
 
@@ -16,4 +18,5 @@
   </div>
   
   <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Balogh.Biborka\Desktop\Tipegok\laraveles\resources\views/mellekletek.blade.php ENDPATH**/ ?>

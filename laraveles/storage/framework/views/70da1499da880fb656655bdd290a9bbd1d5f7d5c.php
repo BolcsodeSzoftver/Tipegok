@@ -1,7 +1,9 @@
 
+
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/agazatiPotlek.css" />
     <script src="js/agazatiPotlek.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <table class="table table-bordered mb-5 ">
@@ -62,7 +64,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
+                <form action="api/agazatiPotlek/0" method="post">
+                <?php echo csrf_field(); ?>
+                    <input type="hidden" name="_method" value="PUT">
                         <div class="modal-body">
                             <div class="urlap">
                                 <div class="row">
@@ -82,31 +86,31 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="a" class="form-control" name="a" readonly>
+                                            <input type="text" id="a" class="form-control" name="A" readonly>
                                             <label class="form-label" for="a">A</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="b" class="form-control" name="b" readonly>
+                                            <input type="text" id="b" class="form-control" name="B" readonly>
                                             <label class="form-label" for="b">B</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="c" class="form-control" name="c" readonly>
+                                            <input type="text" id="c" class="form-control" name="C" readonly>
                                             <label class="form-label" for="c">C</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="d" class="form-control" name="d" readonly>
+                                            <input type="text" id="d" class="form-control" name="D" readonly>
                                             <label class="form-label" for="d">D</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="e" class="form-control" name="e" readonly>
+                                            <input type="text" id="e" class="form-control" name="E" readonly>
                                             <label class="form-label" for="e">E</label>
                                         </div>
                                     </div>
@@ -114,31 +118,31 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="f" class="form-control" name="f" readonly>
+                                            <input type="text" id="f" class="form-control" name="F" readonly>
                                             <label class="form-label" for="f">F</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="g" class="form-control" name="g" readonly>
+                                            <input type="text" id="g" class="form-control" name="G" readonly>
                                             <label class="form-label" for="g">G</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="h" class="form-control" name="h" readonly> 
+                                            <input type="text" id="h" class="form-control" name="H" readonly> 
                                             <label class="form-label" for="h">H</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="i" class="form-control" name="i" readonly>
+                                            <input type="text" id="i" class="form-control" name="I" readonly>
                                             <label class="form-label" for="i">I</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="j" class="form-control" name="j" readonly>
+                                            <input type="text" id="j" class="form-control" name="J" readonly>
                                             <label class="form-label" for="j">J</label>
                                         </div>
                                     </div>
@@ -148,7 +152,7 @@
                                     <input class="btn btn-dark" style="width:200px" type="submit" id="adatMentes" value="Mentés">
                                 </div>
                             </div>
-
+                            
                         </div>
                         <div class="modal-footer">
                             <div class="adatModositEnged">
@@ -156,10 +160,11 @@
                             </div>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                         </div>
-                
+                    </form>
             </div>
         </div>
     </div>
 <?php $__env->stopSection(); ?>
 
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Balogh.Biborka\Desktop\Tipegok\laraveles\resources\views/agazati_potlek_tablazat.blade.php ENDPATH**/ ?>

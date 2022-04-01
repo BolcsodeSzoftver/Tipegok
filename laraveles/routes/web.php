@@ -34,8 +34,8 @@ Route::get('/felhasznalo', [FelhasznaloController::class, 'megjelenit',])->middl
 Route::get('/bolcsode', [BolcsodeController::class, 'megjelenit'])->middleware(['auth']);
 Route::get('/fenntarto', [FenntartoController::class, 'megjelenit'])->middleware(['auth']);
 Route::get('/agaztatiPotlek', [AgazatiPotlekController::class, 'megjelenit'])->middleware(['auth']);
-/* Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->middleware(['auth']);
- */Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
+/* Route::get('/ujBolcsi', [BolcsodeController::class, 'megjeleniFenntartoId'])->middleware(['auth']);*/
+Route::get('/teszt/{id}', [BolcsodeController::class, 'fenntartoBolcsode']);
 Route::get('/bolcsi/{id}', [BolcsodeController::class, 'bolcsi']);
 Route::get('/fennt/{id}', [BolcsodeController::class, 'fennt']);
 

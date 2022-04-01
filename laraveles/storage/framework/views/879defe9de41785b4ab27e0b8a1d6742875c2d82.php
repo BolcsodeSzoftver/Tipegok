@@ -17,6 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dolgozo.js"></script>
+    
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/nav.js"></script>
@@ -44,7 +46,7 @@
                                         profilom
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Saját adatok</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sajatModal">Saját adatok</a>
                                         <a class="dropdown-item" href="#">Jelszó modosítása</a>
                                         <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                                     </div>
