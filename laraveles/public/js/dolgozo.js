@@ -184,7 +184,7 @@ $(function () {
             /* console.log(tomb); */
             $("#bizAdatok").empty();
             $("#bizAdatok").append(
-                '<table class="table table-bordered mb-5"><thead><tr><th>Végzettség</th><th>Bizonyítványt kiállító intézmény neve</th><th>Kiadás dátuma</th><th>Bizonyítvány száma</th><th>Pontokszáma</th><th>Dokumentumok</th></tr></thead></table>'
+                '<table class="table table-bordered mb-5  table-responsive"><thead><tr><th>Végzettség</th><th>Bizonyítványt kiállító intézmény neve</th><th>Kiadás dátuma</th><th>Bizonyítvány száma</th><th>Pontokszáma</th><th>Dokumentumok</th></tr></thead></table>'
             );
             tomb.forEach(function (adat) {
                 if (adat.alkalmazott_id == id) {

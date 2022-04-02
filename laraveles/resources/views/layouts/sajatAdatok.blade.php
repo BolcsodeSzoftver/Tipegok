@@ -18,7 +18,11 @@
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok3" href="#">3</a></li>
-                        <li class="nav-item"><a class="nav-link dolgozoModalAdatok4" href="#">4</a></li>
+                        @foreach ($alkalmazotts as $data)
+                            @if ($data->users_id == Auth::user()->id)
+                        <li class="nav-item"><a class="nav-link bizonyitvanyokGomb" href="#" id={{ $data->id }}>4</a></li>
+                        @endif
+                        @endforeach
                     </ul>
                     <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                     <div class="urlap">
@@ -164,6 +168,7 @@
                                 </div>
 
                                 <div class="adatok3">
+                                <label for="">Munkaköri adtok</label>
                                 @foreach ($dolgozok as $dolgozo)
                                 @if ($dolgozo->alkalmazott_id == $data->id)
                                         <div class="row">
@@ -230,6 +235,12 @@
                         
                         <div class="adatok4">
                             <label for="">Bizonyitvagy(ok)</label>
+                            <div id="bizAdatok"></div>
+                            <div style="width: 220px; margin: auto;">
+                        <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
+                            <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>
+                        </button>
+                        </div>
                         </div>
 
                         <div class="ment">

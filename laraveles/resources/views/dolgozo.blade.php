@@ -109,7 +109,7 @@
                                                         data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
                                                     <a class="hover dropdown-item dolgozoGomb" href="#"
                                                         id={{ $data->id }} data-toggle="modal"
-                                                        data-target="#dolgozoModal">Dolgozo</a>
+                                                        data-target="#dolgozoModal">Munkakőri adatok</a>
                                                     <a class="hover dropdown-item orvosiAdatokGomb" href="#"
                                                         id={{ $data->id }} data-toggle="modal"
                                                         data-target="#orvosiModal">Orvosi adatok</a>
@@ -179,7 +179,7 @@
                                                                     data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
                                                                 <a class="hover dropdown-item dolgozoGomb" href="#"
                                                                     id={{ $data->id }} data-toggle="modal"
-                                                                    data-target="#dolgozoModal">Dolgozo</a>
+                                                                    data-target="#dolgozoModal">Munkaköri adatok</a>
                                                                 <a class="hover dropdown-item orvosiAdatokGomb" href="#"
                                                                     id={{ $data->id }} data-toggle="modal"
                                                                     data-target="#orvosiModal">Orvosi adatok</a>
@@ -243,12 +243,6 @@
 
     </div>
     <div class="row">
-        {{-- <div class="col">
-            <button class="btn btn-secondary regisztracio">
-                <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
-            </button>
-        </div> --}}
-        <div class="row">
             <div class="col">
                 <button class="btn btn-secondary regisztracio">
                     <a href="/felhasznaloRegisztracio" target="_blank" id="ujDolgozo">Új dolgozó regisztrálása</a>
@@ -438,6 +432,11 @@
 
                     <div class="modal-body">
                         <div id="bizAdatok"></div>
+                        <div style="width: 220px; margin: auto;">
+                        <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
+                            <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>
+                        </button>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
