@@ -60,8 +60,21 @@ class ujDolgozoController extends Controller
         $ujDolgozo->nev = $request->nev;
         $ujDolgozo->banszamla_szam = $request->bakszamlaSzam;
         $ujDolgozo->telefonszam = $request->telefonszam;
-        $ujDolgozo->allando_lakhely = $request->allandoLakhely;
-        $ujDolgozo->tartozkodasi_hely = $request->tartozkodasiHely;
+
+        $allandoLakhely = $request->varos;
+        $allandoLakhely .= " ";
+        $allandoLakhely .= $request->utca;
+        $allandoLakhely .= " ";
+        $allandoLakhely .= $request->iranyitoSzam;
+        $ujDolgozo->allando_lakhely = $allandoLakhely;
+
+        $tartozkodasiHely = $request->varosTart;
+        $tartozkodasiHely .= " ";
+        $tartozkodasiHely .= $request->utcaTart;
+        $tartozkodasiHely .= " ";
+        $tartozkodasiHely .= $request->iranyitoSzamTart;
+        $ujDolgozo->tartozkodasi_hely = $tartozkodasiHely;
+
         $ujDolgozo->hazas_e = $request->hazas;
         $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhatAlattiGyermek;
         $ujDolgozo->all_polgarsag = $request->allPolgarsag;
@@ -111,7 +124,7 @@ class ujDolgozoController extends Controller
         $ujDolgzoBiznyitvany->oep_konyv_masolat = json_encode($fileNevek);
 
         $files =  $request->file('dokumentum_feltoltese');
-        
+
         $fileNevek = array();
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();

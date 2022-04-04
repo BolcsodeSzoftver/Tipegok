@@ -1,22 +1,23 @@
-@extends('layouts.UjdolgozoSzerkezet')
-@section('UjdolgozoTartalom')
+<?php $__env->startSection('UjdolgozoTartalom'); ?>
 <form action="/ujdolgozo" method="post" enctype="multipart/form-data">
-    {{ csrf_field() }}
+    <?php echo e(csrf_field()); ?>
+
     <div class="t1">
         <div class="row">
             <div class="col-6" id="munkalatoNeve">
                 <h6>Munkáltató neve</h6>
                 <select class="custom-select" name="bolcsodeID" id="bolcsode">
-                    @foreach ($bolcsiID as $bolcsode)
-                    <option id="bolcsode" value="{{ $bolcsode->id }}">{{ $bolcsode->nev }}
+                    <?php $__currentLoopData = $bolcsiID; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option id="bolcsode" value="<?php echo e($bolcsode->id); ?>"><?php echo e($bolcsode->nev); ?>
+
                     </option>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
             </div>
         </div>
         <div class="row" class="userId">
             <div class="col-6" id="munkalatoNeve">
-                <input type="text" id="form8Example1" class="form-control userId" name="userID" value={{ Auth::user()->id }} />
+                <input type="text" id="form8Example1" class="form-control userId" name="userID" value=<?php echo e(Auth::user()->id); ?> />
             </div>
         </div>
         <div class="row">
@@ -24,9 +25,16 @@
                 <div class="form-outline">
                     <label class="form-label" for="nev">Teljes név</label>
                     <input type="text" id="form8Example1" class="form-control" name="nev" />
-                    @error('nev')
-                    <span style="color: red">{{ $message }} </span>
-                    @enderror
+                    <?php $__errorArgs = ['nev'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                    <span style="color: red"><?php echo e($message); ?> </span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
 
                 </div>
             </div>
@@ -184,9 +192,16 @@
                 <div class="form-outline">
                     <input type="text" id="form8Example1" class="form-control" name="vegzettseg" />
                     <label class="form-label" for="form8Example1">végzettség</label>
-                    @error('vegzettseg')
-                    <span style="color: red">{{ $message }} </span>
-                    @enderror
+                    <?php $__errorArgs = ['vegzettseg'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                    <span style="color: red"><?php echo e($message); ?> </span>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                 </div>
             </div>
             <div class="col">
@@ -253,4 +268,6 @@
     </div>
 
 </form>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.UjdolgozoSzerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\hallgato\Documents\balogh_biborka\Tipegok\laraveles\resources\views/ujdolgozo.blade.php ENDPATH**/ ?>
