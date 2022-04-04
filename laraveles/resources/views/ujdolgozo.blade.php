@@ -117,50 +117,39 @@
         </div>
 
 
-        <div class="t2">
-            <label class="form-label" for="allando_lakhely">Állandó lakhely</label>
-            <div class="row">
-                <div class="form-row">
-                    <div class="col-md-5 mb-3">
-                        <label>Város</label>
-                        <input name="allando_lakhely" type="text" class="form-control" id="allandoLakhely"
-                            placeholder="Város" value="{{ old('allando_lakhely') }}" />
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label>Utca</label>
-                        <input name="allando_lakhely" type="text" class="form-control" id="allandoLakhely"
-                            placeholder="Utca"  value="{{ old('allando_lakhely') }}"/>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Irányítószám</label>
-                        <input name="allando_lakhely" type="text" class="form-control" id="allandoLakhely"
-                            placeholder="Irányítószám"  value="{{ old('allando_lakhely') }}"/>
-                    </div>
+    <div class="t2">
+        <label class="form-label" for="form8Example1">Állandó lakhely</label>
+        <div class="row">
+            <div class="form-row">
+                <div class="col-md-5 mb-3">
+                    <label>Város</label>
+                    <input name="varos" type="text" class="form-control" id="validationTooltip03" placeholder="Város" required />
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label>Utca</label>
+                    <input name="utca" type="text" class="form-control" id="validationTooltip04" placeholder="Utca" required />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Irányítószám</label>
+                    <input name="iranyitoSzam" type="text" class="form-control" id="validationTooltip05" placeholder="Irányítószám" required />
                 </div>
             </div>
-            <br>
-            @error('allando_lakhely')
-                <span style="color: red">{{ $message }} </span>
-            @enderror
-            <hr />
-            <label class="form-label" for="form8Example1">Tartózkodási hely</label>
-            <div class="row">
-                <div class="form-row">
-                    <div class="col-md-5 mb-3">
-                        <label>Város</label>
-                        <input name="tartozkodasi_hely" type="text" class="form-control" id="validationTooltip03"
-                            placeholder="Város"  />
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <label>Utca</label>
-                        <input name="tartozkodasi_hely" type="text" class="form-control" id="validationTooltip04"
-                            placeholder="Utca"  />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label>Irányítószám</label>
-                        <input name="tartozkodasi_hely" type="text" class="form-control" id="validationTooltip05"
-                            placeholder="Irányítószám" />
-                    </div>
+        </div>
+        <hr />
+        <label class="form-label" for="form8Example1">Tartózkodási hely</label>
+        <div class="row">
+            <div class="form-row">
+                <div class="col-md-5 mb-3">
+                    <label>Város</label>
+                    <input name="varosTart" type="text" class="form-control" id="validationTooltip03" placeholder="Város" required />
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label>Utca</label>
+                    <input name="utcaTart" type="text" class="form-control" id="validationTooltip04" placeholder="Utca" required />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Irányítószám</label>
+                    <input name="iranyitoSzamTart" type="text" class="form-control" id="validationTooltip05" placeholder="Irányítószám" required />
                 </div>
             </div>
             <br>
@@ -334,5 +323,5 @@
             <label class="form-label" for="form8Example3">Állapot</label>
         </div>
 
-    </form>
+</form>
 @endsection

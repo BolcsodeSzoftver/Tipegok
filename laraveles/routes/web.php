@@ -65,8 +65,8 @@ Route::get('/', function () {
 Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
 })->middleware(['auth']);
-Route::get('/fejlesztesAlatt', function () {
-    return view('fejlesztesAlatt');
+Route::get('/ujBizonyitvany', function () {
+    return view('ujBizonyitvany');
 })->middleware(['auth']);
 
 Route::get('/belepes', function () {

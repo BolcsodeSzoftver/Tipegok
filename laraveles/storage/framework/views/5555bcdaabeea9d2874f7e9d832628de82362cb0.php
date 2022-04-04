@@ -1,9 +1,9 @@
 
-@php
+<?php
     if(!Auth::user()->regisztralFelhasznalo()){
         echo("<script>window.location.replace('/ujdolgozo')</script>");   
     }
-@endphp
+?>
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/nav.js"></script>
-    @yield('head')
+    <?php echo $__env->yieldContent('head'); ?>
 </head>
 
 <body id="body-pd" id="main">
@@ -30,9 +30,9 @@
         <div class="row ">
             <div class="col-sm-12 ">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    @if (Auth::user()->id)
-                        <a class="navbar-brand" href="#">{{ Auth::user()->name }}</a>
-                    @endif
+                    <?php if(Auth::user()->id): ?>
+                        <a class="navbar-brand" href="#"><?php echo e(Auth::user()->name); ?></a>
+                    <?php endif; ?>
                     <div class='nav-profilom'>
                         <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +48,7 @@
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sajatModal">Saját adatok</a>
                                         <a class="dropdown-item" href="#">Jelszó modosítása</a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
+                                        <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                                     </div>
                                 </li>
                             </ul>
@@ -76,7 +76,7 @@
             
             <div class="col-sm-9" >
                 <article id='tartalom'>
-                    @yield('tartalom')
+                    <?php echo $__env->yieldContent('tartalom'); ?>
                 </article>
             </div>
         </div>
@@ -90,7 +90,7 @@
                 <div class="dropdown-content">
                     <a class="hover dropdown-item" href="#" data-toggle="modal" data-target="#sajatModal">Saját adatok</a>
                     <a class="hover dropdown-item" href="#">Jelszó modosítása</a>
-                    <a class="hover dropdown-item" href="{{ route('logout') }}">Kijelentkezés</a>
+                    <a class="hover dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                 </div>
             </div>
             
@@ -115,3 +115,4 @@
 </body>
 
 </html>
+<?php /**PATH C:\Users\hallgato\Documents\balogh_biborka\Tipegok\laraveles\resources\views/layouts/szerkezet.blade.php ENDPATH**/ ?>

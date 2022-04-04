@@ -11,42 +11,42 @@
             </div>
 
             <form action="api/alkalmazott/0" method="post">
-                @csrf
+                <?php echo csrf_field(); ?>
                 <input type="hidden" name="_method" value="PUT">
                 <div class="modal-body">
                     <ul class="nav nav-tabs">
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok3" href="#">3</a></li>
-                        @foreach ($alkalmazotts as $data)
-                            @if ($data->users_id == Auth::user()->id)
-                        <li class="nav-item"><a class="nav-link bizonyitvanyokGomb" href="#" id={{ $data->id }}>4</a></li>
-                        @endif
-                        @endforeach
+                        <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($data->users_id == Auth::user()->id): ?>
+                        <li class="nav-item"><a class="nav-link bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?>>4</a></li>
+                        <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                     <div class="urlap">
-                        @foreach ($alkalmazotts as $data)
-                            @if ($data->users_id == Auth::user()->id)
+                        <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($data->users_id == Auth::user()->id): ?>
                                 <div class="adatok1">
                                     <div class="col" id="gId">
                                         <div class="form-outline">
                                             <input type="hidden" id="dolgozoId" class="form-control"
-                                                value={{ $data->id }} readonly>
+                                                value=<?php echo e($data->id); ?> readonly>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="nev"
-                                                    value={{ $data->nev }} readonly>
+                                                    value=<?php echo e($data->nev); ?> readonly>
                                                 <label class="form-label" for="nev">Név</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="anyjaNeve"
-                                                    value={{ $data->anyja_neve }} readonly>
+                                                    value=<?php echo e($data->anyja_neve); ?> readonly>
                                                 <label class="form-label" for="anyjaNeve">Anyja neve</label>
                                             </div>
                                         </div>
@@ -55,14 +55,14 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="szulN"
-                                                    value={{ $data->szul_nev }} readonly>
+                                                    value=<?php echo e($data->szul_nev); ?> readonly>
                                                 <label class="form-label" for="szulN">Születési név</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="tel"
-                                                    value={{ $data->telefonszam }} readonly>
+                                                    value=<?php echo e($data->telefonszam); ?> readonly>
                                                 <label class="form-label" for="tel">Telefonszám</label>
                                             </div>
                                         </div>
@@ -71,21 +71,21 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="szulH"
-                                                    value={{ $data->szul_hely }} readonly>
+                                                    value=<?php echo e($data->szul_hely); ?> readonly>
                                                 <label class="form-label" for="szulH">Születési hely</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="szulI"
-                                                    value={{ $data->szul_ido }} readonly>
+                                                    value=<?php echo e($data->szul_ido); ?> readonly>
                                                 <label class="form-label" for="szulI">Születési idő</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="allPorg"
-                                                    value={{ $data->all_polgarsag }} readonly>
+                                                    value=<?php echo e($data->all_polgarsag); ?> readonly>
                                                 <label class="form-label" for="allPorg">Államporgárság</label>
                                             </div>
                                         </div>
@@ -94,7 +94,7 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="tizenhatAGy"
-                                                    value={{ $data->tizenhat_alatti_gyermek }} readonly>
+                                                    value=<?php echo e($data->tizenhat_alatti_gyermek); ?> readonly>
                                                 <label class="form-label" for="tizenhatAGy">16 éven aluli gyermekek
                                                     száma</label>
                                             </div>
@@ -102,14 +102,14 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="nem"
-                                                    value={{ $data->nem }} readonly>
+                                                    value=<?php echo e($data->nem); ?> readonly>
                                                 <label class="form-label" for="nem">Nem</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="hazas"
-                                                    value={{ $data->hazas_e }} readonly>
+                                                    value=<?php echo e($data->hazas_e); ?> readonly>
                                                 <label class="form-label" for="hazas">Házas</label>
                                             </div>
                                         </div>
@@ -123,7 +123,7 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="allandoLak"
-                                                    value={{ $data->allando_lakhely }} readonly>
+                                                    value=<?php echo e($data->allando_lakhely); ?> readonly>
                                                 <label class="form-label" for="allandoLak">Állandó lakhely</label>
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="tartHely"
-                                                    value={{ $data->tartozkodasi_hely }} readonly>
+                                                    value=<?php echo e($data->tartozkodasi_hely); ?> readonly>
                                                 <label class="form-label" for="tartHely">Tartózkodási hely</label>
                                             </div>
                                         </div>
@@ -142,14 +142,14 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="adoAzon"
-                                                    value={{ $data->adoazon_jel }} readonly>
+                                                    value=<?php echo e($data->adoazon_jel); ?> readonly>
                                                 <label class="form-label" for="adoAzon">Adóazonósító</label>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="tajSz"
-                                                    value={{ $data->tajszam }} readonly>
+                                                    value=<?php echo e($data->tajszam); ?> readonly>
                                                 <label class="form-label" for="tajSz">Tajszám</label>
                                             </div>
                                         </div>
@@ -159,7 +159,7 @@
                                         <div class="col">
                                             <div class="form-outline">
                                                 <input type="text" class="form-control" name="bankSZ"
-                                                    value={{ $data->banszamla_szam }} readonly>
+                                                    value=<?php echo e($data->banszamla_szam); ?> readonly>
                                                 <label class="form-label" for="bankSZ">Bankszámla szám</label>
                                             </div>
                                         </div>
@@ -169,68 +169,68 @@
 
                                 <div class="adatok3">
                                 <label for="">Munkaköri adtok</label>
-                                @foreach ($dolgozok as $dolgozo)
-                                @if ($dolgozo->alkalmazott_id == $data->id)
+                                <?php $__currentLoopData = $dolgozok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dolgozo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if($dolgozo->alkalmazott_id == $data->id): ?>
                                         <div class="row">
 							                <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->brutto_alapber}} value={{$dolgozo->brutto_alapber}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->brutto_alapber}}>Bruttó alapbér</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->brutto_alapber); ?> value=<?php echo e($dolgozo->brutto_alapber); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->brutto_alapber); ?>>Bruttó alapbér</label>
                                                 </div>
                                             </div>
                                             <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->heti_munkaora}} value={{$dolgozo->heti_munkaora}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->heti_munkaora}}>Heti munkaóra</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->heti_munkaora); ?> value=<?php echo e($dolgozo->heti_munkaora); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->heti_munkaora); ?>>Heti munkaóra</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
 							                <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->besorolas_betu}} value={{$dolgozo->besorolas_betu}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->besorolas_betu}}>Besorolás betű</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->besorolas_betu); ?> value=<?php echo e($dolgozo->besorolas_betu); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->besorolas_betu); ?>>Besorolás betű</label>
                                                 </div>
                                             </div>
                                             <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->besorolas_szam}} value={{$dolgozo->besorolas_szam}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->besorolas_szam}}>Besorolás szám</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->besorolas_szam); ?> value=<?php echo e($dolgozo->besorolas_szam); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->besorolas_szam); ?>>Besorolás szám</label>
                                                 </div>
                                             </div>
                                             <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->agazati_potlek}} value={{$dolgozo->agazati_potlek}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->agazati_potlek}}>Ágazati pótlék</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->agazati_potlek); ?> value=<?php echo e($dolgozo->agazati_potlek); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->agazati_potlek); ?>>Ágazati pótlék</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
 							                <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->feor_azon}} value={{$dolgozo->feor_azon}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->feor_azon}}>Feor azonosító</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->feor_azon); ?> value=<?php echo e($dolgozo->feor_azon); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->feor_azon); ?>>Feor azonosító</label>
                                                 </div>
                                             </div>
                                             <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->eves_szabi}} value={{$dolgozo->eves_szabi}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->eves_szabi}}>Éves szabadság</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->eves_szabi); ?> value=<?php echo e($dolgozo->eves_szabi); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->eves_szabi); ?>>Éves szabadság</label>
                                                 </div>
                                             </div>
                                             <div class="col">
 							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name={{$dolgozo->vegzettseg}} value={{$dolgozo->vegzettseg}} readonly>
-                                                    <label class="form-label" for={{$dolgozo->vegzettseg}}>Végzettség</label>
+                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->vegzettseg); ?> value=<?php echo e($dolgozo->vegzettseg); ?> readonly>
+                                                    <label class="form-label" for=<?php echo e($dolgozo->vegzettseg); ?>>Végzettség</label>
                                                 </div>
                                             </div>
                                         </div>
-                                @endif
-                                @endforeach
+                                <?php endif; ?>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
                                 
-                            @endif
-                        @endforeach
+                            <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                         
                         <div class="adatok4">
@@ -258,4 +258,4 @@
 
         </div>
     </div>
-</div>
+</div><?php /**PATH C:\Users\hallgato\Documents\balogh_biborka\Tipegok\laraveles\resources\views/layouts/sajatAdatok.blade.php ENDPATH**/ ?>

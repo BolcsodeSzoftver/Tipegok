@@ -24,7 +24,7 @@ $(function() {
 		$('.adatok4').hide();
 	});
 
-	$('.dolgozoModalAdatok4').on('click', function() {
+	$('.bizonyitvanyokGomb').on('click', function() {
 		$('.adatok1').hide();
 		$('.adatok2').hide();
 		$('.adatok3').hide();
