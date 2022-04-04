@@ -63,20 +63,6 @@ class urlapEllenorzes extends FormRequest
 
             'feor.digits_between' => 'Az FEOR azonosító 4 karakter hosszúnak kell lennnie.',
             'feor.numeric' => 'Az FEOR azonosító nem tartalmazhat betűt.',  
- /*           //szgyf kó
-            'szgyf_kod.size' => [
-                'numeric' => 'min Az SZGYF kódnak :size karakter hosszúságúnak kell lennie.',             
-            ],
-            'szgyf_kod.numeric' => 'Az SZGYF kód nem tartalmazhat betűt.', */
-
-/*             //feor azonositó
-            'feor.min' => [
-                'numeric' => 'Az FEOR azonosítónak :min karakter hosszúságúnak kell lennie.',             
-            ],
-            'feor.max' => [
-                'numeric' => 'Az FEOR azonosítónak :max karakter hosszúságúnak kell lennie.',             
-            ],
-            'feor.numeric' => 'Az FEOR azonosító nem tartalmazhat betűt.',  */
         ];
     }
     

@@ -208,7 +208,7 @@ $(function () {
                     kepek.forEach((element) => {
                         console.log(element);
                         $("#dokumentumok").append(
-                            '<div class="kep1"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="dokumentumok/' +
+                            '<div class="kep1"><a href="#" class="adatKep"><img src="dokumentumok/' +
                                 element +
                                 '" id="dokumentum' +
                                 idKep++ +
@@ -220,7 +220,7 @@ $(function () {
                     kepek2.forEach((element) => {
                         console.log(element);
                         $("#dokumentumok").append(
-                            '<div class="kep2"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="dokumentumok/' +
+                            '<div class="kep2"><a href="#" class="adatKep"><img src="dokumentumok/' +
                                 element +
                                 '" id="dokumentum' +
                                 idKep++ +
@@ -232,7 +232,7 @@ $(function () {
                     kepek3.forEach((element) => {
                         console.log(element);
                         $("#dokumentumok").append(
-                            '<div class="kep3"><p>Gyakorlati igazolás:</p><a href="#" class="adatKep"><img src="dokumentumok/' +
+                            '<div class="kep3"><a href="#" class="adatKep"><img src="dokumentumok/' +
                                 element +
                                 '" id="dokumentum' +
                                 idKep++ +

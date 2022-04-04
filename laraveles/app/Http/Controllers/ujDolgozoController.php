@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ujDolgozoUrlapEllenorzes;
 use App\Models\alkalmazott;
 use App\Models\alkalmazott_bizonyitvany;
 use App\Models\bolcsode;
@@ -45,26 +46,26 @@ class ujDolgozoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ujDolgozoUrlapEllenorzes $request)
     {
         $ujDolgozo = new alkalmazott();
         $ujDolgozo->bolcsode_id = $request->bolcsodeID;
         $ujDolgozo->users_id = $request->userID;
-        $ujDolgozo->szul_nev = $request->szulNev;
-        $ujDolgozo->szul_hely = $request->szulHely;
-        $ujDolgozo->szul_ido = $request->szulIdo;
-        $ujDolgozo->anyja_neve = $request->anyjaNeve;
-        $ujDolgozo->adoazon_jel = $request->adoazonJel;
+        $ujDolgozo->szul_nev = $request->szul_nev;
+        $ujDolgozo->szul_hely = $request->szul_hely;
+        $ujDolgozo->szul_ido = $request->szul_ido;
+        $ujDolgozo->anyja_neve = $request->anyja_neve;
+        $ujDolgozo->adoazon_jel = $request->adoazon_jel;
         $ujDolgozo->tajszam = $request->tajszam;
         $ujDolgozo->nem = $request->nem;
         $ujDolgozo->nev = $request->nev;
-        $ujDolgozo->banszamla_szam = $request->bakszamlaSzam;
+        $ujDolgozo->banszamla_szam = $request->banszamla_szam;
         $ujDolgozo->telefonszam = $request->telefonszam;
-        $ujDolgozo->allando_lakhely = $request->allandoLakhely;
-        $ujDolgozo->tartozkodasi_hely = $request->tartozkodasiHely;
-        $ujDolgozo->hazas_e = $request->hazas;
-        $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhatAlattiGyermek;
-        $ujDolgozo->all_polgarsag = $request->allPolgarsag;
+        $ujDolgozo->allando_lakhely = $request->allando_lakhely;
+        $ujDolgozo->tartozkodasi_hely = $request->tartozkodasi_hely;
+        $ujDolgozo->hazas_e = $request->hazas_e;
+        $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhat_alatti_gyermek;
+        $ujDolgozo->all_polgarsag = $request->all_polgarsag;
         $ujDolgozo->allapot = $request->allapot;
 
         if ($request->ferfi) {
@@ -78,6 +79,7 @@ class ujDolgozoController extends Controller
         } elseif ($request->nem) {
             $ujDolgozo->hazas_e   = $request->nem;
         }
+
         $ujDolgzoBiznyitvany = new alkalmazott_bizonyitvany();
         $ujDolgzoBiznyitvany->alkalmazott_id = $request->userID;
         $ujDolgzoBiznyitvany->vegzettseg = $request->vegzettseg;
@@ -111,7 +113,7 @@ class ujDolgozoController extends Controller
         $ujDolgzoBiznyitvany->oep_konyv_masolat = json_encode($fileNevek);
 
         $files =  $request->file('dokumentum_feltoltese');
-        
+
         $fileNevek = array();
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();

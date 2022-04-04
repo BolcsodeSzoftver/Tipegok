@@ -8,6 +8,7 @@
     <script src="js/dolgozo.js"></script>
     <script src="js/dolgozoModosit.js"></script>
     <script src="js/adminSajatAdatMegjelenit.js"></script>
+    <script src="js/munkakoriAdatokModosit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div class=row>
@@ -528,18 +529,20 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" id="adatokKepT1">Gyakorlati igazolás</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="adatokKepT2">OEP könyv másolat</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" id="adatokKepT1">Gyakorlati igazolás</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " id="adatokKepT2">OEP könyv másolat</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
-                            </li>
-                        </ul>
 
                         <div id="dokumentumok" class="dokumentumok">
 

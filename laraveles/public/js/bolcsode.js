@@ -1,25 +1,17 @@
 $(function () {
     let ajaxhivas = new AjaxHivas();
     let vegpont = "/api/bolcsode";
-
-    $('.IDk').hide();
-    let userJogo=$('#userJogosultsag').val();
-    console.log('jog:'+userJogo);
-
-    if(userJogo==$('#adminID').val()){
-        $("#bolcsiForm").hide();
-        let vegpont = "/bolcsi/"+$('#userID').val();
-        ajaxhivas.getAjax(vegpont, adatLista);
-    }
-
-    if(userJogo==$('#szuperAdminID').val()){
-        let vegpont = "/api/bolcsode";
-        ajaxhivas.getAjax(vegpont, adatLista);
-    }
-
+   
     $(".megerositTorles").on("click", () => {
         ajaxhivas.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
         location.reload();
+    });
+    $(window).on("EsemenyTorolBolcsi", (event) => {
+        $(".megerositTorles").attr("id", event.detail.id);
+    });
+
+    $(".adatModositEnged").on("click", function () {
+        $("input").removeAttr("readonly");
     });
 
     //$(".modositUrlap").hide();
@@ -64,20 +56,10 @@ $(function () {
             console.log(fenntarto);
 
             ajaxhivas.putAjax(vegpont, adat, id);
-
-            //$(".modositUrlap").hide();
-            //ajaxhivas.getAjax(vegpont, adatLista);
             location.reload();
         });
     });
-    $(window).on("EsemenyTorolBolcsi", (event) => {
-        $(".megerositTorles").attr("id", event.detail.id);
-    });
 
-    $(".adatModositEnged").on("click", function () {
-        console.log("modositEnged");
-        $("input").removeAttr("readonly");
-    });
 
     $(".bolcsiNev").change(() => {
         $(".table").empty();
@@ -94,7 +76,20 @@ $(function () {
 		</tr></thead>`);
         let vegpont = "/teszt/" + $("select").val();
         ajaxhivas.getAjax(vegpont, adatLista);
-        console.log("muksziik");
-        console.log($("select").val());
     });
+
+    $('.IDk').hide();
+    let userJogo=$('#userJogosultsag').val();
+
+    if(userJogo==$('#adminID').val()){
+        $("#bolcsiForm").hide();
+        let vegpont = "/bolcsi/"+$('#userID').val();
+        ajaxhivas.getAjax(vegpont, adatLista);
+    }
+
+    if(userJogo==$('#szuperAdminID').val()){
+        let vegpont = "/api/bolcsode";
+        ajaxhivas.getAjax(vegpont, adatLista);
+    }
+
 });

@@ -1,17 +1,17 @@
 class AjaxHivas {
     constructor() {}
     getAjax(eleresiUt, myCallback) {
-        const bolcsodek = [];
+        const tomb = [];
         $.ajax({
             url: eleresiUt,
             type: "GET",
             success: function (result) {
                 
                 result.forEach((element) => {
-                    bolcsodek.push(element);
+                    tomb.push(element);
                 });
 
-                myCallback(bolcsodek);
+                myCallback(tomb);
             },
         });
     }
