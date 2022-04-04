@@ -123,17 +123,17 @@
                 <div class="col-md-5 mb-3">
                     <label>Város</label>
                     <input name="varos" type="text" class="form-control" id="validationTooltip03" placeholder="Város"
-                        required />
+                         />
                 </div>
                 <div class="col-md-2 mb-3">
                     <label>Utca</label>
                     <input name="utca" type="text" class="form-control" id="validationTooltip04" placeholder="Utca"
-                        required />
+                         />
                 </div>
                 <div class="col-md-4 mb-3">
                     <label>Irányítószám</label>
                     <input name="iranyitoSzam" type="text" class="form-control" id="validationTooltip05"
-                        placeholder="Irányítószám" required />
+                        placeholder="Irányítószám"  />
                 </div>
             </div>
         </div>
@@ -144,17 +144,17 @@
                 <div class="col-md-5 mb-3">
                     <label>Város</label>
                     <input name="varosTart" type="text" class="form-control" id="validationTooltip03" placeholder="Város"
-                        required />
+                         />
                 </div>
                 <div class="col-md-2 mb-3">
                     <label>Utca</label>
                     <input name="utcaTart" type="text" class="form-control" id="validationTooltip04" placeholder="Utca"
-                        required />
+                         />
                 </div>
                 <div class="col-md-4 mb-3">
                     <label>Irányítószám</label>
                     <input name="iranyitoSzamTart" type="text" class="form-control" id="validationTooltip05"
-                        placeholder="Irányítószám" required />
+                        placeholder="Irányítószám"  />
                 </div>
             </div>
             <br>
@@ -225,14 +225,13 @@
             <div class="col-4">
                 <p>Házas</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="igen" id="igen" value="i"
-                        value="{{ old('igen') }}">
+                    <input class="form-check-input" type="radio" name="igen" id="igen" value="i">
                     <label class="form-check-label" for="igen">igen</label>
 
 
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="nem" id="nem" value="n" value="{{ old('nem') }}">
+                    <input class="form-check-input" type="radio" name="nem" id="nem" value="n">
                     <label class="form-check-label" for="nem">nem</label>
                 </div>
                 <br>
@@ -246,8 +245,8 @@
         <div class="row">
             <div class="col">
                 <div class="form-outline">
-                    <label class="form-label" for="form8Example1">végzettség</label>
-                    <input type="text" id="form8Example1" class="form-control" name="vegzettseg"
+                    <label class="form-label" for="vegzettseg">végzettség</label>
+                    <input type="text" id="vegzettseg" class="form-control" name="vegzettseg"
                         value="{{ old('vegzettseg') }}" />
                     @error('vegzettseg')
                         <span style="color: red">{{ $message }} </span>
@@ -256,8 +255,8 @@
             </div>
             <div class="col">
                 <div class="form-outline">
-                    <label class="form-label" for="form8Example1">Intézmény neve</label>
-                    <input type="text" id="form8Example1" class="form-control" name="biz_intezmeny_nev"
+                    <label class="form-label" for="biz_intezmeny_nev">Intézmény neve</label>
+                    <input type="text" id="biz_intezmeny_nev" class="form-control" name="biz_intezmeny_nev"
                         value="{{ old('biz_intezmeny_nev') }}" />
                     @error('biz_intezmeny_nev')
                         <span style="color: red">{{ $message }} </span>
@@ -271,8 +270,8 @@
 
             <div class="col">
                 <div class="form-outline">
-                    <label class="form-label" for="form8Example1">Pontok száma</label>
-                    <input type="text" id="form8Example1" class="form-control" name="pontokszama"
+                    <label class="form-label" for="pontokszama">Pontok száma</label>
+                    <input type="text" id="pontokszama" class="form-control" name="pontokszama"
                         value="{{ old('pontokszama') }}" />
                     @error('pontokszama')
                         <span style="color: red">{{ $message }} </span>
@@ -282,8 +281,8 @@
             </div>
             <div class="col">
                 <div class="form-outline">
-                    <label class="form-label" for="form8Example1">Bizonyitvány száma</label>
-                    <input type="text" id="form8Example1" class="form-control" name="bizonyitvany_szam"
+                    <label class="form-label" for="bizonyitvany_szam">Bizonyitvány száma</label>
+                    <input type="text" id="bizonyitvany_szam" class="form-control" name="bizonyitvany_szam"
                         value="{{ old('bizonyitvany_szam') }}" />
                     @error('bizonyitvany_szam')
                         <span style="color: red">{{ $message }} </span>
@@ -333,8 +332,8 @@
         <button type="submit" name="mentes" id="mentes" class="mentes">Mentés</button>
     </div>
     <div class="allapot">
-        <input type="text" id="form8Example3" class="form-control" name="allapot" value="0" />
-        <label class="form-label" for="form8Example3">Állapot</label>
+        <input type="text" id="allapot" class="form-control" name="allapot" value="0" />
+        <label class="form-label" for="allapot">Állapot</label>
     </div>
 @endsection
 
@@ -343,7 +342,7 @@
 
 
 @section('UjdolgozoTartalom')
-    <form action="/ujdolgozo" method="post" enctype="multipart/form-data">
+    <form action="/ujdolgozo" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         @yield("t1")
