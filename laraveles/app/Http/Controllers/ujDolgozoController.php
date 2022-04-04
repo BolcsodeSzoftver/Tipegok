@@ -61,11 +61,24 @@ class ujDolgozoController extends Controller
         $ujDolgozo->nev = $request->nev;
         $ujDolgozo->banszamla_szam = $request->banszamla_szam;
         $ujDolgozo->telefonszam = $request->telefonszam;
-        $ujDolgozo->allando_lakhely = $request->allando_lakhely;
-        $ujDolgozo->tartozkodasi_hely = $request->tartozkodasi_hely;
-        $ujDolgozo->hazas_e = $request->hazas_e;
-        $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhat_alatti_gyermek;
-        $ujDolgozo->all_polgarsag = $request->all_polgarsag;
+
+        $allandoLakhely = $request->varos;
+        $allandoLakhely .= " ";
+        $allandoLakhely .= $request->utca;
+        $allandoLakhely .= " ";
+        $allandoLakhely .= $request->iranyitoSzam;
+        $ujDolgozo->allando_lakhely = $allandoLakhely;
+
+        $tartozkodasiHely = $request->varosTart;
+        $tartozkodasiHely .= " ";
+        $tartozkodasiHely .= $request->utcaTart;
+        $tartozkodasiHely .= " ";
+        $tartozkodasiHely .= $request->iranyitoSzamTart;
+        $ujDolgozo->tartozkodasi_hely = $tartozkodasiHely;
+
+        $ujDolgozo->hazas_e = $request->hazas;
+        $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhatAlattiGyermek;
+        $ujDolgozo->all_polgarsag = $request->allPolgarsag;
         $ujDolgozo->allapot = $request->allapot;
 
         if ($request->ferfi) {

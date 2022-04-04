@@ -115,47 +115,52 @@
                 </div>
             </div>
         </div>
-
-
-    <div class="t2">
-        <label class="form-label" for="form8Example1">Állandó lakhely</label>
-        <div class="row">
-            <div class="form-row">
-                <div class="col-md-5 mb-3">
-                    <label>Város</label>
-                    <input name="varos" type="text" class="form-control" id="validationTooltip03" placeholder="Város" required />
-                </div>
-                <div class="col-md-2 mb-3">
-                    <label>Utca</label>
-                    <input name="utca" type="text" class="form-control" id="validationTooltip04" placeholder="Utca" required />
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label>Irányítószám</label>
-                    <input name="iranyitoSzam" type="text" class="form-control" id="validationTooltip05" placeholder="Irányítószám" required />
-                </div>
-            </div>
-        </div>
-        <hr />
-        <label class="form-label" for="form8Example1">Tartózkodási hely</label>
-        <div class="row">
-            <div class="form-row">
-                <div class="col-md-5 mb-3">
-                    <label>Város</label>
-                    <input name="varosTart" type="text" class="form-control" id="validationTooltip03" placeholder="Város" required />
-                </div>
-                <div class="col-md-2 mb-3">
-                    <label>Utca</label>
-                    <input name="utcaTart" type="text" class="form-control" id="validationTooltip04" placeholder="Utca" required />
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label>Irányítószám</label>
-                    <input name="iranyitoSzamTart" type="text" class="form-control" id="validationTooltip05" placeholder="Irányítószám" required />
+        <div class="t2">
+            <label class="form-label" for="form8Example1">Állandó lakhely</label>
+            <div class="row">
+                <div class="form-row">
+                    <div class="col-md-5 mb-3">
+                        <label>Város</label>
+                        <input name="varos" type="text" class="form-control" id="validationTooltip03" placeholder="Város"
+                            required />
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label>Utca</label>
+                        <input name="utca" type="text" class="form-control" id="validationTooltip04" placeholder="Utca"
+                            required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Irányítószám</label>
+                        <input name="iranyitoSzam" type="text" class="form-control" id="validationTooltip05"
+                            placeholder="Irányítószám" required />
+                    </div>
                 </div>
             </div>
-            <br>
-            @error('tartozkodasi_hely')
-                <span style="color: red">{{ $message }} </span>
-            @enderror
+            <hr />
+            <label class="form-label" for="form8Example1">Tartózkodási hely</label>
+            <div class="row">
+                <div class="form-row">
+                    <div class="col-md-5 mb-3">
+                        <label>Város</label>
+                        <input name="varosTart" type="text" class="form-control" id="validationTooltip03"
+                            placeholder="Város" required />
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <label>Utca</label>
+                        <input name="utcaTart" type="text" class="form-control" id="validationTooltip04"
+                            placeholder="Utca" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Irányítószám</label>
+                        <input name="iranyitoSzamTart" type="text" class="form-control" id="validationTooltip05"
+                            placeholder="Irányítószám" required />
+                    </div>
+                </div>
+                <br>
+                @error('tartozkodasi_hely')
+                    <span style="color: red">{{ $message }} </span>
+                @enderror
+            </div>
         </div>
 
 
@@ -218,13 +223,15 @@
                 <div class="col-4">
                     <p>Házas</p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="igen" id="igen" value="i" value="{{ old('igen') }}">
+                        <input class="form-check-input" type="radio" name="igen" id="igen" value="i"
+                            value="{{ old('igen') }}">
                         <label class="form-check-label" for="igen">igen</label>
 
-                        
+
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="nem" id="nem" value="n" value="{{ old('nem') }}"> 
+                        <input class="form-check-input" type="radio" name="nem" id="nem" value="n"
+                            value="{{ old('nem') }}">
                         <label class="form-check-label" for="nem">nem</label>
                     </div>
                     <br>
@@ -237,7 +244,8 @@
                 <div class="col">
                     <div class="form-outline">
                         <label class="form-label" for="form8Example1">végzettség</label>
-                        <input type="text" id="form8Example1" class="form-control" name="vegzettseg" value="{{ old('vegzettseg') }}"/>
+                        <input type="text" id="form8Example1" class="form-control" name="vegzettseg"
+                            value="{{ old('vegzettseg') }}" />
                         @error('vegzettseg')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -246,7 +254,8 @@
                 <div class="col">
                     <div class="form-outline">
                         <label class="form-label" for="form8Example1">Intézmény neve</label>
-                        <input type="text" id="form8Example1" class="form-control" name="biz_intezmeny_nev" value="{{ old('biz_intezmeny_nev') }}"/>
+                        <input type="text" id="form8Example1" class="form-control" name="biz_intezmeny_nev"
+                            value="{{ old('biz_intezmeny_nev') }}" />
                         @error('biz_intezmeny_nev')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -260,7 +269,8 @@
                 <div class="col">
                     <div class="form-outline">
                         <label class="form-label" for="form8Example1">Pontok száma</label>
-                        <input type="text" id="form8Example1" class="form-control" name="pontokszama" value="{{ old('pontokszama') }}"/>
+                        <input type="text" id="form8Example1" class="form-control" name="pontokszama"
+                            value="{{ old('pontokszama') }}" />
                         @error('pontokszama')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -270,7 +280,8 @@
                 <div class="col">
                     <div class="form-outline">
                         <label class="form-label" for="form8Example1">Bizonyitvány száma</label>
-                        <input type="text" id="form8Example1" class="form-control" name="bizonyitvany_szam" value="{{ old('bizonyitvany_szam') }}"/>
+                        <input type="text" id="form8Example1" class="form-control" name="bizonyitvany_szam"
+                            value="{{ old('bizonyitvany_szam') }}" />
                         @error('bizonyitvany_szam')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -282,7 +293,8 @@
                 <div class="col-6">
                     <div class="form-outline">
                         <label for="kiadas_datuma">Kiadás dátuma</label>
-                        <input type="date" class="form-control" id="kiadas_datuma" name="kiadas_datuma" value="{{ old('kiadas_datuma') }}">
+                        <input type="date" class="form-control" id="kiadas_datuma" name="kiadas_datuma"
+                            value="{{ old('kiadas_datuma') }}">
                         @error('kiadas_datuma')
                             <span style="color: red">{{ $message }} </span>
                         @enderror
@@ -323,5 +335,5 @@
             <label class="form-label" for="form8Example3">Állapot</label>
         </div>
 
-</form>
+    </form>
 @endsection

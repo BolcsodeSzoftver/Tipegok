@@ -18,7 +18,11 @@
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok3" href="#">3</a></li>
-                        <li class="nav-item"><a class="nav-link dolgozoModalAdatok4" href="#">4</a></li>
+                        <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if($data->users_id == Auth::user()->id): ?>
+                        <li class="nav-item"><a class="nav-link bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?>>4</a></li>
+                        <?php endif; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                     <div class="urlap">
@@ -164,6 +168,7 @@
                                 </div>
 
                                 <div class="adatok3">
+                                <label for="">Munkaköri adtok</label>
                                 <?php $__currentLoopData = $dolgozok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dolgozo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <?php if($dolgozo->alkalmazott_id == $data->id): ?>
                                         <div class="row">
@@ -230,6 +235,12 @@
                         
                         <div class="adatok4">
                             <label for="">Bizonyitvagy(ok)</label>
+                            <div id="bizAdatok"></div>
+                            <div style="width: 220px; margin: auto;">
+                        <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
+                            <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>
+                        </button>
+                        </div>
                         </div>
 
                         <div class="ment">
