@@ -47,7 +47,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="d-flex flex-row align-items-center mb-4">
+                                            <div class="d-flex flex-row align-items-center mb-4" >
                                                 <div class="form-outline flex-fill mb-0">
                                                     <input type="text" id="allapot" class="form-control allapot"
                                                         name="allapot" value="0" required autofocus />
@@ -55,7 +55,7 @@
                                             </div>
 
 
-                                            <div class="d-flex flex-row align-items-center mb-4">
+                                            <div class="d-flex flex-row align-items-center mb-4 ">
                                                 <div class="form-outline flex-fill mb-0">
                                                     <select name="Jogosultsag" id="jogosultsag">
                                                         @foreach ($jogosultsagok as $jogosultsag)

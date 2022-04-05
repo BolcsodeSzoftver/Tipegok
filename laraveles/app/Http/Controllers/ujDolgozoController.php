@@ -77,8 +77,8 @@ class ujDolgozoController extends Controller
         $ujDolgozo->tartozkodasi_hely = $tartozkodasiHely;
 
         $ujDolgozo->hazas_e = $request->hazas;
-        $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhatAlattiGyermek;
-        $ujDolgozo->all_polgarsag = $request->allPolgarsag;
+        $ujDolgozo->tizenhat_alatti_gyermek = $request->tizenhat_alatti_gyermek;
+        $ujDolgozo->all_polgarsag = $request->all_polgarsag;
         $ujDolgozo->allapot = $request->allapot;
 
         if ($request->ferfi) {

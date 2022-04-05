@@ -8,6 +8,7 @@ use App\Models\dolgozo;
 use App\Models\alkalmazott;
 use App\Models\agazati_potlek;
 use App\Http\Requests\dolgozoUrlapEllenorzes;
+use Illuminate\Contracts\Validation\Validator;
 
 class AlkalmazottController extends Controller
 {
@@ -21,7 +22,6 @@ class AlkalmazottController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -42,6 +42,8 @@ class AlkalmazottController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $dolgozo = new dolgozo();
         $dolgozo->bolcsode_id  = $request->bolcsodeId;
         $dolgozo->alkalmazott_id  = $request->alkalmazottId;
@@ -52,9 +54,9 @@ class AlkalmazottController extends Controller
         $dolgozo->feor_azon  = $request->feorAzonosito;
 
         $agazatiPotlek = agazati_potlek::findOrFail($request->besorolasiSzam);
-        $betu=$request->besorolasiBetu;
+        $betu = $request->besorolasiBetu;
         $dolgozo->agazati_potlek   = $agazatiPotlek->$betu;
-        
+
         $dolgozo->eves_szabi   = $request->evesSzabi;
         $dolgozo->vegzettseg   = $request->vegzettseg;
         $dolgozo->sz_szakkepzet  = $request->szSzakkepzet;
@@ -66,10 +68,11 @@ class AlkalmazottController extends Controller
         } elseif ($request->utalas) {
             $dolgozo->kp_utalas   = $request->utalas;
         }
-
         $dolgozo->save();
         $dolgozo->jovahagy();
+
         return redirect("/dolgozo");
+        
     }
 
     /**

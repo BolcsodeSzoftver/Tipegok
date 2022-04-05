@@ -33,10 +33,17 @@ class ujDolgozoUrlapEllenorzes extends FormRequest
             "adoazon_jel" => 'required|digits:10',
             "tajszam" => 'required|digits:9',
             "nev" => 'required',
-            "banszamla_szam" => 'required',
+            "banszamla_szam" => 'required|between:17,30',
             "telefonszam" => 'required|regex:/D*(^([0-9\(\)\/\+ \-]*)$)$/|between:14,15',
-            "allando_lakhely" => 'required',
-            "tartozkodasi_hely" => 'required',
+
+            "varos" => 'required',
+            "utca" => 'required',
+            "iranyitoSzam" => 'required|between:4,4',
+
+            "varosTart" => 'required',
+            "utcaTart" => 'required',
+            "iranyitoSzamTart" => 'required|between:4,4',
+
             "tizenhat_alatti_gyermek" => 'required',
             "all_polgarsag" => 'required',
 
@@ -44,7 +51,7 @@ class ujDolgozoUrlapEllenorzes extends FormRequest
             "vegzettseg"  => 'required',
             "biz_intezmeny_nev" => 'required',
             "kiadas_datuma" => 'required',
-            "bizonyitvany_szam" => 'required',
+            "bizonyitvany_szam" => 'required|digits:7',
             "pontokszama" => 'required',
         ];
     }
@@ -62,8 +69,15 @@ class ujDolgozoUrlapEllenorzes extends FormRequest
             'nev.required' => 'A név kitöltése kötelező!',
             'banszamla_szam.required' => 'A bankszámla szám kitöltése kötelező!',
             'telefonszam.required' => 'A telefonszám kitöltése kötelező!',
-            'allando_lakhely.required' => 'A állandó lakhely kitöltése kötelező!',
-            'tartozkodasi_hely.required' => 'A tartózkodási hely kitöltése kötelező!',
+
+            'varos.required' => 'A állandó lakhely kitöltése kötelező!',
+            'utca.required' => 'A állandó lakhely kitöltése kötelező!',
+            'iranyitoSzam.required' => 'A állandó lakhely kitöltése kötelező!',
+
+            'varosTart.required' => 'A tartózkodási  hely kitöltése kötelező!',
+            'utcaTart.required' => 'A tartózkodási hely kitöltése kötelező!',
+            'iranyitoSzamTart.required' => 'A tartózkodási hely kitöltése kötelező!',
+
             'hazas_e.required' => 'A házas kiválasztása kötelező!',
             'tizenhat_alatti_gyermek.required' => 'A 16 éven aluli gyermekek száma kitöltése kötelező!',
             'all_polgarsag.required' => 'Állam polgárság kitöltése kötelező!',
@@ -78,9 +92,20 @@ class ujDolgozoUrlapEllenorzes extends FormRequest
                 'string' => 'A telefon szám 15 karakter hosszúnak kell lennie.',
 
             ],
-            'telefonszam.regex' => 'Az :attribute formátum érvénytelen.',
-            'adoazon_jel.digits' => 'Az :attribute :digits számjegynek kell lennie.',
-            'tajszam.digits' => 'Az :attribute :digits számjegynek kell lennie.',
+            'iranyitoSzamTart.between' => [
+                'string' => 'Az irányítószámnak 4 számjegynek kell lennie.',
+            ],
+            'iranyitoSzam.between' => [
+                'string' => 'Az irányítószámnak 4 számjegynek kell lennie.',
+            ],
+            'banszamla_szam.between' => [
+                'string' => 'Az bankszámla számnak :min és :max karakterek között kell lennie.',
+            ],
+            'telefonszam.regex' => 'Az telefonszám formátum érvénytelen.',
+            'adoazon_jel.digits' => 'Az adóazonósító :digits számjegynek kell lennie.',
+            'tajszam.digits' => 'Az tajszám :digits számjegynek kell lennie.',
+            'bizonyitvany_szam.digits' => 'Az bizonyitvány száma :digits számjegynek kell lennie.',
+            'banszamla_szam.numeric' => 'The bankszámla szám csak szám lehet.',
 
 
 

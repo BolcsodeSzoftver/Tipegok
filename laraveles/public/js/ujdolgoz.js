@@ -1,11 +1,11 @@
 $(function () {
     $("#mentes").hide();
     $(".allapot").hide();
-   $(".userId").hide(); 
-    $("#megjelenikGomb").on("click",function(){
+    $(".userId").hide();
+    $("#megjelenikGomb").on("click", function () {
         $("#mentes").show();
     });
-  
+
     $(".nav-link").click(function () {
         if ($(this).hasClass("active")) {
             $(".nav-link").removeClass("active");
