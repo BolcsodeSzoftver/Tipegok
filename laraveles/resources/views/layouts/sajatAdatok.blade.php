@@ -264,9 +264,6 @@
                     </div>
                 </div>
                 <div class="modal-footer" id="bizonyitvanyModosit">
-                    <div class="adatModositEnged">
-                        <button type="button" class="btn btn-primary">Adatok módosítása</button>
-                    </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                 </div>
             </form>

@@ -20,8 +20,9 @@
                         <li class="nav-item"><a class="nav-link dolgozoModalAdatok3" href="#">3</a></li>
                         <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <?php if($data->users_id == Auth::user()->id): ?>
-                        <li class="nav-item"><a class="nav-link bizonyitvanyokGomb" href="#" id=<?php echo e($data->id); ?>>4</a></li>
-                        <?php endif; ?>
+                                <li class="nav-item"><a class="nav-link bizonyitvanyokGomb" href="#"
+                                        id=<?php echo e($data->id); ?>>4</a></li>
+                            <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                     <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
@@ -168,94 +169,130 @@
                                 </div>
 
                                 <div class="adatok3">
-                                <label for="">Munkaköri adtok</label>
-                                <?php $__currentLoopData = $dolgozok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dolgozo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if($dolgozo->alkalmazott_id == $data->id): ?>
-                                        <div class="row">
-							                <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->brutto_alapber); ?> value=<?php echo e($dolgozo->brutto_alapber); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->brutto_alapber); ?>>Bruttó alapbér</label>
+                                    <label for="">Munkaköri adtok</label>
+                                    <?php $__currentLoopData = $dolgozok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dolgozo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($dolgozo->alkalmazott_id == $data->id): ?>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->brutto_alapber); ?>
+
+                                                            value=<?php echo e($dolgozo->brutto_alapber); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->brutto_alapber); ?>>Bruttó alapbér</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->heti_munkaora); ?>
+
+                                                            value=<?php echo e($dolgozo->heti_munkaora); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->heti_munkaora); ?>>Heti munkaóra</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->heti_munkaora); ?> value=<?php echo e($dolgozo->heti_munkaora); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->heti_munkaora); ?>>Heti munkaóra</label>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->besorolas_betu); ?>
+
+                                                            value=<?php echo e($dolgozo->besorolas_betu); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->besorolas_betu); ?>>Besorolás betű</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->besorolas_szam); ?>
+
+                                                            value=<?php echo e($dolgozo->besorolas_szam); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->besorolas_szam); ?>>Besorolás szám</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->agazati_potlek); ?>
+
+                                                            value=<?php echo e($dolgozo->agazati_potlek); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->agazati_potlek); ?>>Ágazati pótlék</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-							                <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->besorolas_betu); ?> value=<?php echo e($dolgozo->besorolas_betu); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->besorolas_betu); ?>>Besorolás betű</label>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->feor_azon); ?>
+
+                                                            value=<?php echo e($dolgozo->feor_azon); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->feor_azon); ?>>Feor azonosító</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->eves_szabi); ?>
+
+                                                            value=<?php echo e($dolgozo->eves_szabi); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->eves_szabi); ?>>Éves szabadság</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="form-outline">
+                                                        <input type="text" class="form-control"
+                                                            name=<?php echo e($dolgozo->vegzettseg); ?>
+
+                                                            value=<?php echo e($dolgozo->vegzettseg); ?> readonly>
+                                                        <label class="form-label"
+                                                            for=<?php echo e($dolgozo->vegzettseg); ?>>Végzettség</label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->besorolas_szam); ?> value=<?php echo e($dolgozo->besorolas_szam); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->besorolas_szam); ?>>Besorolás szám</label>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->agazati_potlek); ?> value=<?php echo e($dolgozo->agazati_potlek); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->agazati_potlek); ?>>Ágazati pótlék</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-							                <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->feor_azon); ?> value=<?php echo e($dolgozo->feor_azon); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->feor_azon); ?>>Feor azonosító</label>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->eves_szabi); ?> value=<?php echo e($dolgozo->eves_szabi); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->eves_szabi); ?>>Éves szabadság</label>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-							                    <div class="form-outline">
-                                                    <input type="text" class="form-control" name=<?php echo e($dolgozo->vegzettseg); ?> value=<?php echo e($dolgozo->vegzettseg); ?> readonly>
-                                                    <label class="form-label" for=<?php echo e($dolgozo->vegzettseg); ?>>Végzettség</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                <?php endif; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </div>
-                                
                             <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                        
-                        <div class="adatok4">
-                            <label for="">Bizonyitvagy(ok)</label>
-                            <div id="bizAdatok"></div>
-                            <div style="width: 220px; margin: auto;">
-                        <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
-                            <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>
-                        </button>
-                        </div>
-                        </div>
+
 
                         <div class="ment">
                             <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" id="bizonyitvanyModosit">
                     <div class="adatModositEnged">
                         <button type="button" class="btn btn-primary">Adatok módosítása</button>
                     </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                 </div>
             </form>
+            <div class="adatok4">
+                <label for="">Bizonyitvagy(ok)</label>
+                <div id="bizSajatAdatok"></div>
+                <div style="width: 220px; margin: auto;">
+                    <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
+                        <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új
+                            bizonyítvány</a></li>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-footer" id="bizonyitvanyBezar">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
+            </div>
 
         </div>
     </div>
-</div><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/layouts/sajatAdatok.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/layouts/sajatAdatok.blade.php ENDPATH**/ ?>

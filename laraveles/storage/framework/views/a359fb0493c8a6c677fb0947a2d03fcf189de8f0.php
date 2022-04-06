@@ -9,6 +9,7 @@
     <script src="js/dolgozoModosit.js"></script>
     <script src="js/adminSajatAdatMegjelenit.js"></script>
     <script src="js/munkakoriAdatokModosit.js"></script>
+    <script src="js/adminSajatBizonyitvany.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div class=row>
@@ -281,7 +282,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="api/alkalmazott/0" method="post">
+                    <form action="api/alkalmazott/0" method="POST">
                         <?php echo csrf_field(); ?>
                         <input type="hidden" name="_method" value="PUT">
                         <div class="modal-body">
@@ -448,7 +449,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <div id="bizAdatok"></div>
+                        <div id="bizAdatokDolgozo"></div>
                         <div style="width: 220px; margin: auto;">
                         <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
                             <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>
@@ -532,18 +533,20 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" id="adatokKepT1">Gyakorlati igazolás</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="adatokKepT2">OEP könyv másolat</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" id="adatokKepT1">Gyakorlati igazolás</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " id="adatokKepT2">OEP könyv másolat</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " id="adatokKepT3">Egyéb dokumentumok</a>
-                            </li>
-                        </ul>
 
                         <div id="dokumentumok" class="dokumentumok">
 
@@ -574,6 +577,7 @@
             </div>
         </div>
     <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.jovahagyasraVaroDolgozok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.torlesMegerositesDolgozo', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

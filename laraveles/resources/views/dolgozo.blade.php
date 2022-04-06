@@ -434,9 +434,6 @@
                     <div class="modal-body">
                         <div id="bizAdatokDolgozo"></div>
                         <div style="width: 220px; margin: auto;">
-                        <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
-                            <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>
-                        </button>
                         </div>
                     </div>
                     <div class="modal-footer">
