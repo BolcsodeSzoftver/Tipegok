@@ -62,12 +62,9 @@ Route::resource('/ujFenntarto', UjFenntarto::class)->middleware(['auth']);
 Route::get('/', function () {
     return redirect("/bolcsode");
 })->name('kezdolap');
-Route::get('/fejlesztesAlatt', function () {
+/* Route::get('/fejlesztesAlatt', function () {
     return view('fejlesztesAlatt');
-})->middleware(['auth']);
-Route::get('/ujBizonyitvany', function () {
-    return view('ujBizonyitvany');
-})->middleware(['auth']);
+})->middleware(['auth']); */
 
 Route::get('/belepes', function () {
     return view('belepes');

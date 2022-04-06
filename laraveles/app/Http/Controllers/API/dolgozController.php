@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\alkalmazott;
+use App\Models\agazati_potlek;
 use Illuminate\Support\Facades\DB;
 use App\Models\dolgozo;
 use App\Models\jogosultsag;
@@ -138,7 +139,11 @@ class dolgozController extends Controller
         $dolgozo->besorolas_betu = $request->besorolas_betu;
         $dolgozo->besorolas_szam = $request->besorolas_szam;
         $dolgozo->feor_azon = $request->feor_azon;
-        $dolgozo->agazati_potlek = $request->agazati_potlek;
+        
+        $agazatiPotlek = agazati_potlek::findOrFail($request->besorolasiSzam);
+        $betu = $request->besorolasiBetu;
+        $dolgozo->agazati_potlek   = $agazatiPotlek->$betu;
+
         $dolgozo->eves_szabi = $request->eves_szabi;
         $dolgozo->szgf_kod = $request->szgf_kod;
         $dolgozo->munkakor = $request->munkakor;

@@ -1,7 +1,6 @@
 @extends('layouts.szerkezet')
 @extends('layouts.torlesMegerositesDolgozo')
 @extends('layouts.jovahagyasraVaroDolgozok')
-@extends('layouts.sajatAdatok')
 @section('head')
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/ajax.js"></script>
@@ -84,7 +83,7 @@
                     @if (Auth::user()->jogosultsag_id == $jogosultsag->id)
                         <tbody class="adatokDolgozo">
                             @foreach ($alkalmazotts as $data)
-                                @if ($data->allapot === 1 && $data->users_id != Auth::user()->id)
+                                @if ($data->allapot === 1)
                                     <tr class="dolgozo">
                                         <td class="modosit">
                                             <button wire:click="edit({{ $data->id }})"
@@ -152,7 +151,7 @@
                                 <tbody class="adatokDolgozo">
                                     @foreach ($alkalmazotts as $data)
                                         @if ($data->allapot === 1)
-                                            @if ($bolcsode->id == $data->bolcsode_id && $data->users_id != Auth::user()->id)
+                                            @if ($bolcsode->id == $data->bolcsode_id)
                                                 <tr class="dolgozo">
                                                     <td class="modosit">
                                                         <button wire:click="edit({{ $data->id }})"
