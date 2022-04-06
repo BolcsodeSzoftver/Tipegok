@@ -1,7 +1,6 @@
 
 
 
-
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/dolgozo.css" />
     <script src="js/ajax.js"></script>
@@ -84,7 +83,7 @@
                     <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
                         <tbody class="adatokDolgozo">
                             <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if($data->allapot === 1 && $data->users_id != Auth::user()->id): ?>
+                                <?php if($data->allapot === 1): ?>
                                     <tr class="dolgozo">
                                         <td class="modosit">
                                             <button wire:click="edit(<?php echo e($data->id); ?>)"
@@ -159,7 +158,7 @@
                                 <tbody class="adatokDolgozo">
                                     <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php if($data->allapot === 1): ?>
-                                            <?php if($bolcsode->id == $data->bolcsode_id && $data->users_id != Auth::user()->id): ?>
+                                            <?php if($bolcsode->id == $data->bolcsode_id): ?>
                                                 <tr class="dolgozo">
                                                     <td class="modosit">
                                                         <button wire:click="edit(<?php echo e($data->id); ?>)"
@@ -575,7 +574,6 @@
         </div>
     <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.jovahagyasraVaroDolgozok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.torlesMegerositesDolgozo', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/dolgozo.blade.php ENDPATH**/ ?>
