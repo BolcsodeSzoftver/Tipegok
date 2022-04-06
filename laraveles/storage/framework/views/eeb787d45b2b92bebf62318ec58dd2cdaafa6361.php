@@ -4,6 +4,7 @@
         echo("<script>window.location.replace('/ujdolgozo')</script>");   
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/nav.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script> 
+    <script src="js/adminSajatAdatBizonyitvany.js"></script> 
     <?php echo $__env->yieldContent('head'); ?>
 </head>
 
@@ -46,7 +49,6 @@
                                         profilom
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#sajatModal">Saját adatok</a>
                                         <a class="dropdown-item" href="#">Jelszó modosítása</a>
                                         <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                                     </div>
@@ -88,7 +90,6 @@
             <div class="dropdown">
                 <a class="hover" class="dropbtn" href="#">Profilom <i class='fa fa-angle-down'></i></a>
                 <div class="dropdown-content">
-                    <a class="hover dropdown-item" href="#" data-toggle="modal" data-target="#sajatModal">Saját adatok</a>
                     <a class="hover dropdown-item" href="#">Jelszó modosítása</a>
                     <a class="hover dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                 </div>
@@ -102,6 +103,8 @@
             <a class="hover" href="/agaztatiPotlek" >Ágazati potlék</a>
         </div>
 
+        
+
     <script>
         function openNav() {
           document.getElementById("mySidebar").style.width = "250px";
@@ -112,7 +115,11 @@
         }
     </script>
 
+
+
+
 </body>
 
 </html>
-<?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/layouts/szerkezet.blade.php ENDPATH**/ ?>
+
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Kiss Niki\Desktop\Tipegok\laraveles\resources\views/layouts/szerkezet.blade.php ENDPATH**/ ?>

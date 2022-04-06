@@ -1,5 +1,4 @@
 @extends('layouts.szerkezet')
-@extends('layouts.sajatAdatok')
 @section('head')
     <link rel="stylesheet" href="css/agazatiPotlek.css" />
     <script src="js/agazatiPotlek.js"></script>
