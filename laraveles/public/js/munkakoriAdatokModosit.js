@@ -11,7 +11,7 @@ $(function () {
             $("#dolgozoAdatok").empty();
             tomb.forEach(function (adat) {
                 if (adat.alkalmazott_id == id) {
-                    console.log(adat);
+                    console.log(adat.id);
                     $("#dolgozoAdatok").append(
                         '<div class="row">' +
                             '<div class="col">' +
@@ -186,7 +186,7 @@ $(function () {
                             "</div>" +
                             "</div>"
                     );
-                     let action = dolgozoEleresiUt + id;
+                     let action = dolgozoEleresiUt + adat.id;
                     $(".modositDolgozo").attr("action", action);
                 }
             });
