@@ -1,6 +1,5 @@
 
 
-
 <?php $__env->startSection('head'); ?>
     <link rel="stylesheet" href="css/bolcsiadat.css" />
     <script src="js/ajax.js"></script>
@@ -156,6 +155,5 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.torlesMegerosites', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('layouts.szerkezet', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/bolcsiadat.blade.php ENDPATH**/ ?>

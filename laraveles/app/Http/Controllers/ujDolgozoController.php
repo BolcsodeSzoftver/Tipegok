@@ -112,35 +112,35 @@ class ujDolgozoController extends Controller
             $file = $file->storeAs('dokumentumok', $name);
             array_push($fileNevek, $name);
         }
-        print_r($fileNevek);
         $ujDolgzoBiznyitvany->gyakorlati_igazolas = json_encode($fileNevek);
-        $files =  $request->file('oep_konyv_masolat');
 
+        $files =  $request->file('oep_konyv_masolat');
         $fileNevek = array();
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();
             $file = $file->storeAs('dokumentumok', $name);
             array_push($fileNevek, $name);
         }
-        print_r($fileNevek);
         $ujDolgzoBiznyitvany->oep_konyv_masolat = json_encode($fileNevek);
 
         $files =  $request->file('dokumentum_feltoltese');
-
         $fileNevek = array();
         foreach ($files as $file) {
             $name = $file->getClientOriginalName();
             $file = $file->storeAs('dokumentumok', $name);
             array_push($fileNevek, $name);
         }
-        print_r($fileNevek);
         $ujDolgzoBiznyitvany->dokumentum_feltoltese = json_encode($fileNevek);
 
         $ujDolgozo->save();
         $ujDolgzoBiznyitvany->save();
         Auth::user()->bejelentkezesTiltasa();
-        return  "sikeres adat kitöltés<br>";
+       if( Auth::user()->isDolgozo()){
+            return  redirect("/sikeresAdatKitoltesDolgozo");
+        } 
+        return  redirect("/sikeresAdatKitoltes");
     }
+
 
     /**
      * Display the specified resource.

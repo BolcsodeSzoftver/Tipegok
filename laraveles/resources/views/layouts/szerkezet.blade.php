@@ -2,7 +2,11 @@
 @php
     if(!Auth::user()->regisztralFelhasznalo()){
         echo("<script>window.location.replace('/ujdolgozo')</script>");   
+    } 
+    if(Auth::user()->isDolgozo()){
+        echo("<script>window.location.replace('/sikeresAdatKitoltesDolgozo')</script>");   
     }
+
 @endphp
 @extends('layouts.sajatAdatok')
 <!DOCTYPE html>

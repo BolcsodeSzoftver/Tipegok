@@ -108,42 +108,17 @@ class dolgozController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /*    if ($request->input('submit') === 'Save') {
-            $alkalmazottJovahagyas = alkalmazott::findOrFail($id);
-            $alkalmazottJovahagyas->allapot = $request->allapot;
-            $alkalmazottJovahagyas->save();
-            return redirect("/dolgozo");
-        }
-
-        $alkalmazott = alkalmazott::findOrFail($request->id);
-        $alkalmazott->szul_nev  = $request->szulN;
-        $alkalmazott->szul_hely   = $request->szulH;
-        $alkalmazott->szul_ido   = $request->szulI;
-        $alkalmazott->anyja_neve   = $request->anyjaNeve;
-        $alkalmazott->adoazon_jel  = $request->adoAzon;
-        $alkalmazott->tajszam  = $request->tajSz;
-        $alkalmazott->nem  = $request->nem;
-        $alkalmazott->nev   = $request->nev;
-        $alkalmazott->banszamla_szam   = $request->bankSZ;
-        $alkalmazott->telefonszam   = $request->tel;
-        $alkalmazott->allando_lakhely   = $request->allandoLak;
-        $alkalmazott->tartozkodasi_hely   = $request->tartHely;
-        $alkalmazott->hazas_e   = $request->hazas;
-        $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhatAGy;
-        $alkalmazott->all_polgarsag     = $request->allPorg; */
-            /*  $alkalmazott->save(); */
-
-        
         $dolgozo = dolgozo::findOrFail($id);
         $dolgozo->brutto_alapber = $request->brutto_alapber;
         $dolgozo->heti_munkaora = $request->heti_munkaora;
         $dolgozo->besorolas_betu = $request->besorolas_betu;
         $dolgozo->besorolas_szam = $request->besorolas_szam;
         $dolgozo->feor_azon = $request->feor_azon;
-        
-        $agazatiPotlek = agazati_potlek::findOrFail($request->besorolasiSzam);
-        $betu = $request->besorolasiBetu;
+
+        $agazatiPotlek = agazati_potlek::findOrFail($id);
+        $betu = $request->besorolas_betu;
         $dolgozo->agazati_potlek   = $agazatiPotlek->$betu;
+
 
         $dolgozo->eves_szabi = $request->eves_szabi;
         $dolgozo->szgf_kod = $request->szgf_kod;
@@ -151,7 +126,7 @@ class dolgozController extends Controller
         $dolgozo->vegzettseg = $request->vegzettseg;
         $dolgozo->kp_utalas = $request->kp_utalas;
         $dolgozo->save();
-    
+
         return redirect("/dolgozo");
     }
 

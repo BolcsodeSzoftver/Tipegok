@@ -27,7 +27,7 @@ class CreateDolgozosTable extends Migration
             $table->integer('agazati_potlek');
             $table->integer('eves_szabi');
             $table->string('vegzettseg');
-            $table->boolean('kp_utalas');
+            $table->string('kp_utalas');
             $table->string('sz_szakkepzet');
             $table->date('belepesi_nap')->unique();;
             $table->date('kilepesi_nap')->nullable();

@@ -69,6 +69,12 @@ Route::get('/', function () {
 Route::get('/belepes', function () {
     return view('belepes');
 });
+Route::get('/sikeresAdatKitoltes', function () {
+    return view('sikeresAdatKitoltes');
+});
+Route::get('/sikeresAdatKitoltesDolgozo', function () {
+    return view('sikeresAdatKitoltesDolgozo');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
