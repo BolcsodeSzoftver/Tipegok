@@ -1,5 +1,5 @@
 @extends('layouts.szerkezet')
-@extends('layouts.sajatAdatok')
+{{-- @extends('layouts.sajatAdatok') --}}
 @section('head')
 
     <style>
@@ -11,7 +11,7 @@
 
     </style>
     <script src="js/felhasznalo.js"></script>
-    <script src="js/adminSajatAdatMegjelenit.js"></script>
+   {{--  <script src="js/adminSajatAdatMegjelenit.js"></script> --}}
 @endsection
 @section('tartalom')
     <div>

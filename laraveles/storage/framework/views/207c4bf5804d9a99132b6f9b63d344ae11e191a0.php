@@ -4,6 +4,7 @@
         echo("<script>window.location.replace('/ujdolgozo')</script>");   
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/nav.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script> 
+    <script src="js/adminSajatAdatBizonyitvany.js"></script> 
     <?php echo $__env->yieldContent('head'); ?>
 </head>
 
@@ -102,6 +105,8 @@
             <a class="hover" href="/agaztatiPotlek" >Ágazati potlék</a>
         </div>
 
+        
+
     <script>
         function openNav() {
           document.getElementById("mySidebar").style.width = "250px";
@@ -112,7 +117,11 @@
         }
     </script>
 
+
+
+
 </body>
 
 </html>
-<?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/layouts/szerkezet.blade.php ENDPATH**/ ?>
+
+<?php echo $__env->make('layouts.sajatAdatok', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/layouts/szerkezet.blade.php ENDPATH**/ ?>

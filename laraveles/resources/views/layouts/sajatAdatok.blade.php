@@ -1,4 +1,4 @@
-<!-- Modal: sajat adat -->
+{{-- <!-- Modal: sajat adat -->
 <div class="modal fade" id="sajatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -259,11 +259,15 @@
 
 
                         <div class="ment">
+
                             <input class="btn btn-dark" type="submit" id="mentes" value="Mentés">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer" id="bizonyitvanyModosit">
+                    <div class="adatModositEnged">
+                        <button type="button" class="btn btn-primary" >Adatok módosítása</button>
+                    </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                 </div>
             </form>
@@ -284,3 +288,4 @@
         </div>
     </div>
 </div>
+ --}}

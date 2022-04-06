@@ -4,6 +4,7 @@
         echo("<script>window.location.replace('/ujdolgozo')</script>");   
     }
 @endphp
+@extends('layouts.sajatAdatok')
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -22,6 +23,8 @@
     <link rel="stylesheet" href="css/szerkezet.css">
     <link rel="stylesheet" href="css/nav.css">
     <script src="js/nav.js"></script>
+    <script src="js/adminSajatAdatMegjelenit.js"></script> 
+    <script src="js/adminSajatAdatBizonyitvany.js"></script> 
     @yield('head')
 </head>
 
@@ -102,6 +105,8 @@
             <a class="hover" href="/agaztatiPotlek" >Ágazati potlék</a>
         </div>
 
+        
+
     <script>
         function openNav() {
           document.getElementById("mySidebar").style.width = "250px";
@@ -111,6 +116,9 @@
           document.getElementById("mySidebar").style.width = "0";
         }
     </script>
+
+
+
 
 </body>
 

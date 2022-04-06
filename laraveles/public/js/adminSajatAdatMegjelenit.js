@@ -11,6 +11,7 @@ $(function() {
 		$('.adatok3').hide();
 		$('.adatok4').hide();
 		$(".ment").show();
+		$("#bizonyitvanyBezar").hide();
 		$("#bizonyitvanyModosit").show();
 		
 	});

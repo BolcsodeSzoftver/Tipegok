@@ -134,6 +134,7 @@ class AlkalmazottController extends Controller
         $alkalmazott->hazas_e   = $request->hazas;
         $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhatAGy;
         $alkalmazott->all_polgarsag     = $request->allPorg;
+
         $alkalmazott->save();
         return redirect("/dolgozo");
     }

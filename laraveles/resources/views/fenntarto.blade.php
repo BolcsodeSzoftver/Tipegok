@@ -1,13 +1,13 @@
 @extends('layouts.szerkezet')
 @extends('layouts.torlesMegerosites')
-@extends('layouts.sajatAdatok')
+{{-- @extends('layouts.sajatAdatok') --}}
 @section('head')
     <link rel="stylesheet" href="css/fennt.css" />
     <script src="js/ajax.js"></script>
     <script src="js/fenntClass.js"></script>
     <script src="js/fenntListazas.js"></script>
     <script src="js/fennt.js"></script>
-    <script src="js/adminSajatAdatMegjelenit.js"></script>
+  {{--   <script src="js/adminSajatAdatMegjelenit.js"></script> --}}
 @endsection
 @section('tartalom')
     <h3>Fenntartó adatok</h3>
