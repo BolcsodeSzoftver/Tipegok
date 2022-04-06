@@ -10,6 +10,7 @@ $(function() {
 		$('.adatok2').hide();
 		$('.adatok3').hide();
 		$('.adatok4').hide();
+		$(".ment").show();
 		$("#bizonyitvanyModosit").show();
 		
 	});
@@ -20,6 +21,7 @@ $(function() {
 		$('.adatok3').hide();
 		$('.adatok4').hide();
 		$("#bizonyitvanyBezar").hide();
+		$(".ment").show();
 		$("#bizonyitvanyModosit").show();
 	});
 
@@ -29,6 +31,7 @@ $(function() {
 		$('.adatok3').show();
 		$('.adatok4').hide();
 		$("#bizonyitvanyBezar").hide();
+		$(".ment").show();
 		$("#bizonyitvanyModosit").show();
 	});
 
