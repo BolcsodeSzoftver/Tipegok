@@ -9,6 +9,7 @@
     <script src="js/dolgozoModosit.js"></script>
     <script src="js/adminSajatAdatMegjelenit.js"></script>
     <script src="js/munkakoriAdatokModosit.js"></script>
+    <script src="js/adminSajatBizonyitvany.js"></script>
 @endsection
 @section('tartalom')
     <div class=row>
@@ -264,7 +265,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="api/alkalmazott/0" method="post">
+                    <form action="api/alkalmazott/0" method="POST">
                         @csrf
                         <input type="hidden" name="_method" value="PUT">
                         <div class="modal-body">
@@ -431,7 +432,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <div id="bizAdatok"></div>
+                        <div id="bizAdatokDolgozo"></div>
                         <div style="width: 220px; margin: auto;">
                         <button class="btn btn-secondary ujBizGomb" style="width: 200px; margin: auto;">
                             <a href="/ujBizonyitvany" target="_blank" style="color: white; text-decoration: none;">Új bizonyítvány</a></li>

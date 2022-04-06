@@ -237,13 +237,13 @@
             <div class="col-4">
                 <p>Házas</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="igen" id="igen" value="i">
+                    <input class="form-check-input" type="radio" name="igen" id="igen" value="igen">
                     <label class="form-check-label" for="igen">igen</label>
 
 
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="nem" id="nem" value="n">
+                    <input class="form-check-input" type="radio" name="nem" id="nem" value="nem">
                     <label class="form-check-label" for="nem">nem</label>
                 </div>
                 <br>
