@@ -130,31 +130,23 @@ class dolgozController extends Controller
         $alkalmazott->hazas_e   = $request->hazas;
         $alkalmazott->tizenhat_alatti_gyermek    = $request->tizenhatAGy;
         $alkalmazott->all_polgarsag     = $request->allPorg; */
+            /*  $alkalmazott->save(); */
 
-        $dolgozoAdat=dolgozo::all();
-        $dolgozo = dolgozo::findOrFail($request->id);
+        
+        $dolgozo = dolgozo::findOrFail($id);
         $dolgozo->brutto_alapber = $request->brutto_alapber;
         $dolgozo->heti_munkaora = $request->heti_munkaora;
         $dolgozo->besorolas_betu = $request->besorolas_betu;
         $dolgozo->besorolas_szam = $request->besorolas_szam;
         $dolgozo->feor_azon = $request->feor_azon;
-        $dolgozo->agazati_potlek = $request->agazati_potlek;
         $dolgozo->eves_szabi = $request->eves_szabi;
         $dolgozo->szgf_kod = $request->szgf_kod;
         $dolgozo->munkakor = $request->munkakor;
         $dolgozo->vegzettseg = $request->vegzettseg;
         $dolgozo->kp_utalas = $request->kp_utalas;
-        $dolgozo->sz_szakkepzet = $request->sz_szakkepzet;
-
-        if ($request->kezpenz) {
-            $dolgozo->kp_utalas   = $request->kezpenz;
-        } elseif ($request->utalas) {
-            $dolgozo->kp_utalas   = $request->utalas;
-        }
-
         $dolgozo->save();
-        /*  $alkalmazott->save(); */
-        return redirect("/dolgozo",compact("dolgozoAdat"));
+    
+        return redirect("/dolgozo");
     }
 
     /**
