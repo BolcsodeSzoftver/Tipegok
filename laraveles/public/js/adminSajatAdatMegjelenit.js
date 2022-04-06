@@ -44,10 +44,5 @@ $(function() {
 		$("#bizonyitvanyModosit").hide();
 		$(".ment").hide();
 		$("#bizonyitvanyBezar").show();
-	});
-
-	
-
-
-	
+	});	
 });

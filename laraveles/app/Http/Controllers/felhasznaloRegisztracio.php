@@ -15,6 +15,7 @@ use App\Mail\emailKuldes;
 use Illuminate\Support\Str;
 
 
+
 class felhasznaloRegisztracio extends Controller
 {
     /**
@@ -23,15 +24,13 @@ class felhasznaloRegisztracio extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
+    {
         if (Auth::user()->isAdmin() || Auth::user()->isSzuperAdmin()) {
             $jogosultsagok = jogosultsag::all();
             return view('felhasznaloRegisztracio', compact('jogosultsagok'));
         } else {
             return redirect('/');
-        } 
-
-  
+        }
     }
 
     /**
@@ -62,12 +61,10 @@ class felhasznaloRegisztracio extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->allapot = $request->get('allapot'); 
-        $user->jogosultsag_id = $request->get('Jogosultsag'); 
+        $user->allapot = $request->get('allapot');
+        $user->jogosultsag_id = $request->get('Jogosultsag');
         $user->password = Hash::make($pass);
         $user->save();
-
-
 
         $details = [
             'title' => 'Kedves ' . $user->name . ",",
@@ -119,8 +116,19 @@ class felhasznaloRegisztracio extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = $request->user();
+        if(Hash::check($request->regiJelszo,$user->password)){
+            $user->update([
+                'password'=>Hash::make($request->ujJelszo)
+            ]);
+            return redirect('/dolgozo');
+        }else{
+            return response()->json([
+                'password'=>'Nem jó!'
+            ]);
+        }
     }
+
 
     /**
      * Remove the specified resource from storage.
