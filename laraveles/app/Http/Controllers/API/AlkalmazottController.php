@@ -42,8 +42,6 @@ class AlkalmazottController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $dolgozo = new dolgozo();
         $dolgozo->bolcsode_id  = $request->bolcsodeId;
         $dolgozo->alkalmazott_id  = $request->alkalmazottId;
