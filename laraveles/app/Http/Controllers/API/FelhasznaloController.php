@@ -16,60 +16,6 @@ use Illuminate\Support\Facades\Storage;
 class FelhasznaloController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    /**
-     * -Ezt használjuk az összes megjegyzés lekéréséhez. 
-     */
-    public function index()
-    {
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        /*  $comment = Comment::findOrFail($id);
-        return response()->json($comment); */
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -99,8 +45,6 @@ class FelhasznaloController extends Controller
      */
     public function destroy($id)
     {
-        /*  $felhasznalo = User::findOrFail($id);
-        $felhasznalo->delete(); */
         $user = User::where('id', $id)->firstorfail()->delete();
         return redirect("/felhasznalo");
     }

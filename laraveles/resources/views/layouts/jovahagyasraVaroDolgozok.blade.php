@@ -52,12 +52,6 @@
 
                                     </tr>
                                 @endif
-
-                                {{-- @if ($db == 0)
-                                    <tr>
-                                        <td>Nincs jóváhagyásra váró dolgozó</td>
-                                    </tr>
-                                @endif --}}
                             @endforeach
                         @endif
 

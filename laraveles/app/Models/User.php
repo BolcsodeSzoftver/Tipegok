@@ -98,7 +98,6 @@ class User extends Authenticatable
 
     public function getBolcsodeId()
     {
-
         return alkalmazott::keresBolcsodeId($this->id);
     }
 }

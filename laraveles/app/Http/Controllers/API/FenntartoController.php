@@ -25,22 +25,9 @@ class FenntartoController extends Controller
      * -Ezt használjuk az összes megjegyzés lekéréséhez. 
      */
     public function index()
-    {
-        //Storage::put('fenntarto.json',fenntarto::all());
-       
+    {  
         return response()->json(fenntarto::all());
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -67,36 +54,6 @@ class FenntartoController extends Controller
         $fenntarto->save();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-       /*  $comment = Comment::findOrFail($id);
-        return response()->json($comment); */
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-       
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     /**
      * Az update() metódus hasonló a store() metódushoz, de ahelyett, hogy új megjegyzést hozna létre, először megragadja a meglévő kért megjegyzést
      * a findOrFail($id) paraméterrel. Ezután érvényesíti az új kérést, frissíti a meglévő megjegyzést, 
@@ -233,7 +190,6 @@ class FenntartoController extends Controller
 
         return response()->json($fenntarto::all());
     }
-
     public function megjelenit(){
         $alkalmazotts=alkalmazott::all();
         $dolgozok=dolgozo::all();

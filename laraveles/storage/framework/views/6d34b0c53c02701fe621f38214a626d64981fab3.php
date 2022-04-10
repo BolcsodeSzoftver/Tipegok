@@ -54,8 +54,6 @@
 
                                     </tr>
                                 <?php endif; ?>
-
-                                
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
 

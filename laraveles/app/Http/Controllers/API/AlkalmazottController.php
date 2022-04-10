@@ -13,28 +13,6 @@ use Illuminate\Contracts\Validation\Validator;
 class AlkalmazottController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    /**
-     * -Ezt használjuk az összes megjegyzés lekéréséhez. 
-     */
-    public function index()
-    {
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -72,31 +50,6 @@ class AlkalmazottController extends Controller
         return redirect("/dolgozo");
         
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        /*   $alkalmazott = alkalmazott::findOrFail($id);
-        return response()->json($alkalmazott); */
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        /*  $alkalmazotts = alkalmazott::find($id);
-        return view('dolgozo', compact('alkalmazotts', 'id')); */
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -111,12 +64,6 @@ class AlkalmazottController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->input('submit') === 'Save') {
-            $alkalmazottJovahagyas = alkalmazott::findOrFail($id);
-            $alkalmazottJovahagyas->allapot = $request->allapot;
-            $alkalmazottJovahagyas->save();
-            return redirect("/dolgozo");
-        }
 
         $alkalmazott = alkalmazott::findOrFail($request->id);
         $alkalmazott->szul_nev  = $request->szulN;

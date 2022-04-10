@@ -118,7 +118,6 @@
                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/felhasznaloRegisztracio/<?php echo e(Auth::user()->id); ?>" method="post">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="_method" value="PUT">
-                                <input type="text" id="first-name" class="form-control"  placeholder="Enter old password" name="adminID" value="<?php echo e(Auth::user()->id); ?>"> 
                                 <div class="form-group">
                                     <label>Régi jelszó :</label>
                                     <input type="password" id="first-name" class="form-control"  placeholder="Régi jelszó" name="regiJelszo"> 
