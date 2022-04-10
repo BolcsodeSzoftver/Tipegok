@@ -26,23 +26,53 @@
                 </tr>
             </thead>
             <tbody class="adatok">
-                @foreach ($jogosultsag as $a)
-                    @foreach ($user as $u)
-                        @if ($u->jogosultsag_id == 1 and $u->jogosultsag_id == $a->id)
-                            <tr class="felhasznalo">
-                                <td class="modosit">
-                                    <button class="btn btn-primary modositGomb" id={{ $u->id }} type="button"
-                                        data-toggle="modal" data-target="#modalLoginForm">
-                                        <i class='fa fa-edit'></i>
-                                    </button>
-                                </td>
-                                <td></td>
-                                <td class="nev" id={{ $u->id }}>{{ $u->name }}</td>
-                                <td class="email" id={{ $u->id }}>{{ $u->email }}</td>
-                                <td>{{ $a->megnevezes }}</td>
-                            </tr>
+                @foreach ($jogosultsagok as $jogosultsag)
+                    @if ($jogosultsag->megnevezes == 'szuperadmin')
+                        @if (Auth::user()->jogosultsag_id == $jogosultsag->id)
+                            @foreach ($user as $userData)
+                                <tr class="felhasznalo">
+                                    <td class="modosit">
+                                        <button class="btn btn-primary modositGomb" id={{ $userData->id }} type="button"
+                                            data-toggle="modal" data-target="#modalLoginForm">
+                                            <i class='fa fa-edit'></i>
+                                        </button>
+                                    </td>
+                                    <td></td>
+                                    <td class="nev" id={{ $userData->id }}>{{ $userData->name }}</td>
+                                    <td class="email" id={{ $userData->id }}>{{ $userData->email }}</td>
+                                    <td>{{ $jogosultsag->megnevezes }}</td>
+                                </tr>
+                            @endforeach
                         @endif
-                    @endforeach
+                    @endif
+                    @if ($jogosultsag->megnevezes == 'admin')
+                        @if (Auth::user()->jogosultsag_id == $jogosultsag->id)
+                            @foreach ($bolcsodek as $bolcsode)
+                                @if ($bolcsode->bolcsode_admin == Auth::user()->id)
+                                    @foreach ($user as $userData)
+                                        @foreach ($alkalmazottak as $alkalmazott)
+                                            @if ($userData->id == $alkalmazott->users_id)
+                                                @if ($alkalmazott->bolcsode_id == $bolcsode->id)
+                                                    <tr class="felhasznalo">
+                                                        <td class="modosit">
+                                                            <button class="btn btn-primary modositGomb" id={{ $userData->id }} type="button"
+                                                            data-toggle="modal" data-target="#modalLoginForm">
+                                                            <i class='fa fa-edit'></i>
+                                                            </button>
+                                                        </td>
+                                                        <td></td>
+                                                        <td class="nev" id={{ $userData->id }}>{{ $userData->name }}</td>
+                                                        <td class="email" id={{ $userData->id }}>{{ $userData->email }}</td>
+                                                        <td>{{ $jogosultsag->megnevezes }}</td>
+                                                    </tr>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        @endif
+                    @endif
                 @endforeach
             </tbody>
         </table>
@@ -76,7 +106,7 @@
                             </div>
                             <div class="md-form mb-4">
                                 <select name="jogosultsag" id="">
-                                    @foreach ($jogosultsag as $jogosultsag)
+                                    @foreach ($jogosultsagok as $jogosultsag)
                                         <option value={{ $jogosultsag->id }}>{{ $jogosultsag->megnevezes }}
                                         </option>
                                     @endforeach

@@ -9,7 +9,6 @@ use App\Models\bolcsode;
 use App\Models\bolcsode_valtozas;
 use App\Models\fenntarto;
 use App\Models\alkalmazott;
-use App\Models\dolgozo;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\jogosultsag;
@@ -135,11 +134,9 @@ class BolcsodeController extends Controller
 
     public function megjelenit()
     {
-        $alkalmazotts=alkalmazott::all();
-        $dolgozok=dolgozo::all();
         $fenntartok = fenntarto::all();
         $jogosults = jogosultsag::all();
-        return view('bolcsiadat', compact('fenntartok', 'jogosults','alkalmazotts','dolgozok'));
+        return view('bolcsiadat', compact('fenntartok', 'jogosults'));
     }
 
 
