@@ -14,8 +14,7 @@ class MellekletController extends Controller
 { 
     public function megjelenit(){
         $alkalmazotts=alkalmazott::all();
-        $dolgozok=dolgozo::all();
-        return view('mellekletek',compact('alkalmazotts','dolgozok'));
+        return view('mellekletek',compact('alkalmazotts'));
     }
 
     public function kivalasztottAlkalmazott($id){

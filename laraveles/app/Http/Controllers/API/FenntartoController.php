@@ -235,10 +235,8 @@ class FenntartoController extends Controller
     }
 
     public function megjelenit(){
-        $alkalmazotts=alkalmazott::all();
-        $dolgozok=dolgozo::all();
         $bolcsodek = bolcsode::all();
         $jogosults=jogosultsag::all();
-        return view('fenntarto',compact('bolcsodek','jogosults','alkalmazotts','dolgozok'));
+        return view('fenntarto',compact('bolcsodek','jogosults'));
     }
 }
