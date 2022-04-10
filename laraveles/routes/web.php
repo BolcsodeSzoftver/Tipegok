@@ -53,6 +53,8 @@ Route::get('/dolgozo/{id}', [MellekletController::class,'kivalasztottDolgozo']);
 Route::get('/fenntarto/{id}', [MellekletController::class,'kivalasztottFenntarto']);
 Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgozoBizonyitvany']);
 
+
+
 Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
 Route::resource('/ujdolgozo', ujDolgozoController::class)->middleware(['auth']);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
@@ -68,6 +70,12 @@ Route::get('/', function () {
 
 Route::get('/belepes', function () {
     return view('belepes');
+});
+Route::get('/sikeresAdatKitoltes', function () {
+    return view('sikeresAdatKitoltes');
+});
+Route::get('/sikeresAdatKitoltesDolgozo', function () {
+    return view('sikeresAdatKitoltesDolgozo');
 });
 Route::get('/dashboard', function () {
     return view('dashboard');
