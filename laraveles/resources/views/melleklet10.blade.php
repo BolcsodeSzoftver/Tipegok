@@ -315,7 +315,6 @@
             <p>** Az I/2000. (I.7.) SzCsM rendelet illetve a 15/1998. NM rendelet alapján</p>
         </footer>
     </div>
-    <input type="submit" value="word exportálása" id="gomb" onclick="Export2Word('export', 'melléklet_10');">
     <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
     </main>
 </body>

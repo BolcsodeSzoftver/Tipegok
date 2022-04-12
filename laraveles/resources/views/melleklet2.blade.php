@@ -83,7 +83,6 @@
         </article>
 
     </div>
-    <input type="submit" value="word exportálása" id="gomb" onclick="Export2Word('export', 'melléklet_2');">
     <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
     </main>
     </main>

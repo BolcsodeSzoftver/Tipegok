@@ -98,7 +98,6 @@
         <p class="alairas"><span>...................................................<br>munkavállaló aláírása</span></p>
       </section>
         </div>
-        <input type="submit" value="Word exportálása" onclick="Export2Word('export', 'melleklet_6');" id="gomb">
         <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
     </main>
   </body>
