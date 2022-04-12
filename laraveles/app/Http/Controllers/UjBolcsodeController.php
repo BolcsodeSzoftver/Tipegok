@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\urlapEllenorzes;
@@ -7,9 +6,9 @@ use App\Models\bolcsode;
 use App\Models\fenntarto;
 use Illuminate\Foundation\Auth\User;
 
-class UjBolcsode extends Controller
+class UjBolcsodeController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -42,5 +41,4 @@ class UjBolcsode extends Controller
         $bolcsode->save();
         return redirect('/bolcsode');
     }
-
 }

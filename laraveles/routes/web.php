@@ -12,9 +12,12 @@ use App\Http\Controllers\API\MellekletController;
 use App\Http\Controllers\API\AgazatiPotlekController;
 use App\Http\Controllers\dolgozoListaController;
 use App\Http\Controllers\felhasznaloRegisztracio;
+use App\Http\Controllers\FelhasznaloRegisztracioController;
 use App\Http\Controllers\UjBolcsode;
+use App\Http\Controllers\UjBolcsodeController;
 use App\Http\Controllers\ujDolgozoController;
 use App\Http\Controllers\UjFenntarto;
+use App\Http\Controllers\UjFenntartoController;
 use App\Mail\yourMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -55,11 +58,11 @@ Route::get('/bizonyitvany/{id}', [MellekletController::class,'kivalasztottDolgoz
 
 
 
-Route::resource('/felhasznaloRegisztracio', felhasznaloRegisztracio::class)->middleware(['auth']);
+Route::resource('/felhasznaloRegisztracio', FelhasznaloRegisztracioController::class)->middleware(['auth']);
 Route::resource('/ujdolgozo', ujDolgozoController::class)->middleware(['auth']);
 Route::resource('/dolgozo', dolgozoListaController::class)->middleware(['auth']);
-Route::resource('/ujBolcsi', UjBolcsode::class)->middleware(['auth']);
-Route::resource('/ujFenntarto', UjFenntarto::class)->middleware(['auth']);
+Route::resource('/ujBolcsi', UjBolcsodeController::class)->middleware(['auth']);
+Route::resource('/ujFenntarto', UjFenntartoController::class)->middleware(['auth']);
 
 Route::get('/', function () {
     return redirect("/bolcsode");

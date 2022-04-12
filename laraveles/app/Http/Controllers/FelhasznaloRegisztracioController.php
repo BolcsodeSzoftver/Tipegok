@@ -8,15 +8,12 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Validation\Rules;
 use App\Mail\emailKuldes;
 use Illuminate\Support\Str;
 
-
-
-class felhasznaloRegisztracio extends Controller
+class FelhasznaloRegisztracioController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -89,5 +86,4 @@ class felhasznaloRegisztracio extends Controller
             ]);
         }
     }
-
 }

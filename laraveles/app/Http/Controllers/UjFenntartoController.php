@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\fenntUrlapEllenorzes;
 use App\Models\fenntarto;
-class UjFenntarto extends Controller
+
+class UjFenntartoController extends Controller
 {
     /**
      * Display a listing of the resource.
