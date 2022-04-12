@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\dolgozo;
 use App\Models\alkalmazott;
 use App\Models\agazati_potlek;
-use App\Http\Requests\dolgozoUrlapEllenorzes;
-use Illuminate\Contracts\Validation\Validator;
+
 
 class AlkalmazottController extends Controller
 {

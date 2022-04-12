@@ -114,16 +114,17 @@
                             <div class="md-form mb-4">
                                 <label data-error="wrong" data-success="right" for="nameInput">Felhasználó
                                     név</label>
-                                <input type="text" id="nameInput" class="form-control validate" name="name" value="">
+                                <input type="text" id="nameInput" class="form-control validate" name="name" value="" readonly>
 
                             </div>
                             <div class="md-form mb-4">
                                 <label data-error="wrong" data-success="right" for="emailInput">Email</label>
-                                <input type="email" id="emailInput" class="form-control validate" name="email" value="">
+                                <input type="email" id="emailInput" class="form-control validate" name="email" value="" readonly>
 
                             </div>
                             <div class="md-form mb-4">
-                                <select name="jogosultsag" id="">
+                                <select name="jogosultsag" id=""  class="form-control">
+                                    <option>Válassz Jogosultságot</option>
                                     @foreach ($jogosultsagok as $jogosultsag)
                                         <option value={{ $jogosultsag->id }}>{{ $jogosultsag->megnevezes }}
                                         </option>
@@ -137,7 +138,7 @@
                         </div>
                         <div class="modal-footer">
                             <div class="adatModositEnged">
-                                <button type="button" class="btn btn-primary" id="adatModosit">Adatok módosítása</button>
+                                <button type="button" class="btn btn-primary" id="adatModositEnged">Adatok módosítása</button>
                             </div>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                         </div>

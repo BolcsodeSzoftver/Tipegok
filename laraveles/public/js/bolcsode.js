@@ -74,7 +74,7 @@ $(function () {
 			<th scope="col">FEOR azonosító</th>
 			<th scope="col">Ágazati pótlék</th>
 		</tr></thead>`);
-        let vegpont = "/teszt/" + $("select").val();
+        let vegpont = "/keresFenntarto/" + $("select").val();
         ajaxhivas.getAjax(vegpont, adatLista);
     });
 

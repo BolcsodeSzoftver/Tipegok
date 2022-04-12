@@ -1,4 +1,8 @@
 $(function () {
+    $(".adatModositEnged").on("click", function () {
+        console.log("modositEnged");
+        $("input").removeAttr("readonly");
+    });
     $(".modositGomb").on("click", function () {
         let id = this.id;
         $("#usersId").val(id);
