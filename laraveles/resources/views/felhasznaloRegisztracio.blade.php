@@ -57,7 +57,7 @@
 
                                             <div class="d-flex flex-row align-items-center mb-4 ">
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <select name="Jogosultsag" id="jogosultsag">
+                                                    <select name="Jogosultsag" id="jogosultsag" class="form-control">
                                                         @foreach ($jogosultsagok as $jogosultsag)
                                                             <option value="{{ $jogosultsag->id }}">
                                                                 {{ $jogosultsag->megnevezes }}</option>

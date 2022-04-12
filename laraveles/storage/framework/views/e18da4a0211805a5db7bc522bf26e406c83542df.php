@@ -25,8 +25,7 @@
     </div>
 
     <form class="form" id="bolcsiForm">
-        <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
-        <select class="bolcsiNev">
+        <select class="form-control col-md-4 bolcsiNev">
             <option>Válassz egy fenntartót</option>
             <?php $__currentLoopData = $fenntartok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <option value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?></option>
@@ -122,7 +121,7 @@
                             <div class="form-outline">
                                 
 
-                                <select class="fenntartoModosit" name="fenntarto" id="fenntarto">
+                                <select  class="form-control fenntartoModosit" name="fenntarto" id="fenntarto">
                                     <?php $__currentLoopData = $fenntartok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option id="fenntarto" value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?>
 

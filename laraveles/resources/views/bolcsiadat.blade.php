@@ -25,8 +25,7 @@
     </div>
 
     <form class="form" id="bolcsiForm">
-        <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
-        <select class="bolcsiNev">
+        <select class="form-control col-md-4 bolcsiNev">
             <option>Válassz egy fenntartót</option>
             @foreach ($fenntartok as $fenntarto)
                 <option value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
@@ -123,7 +122,7 @@
                                 {{-- <input type="text" id="fenntarto" class="form-control" readonly />
                                 <label for="fenntarto">Fenntartó</label> --}}
 
-                                <select class="fenntartoModosit" name="fenntarto" id="fenntarto">
+                                <select  class="form-control fenntartoModosit" name="fenntarto" id="fenntarto">
                                     @foreach ($fenntartok as $fenntarto)
                                         <option id="fenntarto" value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}
                                         </option>

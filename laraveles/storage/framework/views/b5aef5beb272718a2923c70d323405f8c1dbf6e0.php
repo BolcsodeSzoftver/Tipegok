@@ -78,7 +78,7 @@
 
                                             <div class="d-flex flex-row align-items-center mb-4 ">
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <select name="Jogosultsag" id="jogosultsag">
+                                                    <select name="Jogosultsag" id="jogosultsag" class="form-control">
                                                         <?php $__currentLoopData = $jogosultsagok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jogosultsag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <option value="<?php echo e($jogosultsag->id); ?>">
                                                                 <?php echo e($jogosultsag->megnevezes); ?></option>

@@ -114,6 +114,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h6 style="text-align: center">Jelszó módosítás</h6>
+
                             </div> 
                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/felhasznaloRegisztracio/{{ Auth::user()->id }}" method="post">
                                 @csrf

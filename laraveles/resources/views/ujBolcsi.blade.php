@@ -38,11 +38,8 @@
                                 <div class="col">
 
                                     <div class="form-outline">
-                                        {{-- <input type="text" id="cim" class="form-control" name="fenntarto" />
-                                                            <label class="form-label" for="cim">Fenntartó</label> --}}
-                                        <label for="bolcsi">Fenntartók:</label>
-                                        <select class="bolcsiNev" name="fennt_id">
-
+                                        <select  name="fennt_id"  class="form-control bolcsiNev">
+                                            <option>Válassz fenntartót</option>
                                             @foreach ($fenntartokId as $fenntarto)
                                                 <option value="{{ $fenntarto->id }}">
                                                     {{ $fenntarto->nev }}</option>
@@ -59,11 +56,8 @@
                                 <div class="col">
 
                                     <div class="form-outline">
-                                        {{-- <input type="text" id="cim" class="form-control" name="admin" />
-                                                            <label class="form-label" for="cim">Admin</label> --}}
-                                        <label for="bolcsi">Admin:</label>
-
-                                        <select class="bolcsiNev" name="bolcsode_admin">
+                                        <select class="form-control bolcsiNev" name="bolcsode_admin">
+                                            <option>Válassz admint</option>
                                             @foreach ($megjelenitAdminNev as $adminNev)
                                                 @if ($adminNev->jogosultsag_id === 1)
                                                     <option value="{{ $adminNev->id }}">
@@ -173,7 +167,7 @@
                     <div class="modal-footer">
                         <div class="col">
                             <div class="form-outline">
-                                <button class="btn btn-primary" id="ujBolcsi" type="submit">
+                                <button class="btn btn-dark" id="ujBolcsi" type="submit">
                                     Mentés
                                 </button>
                             </div>

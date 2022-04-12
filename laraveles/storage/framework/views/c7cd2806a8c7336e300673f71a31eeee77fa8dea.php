@@ -38,10 +38,8 @@
                                 <div class="col">
 
                                     <div class="form-outline">
-                                        
-                                        <label for="bolcsi">Fenntartók:</label>
-                                        <select class="bolcsiNev" name="fennt_id">
-
+                                        <select  name="fennt_id"  class="form-control bolcsiNev">
+                                            <option>Válassz fenntartót</option>
                                             <?php $__currentLoopData = $fenntartokId; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <option value="<?php echo e($fenntarto->id); ?>">
                                                     <?php echo e($fenntarto->nev); ?></option>
@@ -65,10 +63,8 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col">
 
                                     <div class="form-outline">
-                                        
-                                        <label for="bolcsi">Admin:</label>
-
-                                        <select class="bolcsiNev" name="bolcsode_admin">
+                                        <select class="form-control bolcsiNev" name="bolcsode_admin">
+                                            <option>Válassz admint</option>
                                             <?php $__currentLoopData = $megjelenitAdminNev; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <?php if($adminNev->jogosultsag_id === 1): ?>
                                                     <option value="<?php echo e($adminNev->id); ?>">
@@ -235,7 +231,7 @@ unset($__errorArgs, $__bag); ?>
                     <div class="modal-footer">
                         <div class="col">
                             <div class="form-outline">
-                                <button class="btn btn-primary" id="ujBolcsi" type="submit">
+                                <button class="btn btn-dark" id="ujBolcsi" type="submit">
                                     Mentés
                                 </button>
                             </div>
