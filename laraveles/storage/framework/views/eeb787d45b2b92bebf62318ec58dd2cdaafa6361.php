@@ -2,7 +2,11 @@
 <?php
     if(!Auth::user()->regisztralFelhasznalo()){
         echo("<script>window.location.replace('/ujdolgozo')</script>");   
+    } 
+    if(Auth::user()->isDolgozo()){
+        echo("<script>window.location.replace('/sikeresAdatKitoltesDolgozo')</script>");   
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +53,7 @@
                                         profilom
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Jelszó modosítása</a>
+                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target=".jelszoModositModal">Jelszó modosítása</a>
                                         <a class="dropdown-item" href="<?php echo e(route('logout')); ?>">Kijelentkezés</a>
                                     </div>
                                 </li>
@@ -102,6 +106,38 @@
             <a class="hover" href="/mellekletek"    >Mellékletek</a>
             <a class="hover" href="/agaztatiPotlek" >Ágazati potlék</a>
         </div>
+        <div class="modal fade jelszoModositModal" tabindex="-1" role="dialog" aria-labelledby="jelszoModositModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 style="text-align: center">Jelszó módosítás</h6>
+                            </div> 
+                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/felhasznaloRegisztracio/<?php echo e(Auth::user()->id); ?>" method="post">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="_method" value="PUT">
+                                <div class="form-group">
+                                    <label>Régi jelszó :</label>
+                                    <input type="password" id="first-name" class="form-control"  placeholder="Régi jelszó" name="regiJelszo"> 
+                                </div>
+                                <div class="form-group">
+                                    <label>Új jelszó :</label>
+                                    <input type="password" id="first-name" placeholder="Új jelszó" class="form-control" name="ujJelszo"> 
+                                </div>
+                                <div class="form-group">
+                                    <label>Új jelszó megerősítése :</label>  
+                                    <input type="password" id="first-name"  class="form-control"placeholder="Új jelszó megerősítése"  name="jelszoMegerosites"> 
+                                </div>
+                                <button type="submit" class="btn btn-primary">Mentés</button>
+                            </form>                     
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         
 

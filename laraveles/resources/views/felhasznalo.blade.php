@@ -40,14 +40,24 @@
                                     <td></td>
                                     <td class="nev" id={{ $userData->id }}>{{ $userData->name }}</td>
                                     <td class="email" id={{ $userData->id }}>{{ $userData->email }}</td>
-                                    <td>{{ $jogosultsag->megnevezes }}</td>
+                                    @if ($userData->jogosultsag_id == 1)
+                                    <td>admin</td>
+                                    @endif
+                                    @if ($userData->jogosultsag_id == 2)
+                                    <td>szuperadmin</td>
+                                    @endif
+                                    @if ($userData->jogosultsag_id == 3)
+                                    <td>dolgozo</td>
+                                    @endif
                                 </tr>
                             @endforeach
                         @endif
                     @endif
+                    
                     @if ($jogosultsag->megnevezes == 'admin')
                         @if (Auth::user()->jogosultsag_id == $jogosultsag->id)
-                            @foreach ($bolcsodek as $bolcsode)
+
+                        @foreach ($bolcsodek as $bolcsode)
                                 @if ($bolcsode->bolcsode_admin == Auth::user()->id)
                                     @foreach ($user as $userData)
                                         @foreach ($alkalmazottak as $alkalmazott)
@@ -63,14 +73,23 @@
                                                         <td></td>
                                                         <td class="nev" id={{ $userData->id }}>{{ $userData->name }}</td>
                                                         <td class="email" id={{ $userData->id }}>{{ $userData->email }}</td>
-                                                        <td>{{ $jogosultsag->megnevezes }}</td>
+                                                        @if ($userData->jogosultsag_id == 1)
+                                                            <td>admin</td>
+                                                        @endif
+                                                        @if ($userData->jogosultsag_id == 2)
+                                                            <td>szuperadmin</td>
+                                                        @endif
+                                                        @if ($userData->jogosultsag_id == 3)
+                                                            <td>dolgozo</td>
+                                                        @endif
                                                     </tr>
                                                 @endif
                                             @endif
                                         @endforeach
                                     @endforeach
                                 @endif
-                            @endforeach
+                            @endforeach        
+
                         @endif
                     @endif
                 @endforeach

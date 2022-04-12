@@ -54,8 +54,6 @@
 
                                     </tr>
                                 <?php endif; ?>
-
-                                
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
 
@@ -278,11 +276,11 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <p>Kifizetés módja</p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz" value="1">
+                                    <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz" value="kézpénz">
                                     <label class="form-check-label" for="kezpenz">Kézpénz</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="utalas" id="utalas" value="2">
+                                    <input class="form-check-input" type="radio" name="utalas" id="utalas" value="Utalás">
                                     <label class="form-check-label" for="utalas">Utalás</label>
                                 </div>
                             </div>

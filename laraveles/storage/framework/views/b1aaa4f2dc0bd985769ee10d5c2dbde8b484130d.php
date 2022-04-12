@@ -40,14 +40,24 @@
                                     <td></td>
                                     <td class="nev" id=<?php echo e($userData->id); ?>><?php echo e($userData->name); ?></td>
                                     <td class="email" id=<?php echo e($userData->id); ?>><?php echo e($userData->email); ?></td>
-                                    <td><?php echo e($jogosultsag->megnevezes); ?></td>
+                                    <?php if($userData->jogosultsag_id == 1): ?>
+                                    <td>admin</td>
+                                    <?php endif; ?>
+                                    <?php if($userData->jogosultsag_id == 2): ?>
+                                    <td>szuperadmin</td>
+                                    <?php endif; ?>
+                                    <?php if($userData->jogosultsag_id == 3): ?>
+                                    <td>dolgozo</td>
+                                    <?php endif; ?>
                                 </tr>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <?php endif; ?>
                     <?php endif; ?>
+                    
                     <?php if($jogosultsag->megnevezes == 'admin'): ?>
                         <?php if(Auth::user()->jogosultsag_id == $jogosultsag->id): ?>
-                            <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                        <?php $__currentLoopData = $bolcsodek; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bolcsode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <?php if($bolcsode->bolcsode_admin == Auth::user()->id): ?>
                                     <?php $__currentLoopData = $user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $userData): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <?php $__currentLoopData = $alkalmazottak; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -63,14 +73,23 @@
                                                         <td></td>
                                                         <td class="nev" id=<?php echo e($userData->id); ?>><?php echo e($userData->name); ?></td>
                                                         <td class="email" id=<?php echo e($userData->id); ?>><?php echo e($userData->email); ?></td>
-                                                        <td><?php echo e($jogosultsag->megnevezes); ?></td>
+                                                        <?php if($userData->jogosultsag_id == 1): ?>
+                                                            <td>admin</td>
+                                                        <?php endif; ?>
+                                                        <?php if($userData->jogosultsag_id == 2): ?>
+                                                            <td>szuperadmin</td>
+                                                        <?php endif; ?>
+                                                        <?php if($userData->jogosultsag_id == 3): ?>
+                                                            <td>dolgozo</td>
+                                                        <?php endif; ?>
                                                     </tr>
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 <?php endif; ?>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>        
+
                         <?php endif; ?>
                     <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
