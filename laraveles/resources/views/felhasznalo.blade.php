@@ -10,7 +10,6 @@
 
     </style>
     <script src="js/felhasznalo.js"></script>
-   {{--  <script src="js/adminSajatAdatMegjelenit.js"></script> --}}
 @endsection
 @section('tartalom')
     <div>

@@ -1,23 +1,52 @@
+h3 {
+	margin: 12px 0;
+	color: rgb(31, 144, 214);
+}
+
+#menetesJelszo {
+	width: 200px;
+	margin: 10 auto;
+	display: block;
+}
+
 @media only screen and (max-width: 990px) {
-	#tartalom{padding: 20px; width: 60em;}
+	#tartalom {
+		padding: 20px;
+		width: 60em;
+	}
 }
 
 @media only screen and (max-width: 960px) {
-	#tartalom{padding: 20px; width: 55em;}
+	#tartalom {
+		padding: 20px;
+		width: 55em;
+	}
 }
 
 @media only screen and (max-width: 880px) {
-	#tartalom{padding: 20px; width: 50em;}
+	#tartalom {
+		padding: 20px;
+		width: 50em;
+	}
 }
 
 @media only screen and (max-width: 800px) {
-	#tartalom{padding: 20px; width: 45em;}
+	#tartalom {
+		padding: 20px;
+		width: 45em;
+	}
 }
 
 @media only screen and (max-width: 730px) {
-	#tartalom{padding: 20px; width: 40em;}
+	#tartalom {
+		padding: 20px;
+		width: 40em;
+	}
 }
 
 @media only screen and (max-width: 655px) {
-	#tartalom{padding: 20px; width: 100%;}
+	#tartalom {
+		padding: 20px;
+		width: 100%;
+	}
 }

@@ -315,7 +315,7 @@
             <p>** Az I/2000. (I.7.) SzCsM rendelet illetve a 15/1998. NM rendelet alapján</p>
         </footer>
     </div>
-    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
+    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb" class="btn btn-dark"> 
     </main>
 </body>
 </html>

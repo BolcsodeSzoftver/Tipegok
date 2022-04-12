@@ -13,12 +13,7 @@
   </head>
   <body>
     <main>
-        <label class="alkalmazottNevek">Válasz dolgozót: </label>
-        <select class="alkalmazottNevek">
-            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <option class='nevekLista' value=<?php echo e($alkalmazott->id); ?>><?php echo e($alkalmazott->nev); ?></option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </select>
+      <?php echo $__env->make('layouts.dolgozoKivalasztas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
       <div id="export">
       <header>
         <h2>6. Melléklet</h2>
@@ -103,8 +98,7 @@
         <p class="alairas"><span>...................................................<br>munkavállaló aláírása</span></p>
       </section>
         </div>
-        <input type="submit" value="Word exportálása" onclick="Export2Word('export', 'melleklet_6');" id="gomb">
-        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
+        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb" class="btn btn-dark"> 
     </main>
   </body>
 </html>

@@ -77,5 +77,10 @@ img{
 .modal {
 	overflow-y:auto;
   }
+  #mentes{
+	width: 200px;
+    margin: 10 auto;
+    display: block;
+  }
 
 

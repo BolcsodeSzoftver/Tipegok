@@ -130,7 +130,12 @@
                                     <label>Új jelszó megerősítése :</label>  
                                     <input type="password" id="first-name"  class="form-control"placeholder="Új jelszó megerősítése"  name="jelszoMegerosites"> 
                                 </div>
-                                <button type="submit" class="btn btn-primary">Mentés</button>
+                                <div>
+                                    <button type="submit" class="btn btn-dark" id="menetesJelszo">Mentés</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Bezár</button>
+                                </div>
                             </form>                     
                         </div>
                     </div>

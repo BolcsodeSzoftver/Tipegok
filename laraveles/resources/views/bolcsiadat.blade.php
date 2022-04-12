@@ -27,7 +27,7 @@
     <form class="form" id="bolcsiForm">
         <label for="bolcsi">Fenntartókhoz tartozó bölcsödék:</label>
         <select class="bolcsiNev">
-            <option >Válassz egy fenntartót</option>
+            <option>Válassz egy fenntartót</option>
             @foreach ($fenntartok as $fenntarto)
                 <option value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}</option>
             @endforeach
@@ -135,18 +135,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-outline">
+                    <button class="btn btn-dark" id="Ujmodositadat" type="button">
+                        Mentés
+                    </button>
+                </div>
 
 
                 <div class="modal-footer">
                     <div class="adatModositEnged">
                         <button id="adatokMod" type="button" class="btn btn-primary">Adatok módosítása</button>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                            <button class="btn btn-primary" id="Ujmodositadat" type="button">
-                                Mentés
-                            </button>
-                        </div>
                     </div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
                 </div>

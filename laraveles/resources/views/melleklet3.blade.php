@@ -31,7 +31,7 @@
         </article>
 
     </div>
-    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
+    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb" class="btn btn-dark"> 
     </main>
     </main>
 </body>

@@ -4,24 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Melléklet 1</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/mellekletek_css/melleklet1.css">
     <script src="js/ajax.js"></script>
     <script src="js/mellekletAdatok.js"></script>
     <script src="js/melleklet.js"></script>
-    <script src="js/mellekletAdatok.js"></script>
 </head>
 
 <body>
     <main>
-        <label class="alkalmazottNevek">Válasz dolgozót: </label>
-        <select class="alkalmazottNevek">
-            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <option class='nevekLista' value=<?php echo e($alkalmazott->id); ?>><?php echo e($alkalmazott->nev); ?></option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </select>
+        <?php echo $__env->make('layouts.dolgozoKivalasztas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div id="export">
         <header>
             <h2>1. Melléklet</h2><br>
@@ -65,8 +58,8 @@
             </div>
 
         </div>
-        <input type="submit" value="word exportálása" id="gomb" onclick="Export2Word('export', 'melléklet_1');">
-        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb">
+        
+        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb" class="btn btn-dark">
     </main>
 </body>
 

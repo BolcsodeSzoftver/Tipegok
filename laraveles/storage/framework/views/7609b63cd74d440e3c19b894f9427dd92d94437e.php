@@ -13,12 +13,7 @@
 </head>
 <body>
     <main>
-        <label class="alkalmazottNevek">Válasz dolgozót: </label>
-        <select class="alkalmazottNevek">
-            <?php $__currentLoopData = $alkalmazotts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $alkalmazott): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <option class='nevekLista' value=<?php echo e($alkalmazott->id); ?>><?php echo e($alkalmazott->nev); ?></option>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </select>
+        <?php echo $__env->make('layouts.dolgozoKivalasztas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div id="export">
         <header>
             <h2 id="vekony">10. melléklet</h2>
@@ -320,8 +315,7 @@
             <p>** Az I/2000. (I.7.) SzCsM rendelet illetve a 15/1998. NM rendelet alapján</p>
         </footer>
     </div>
-    <input type="submit" value="word exportálása" id="gomb" onclick="Export2Word('export', 'melléklet_10');">
-    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
+    <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb" class="btn btn-dark"> 
     </main>
 </body>
 </html><?php /**PATH C:\Users\Bibor\Desktop\Szakdoga\Tipegok\laraveles\resources\views/melleklet10.blade.php ENDPATH**/ ?>

@@ -1,20 +1,25 @@
 @charset "utf-8";
+
 h3 {
     margin: 12px 0;
     color: rgb(31, 144, 214);
 }
+
 table {
     background-color: #f3f3f3;
 }
+
 th,
 td {
     text-align: center;
 }
+
 #jovhagyas {
     padding: 5px;
     margin: 5px;
     float: right;
 }
+
 .pagination {
     float: right;
 }
@@ -22,14 +27,23 @@ td {
 .modosit {
     text-align: center;
 }
+
 #ujBolcsode {
     width: 200px;
     color: white;
 }
+
 #ujBolcsi {
     color: white;
 }
+
 #ujBolcsi:hover {
     color: white;
     text-decoration: none;
+}
+
+#Ujmodositadat {
+    width: 200px;
+    margin: 10 auto;
+    display: block;
 }

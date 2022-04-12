@@ -98,7 +98,7 @@
         <p class="alairas"><span>...................................................<br>munkavállaló aláírása</span></p>
       </section>
         </div>
-        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb"> 
+        <input type="button" value="Nyomtatás" onclick="printDiv()" id="gomb" class="btn btn-dark"> 
     </main>
   </body>
 </html>

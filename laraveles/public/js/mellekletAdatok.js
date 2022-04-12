@@ -4,10 +4,10 @@ $(function() {
 	$('.kereso_box select').selectpicker();
 
 	$('select').change(() => {
-		let alkalmazott="http://localhost:8000/alkalmazott/"+$('select').val();
-		let dolgozo="http://localhost:8000/dolgozo/"+$('select').val();
-		let fenntarto="http://localhost:8000/fenntarto/"+$('select').val();
-		let bizonyitvany="http://localhost:8000/bizonyitvany/"+$('select').val();
+		let alkalmazott="/alkalmazott/"+$('select').val();
+		let dolgozo="/dolgozo/"+$('select').val();
+		let fenntarto="/fenntarto/"+$('select').val();
+		let bizonyitvany="/bizonyitvany/"+$('select').val();
 		console.log(alkalmazott, fenntarto);
 		ajax.getAjax(alkalmazott, adatLista1);
 		ajax.getAjax(dolgozo, adatLista2);
