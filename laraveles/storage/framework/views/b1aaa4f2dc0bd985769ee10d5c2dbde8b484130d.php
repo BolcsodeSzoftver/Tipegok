@@ -10,7 +10,6 @@
 
     </style>
     <script src="js/felhasznalo.js"></script>
-   
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
     <div>
