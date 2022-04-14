@@ -110,9 +110,6 @@
                                                     <a class="hover dropdown-item dolgozoGomb" href="#"
                                                         id={{ $data->id }} data-toggle="modal"
                                                         data-target="#dolgozoModal">Munkakőri adatok</a>
-                                                    <a class="hover dropdown-item orvosiAdatokGomb" href="#"
-                                                        id={{ $data->id }} data-toggle="modal"
-                                                        data-target="#orvosiModal">Orvosi adatok</a>
                                                 </div>
                                             </div>
                                         </td>

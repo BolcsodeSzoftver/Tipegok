@@ -99,39 +99,48 @@
                             <div class="row">
                                 <div class="col">
                                     <label for="bruttoAlapber">Bruttó alapbér</label>
-                                    <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber" value="{{ old('bruttoAlapber')}}">
-                                        @error('bruttoAlapber')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                    <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber"
+                                        value="{{ old('bruttoAlapber') }}">
+                                    @error('bruttoAlapber')
+                                        <span style="color: red">{{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="col">
                                     <label for="hetiMunkaOra">Heti munkaóra</label>
-                                    <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra" value="{{ old('hetiMunkaOra')}}">
-                                        @error('hetiMunkaOra')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                    <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra"
+                                        value="{{ old('hetiMunkaOra') }}">
+                                    @error('hetiMunkaOra')
+                                        <span style="color: red">{{ $message }} </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="besorolasiBetu">Besorolási betű</label><br>
-                                    <select id="besorolasiBetu" name="besorolasiBetu" style="width: 100%; height: 35px; border-radius: 3px;">
-                                        <option value="A">A</option><option value="B">B</option>
-                                        <option value="C">C</option><option value="D">D</option>
-                                        <option value="E">E</option><option value="F">F</option>
-                                        <option value="G">G</option><option value="H">H</option>
-                                        <option value="I">I</option><option value="J">J</option>
+                                    <select id="besorolasiBetu" name="besorolasiBetu"
+                                        style="width: 100%; height: 35px; border-radius: 3px;">
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
                                     </select>
-                                        @error('besorolasiBetu')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                    @error('besorolasiBetu')
+                                        <span style="color: red">{{ $message }} </span>
+                                    @enderror
                                 </div>
                                 <div class="col">
                                     <label for="besorolasiSzam">Besorolási szám</label>
-                                    <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam" value="{{ old('besorolasiSzam')}}">
-                                        @error('besorolasiSzam')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                    <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam"
+                                        value="{{ old('besorolasiSzam') }}">
+                                    @error('besorolasiSzam')
+                                        <span style="color: red">{{ $message }} </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -139,69 +148,78 @@
                         <div class="row">
                             <div class="col">
                                 <label for="feorAzonosito">Feor azonosító</label>
-                                <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito" value="{{ old('feorAzonosito')}}">
-                                        @error('feorAzonosito')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito"
+                                    value="{{ old('feorAzonosito') }}">
+                                @error('feorAzonosito')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                             <div class="col">
                                 <label for="evesSzabi">Éves szabadság</label>
-                                <input type="text" class="form-control" id="evesSzabi" name="evesSzabi" value="{{ old('evesSzabi')}}">
-                                        @error('evesSzabi')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="text" class="form-control" id="evesSzabi" name="evesSzabi"
+                                    value="{{ old('evesSzabi') }}">
+                                @error('evesSzabi')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="vegzettseg">Végzettség</label>
-                                <input type="text" class="form-control" id="vegzettseg" name="vegzettseg" value="{{ old('vegzettseg')}}">
-                                        @error('vegzettseg')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="text" class="form-control" id="vegzettseg" name="vegzettseg"
+                                    value="{{ old('vegzettseg') }}">
+                                @error('vegzettseg')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                             <div class="col">
                                 <label for="szgfKod">SZGF kód</label>
-                                <input type="text" class="form-control" id="szgfKod" name="szgfKod" value="{{ old('szgfKod')}}">
-                                        @error('szgfKod')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="text" class="form-control" id="szgfKod" name="szgfKod"
+                                    value="{{ old('szgfKod') }}">
+                                @error('szgfKod')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col">
                                 <label for="munkakor">Munkakör</label>
-                                <input type="text" class="form-control" id="munkakor" name="munkakor" value="{{ old('munkakor')}}">
-                                        @error('munkakor')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="text" class="form-control" id="munkakor" name="munkakor"
+                                    value="{{ old('munkakor') }}">
+                                @error('munkakor')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                             <div class="col">
                                 <label for="szSzakkepzet">Sz_szakképzett</label>
-                                <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet" value="{{ old('szSzakkepzet')}}">
-                                        @error('szSzakkepzet')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet"
+                                    value="{{ old('szSzakkepzet') }}">
+                                @error('szSzakkepzet')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col">
                                 <label for="belepes">Belépési nap</label>
-                                <input type="date" class="form-control" id="belepes" name="belepes" value="{{ old('belepes')}}">
-                                        @error('belepes')
-                                            <span style="color: red">{{ $message }} </span>
-                                        @enderror
+                                <input type="date" class="form-control" id="belepes" name="belepes"
+                                    value="{{ old('belepes') }}">
+                                @error('belepes')
+                                    <span style="color: red">{{ $message }} </span>
+                                @enderror
                             </div>
                             <div class="col">
                                 <p>Kifizetés módja</p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz" value="kézpénz">
+                                    <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz"
+                                        value="kézpénz">
                                     <label class="form-check-label" for="kezpenz">Kézpénz</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="utalas" id="utalas" value="Utalás">
+                                    <input class="form-check-input" type="radio" name="utalas" id="utalas"
+                                        value="Utalás">
                                     <label class="form-check-label" for="utalas">Utalás</label>
                                 </div>
                             </div>

@@ -111,9 +111,6 @@
                                                     <a class="hover dropdown-item dolgozoGomb" href="#"
                                                         id=<?php echo e($data->id); ?> data-toggle="modal"
                                                         data-target="#dolgozoModal">Munkakőri adatok</a>
-                                                    <a class="hover dropdown-item orvosiAdatokGomb" href="#"
-                                                        id=<?php echo e($data->id); ?> data-toggle="modal"
-                                                        data-target="#orvosiModal">Orvosi adatok</a>
                                                 </div>
                                             </div>
                                         </td>

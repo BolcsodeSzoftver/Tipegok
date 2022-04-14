@@ -165,7 +165,7 @@ $(function () {
 
         $(".jovahagyasKezd").on("click", function () {
             let id = this.id;
-            console.log(this.id);
+            console.log(this.name);
             if (this.id == id) {
                 $("#nevKiri").html(this.name);
             }

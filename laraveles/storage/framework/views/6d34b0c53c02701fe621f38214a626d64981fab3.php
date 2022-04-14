@@ -101,28 +101,30 @@
                             <div class="row">
                                 <div class="col">
                                     <label for="bruttoAlapber">Bruttó alapbér</label>
-                                    <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber" value="<?php echo e(old('bruttoAlapber')); ?>">
-                                        <?php $__errorArgs = ['bruttoAlapber'];
+                                    <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber"
+                                        value="<?php echo e(old('bruttoAlapber')); ?>">
+                                    <?php $__errorArgs = ['bruttoAlapber'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                        <span style="color: red"><?php echo e($message); ?> </span>
+                                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
                                 <div class="col">
                                     <label for="hetiMunkaOra">Heti munkaóra</label>
-                                    <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra" value="<?php echo e(old('hetiMunkaOra')); ?>">
-                                        <?php $__errorArgs = ['hetiMunkaOra'];
+                                    <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra"
+                                        value="<?php echo e(old('hetiMunkaOra')); ?>">
+                                    <?php $__errorArgs = ['hetiMunkaOra'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                        <span style="color: red"><?php echo e($message); ?> </span>
+                                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -131,34 +133,41 @@ unset($__errorArgs, $__bag); ?>
                             <div class="row">
                                 <div class="col">
                                     <label for="besorolasiBetu">Besorolási betű</label><br>
-                                    <select id="besorolasiBetu" name="besorolasiBetu" style="width: 100%; height: 35px; border-radius: 3px;">
-                                        <option value="A">A</option><option value="B">B</option>
-                                        <option value="C">C</option><option value="D">D</option>
-                                        <option value="E">E</option><option value="F">F</option>
-                                        <option value="G">G</option><option value="H">H</option>
-                                        <option value="I">I</option><option value="J">J</option>
+                                    <select id="besorolasiBetu" name="besorolasiBetu"
+                                        style="width: 100%; height: 35px; border-radius: 3px;">
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                        <option value="F">F</option>
+                                        <option value="G">G</option>
+                                        <option value="H">H</option>
+                                        <option value="I">I</option>
+                                        <option value="J">J</option>
                                     </select>
-                                        <?php $__errorArgs = ['besorolasiBetu'];
+                                    <?php $__errorArgs = ['besorolasiBetu'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                        <span style="color: red"><?php echo e($message); ?> </span>
+                                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
                                 <div class="col">
                                     <label for="besorolasiSzam">Besorolási szám</label>
-                                    <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam" value="<?php echo e(old('besorolasiSzam')); ?>">
-                                        <?php $__errorArgs = ['besorolasiSzam'];
+                                    <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam"
+                                        value="<?php echo e(old('besorolasiSzam')); ?>">
+                                    <?php $__errorArgs = ['besorolasiSzam'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                        <span style="color: red"><?php echo e($message); ?> </span>
+                                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -169,28 +178,30 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row">
                             <div class="col">
                                 <label for="feorAzonosito">Feor azonosító</label>
-                                <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito" value="<?php echo e(old('feorAzonosito')); ?>">
-                                        <?php $__errorArgs = ['feorAzonosito'];
+                                <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito"
+                                    value="<?php echo e(old('feorAzonosito')); ?>">
+                                <?php $__errorArgs = ['feorAzonosito'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col">
                                 <label for="evesSzabi">Éves szabadság</label>
-                                <input type="text" class="form-control" id="evesSzabi" name="evesSzabi" value="<?php echo e(old('evesSzabi')); ?>">
-                                        <?php $__errorArgs = ['evesSzabi'];
+                                <input type="text" class="form-control" id="evesSzabi" name="evesSzabi"
+                                    value="<?php echo e(old('evesSzabi')); ?>">
+                                <?php $__errorArgs = ['evesSzabi'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -199,28 +210,30 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row">
                             <div class="col">
                                 <label for="vegzettseg">Végzettség</label>
-                                <input type="text" class="form-control" id="vegzettseg" name="vegzettseg" value="<?php echo e(old('vegzettseg')); ?>">
-                                        <?php $__errorArgs = ['vegzettseg'];
+                                <input type="text" class="form-control" id="vegzettseg" name="vegzettseg"
+                                    value="<?php echo e(old('vegzettseg')); ?>">
+                                <?php $__errorArgs = ['vegzettseg'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col">
                                 <label for="szgfKod">SZGF kód</label>
-                                <input type="text" class="form-control" id="szgfKod" name="szgfKod" value="<?php echo e(old('szgfKod')); ?>">
-                                        <?php $__errorArgs = ['szgfKod'];
+                                <input type="text" class="form-control" id="szgfKod" name="szgfKod"
+                                    value="<?php echo e(old('szgfKod')); ?>">
+                                <?php $__errorArgs = ['szgfKod'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -230,28 +243,30 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row">
                             <div class="col">
                                 <label for="munkakor">Munkakör</label>
-                                <input type="text" class="form-control" id="munkakor" name="munkakor" value="<?php echo e(old('munkakor')); ?>">
-                                        <?php $__errorArgs = ['munkakor'];
+                                <input type="text" class="form-control" id="munkakor" name="munkakor"
+                                    value="<?php echo e(old('munkakor')); ?>">
+                                <?php $__errorArgs = ['munkakor'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col">
                                 <label for="szSzakkepzet">Sz_szakképzett</label>
-                                <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet" value="<?php echo e(old('szSzakkepzet')); ?>">
-                                        <?php $__errorArgs = ['szSzakkepzet'];
+                                <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet"
+                                    value="<?php echo e(old('szSzakkepzet')); ?>">
+                                <?php $__errorArgs = ['szSzakkepzet'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -261,14 +276,15 @@ unset($__errorArgs, $__bag); ?>
                         <div class="row">
                             <div class="col">
                                 <label for="belepes">Belépési nap</label>
-                                <input type="date" class="form-control" id="belepes" name="belepes" value="<?php echo e(old('belepes')); ?>">
-                                        <?php $__errorArgs = ['belepes'];
+                                <input type="date" class="form-control" id="belepes" name="belepes"
+                                    value="<?php echo e(old('belepes')); ?>">
+                                <?php $__errorArgs = ['belepes'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                            <span style="color: red"><?php echo e($message); ?> </span>
-                                        <?php unset($message);
+                                    <span style="color: red"><?php echo e($message); ?> </span>
+                                <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -276,11 +292,13 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <p>Kifizetés módja</p>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz" value="kézpénz">
+                                    <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz"
+                                        value="kézpénz">
                                     <label class="form-check-label" for="kezpenz">Kézpénz</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="utalas" id="utalas" value="Utalás">
+                                    <input class="form-check-input" type="radio" name="utalas" id="utalas"
+                                        value="Utalás">
                                     <label class="form-check-label" for="utalas">Utalás</label>
                                 </div>
                             </div>
