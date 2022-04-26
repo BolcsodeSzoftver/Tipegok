@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\jogosultsag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -35,7 +34,16 @@ class CreateUsersTable extends Migration
         $user->jogosultsag_id = 2;
         $user->allapot = 0;
         $user->password = Hash::make(123);
+
+        $userAdmin = new User();
+        $userAdmin-> name = "admin";
+        $userAdmin->email = "admin@gmail.com";
+        $userAdmin->jogosultsag_id = 1;
+        $userAdmin->allapot = 0;
+        $userAdmin->password = Hash::make(321);
+
         $user->save();
+        $userAdmin->save();
 
     }
 

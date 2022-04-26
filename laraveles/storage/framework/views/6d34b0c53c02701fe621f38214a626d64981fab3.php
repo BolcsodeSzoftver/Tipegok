@@ -102,7 +102,7 @@
                                 <div class="col">
                                     <label for="bruttoAlapber">Bruttó alapbér</label>
                                     <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber"
-                                        value="<?php echo e(old('bruttoAlapber')); ?>">
+                                        value="<?php echo e(old('bruttoAlapber')); ?> 350000">
                                     <?php $__errorArgs = ['bruttoAlapber'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -117,7 +117,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col">
                                     <label for="hetiMunkaOra">Heti munkaóra</label>
                                     <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra"
-                                        value="<?php echo e(old('hetiMunkaOra')); ?>">
+                                        value="<?php echo e(old('hetiMunkaOra')); ?> 40">
                                     <?php $__errorArgs = ['hetiMunkaOra'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -160,7 +160,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col">
                                     <label for="besorolasiSzam">Besorolási szám</label>
                                     <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam"
-                                        value="<?php echo e(old('besorolasiSzam')); ?>">
+                                        value="<?php echo e(old('besorolasiSzam')); ?> 5">
                                     <?php $__errorArgs = ['besorolasiSzam'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -179,7 +179,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <label for="feorAzonosito">Feor azonosító</label>
                                 <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito"
-                                    value="<?php echo e(old('feorAzonosito')); ?>">
+                                    value="<?php echo e(old('feorAzonosito')); ?> 123">
                                 <?php $__errorArgs = ['feorAzonosito'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -194,7 +194,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <label for="evesSzabi">Éves szabadság</label>
                                 <input type="text" class="form-control" id="evesSzabi" name="evesSzabi"
-                                    value="<?php echo e(old('evesSzabi')); ?>">
+                                    value="<?php echo e(old('evesSzabi')); ?> 25">
                                 <?php $__errorArgs = ['evesSzabi'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -211,7 +211,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <label for="vegzettseg">Végzettség</label>
                                 <input type="text" class="form-control" id="vegzettseg" name="vegzettseg"
-                                    value="<?php echo e(old('vegzettseg')); ?>">
+                                    value="<?php echo e(old('vegzettseg')); ?> Rendszergazda">
                                 <?php $__errorArgs = ['vegzettseg'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -226,7 +226,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <label for="szgfKod">SZGF kód</label>
                                 <input type="text" class="form-control" id="szgfKod" name="szgfKod"
-                                    value="<?php echo e(old('szgfKod')); ?>">
+                                    value="<?php echo e(old('szgfKod')); ?> 2345">
                                 <?php $__errorArgs = ['szgfKod'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -244,7 +244,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="col">
                                 <label for="munkakor">Munkakör</label>
                                 <input type="text" class="form-control" id="munkakor" name="munkakor"
-                                    value="<?php echo e(old('munkakor')); ?>">
+                                    value="<?php echo e(old('munkakor')); ?> Rendszergazda">
                                 <?php $__errorArgs = ['munkakor'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -257,9 +257,9 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col">
-                                <label for="szSzakkepzet">Sz_szakképzett</label>
+                                <label for="szSzakkepzet">Szakképzett</label>
                                 <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet"
-                                    value="<?php echo e(old('szSzakkepzet')); ?>">
+                                    value="<?php echo e(old('szSzakkepzet')); ?> Rendszergazda">
                                 <?php $__errorArgs = ['szSzakkepzet'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

@@ -6,13 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\fenntarto;
 use App\Models\fenntarto_valtozas;
-use App\Models\User;
 use Illuminate\Support\Facades\Storage;
-use SebastianBergmann\Environment\Console;
 use App\Models\bolcsode;
 use App\Models\jogosultsag;
-use App\Models\alkalmazott;
-use App\Models\dolgozo;
+
 
 class FenntartoController extends Controller
 {
@@ -20,9 +17,6 @@ class FenntartoController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    /**
-     * -Ezt használjuk az összes megjegyzés lekéréséhez. 
      */
     public function index()
     {  
@@ -50,22 +44,13 @@ class FenntartoController extends Controller
         $fenntarto->uzemorvos_nev  = $request->uzemorvos_nev;
         $fenntarto->uzemorvos_cim   = $request->uzemorvos_cim;
         $fenntarto->uzemorvos_telefonszam   = $request->uzemorvos_telefonszam;
-        //$fenntarto->fennt_admin  = $request->get('fennt_admin');
         $fenntarto->save();
     }
 
-    /**
-     * Az update() metódus hasonló a store() metódushoz, de ahelyett, hogy új megjegyzést hozna létre, először megragadja a meglévő kért megjegyzést
-     * a findOrFail($id) paraméterrel. Ezután érvényesíti az új kérést, frissíti a meglévő megjegyzést, 
-     * ha a kérelem érvényes, menti az adatbázisba, és visszaküldi a frissített megjegyzést.
-     */
+ 
     public function update(Request $request, $id)
     {
         $fenntarto = fenntarto::findOrFail($id);
-               
-        /* $mezok=['nev','szekhely','agazati_azon','kepviselo','adoszam','megye',
-        'cegjegyzekszam','statisztikaiszam','illetekes_kormányh','bolcsodek_szama',
-        'uzemorvos_nev','uzemorvos_cim','uzemorvos_telefonszam']; */
         
             if($fenntarto-> nev != $request->get('nev')){
                 $f_valtozas= new fenntarto_valtozas();

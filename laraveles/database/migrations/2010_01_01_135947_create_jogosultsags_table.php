@@ -4,9 +4,6 @@ use App\Models\jogosultsag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Foundation\Auth\User;
-use Dotenv\Util\Str;
-use Illuminate\Support\Facades\Hash;
 
 class CreateJogosultsagsTable extends Migration
 {
@@ -20,6 +17,7 @@ class CreateJogosultsagsTable extends Migration
         Schema::create('jogosultsags', function (Blueprint $table) {
             $table->id();
             $table->string('megnevezes');
+            $table->softDeletes();
             $table->timestamps();
         });
 

@@ -100,7 +100,7 @@
                                 <div class="col">
                                     <label for="bruttoAlapber">Bruttó alapbér</label>
                                     <input type="text" class="form-control" id="bruttoAlapber" name="bruttoAlapber"
-                                        value="{{ old('bruttoAlapber') }}">
+                                        value="{{ old('bruttoAlapber') }} 350000">
                                     @error('bruttoAlapber')
                                         <span style="color: red">{{ $message }} </span>
                                     @enderror
@@ -108,7 +108,7 @@
                                 <div class="col">
                                     <label for="hetiMunkaOra">Heti munkaóra</label>
                                     <input type="text" class="form-control" id="hetiMunkaOra" name="hetiMunkaOra"
-                                        value="{{ old('hetiMunkaOra') }}">
+                                        value="{{ old('hetiMunkaOra') }} 40">
                                     @error('hetiMunkaOra')
                                         <span style="color: red">{{ $message }} </span>
                                     @enderror
@@ -137,7 +137,7 @@
                                 <div class="col">
                                     <label for="besorolasiSzam">Besorolási szám</label>
                                     <input type="text" class="form-control" id="besorolasiSzam" name="besorolasiSzam"
-                                        value="{{ old('besorolasiSzam') }}">
+                                        value="{{ old('besorolasiSzam') }} 5">
                                     @error('besorolasiSzam')
                                         <span style="color: red">{{ $message }} </span>
                                     @enderror
@@ -149,7 +149,7 @@
                             <div class="col">
                                 <label for="feorAzonosito">Feor azonosító</label>
                                 <input type="text" class="form-control" id="feorAzonosito" name="feorAzonosito"
-                                    value="{{ old('feorAzonosito') }}">
+                                    value="{{ old('feorAzonosito') }} 123">
                                 @error('feorAzonosito')
                                     <span style="color: red">{{ $message }} </span>
                                 @enderror
@@ -157,7 +157,7 @@
                             <div class="col">
                                 <label for="evesSzabi">Éves szabadság</label>
                                 <input type="text" class="form-control" id="evesSzabi" name="evesSzabi"
-                                    value="{{ old('evesSzabi') }}">
+                                    value="{{ old('evesSzabi') }} 25">
                                 @error('evesSzabi')
                                     <span style="color: red">{{ $message }} </span>
                                 @enderror
@@ -167,7 +167,7 @@
                             <div class="col">
                                 <label for="vegzettseg">Végzettség</label>
                                 <input type="text" class="form-control" id="vegzettseg" name="vegzettseg"
-                                    value="{{ old('vegzettseg') }}">
+                                    value="{{ old('vegzettseg') }} Rendszergazda">
                                 @error('vegzettseg')
                                     <span style="color: red">{{ $message }} </span>
                                 @enderror
@@ -175,7 +175,7 @@
                             <div class="col">
                                 <label for="szgfKod">SZGF kód</label>
                                 <input type="text" class="form-control" id="szgfKod" name="szgfKod"
-                                    value="{{ old('szgfKod') }}">
+                                    value="{{ old('szgfKod') }} 2345">
                                 @error('szgfKod')
                                     <span style="color: red">{{ $message }} </span>
                                 @enderror
@@ -186,15 +186,15 @@
                             <div class="col">
                                 <label for="munkakor">Munkakör</label>
                                 <input type="text" class="form-control" id="munkakor" name="munkakor"
-                                    value="{{ old('munkakor') }}">
+                                    value="{{ old('munkakor') }} Rendszergazda">
                                 @error('munkakor')
                                     <span style="color: red">{{ $message }} </span>
                                 @enderror
                             </div>
                             <div class="col">
-                                <label for="szSzakkepzet">Sz_szakképzett</label>
+                                <label for="szSzakkepzet">Szakképzett</label>
                                 <input type="text" class="form-control" id="szSzakkepzet" name="szSzakkepzet"
-                                    value="{{ old('szSzakkepzet') }}">
+                                    value="{{ old('szSzakkepzet') }} Rendszergazda">
                                 @error('szSzakkepzet')
                                     <span style="color: red">{{ $message }} </span>
                                 @enderror

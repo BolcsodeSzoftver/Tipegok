@@ -119,9 +119,6 @@
                                 </div>
                             </div>
                             <div class="form-outline">
-                                {{-- <input type="text" id="fenntarto" class="form-control" readonly />
-                                <label for="fenntarto">Fenntartó</label> --}}
-
                                 <select  class="form-control fenntartoModosit" name="fenntarto" id="fenntarto">
                                     @foreach ($fenntartok as $fenntarto)
                                         <option id="fenntarto" value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}

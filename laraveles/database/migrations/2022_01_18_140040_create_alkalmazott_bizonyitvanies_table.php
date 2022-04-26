@@ -25,6 +25,7 @@ class CreateAlkalmazottBizonyitvaniesTable extends Migration
             $table->string('oep_konyv_masolat');
             $table->integer('pontokszama');
             $table->string('dokumentum_feltoltese');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

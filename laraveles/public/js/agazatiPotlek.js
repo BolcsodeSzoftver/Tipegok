@@ -1,7 +1,6 @@
 $(function() {
 	$('.modositGomb').on('click', function() {
 		let id = this.id;
-		console.log(id);
 		$('#agazatiPID').val(id);
         $('#apId').hide();
         const tomb=['eletkor', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];

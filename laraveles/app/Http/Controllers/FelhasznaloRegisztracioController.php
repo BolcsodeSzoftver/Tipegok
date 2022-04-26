@@ -42,7 +42,7 @@ class FelhasznaloRegisztracioController extends Controller
         $pass = Str::random(8);
         $user = new User();
         $user->name = $request->name;
-        $user->email = $request->email;
+        $emial = $user->email = $request->email;
         $user->allapot = $request->get('allapot');
         $user->jogosultsag_id = $request->get('Jogosultsag');
         $user->password = Hash::make($pass);
@@ -51,11 +51,11 @@ class FelhasznaloRegisztracioController extends Controller
         $details = [
             'title' => 'Kedves ' . $user->name . ",",
             'body' => 'Felhasználód létrehozása sikeresen megtörtént. További adatok megadása szükséges,
-                        ezt a következő linkre kattintva tudod megtenni: TODO<br>
+                        ezt a következő linkre kattintva tudod megtenni: http://127.0.0.1:8000/login
             
                         Bejelentkezéshez szükséges adatok:
 
-                        -felhasználónév:email címed
+                        -Email cím: '.$emial.'
 
                         -jelszó:' . $pass . '
                         ',

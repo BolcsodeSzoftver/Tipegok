@@ -15,7 +15,7 @@
         </div>
         <div class="row" class="userId">
             <div class="col-6" id="munkalatoNeve">
-                <input type="text" id="form8Example1" class="form-control userId" name="userID" 
+                <input type="text" id="form8Example1" class="form-control userId" name="userID"
                     value={{ Auth::user()->id }} />
             </div>
         </div>
@@ -23,7 +23,8 @@
             <div class="col">
                 <div class="form-outline">
                     <label class="form-label" for="nev">Teljes név</label>
-                    <input type="text" id="nev" class="form-control" name="nev" value="{{ old('nev') }}" placeholder="Nagy Ede"/>
+                    <input type="text" id="nev" class="form-control" name="nev" value="{{ old('nev') }} Balogh Bíborka"
+                        placeholder="Nagy Ede" />
                     @error('nev')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -34,7 +35,7 @@
                 <div class="form-outline">
                     <label for="telefonszam">Telefonszám:</label>
                     <input type="text" class="form-control" id="telefonszam" name="telefonszam"
-                        placeholder="+36/30-111-2222" value="{{ old('telefonszam') }}">
+                        placeholder="+36/30-111-2222" value="{{ old('telefonszam') }} +36/30-555-3333">
                     @error('telefonszam')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -47,7 +48,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="szul_nev">Születési név</label>
                     <input type="text" id="szulNev" class="form-control" name="szul_nev" placeholder="Nagy Ede"
-                        value="{{ old('szul_nev') }}" />
+                        value="{{ old('szul_nev') }} Balogh Bíborka" />
                     @error('szul_nev')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -58,7 +59,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="anyja_neve">Anyja neve</label>
                     <input type="text" id="form8Example2" class="form-control" name="anyja_neve" placeholder="Kiss Anna"
-                        value="{{ old('anyja_neve') }}" />
+                        value="{{ old('anyja_neve') }} Kiss Anna" />
                     @error('anyja_neve')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -71,7 +72,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="szul_hely">Születési hely</label>
                     <input type="text" id="form8Example1" class="form-control" name="szul_hely" placeholder="Budapest"
-                        value="{{ old('szul_hely') }}" />
+                        value="{{ old('szul_hely') }} Budapest" />
                     @error('szul_hely')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -80,7 +81,7 @@
             </div>
             <div class="col">
                 <label class="form-label" for="szul_ido">Születési idő</label>
-                <input type="date" class="form-control" id="szulIdo" name="szul_ido" value="{{ old('szul_ido') }}">
+                <input type="date" id="szulIdo" class="form-control" name="szul_ido" value="1980-07-22">
                 @error('szul_ido')
                     <span style="color: red">{{ $message }} </span>
                 @enderror
@@ -89,7 +90,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="all_polgarsag">Állam polgárság</label>
                     <input type="text" id="form8Example1" class="form-control" name="all_polgarsag" placeholder="Magyar"
-                        value="{{ old('allPolgarsag') }}" />
+                        value="{{ old('allPolgarsag') }} Magyar" />
                     @error('all_polgarsag')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -101,12 +102,11 @@
             <div class="col-4">
                 <p>Nem</p>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="no" id="no" value="N" value="{{ old('N') }}">
+                    <input class="form-check-input" type="radio" name="no" id="no" value="Nő" value="Nő" checked>
                     <label class="form-check-label" for="no">Nő</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="ferfi" id="ferfi" value="F"
-                        value="{{ old('F') }}">
+                    <input class="form-check-input" type="radio" name="ferfi" id="ferfi" value="Férfi">
                     <label class="form-check-label" for="ferfi">Férfi</label>
                 </div>
                 <br>
@@ -122,22 +122,24 @@
             <div class="form-row">
                 <div class="col-md-5 mb-3">
                     <label>Város</label>
-                    <input name="varos" type="text" class="form-control" id="validationTooltip03" placeholder="Város" value="{{ old('varos') }}"/>
+                    <input name="varos" type="text" class="form-control" id="validationTooltip03" placeholder="Város"
+                        value="{{ old('varos') }} Budapest" />
                     @error('varos')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
                 </div>
                 <div class="col-md-2 mb-3">
                     <label>Utca</label>
-                    <input name="utca" type="text" class="form-control" id="validationTooltip04" placeholder="Utca 11" value="{{ old('utca') }}"/>
+                    <input name="utca" type="text" class="form-control" id="validationTooltip04" placeholder="Utca 11"
+                        value="{{ old('utca') }} Utca 11" />
                     @error('utca')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
                 </div>
                 <div class="col-md-4 mb-3">
                     <label>Irányítószám</label>
-                    <input name="iranyitoSzam" type="text" class="form-control" id="validationTooltip05" 
-                        placeholder="2222" value="{{ old('iranyitoSzam') }}"/>
+                    <input name="iranyitoSzam" type="text" class="form-control" id="validationTooltip05"
+                        placeholder="2222" value="{{ old('iranyitoSzam') }} 2222" />
                     @error('iranyitoSzam')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -150,15 +152,16 @@
             <div class="form-row">
                 <div class="col-md-5 mb-3">
                     <label>Város</label>
-                    <input name="varosTart" type="text" class="form-control" id="validationTooltip03"
-                        placeholder="Város" value="{{ old('varosTart') }}"/>
+                    <input name="varosTart" type="text" class="form-control" id="validationTooltip03" placeholder="Város"
+                        value="{{ old('varosTart') }} Budapest" />
                     @error('varosTart')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
                 </div>
                 <div class="col-md-2 mb-3">
                     <label>Utca</label>
-                    <input name="utcaTart" type="text" class="form-control" id="validationTooltip04" placeholder="Utca 11" value="{{ old('utcaTart') }}"/>
+                    <input name="utcaTart" type="text" class="form-control" id="validationTooltip04" placeholder="Utca 11"
+                        value="{{ old('utcaTart') }} Utca 11" />
                     @error('utcaTart')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -166,7 +169,7 @@
                 <div class="col-md-4 mb-3">
                     <label>Irányítószám</label>
                     <input name="iranyitoSzamTart" type="text" class="form-control" id="validationTooltip05"
-                        placeholder="2222" value="{{ old('iranyitoSzamTart') }}"/>
+                        placeholder="2222" value="{{ old('iranyitoSzamTart') }} 2222" />
                     @error('iranyitoSzamTart')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -184,7 +187,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="adoazon_jel">Adóazonósító</label>
                     <input type="text" id="form8Example3" class="form-control" name="adoazon_jel" placeholder="1234567891"
-                        value="{{ old('adoazon_jel') }}" />
+                        value="{{ old('adoazon_jel') }} 1234567891" />
                     <br>
                     @error('adoazon_jel')
                         <span style="color: red">{{ $message }} </span>
@@ -195,7 +198,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="form8Example4">Tajszám</label>
                     <input type="text" id="form8Example4" class="form-control" name="tajszam" placeholder="123456789"
-                        value="{{ old('tajszam') }}" />
+                        value="{{ old('tajszam') }} 123456789" />
                     <br>
                     @error('tajszam')
                         <span style="color: red">{{ $message }} </span>
@@ -208,8 +211,8 @@
             <div class="col">
                 <div class="form-outline">
                     <label class="form-label" for="tizenhat_alatti_gyermek">16 éven aluli gyermekek száma</label>
-                    <input type="nev" id="form8Example1" class="form-control" name="tizenhat_alatti_gyermek" placeholder="2"
-                        value="{{ old('tizenhat_alatti_gyermek') }}" />
+                    <input type="nev" id="form8Example1" class="form-control" name="tizenhat_alatti_gyermek"
+                        placeholder="2" value="{{ old('tizenhat_alatti_gyermek') }} 0" />
                     <br>
                     @error('tizenhat_alatti_gyermek')
                         <span style="color: red">{{ $message }} </span>
@@ -222,8 +225,9 @@
             <div class="col">
                 <div class="form-outline">
                     <label class="form-label" for="banszamla_szam">Bankszámla szám</label>
-                    <input type="text" id="form8Example3" class="form-control" name="banszamla_szam" placeholder="10404072-50526871-56691003"
-                        value="{{ old('banszamla_szam') }}" />
+                    <input type="text" id="form8Example3" class="form-control" name="banszamla_szam"
+                        placeholder="10404072-50526871-56691003"
+                        value="{{ old('banszamla_szam') }} 10404072-50526871-56691003" />
 
                     <br>
                     @error('banszamla_szam')
@@ -243,7 +247,7 @@
 
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="nem" id="nem" value="nem">
+                    <input class="form-check-input" type="radio" name="nem" id="nem" value="nem" checked>
                     <label class="form-check-label" for="nem">nem</label>
                 </div>
                 <br>
@@ -259,7 +263,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="vegzettseg">végzettség</label>
                     <input type="text" id="vegzettseg" class="form-control" name="vegzettseg" placeholder="végzettség"
-                        value="{{ old('vegzettseg') }}" />
+                        value="{{ old('vegzettseg') }} Rendszergazda" />
                     @error('vegzettseg')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -268,8 +272,8 @@
             <div class="col">
                 <div class="form-outline">
                     <label class="form-label" for="biz_intezmeny_nev">Intézmény neve</label>
-                    <input type="text" id="biz_intezmeny_nev" class="form-control" name="biz_intezmeny_nev" placeholder="intézmény neve"
-                        value="{{ old('biz_intezmeny_nev') }}" />
+                    <input type="text" id="biz_intezmeny_nev" class="form-control" name="biz_intezmeny_nev"
+                        placeholder="intézmény neve" value="{{ old('biz_intezmeny_nev') }} Iskola" />
                     @error('biz_intezmeny_nev')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -284,7 +288,7 @@
                 <div class="form-outline">
                     <label class="form-label" for="pontokszama">Pontok száma</label>
                     <input type="text" id="pontokszama" class="form-control" name="pontokszama" placeholder="100"
-                        value="{{ old('pontokszama') }}" />
+                        value="{{ old('pontokszama') }} 200" />
                     @error('pontokszama')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -294,8 +298,8 @@
             <div class="col">
                 <div class="form-outline">
                     <label class="form-label" for="bizonyitvany_szam">Bizonyitvány száma</label>
-                    <input type="text" id="bizonyitvany_szam" class="form-control" name="bizonyitvany_szam" placeholder="1234567"
-                        value="{{ old('bizonyitvany_szam') }}" />
+                    <input type="text" id="bizonyitvany_szam" class="form-control" name="bizonyitvany_szam"
+                        placeholder="1234567" value="{{ old('bizonyitvany_szam') }} 1234567" />
                     @error('bizonyitvany_szam')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -307,8 +311,7 @@
             <div class="col-6">
                 <div class="form-outline">
                     <label for="kiadas_datuma">Kiadás dátuma</label>
-                    <input type="date" class="form-control" id="kiadas_datuma" name="kiadas_datuma"
-                        value="{{ old('kiadas_datuma') }}">
+                    <input type="date" id="start" class="form-control" name="kiadas_datuma" value="2020-06-25">
                     @error('kiadas_datuma')
                         <span style="color: red">{{ $message }} </span>
                     @enderror
@@ -341,7 +344,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" name="mentes" id="mentes" class="mentes">Mentés</button>
+        <button type="submit" class="btn btn-primary mentes " name="mentes" id="mentes">Mentés</button>
     </div>
     <div class="allapot">
         <input type="text" id="allapot" class="form-control" name="allapot" value="0" />
@@ -361,9 +364,6 @@
         @yield("t2")
         @yield("t3")
         @yield("t4")
-
-
-
 
     </form>
 @endsection

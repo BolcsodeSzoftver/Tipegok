@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
  
    
-    <script src="../js/ujdolgoz.js"></script>
+    <script src="../js/ujdolgozo.js"></script>
 
 
 

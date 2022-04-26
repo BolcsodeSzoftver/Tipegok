@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\alkalmazott;
 use App\Models\agazati_potlek;
 use App\Models\dolgozo;
 
@@ -29,11 +28,6 @@ class dolgozController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    /**
-     * Az update() metódus hasonló a store() metódushoz, de ahelyett, hogy új megjegyzést hozna létre, először megragadja a meglévő kért megjegyzést
-     * a findOrFail($id) paraméterrel. Ezután érvényesíti az új kérést, frissíti a meglévő megjegyzést, 
-     * ha a kérelem érvényes, menti az adatbázisba, és visszaküldi a frissített megjegyzést.
      */
     public function update(Request $request, $id)
     {

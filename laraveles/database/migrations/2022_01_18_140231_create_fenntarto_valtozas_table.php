@@ -19,6 +19,7 @@ class CreateFenntartoValtozasTable extends Migration
             $table->foreign('fennt_id')->references('id')->on('fenntartos');
             $table->string('mezonev');
             $table->string('regiertek');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

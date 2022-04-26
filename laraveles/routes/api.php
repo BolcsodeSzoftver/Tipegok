@@ -25,11 +25,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('bolcsode', BolcsodeController::class);//én
+Route::apiResource('bolcsode', BolcsodeController::class);
 Route::apiResource('fenntarto', FenntartoController::class);
 Route::apiResource('dolgozo', dolgozController::class);
-Route::apiResource('alkalmazott', AlkalmazottController::class);//én
+Route::apiResource('alkalmazott', AlkalmazottController::class);
 Route::apiResource('bizonyitvany', BizonyitvanyController::class);
-Route::apiResource('felhasznalo', FelhasznaloController::class);//én
+Route::apiResource('felhasznalo', FelhasznaloController::class);
 Route::apiResource('agazatiPotlek', AgazatiPotlekController::class);
 

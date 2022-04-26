@@ -56,14 +56,8 @@ class AlkalmazottController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    /**
-     * Az update() metódus hasonló a store() metódushoz, de ahelyett, hogy új megjegyzést hozna létre, először megragadja a meglévő kért megjegyzést
-     * a findOrFail($id) paraméterrel. Ezután érvényesíti az új kérést, frissíti a meglévő megjegyzést, 
-     * ha a kérelem érvényes, menti az adatbázisba, és visszaküldi a frissített megjegyzést.
-     */
     public function update(Request $request, $id)
     {
-
         $alkalmazott = alkalmazott::findOrFail($request->id);
         $alkalmazott->szul_nev  = $request->szulN;
         $alkalmazott->szul_hely   = $request->szulH;

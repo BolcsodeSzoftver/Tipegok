@@ -1,5 +1,5 @@
 
-/* Puck (by @eden_sg) */
+
 .menu--puck .menu__link {
 	position: relative;
 	display: block;
@@ -10,8 +10,7 @@
 	transition: color 0.4s;
 }
 
-.menu--puck .menu__link:hover/* ,
-.menu--puck .menu__link:focus  */{
+.menu--puck .menu__link:hover{
 	color: #4e8ee2;
     text-decoration: none;
 }
@@ -123,46 +122,32 @@ a {
 	z-index: 1;
 	top: 0;
 	right: 0;
-	/* background-color: #111; */
+
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
 	z-index:1;
 	overflow: hidden;
 	background-color: #ebebeb;
-	/* background-image: url("https://images.unsplash.com/photo-1589306994259-a806e14b775a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"); */
-	/* background-image: url("https://colorlib.com/etc/bootstrap-sidebar/sidebar-10/images/bg_1.jpg"); */
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
 }
 
-/* .dropdown-menu{
-	background-image: url("https://images.unsplash.com/photo-1589306994259-a806e14b775a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60");
-	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
-} */
   
-  .sidebar a /* .dropdown-btn,  .dropbtn */{
+  .sidebar a{
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 20px;
 	color: black;
 	display: block;
 	transition: 0.3s;
-	/* background-color: #111; */
 	border: none;
 	text-align: left;
   	cursor: pointer;
   	outline: none;
   }
   
-  /* .sidebar a:hover, .dropdown-btn:hover, .profilom-gomb:hover, .dropbtn:hover{
-	color: #000000;
-  }
- */
-
  #jobb-menu{background-color: #4e8ee2; opacity: 0.2; width: 250px; height: 340px;
 	margin-top: 55px;
 	position: absolute;

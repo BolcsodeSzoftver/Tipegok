@@ -1,20 +1,7 @@
 $(function () {
     let ajaxhivas = new AjaxHivas();
     let vegpont = "/api/bolcsode";
-   
-    $(".megerositTorles").on("click", () => {
-        ajaxhivas.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
-        location.reload();
-    });
-    $(window).on("EsemenyTorolBolcsi", (event) => {
-        $(".megerositTorles").attr("id", event.detail.id);
-    });
 
-    $(".adatModositEnged").on("click", function () {
-        $("input").removeAttr("readonly");
-    });
-
-    //$(".modositUrlap").hide();
     $(window).on("modosit", (event) => {
         $(".modositUrlap").show();
         $("#id").attr("value", event.detail.id);
@@ -29,7 +16,6 @@ $(function () {
 
         $("#idB").hide();
         $("#Ujmodositadat").on("click", function () {
-            console.log("modositasadat!");
             let id = $("#id").val();
             let cim = $("#cim").val();
             let nev = $("#nev").val();
@@ -50,16 +36,17 @@ $(function () {
                 agazati_potlek: agazatiPotlek,
                 fennt_id: fenntarto,
             };
-            console.log(adat);
-            console.log(vegpont);
-            console.log(id);
-            console.log(fenntarto);
-
             ajaxhivas.putAjax(vegpont, adat, id);
             location.reload();
         });
     });
-
+    $(window).on("EsemenyTorolBolcsi", (event) => {
+        $(".megerositTorles").attr("id", event.detail.id);
+    });
+    $(".megerositTorles").on("click", () => {
+        ajaxhivas.deleteAjax(vegpont, $(".megerositTorles").attr("id"));
+        location.reload();
+    });
 
     $(".bolcsiNev").change(() => {
         $(".table").empty();
@@ -78,18 +65,21 @@ $(function () {
         ajaxhivas.getAjax(vegpont, adatLista);
     });
 
-    $('.IDk').hide();
-    let userJogo=$('#userJogosultsag').val();
+    $(".adatModositEnged").on("click", function () {
+        $("input").removeAttr("readonly");
+    });
 
-    if(userJogo==$('#adminID').val()){
+    $(".IDk").hide();
+    let userJogo = $("#userJogosultsag").val();
+
+    if (userJogo == $("#adminID").val()) {
         $("#bolcsiForm").hide();
-        let vegpont = "/bolcsi/"+$('#userID').val();
+        let vegpont = "/bolcsi/" + $("#userID").val();
         ajaxhivas.getAjax(vegpont, adatLista);
     }
 
-    if(userJogo==$('#szuperAdminID').val()){
+    if (userJogo == $("#szuperAdminID").val()) {
         let vegpont = "/api/bolcsode";
         ajaxhivas.getAjax(vegpont, adatLista);
     }
-
 });

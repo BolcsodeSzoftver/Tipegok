@@ -37,11 +37,9 @@ class Bolcsode {
 		this.agazatiPotlekElem = this.elem.children('.agazati_potlek');
 		this.setAdatok(this.adat);
 		this.gombModosit.on('click', () => {
-			console.log('gom');
 			this.kattintasTrigger('modosit');
 		});
-		  this.gombTorol.on('click', () => {
-			console.log('gom');
+		  this.gombTorol.on('click', () => {;
 			this.kattintasTrigger('EsemenyTorolBolcsi');
 		});  
 		
@@ -61,6 +59,5 @@ class Bolcsode {
 			detail: this.adat
 		});
 		window.dispatchEvent(esemeny);
-		console.log('kattintastrigger');
 	}
 }

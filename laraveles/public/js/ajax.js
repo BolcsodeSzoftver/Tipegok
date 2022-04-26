@@ -24,17 +24,11 @@ class AjaxHivas {
         });
     }
     putAjax(eleresiUt, adat, id) {
-        console.log(adat);
         $.ajax({
             url: eleresiUt + "/" + id,
             type: "PUT",
             data: adat,
             success: function (result) {},
-            error: function (xhr, textStatus, errorThrown) {
-                console.log(
-                    "STATUS: " + textStatus + "\nERROR THROWN: " + errorThrown
-                );
-            },
         });
     }
     deleteAjax(eleresiUt, id) {

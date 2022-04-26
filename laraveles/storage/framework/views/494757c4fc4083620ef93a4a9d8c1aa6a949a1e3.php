@@ -282,10 +282,6 @@
                         <?php echo csrf_field(); ?>
                         <input type="hidden" name="_method" value="PUT">
                         <div class="modal-body">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item"><a class="nav-link dolgozoModalAdatok1" href="#">1</a></li>
-                                <li class="nav-item"><a class="nav-link dolgozoModalAdatok2" href="#">2</a></li>
-                            </ul>
                             <input type="hidden" id="dolgozoId" class="form-control" name="id" readonly>
                             <div class="urlap">
                                 <div class="adatok1">
@@ -564,7 +560,7 @@
                         <button type="button" class="close" data-dismiss="modal"><span
                                 aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                         <img src="" class="nagyKep" style="width: 100%;">
-                        <a href="" id="letoltGomb" download><button id="letoltKep">Letöltés</button></a>
+                        <a href="" id="letoltGomb" download><button type="button" class="btn btn-primary" id="letoltKep">Letöltés</button></a>
                     </div>
                 </div>
             </div>

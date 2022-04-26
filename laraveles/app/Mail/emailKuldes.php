@@ -2,9 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\bolcsode;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +30,7 @@ class emailKuldes extends Mailable
         $address = config("mail.from.address");
         $nev = Auth::user();
   
-        $this->subject('Sikeres felhasználó regisztráció: Bölcsineve')
+        $this->subject('Sikeres felhasználó regisztráció!')
                     ->view('email.ujFelhasznalo')
                     ->from($address, $nev->name);
   

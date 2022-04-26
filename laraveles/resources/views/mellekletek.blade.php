@@ -1,7 +1,6 @@
 @extends('layouts.szerkezet')
 @section('head')
   <link rel="stylesheet" href="css/mellekletek_css/mellekletekFromazasa.css">
-{{--   <script src="js/adminSajatAdatMegjelenit.js"></script> --}}
 @endsection
 @section('tartalom')
 
@@ -13,7 +12,6 @@
     <a class="btn btn-secondary" href="/melleklet5" target="_blank">Melleklet 5</a>
     <a class="btn btn-secondary" href="/melleklet6" target="_blank">Melleklet 6</a>
     <a class="btn btn-secondary" href="/melleklet10" target="_blank">Melleklet 10</a>
-    <!-- <input class="btn btn-dark" style="width:200px" type="submit" value="Új melléklet"> -->
   </div>
   
   @endsection

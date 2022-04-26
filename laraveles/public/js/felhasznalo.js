@@ -1,6 +1,5 @@
 $(function () {
     $(".adatModositEnged").on("click", function () {
-        console.log("modositEnged");
         $("input").removeAttr("readonly");
     });
     $(".modositGomb").on("click", function () {
@@ -8,7 +7,6 @@ $(function () {
         $("#usersId").val(id);
         $(".adatok").find(".nev").each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#nameInput").val($(this).text());
                 }
             });
@@ -16,7 +14,6 @@ $(function () {
             .find(".email")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#emailInput").val($(this).text());
                 }
             }); 

@@ -4,14 +4,11 @@ $(function () {
 
     $(".dolgozoGomb").on("click", function () {
         let id = this.id;
-        console.log(this.id);
         ajax.getAjax(dolgozoEleresiUt, dolgozotLista);
         function dolgozotLista(tomb) {
-            /* console.log(tomb); */
             $("#dolgozoAdatok").empty();
             tomb.forEach(function (adat) {
                 if (adat.alkalmazott_id == id) {
-                    console.log(adat.id);
                     $("#dolgozoAdatok").append(
                         '<div class="row">' +
                             '<div class="col">' +

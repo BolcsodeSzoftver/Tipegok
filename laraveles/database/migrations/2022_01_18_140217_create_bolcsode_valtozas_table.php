@@ -19,6 +19,7 @@ class CreateBolcsodeValtozasTable extends Migration
             $table->foreign('bolcsode_id')->references('id')->on('bolcsodes');
             $table->string('mezonev');
             $table->string('regiertek');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

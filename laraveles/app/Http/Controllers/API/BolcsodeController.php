@@ -3,19 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\belepes;
 use Illuminate\Http\Request;
 use App\Models\bolcsode;
 use App\Models\bolcsode_valtozas;
 use App\Models\fenntarto;
-use App\Models\alkalmazott;
-use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 use App\Models\jogosultsag;
-use Dotenv\Validator;
-use App\Http\Requests\urlapEllenorzes;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\MessageBag;
 
 class BolcsodeController extends Controller
 {
@@ -128,8 +121,6 @@ class BolcsodeController extends Controller
     {
         $bolcsode = bolcsode::findOrFail($id);
         $bolcsode->delete();
-
-        return response()->json($bolcsode::all());
     }
 
     public function megjelenit()

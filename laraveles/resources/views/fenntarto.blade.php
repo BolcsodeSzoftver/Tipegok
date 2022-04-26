@@ -6,7 +6,6 @@
     <script src="js/fenntClass.js"></script>
     <script src="js/fenntListazas.js"></script>
     <script src="js/fennt.js"></script>
-  {{--   <script src="js/adminSajatAdatMegjelenit.js"></script> --}}
 @endsection
 @section('tartalom')
     <h3>Fenntartó adatok</h3>

@@ -23,7 +23,6 @@ class Fenntarto {
 		this.setAdatok(this.adat);
 
 		this.gombModosit.on('click', () => {
-			console.log('modosit');
 			this.kattintasTrigger('modosit');
 		});
 

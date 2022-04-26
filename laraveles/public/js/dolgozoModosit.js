@@ -27,7 +27,6 @@ $(function () {
             .find(".telefonszam")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#tel").val($(this).text());
                 }
             });
@@ -35,7 +34,6 @@ $(function () {
             .find(".anyjaNev")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#anyjaNeve").val($(this).text());
                 }
             });
@@ -43,7 +41,6 @@ $(function () {
             .find(".szulN")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#szulN").val($(this).text());
                 }
             });
@@ -51,7 +48,6 @@ $(function () {
             .find(".szulH")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#szulH").val($(this).text());
                 }
             });
@@ -59,7 +55,6 @@ $(function () {
             .find(".szulI")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#szulI").val($(this).text());
                 }
             });
@@ -67,7 +62,6 @@ $(function () {
             .find(".cim")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#allandoLak").val($(this).text());
                 }
             });
@@ -75,7 +69,6 @@ $(function () {
             .find(".tartHely")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#tartHely").val($(this).text());
                 }
             });
@@ -83,7 +76,6 @@ $(function () {
             .find(".taj")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#tajSz").val($(this).text());
                 }
             });
@@ -91,7 +83,6 @@ $(function () {
             .find(".adoA")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#adoAzon").val($(this).text());
                 }
             });
@@ -99,7 +90,6 @@ $(function () {
             .find(".bankSz")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#bankSZ").val($(this).text());
                 }
             });
@@ -107,7 +97,6 @@ $(function () {
             .find(".nem")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#nem").val($(this).text());
                 }
             });
@@ -115,7 +104,6 @@ $(function () {
             .find(".hazas")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#hazas").val($(this).text());
                 }
             });
@@ -123,7 +111,6 @@ $(function () {
             .find(".gyerek")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#tizenhatAGy").val($(this).text());
                 }
             });
@@ -131,7 +118,6 @@ $(function () {
             .find(".polgar")
             .each(function () {
                 if (this.id === id) {
-                    console.log($(this).text());
                     $("#allPorg").val($(this).text());
                 }
             });

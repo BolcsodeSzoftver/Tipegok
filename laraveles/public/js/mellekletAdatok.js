@@ -8,7 +8,6 @@ $(function() {
 		let dolgozo="/dolgozo/"+$('select').val();
 		let fenntarto="/fenntarto/"+$('select').val();
 		let bizonyitvany="/bizonyitvany/"+$('select').val();
-		console.log(alkalmazott, fenntarto);
 		ajax.getAjax(alkalmazott, adatLista1);
 		ajax.getAjax(dolgozo, adatLista2);
 		ajax.getAjax(fenntarto, adatLista3);
@@ -17,7 +16,6 @@ $(function() {
 
 	function adatLista1(tomb) {
 		tomb.forEach(function (ertek) {
-			console.log(ertek.nev);
 			$('#nev').attr('value',ertek.nev);
 			$('#szulNev').attr('value',ertek.szul_nev);
 			$('#szulHely').attr('value',ertek.szul_hely);
@@ -39,7 +37,6 @@ $(function() {
 
 	function adatLista3(tomb) {
 		tomb.forEach(function (ertek) {
-			//console.log(ertek.szekhely);
 			$('#szekHely').attr('value',ertek.szekhely);
 			$('#megye').attr('value',ertek.megye);
 			$('#orvosNeve').attr('value',ertek.uzemorvos_nev);
