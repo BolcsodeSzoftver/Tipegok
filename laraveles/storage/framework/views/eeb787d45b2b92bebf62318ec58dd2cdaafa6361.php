@@ -114,6 +114,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h6 style="text-align: center">Jelszó módosítás</h6>
+
                             </div> 
                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/felhasznaloRegisztracio/<?php echo e(Auth::user()->id); ?>" method="post">
                                 <?php echo csrf_field(); ?>
@@ -130,7 +131,12 @@
                                     <label>Új jelszó megerősítése :</label>  
                                     <input type="password" id="first-name"  class="form-control"placeholder="Új jelszó megerősítése"  name="jelszoMegerosites"> 
                                 </div>
-                                <button type="submit" class="btn btn-primary">Mentés</button>
+                                <div>
+                                    <button type="submit" class="btn btn-dark" id="menetesJelszo">Mentés</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Bezár</button>
+                                </div>
                             </form>                     
                         </div>
                     </div>

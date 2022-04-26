@@ -5,7 +5,8 @@
     <script src="js/adminSajatAdatMegjelenit.js"></script>
 @endsection
 @section('tartalom')
-    <table class="table table-bordered mb-5 ">
+<div style="overflow-x:auto;">
+    <table class="table table-bordered mb-5 agazatiPTablazat" >
         <thead>
             <tr class="table-active">
                 <th></th>
@@ -45,6 +46,7 @@
             @endforeach
         </thead>
     </table>
+    </div>
     <div class="lapozos">
         {!! $agazatiPotlek->links('pagination::bootstrap-4') !!}
     </div>
