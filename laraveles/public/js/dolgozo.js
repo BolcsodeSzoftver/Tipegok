@@ -175,5 +175,12 @@ $(function () {
         $(document).on("click", "#gomb", function () {
             window.location.replace(window.location.href);
         });
+
+        $("#kezpenz").click(function () {
+            $("#utalas").prop("checked", false)  
+        });
+        $("#utalas").click(function () {
+            $("#kezpenz").prop("checked", false)  
+        });
     });
 });

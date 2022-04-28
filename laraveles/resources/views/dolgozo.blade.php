@@ -109,7 +109,7 @@
                                                         data-target="#bizonyitvanyModal">Bizonyitvanyok</a>
                                                     <a class="hover dropdown-item dolgozoGomb" href="#"
                                                         id={{ $data->id }} data-toggle="modal"
-                                                        data-target="#dolgozoModal">Munkakőri adatok</a>
+                                                        data-target="#dolgozoModal">Munkaköri adatok</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -473,31 +473,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal: orvosi adatok -->
-        <div class="modal fade" id="orvosiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Dolgozó orvosi adatok
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <div id="orvosiAdatok"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Bezár</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
 
 
         <div class="modal fade" id="dokumentumokModal" tabindex="-1" role="dialog"

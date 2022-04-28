@@ -51,7 +51,7 @@ class FelhasznaloRegisztracioController extends Controller
         $details = [
             'title' => 'Kedves ' . $user->name . ",",
             'body' => 'Felhasználód létrehozása sikeresen megtörtént. További adatok megadása szükséges,
-                        ezt a következő linkre kattintva tudod megtenni: http://127.0.0.1:8000/login
+                        ezt a következő linkre kattintva tudod megtenni: http://bolcsode.szakdolgozat.net/login
             
                         Bejelentkezéshez szükséges adatok:
 

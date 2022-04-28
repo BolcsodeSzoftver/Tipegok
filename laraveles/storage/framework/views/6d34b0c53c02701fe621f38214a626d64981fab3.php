@@ -294,7 +294,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz"
                                         value="kézpénz">
-                                    <label class="form-check-label" for="kezpenz">Kézpénz</label>
+                                    <label class="form-check-label" for="kezpenz">Készpénz</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="utalas" id="utalas"

@@ -38,4 +38,18 @@ $(function () {
             .addClass("selected")
             .html(fileName);
     });
+    $("#igen").click(function () {
+        $("#nem").prop("checked", false)  
+    });
+    $("#nem").click(function () {
+        $("#igen").prop("checked", false)  
+    });
+
+    $("#no").click(function () {
+        $("#ferfi").prop("checked", false)  
+    });
+    $("#ferfi").click(function () {
+        $("#no").prop("checked", false)  
+    });
+
 });
