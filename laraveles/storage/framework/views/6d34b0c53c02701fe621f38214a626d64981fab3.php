@@ -293,7 +293,7 @@ unset($__errorArgs, $__bag); ?>
                                 <p>Kifizetés módja</p>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="kezpenz" id="kezpenz"
-                                        value="kézpénz">
+                                        value="készpénz">
                                     <label class="form-check-label" for="kezpenz">Készpénz</label>
                                 </div>
                                 <div class="form-check form-check-inline">

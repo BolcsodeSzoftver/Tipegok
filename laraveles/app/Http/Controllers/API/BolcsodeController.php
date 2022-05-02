@@ -107,6 +107,7 @@ class BolcsodeController extends Controller
         $bolcsode->feor = $request->get('feor');
         $bolcsode->agazati_potlek = $request->get('agazati_potlek');
         $bolcsode->fennt_id = $request->get('fennt_id');
+        $bolcsode->bolcsode_admin = $request->get('bolcsode_admin');
         $bolcsode->save();
         return response()->json($bolcsode);
     }
@@ -127,7 +128,8 @@ class BolcsodeController extends Controller
     {
         $fenntartok = fenntarto::all();
         $jogosults = jogosultsag::all();
-        return view('bolcsiadat', compact('fenntartok', 'jogosults'));
+        $admin = User::all();
+        return view('bolcsiadat', compact('fenntartok', 'jogosults','admin'));
     }
 
 

@@ -14,4 +14,5 @@ class bolcsode extends Model
     protected $fillable = [
         'fennt_id','cim','nev','agazati_azon','szgyf_kod','ferohelyek_szama','feor','agazati_potlek','bolcsode_admin'
     ];
+    
 }

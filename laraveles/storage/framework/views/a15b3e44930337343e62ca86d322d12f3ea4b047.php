@@ -5,7 +5,8 @@
     <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('tartalom'); ?>
-    <table class="table table-bordered mb-5 ">
+<div style="overflow-x:auto;">
+    <table class="table table-bordered mb-5 agazatiPTablazat" >
         <thead>
             <tr class="table-active">
                 <th></th>
@@ -45,6 +46,7 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </thead>
     </table>
+    </div>
     <div class="lapozos">
         <?php echo $agazatiPotlek->links('pagination::bootstrap-4'); ?>
 

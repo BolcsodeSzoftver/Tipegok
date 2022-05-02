@@ -12,7 +12,7 @@ $(function () {
         $("#ferohelyekSzama").attr("value", event.detail.ferohelyek_szama);
         $("#feorAzon").attr("value", event.detail.feor);
         $("#agazatiPotlek").attr("value", event.detail.agazati_potlek);
-        $("#fenntarto").attr("value", event.detail.fennt_id);
+
 
         $("#idB").hide();
         $("#Ujmodositadat").on("click", function () {
@@ -25,6 +25,7 @@ $(function () {
             let feor = $("#feorAzon").val();
             let agazatiPotlek = $("#agazatiPotlek").val();
             let fenntarto = $("#fenntarto").val();
+            let admin = $("#bolcsode_admin").val();
             let adat = {
                 id: id,
                 cim: cim,
@@ -35,8 +36,10 @@ $(function () {
                 feor: feor,
                 agazati_potlek: agazatiPotlek,
                 fennt_id: fenntarto,
+                bolcsode_admin: admin
             };
             ajaxhivas.putAjax(vegpont, adat, id);
+            console.log(admin);
             location.reload();
         });
     });

@@ -6,7 +6,6 @@
     <script src="js/bolcsodeAdatLista.js"></script>
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
-    <script src="js/adminSajatAdatMegjelenit.js"></script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('tartalom'); ?>
@@ -120,6 +119,7 @@
                             </div>
                             <div class="form-outline">
                                 <select  class="form-control fenntartoModosit" name="fenntarto" id="fenntarto">
+                                    <option>Válassz fenntartót</option>
                                     <?php $__currentLoopData = $fenntartok; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fenntarto): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option id="fenntarto" value="<?php echo e($fenntarto->id); ?>"><?php echo e($fenntarto->nev); ?>
 
@@ -127,6 +127,19 @@
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
 
+                            </div>
+                            <div class="form-outline">
+                                <select class="form-control bolcsiNev" name="bolcsode_admin" id="bolcsode_admin">
+                                    <option>Válassz admint</option>
+                                    <?php $__currentLoopData = $admin; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $adminNev): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php if($adminNev->jogosultsag_id === 1): ?>
+                                            <option  id="bolcsode_admin" value="<?php echo e($adminNev->id); ?>">
+                                                <?php echo e($adminNev->name); ?>
+
+                                            </option>
+                                        <?php endif; ?>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                </select>
                             </div>
 
                         </div>

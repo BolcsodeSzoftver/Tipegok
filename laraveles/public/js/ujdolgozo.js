@@ -38,6 +38,11 @@ $(function () {
             .addClass("selected")
             .html(fileName);
     });
+
+    
+    $("#bolcsode").change(() => {
+        console.log($( "#bolcsode" ).val());
+    });
     $("#igen").click(function () {
         $("#nem").prop("checked", false)  
     });

@@ -6,7 +6,6 @@
     <script src="js/bolcsodeAdatLista.js"></script>
     <script src="js/bolcsodeClass.js"></script>
     <script src="js/bolcsode.js"></script>
-    <script src="js/adminSajatAdatMegjelenit.js"></script>
 @endsection
 
 @section('tartalom')
@@ -120,12 +119,25 @@
                             </div>
                             <div class="form-outline">
                                 <select  class="form-control fenntartoModosit" name="fenntarto" id="fenntarto">
+                                    <option>Válassz fenntartót</option>
                                     @foreach ($fenntartok as $fenntarto)
                                         <option id="fenntarto" value="{{ $fenntarto->id }}">{{ $fenntarto->nev }}
                                         </option>
                                     @endforeach
                                 </select>
 
+                            </div>
+                            <div class="form-outline">
+                                <select class="form-control bolcsiNev" name="bolcsode_admin" id="bolcsode_admin">
+                                    <option>Válassz admint</option>
+                                    @foreach ($admin as $adminNev)
+                                        @if ($adminNev->jogosultsag_id === 1)
+                                            <option  id="bolcsode_admin" value="{{ $adminNev->id }}">
+                                                {{ $adminNev->name }}
+                                            </option>
+                                        @endif
+                                    @endforeach
+                                </select>
                             </div>
 
                         </div>
